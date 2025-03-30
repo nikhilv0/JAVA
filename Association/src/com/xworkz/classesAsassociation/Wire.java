@@ -2,18 +2,21 @@ package com.xworkz.classesAsassociation;
 
 public class Wire {
     private String type;
-    private boolean conductivity;
+    private String conductivity;
 
-    public Wire(String type,boolean conductivit)
-    {
-        this.type=type;
-        this.conductivity=conductivit;
-
+    public String getType() {
+        return type;
     }
-    public void wiredisplay()
-    {
-        System.out.println("running wire ");
-        System.out.println("Type:"+this.type);
-        System.out.println("Conductivity:"+this.conductivity);
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getConductivity() {
+        return conductivity;
+    }
+
+    public void setConductivity(String conductivity) {
+        this.conductivity = conductivity;
     }
 }

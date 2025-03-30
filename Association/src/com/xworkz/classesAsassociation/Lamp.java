@@ -4,16 +4,19 @@ public class Lamp {
     private String material;
     private int voltage;
 
-    public Lamp(String material,int voltage)
-    {
-        this.material=material;
-        this.voltage=voltage;
-
+    public String getMaterial() {
+        return material;
     }
-    public void lampdisplay()
-    {
-        System.out.println("running lamp ");
-        System.out.println("Material:"+this.material);
-        System.out.println("Voltage:"+this.voltage);
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public int getVoltage() {
+        return voltage;
+    }
+
+    public void setVoltage(int voltage) {
+        this.voltage = voltage;
     }
 }

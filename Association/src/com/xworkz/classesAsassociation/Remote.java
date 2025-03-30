@@ -4,16 +4,19 @@ public class Remote {
     private int signalRange;
     private String accessControl ;
 
-    public Remote(int signalRange,String accessControl)
-    {
-        this.signalRange=signalRange;
-        this.accessControl=accessControl;
-
+    public int getSignalRange() {
+        return signalRange;
     }
-    public void remotedisplay()
-    {
-        System.out.println("running Remote");
-        System.out.println("Singal Range:"+this.signalRange);
-        System.out.println("Acess Control:"+this.accessControl);
+
+    public void setSignalRange(int signalRange) {
+        this.signalRange = signalRange;
+    }
+
+    public String getAccessControl() {
+        return accessControl;
+    }
+
+    public void setAccessControl(String accessControl) {
+        this.accessControl = accessControl;
     }
 }

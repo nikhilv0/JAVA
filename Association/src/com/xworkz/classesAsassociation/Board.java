@@ -4,16 +4,19 @@ public class Board {
     private String thickness;
     private String surface ;
 
-    public Board(String thickness,String surface)
-    {
-        this.thickness=thickness;
-        this.surface=surface;
-
+    public String getThickness() {
+        return thickness;
     }
-    public void boarddisplay()
-    {
-        System.out.println("running board ");
-        System.out.println("Thickness:"+this.thickness);
-        System.out.println("Surface:"+this.surface);
+
+    public void setThickness(String thickness) {
+        this.thickness = thickness;
+    }
+
+    public String getSurface() {
+        return surface;
+    }
+
+    public void setSurface(String surface) {
+        this.surface = surface;
     }
 }

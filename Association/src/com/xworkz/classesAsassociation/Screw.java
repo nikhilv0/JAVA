@@ -4,16 +4,19 @@ public class Screw {
     private float length;
     private float diameter ;
 
-    public Screw(float length,float diameter)
-    {
-        this.length=length;
-        this.diameter=diameter;
-
+    public float getLength() {
+        return length;
     }
-    public void screwdisplay()
-    {
-        System.out.println("running Remote");
-        System.out.println("Length:"+this.length);
-        System.out.println("Diameter:"+this.diameter);
+
+    public void setLength(float length) {
+        this.length = length;
+    }
+
+    public float getDiameter() {
+        return diameter;
+    }
+
+    public void setDiameter(float diameter) {
+        this.diameter = diameter;
     }
 }

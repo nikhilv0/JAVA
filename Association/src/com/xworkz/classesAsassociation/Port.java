@@ -4,17 +4,20 @@ public class Port {
     private String type;
     private float portno;
 
-    public Port(String type,float portno)
-    {
-        this.type=type;
-        this.portno=portno;
-
+    public String getType() {
+        return type;
     }
-    public void portdisplay()
-    {
-        System.out.println("running port ");
-        System.out.println("Type:"+this.type);
-        System.out.println("Port Number:"+this.portno);
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public float getPortno() {
+        return portno;
+    }
+
+    public void setPortno(float portno) {
+        this.portno = portno;
     }
 }
 

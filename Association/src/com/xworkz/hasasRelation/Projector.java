@@ -1,7 +1,5 @@
 package com.xworkz.hasasRelation;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.PortType;
-
 public class Projector {
     public void displayProject() {
 
@@ -10,13 +8,13 @@ public class Projector {
         lamp.lampDisplay();
         System.out.println("--------------------------------------------------------");
 
-
-       Port port=new Port();
+        PortType portType=new PortType();
+       Port port=new Port(portType);
        port.portDisplay();
-
        System.out.println("--------------------------------------------------------");
 
-        Wire wire=new Wire();
+       Quality quality=new Quality();
+        Wire wire=new Wire(quality);
         wire.wireDisplay();
         System.out.println("--------------------------------------------------------");
 
@@ -40,6 +38,7 @@ public class Projector {
 
         Voltage voltage=new Voltage(1000,1000.0f);
         voltage.voltgeDisplay();
+        System.out.println("--------------------------------------------------------");
 
     }
 
