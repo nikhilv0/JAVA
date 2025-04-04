@@ -1,8 +1,8 @@
 package com.xworkz.inheritance.external;
 
-class Button extends Component {
-    public Button() {
+public class Button extends Component{
+    public Button(){
         super();
-        System.out.println("Running constructor of Button class.");
+        System.out.println("running constructor of Button class");
     }
 }
