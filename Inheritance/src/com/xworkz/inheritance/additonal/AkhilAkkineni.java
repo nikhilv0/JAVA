@@ -5,4 +5,26 @@ public class AkhilAkkineni extends Model {
         super();
         System.out.println("Running constructor of AkhilAkkineni class");
     }
+
+    @Override
+    public void walk() {
+        System.out.println("Running walk in AkhilAkkineni class");
+    }
+
+    public void pose() {
+        System.out.println("Posing in AkhilAkkineni class");
+    }
+
+    public void design() {
+        System.out.println("design in AkhilAkkineni class");
+    }
+
+    public void dance() {
+        System.out.println("dancing in AkhilAkkineni class");
+    }
+
+    public void display() {
+        System.out.println("Displaying in AkhilAkkineni class");
+    }
 }
+

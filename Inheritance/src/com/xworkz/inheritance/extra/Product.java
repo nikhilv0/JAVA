@@ -11,7 +11,7 @@ public class Product {
     }
 
     public void calculateDiscount() {
-        System.out.println("Calculating discount");
+        System.out.println("Calculating Product discount");
     }
 
     public void checkAvailability() {

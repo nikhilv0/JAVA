@@ -3,7 +3,7 @@ package com.xworkz.inheritance.external;
 public class Component {
     public Component(){
 
-        System.out.println("running constructor Component");
+        System.out.println("running constructor of Component class");
     }
     public void render(){
         System.out.println("running render in Component");

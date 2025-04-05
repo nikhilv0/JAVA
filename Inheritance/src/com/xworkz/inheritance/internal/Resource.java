@@ -4,7 +4,7 @@ public class Resource {
 
     public Resource(){
         super();
-        System.out.println("running const resource");
+        System.out.println("running const of Resource class");
     }
     public void load(){
         System.out.println("running load in resource");

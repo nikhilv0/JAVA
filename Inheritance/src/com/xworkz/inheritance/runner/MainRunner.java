@@ -1,29 +1,9 @@
 package com.xworkz.inheritance.runner;
 import com.xworkz.inheritance.extra.*;
-import com.xworkz.inheritance.additonal.AkhilAkkineni;
-import com.xworkz.inheritance.additonal.Aryan;
-import com.xworkz.inheritance.additonal.Model;
 import com.xworkz.inheritance.external.*;
-import com.xworkz.inheritance.external.Button;
-import com.xworkz.inheritance.external.Canvas;
-import com.xworkz.inheritance.external.Checkbox;
-import com.xworkz.inheritance.external.Component;
-import com.xworkz.inheritance.external.Dialog;
-import com.xworkz.inheritance.external.Frame;
-import com.xworkz.inheritance.external.Label;
-import com.xworkz.inheritance.external.Menu;
-import com.xworkz.inheritance.external.MenuItem;
-import com.xworkz.inheritance.external.Panel;
-import com.xworkz.inheritance.external.TextField;
-import com.xworkz.inheritance.external.Window;
-import com.xworkz.inheritance.extra.AirConditioner;
-import com.xworkz.inheritance.extra.Product;
-import com.xworkz.inheritance.extra.Smartphone;
-import com.xworkz.inheritance.extra.VacuumCleaner;
 import com.xworkz.inheritance.internal.*;
 import com.xworkz.inheritance.additonal.*;
-import com.xworkz.inheritance.internal.Image;
-import com.xworkz.inheritance.internal.Resource;
+
 
 
 public class MainRunner {

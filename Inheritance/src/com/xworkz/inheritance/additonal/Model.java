@@ -6,23 +6,23 @@ public class Model {
     }
 
     public void walk() {
-        System.out.println("Ramp walk");
+        System.out.println("Running walk in Model class");
     }
 
     public void pose() {
-        System.out.println("Posing");
+        System.out.println("Posing in Model class");
     }
 
     public void design() {
-        System.out.println("design");
+        System.out.println("design in Model class");
     }
 
     public void dance() {
-        System.out.println("dancing");
+        System.out.println("dancing in Model class");
     }
 
     public void display() {
-        System.out.println("Displaying ");
+        System.out.println("Displaying in Model class");
     }
 }
 
