@@ -25,4 +25,7 @@ public class Sanjana extends Model{
     public void display() {
         System.out.println("Displaying in Sanjana class");
     }
+    public void sanj() {
+        System.out.println("sanjana in Sanjana class");
+    }
 }

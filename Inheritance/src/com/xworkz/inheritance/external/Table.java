@@ -21,5 +21,8 @@ public class Table extends Component {
     public void click(){
         System.out.println("running click in Table");
     }
+    public void add(){
+        System.out.println("running click in Table");
+    }
 }
 

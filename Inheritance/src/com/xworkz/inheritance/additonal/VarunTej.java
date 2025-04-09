@@ -25,4 +25,7 @@ public class VarunTej extends Model {
     public void display() {
         System.out.println("Displaying in VarunTej class");
     }
+    public void varun() {
+        System.out.println("Varun tej in PawanKalyan class");
+    }
 }

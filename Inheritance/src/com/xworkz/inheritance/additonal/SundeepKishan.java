@@ -25,4 +25,7 @@ public class SundeepKishan extends Model {
     public void display() {
         System.out.println("Displaying in SundeepKishan class");
     }
+    public void sundeep() {
+        System.out.println("Sundeep in PawanKalyan class");
+    }
 }

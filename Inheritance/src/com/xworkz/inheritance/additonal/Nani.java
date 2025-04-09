@@ -25,4 +25,7 @@ public class Nani extends Model {
     public void display() {
         System.out.println("Displaying in Nani class");
     }
+    public void nani() {
+        System.out.println("Nani in Nani class");
+    }
 }

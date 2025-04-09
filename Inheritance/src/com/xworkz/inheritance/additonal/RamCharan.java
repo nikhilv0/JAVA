@@ -25,4 +25,7 @@ public class RamCharan extends Model {
     public void display() {
         System.out.println("Displaying in RamCharan class");
     }
+    public void ram() {
+        System.out.println("Ram in PawanKalyan class");
+    }
 }

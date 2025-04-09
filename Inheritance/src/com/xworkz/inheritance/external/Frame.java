@@ -21,4 +21,7 @@ public class Frame extends Component {
     public void click(){
         System.out.println("running click in Frame");
     }
+    public void frame(){
+        System.out.println("running frame in Frame");
+    }
 }

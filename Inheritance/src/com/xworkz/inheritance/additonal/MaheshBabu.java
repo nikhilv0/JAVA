@@ -25,4 +25,7 @@ public class MaheshBabu extends Model {
     public void display() {
         System.out.println("Displaying in MaheshBabu class");
     }
+    public void mahesh() {
+        System.out.println("Mahesh in MaheshBabu class");
+    }
 }

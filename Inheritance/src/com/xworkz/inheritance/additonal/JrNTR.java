@@ -25,4 +25,7 @@ public class JrNTR extends Model {
     public void display() {
         System.out.println("Displaying in JrNTR class");
     }
+    public void ntr() {
+        System.out.println("ntr in JrNTR class");
+    }
 }

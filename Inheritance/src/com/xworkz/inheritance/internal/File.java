@@ -21,4 +21,7 @@ public class File extends Resource {
         public void save(){
             System.out.println("running save in File");
         }
+    public void update(){
+        System.out.println("running update in File");
+    }
 }

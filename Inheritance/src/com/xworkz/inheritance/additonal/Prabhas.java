@@ -25,4 +25,7 @@ public class Prabhas extends Model {
     public void display() {
         System.out.println("Displaying in Prabhas class");
     }
+    public void prabhas() {
+        System.out.println("Prabhas in PawanKalyan class");
+    }
 }

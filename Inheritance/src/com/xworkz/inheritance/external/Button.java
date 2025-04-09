@@ -21,4 +21,7 @@ public class Button extends Component{
     public void click(){
         System.out.println("running click in Button");
     }
+    public void customise(){
+        System.out.println("running customise in Button");
+    }
 }

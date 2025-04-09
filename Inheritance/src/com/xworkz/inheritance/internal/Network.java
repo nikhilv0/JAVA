@@ -21,4 +21,7 @@ public class Network extends Resource{
     public void save(){
         System.out.println("running save in Network");
     }
+    public void net(){
+        System.out.println("running save in Network");
+    }
 }

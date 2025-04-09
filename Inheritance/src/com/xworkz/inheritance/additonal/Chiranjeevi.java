@@ -26,6 +26,9 @@ public class Chiranjeevi extends Model {
     public void display() {
         System.out.println("Displaying in Chiranjeevi class");
     }
+    public void chiru() {
+        System.out.println("chiru in Chiranjeevi class");
+    }
 }
 
 

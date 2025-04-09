@@ -21,4 +21,7 @@ public class Checkbox extends Component {
     public void click(){
         System.out.println("running click in Checkbox");
     }
+    public void check(){
+        System.out.println("running click in Checkbox");
+    }
 }

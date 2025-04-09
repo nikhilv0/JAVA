@@ -21,4 +21,7 @@ public class Tab extends Component {
     public void click(){
         System.out.println("running click in Tab");
     }
+    public void tap(){
+        System.out.println("running click in Tab");
+    }
 }

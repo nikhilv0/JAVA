@@ -21,4 +21,7 @@ public class Session extends Resource{
     public void save(){
         System.out.println("running save in Session");
     }
+    public void start(){
+        System.out.println("running Start in Session");
+    }
 }

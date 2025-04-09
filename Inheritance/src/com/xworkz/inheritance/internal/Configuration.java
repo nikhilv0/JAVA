@@ -21,4 +21,7 @@ public class Configuration extends Resource{
     public void save(){
         System.out.println("running save in Configuration");
     }
+    public void setInfo(){
+        System.out.println("running setInfo in Configuration");
+    }
 }

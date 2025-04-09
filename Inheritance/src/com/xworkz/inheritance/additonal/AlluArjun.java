@@ -25,4 +25,7 @@ public class AlluArjun extends Model {
     public void display() {
         System.out.println("Displaying in AlluArjun class");
     }
+    public void allu() {
+        System.out.println("Allu in AlluArjun class");
+    }
 }

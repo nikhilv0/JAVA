@@ -25,4 +25,7 @@ public class Balakrishna extends Model {
     public void display() {
         System.out.println("Displaying in Balakrishna class");
     }
+    public void bala() {
+        System.out.println("bala in Balakrishna class");
+    }
 }

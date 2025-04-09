@@ -21,4 +21,7 @@ public class Card extends Component {
     public void click(){
         System.out.println("running click in Card");
     }
+    public void delete(){
+        System.out.println("running unoCard in Card");
+    }
 }

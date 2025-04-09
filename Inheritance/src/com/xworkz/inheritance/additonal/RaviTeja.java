@@ -25,4 +25,7 @@ public class RaviTeja extends Model {
     public void display() {
         System.out.println("Displaying in RaviTeja class");
     }
+    public void ravi() {
+        System.out.println("Ravi in PawanKalyan class");
+    }
 }

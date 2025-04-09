@@ -25,4 +25,8 @@ public class Nagarjuna extends Model {
     public void display() {
         System.out.println("Displaying in Nagarjuna class");
     }
+    public void nagarjuna(){
+        System.out.println("nagarjuna in Nagarjuna class");
+
+    }
 }

@@ -21,4 +21,7 @@ public class Canvas extends Component {
     public void click(){
         System.out.println("running click in Canvas");
     }
+    public void operate(){
+        System.out.println("running click in Canvas");
+    }
 }

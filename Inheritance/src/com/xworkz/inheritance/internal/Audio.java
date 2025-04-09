@@ -21,4 +21,7 @@ public class Audio extends Resource{
     public void save(){
         System.out.println("running save in Audio");
     }
+    public void listen(){
+        System.out.println("running listen in Audio");
+    }
 }

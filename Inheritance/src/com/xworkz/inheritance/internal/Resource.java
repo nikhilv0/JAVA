@@ -3,7 +3,6 @@ package com.xworkz.inheritance.internal;
 public class Resource {
 
     public Resource(){
-        super();
         System.out.println("running const of Resource class");
     }
     public void load(){

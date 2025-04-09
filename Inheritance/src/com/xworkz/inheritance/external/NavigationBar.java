@@ -18,7 +18,7 @@ public class NavigationBar extends Component {
     public void disable(){
         System.out.println("running disable in NavigationBar");
     }
-    public void click(){
-        System.out.println("running click in NavigationBar");
+    public void nav(){
+        System.out.println("running nav in NavigationBar");
     }
 }

@@ -25,4 +25,7 @@ public class VijayDeverakonda extends Model {
     public void display() {
         System.out.println("Displaying in VijayDeverakonda class");
     }
+    public void vijay() {
+        System.out.println("Vijay in PawanKalyan class");
+    }
 }

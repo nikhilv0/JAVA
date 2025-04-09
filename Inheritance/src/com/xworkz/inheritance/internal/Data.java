@@ -21,4 +21,7 @@ public class Data extends Resource{
     public void save(){
         System.out.println("running save in Data");
     }
+    public void use(){
+        System.out.println("running save in User");
+    }
 }

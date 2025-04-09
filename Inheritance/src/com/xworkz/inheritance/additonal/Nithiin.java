@@ -22,7 +22,7 @@ public class Nithiin extends Model {
         System.out.println("dancing in Nithiin class");
     }
 
-    public void display() {
-        System.out.println("Displaying in Nithiin class");
+    public void nithiin() {
+        System.out.println("Nithin in Nithiin class");
     }
 }

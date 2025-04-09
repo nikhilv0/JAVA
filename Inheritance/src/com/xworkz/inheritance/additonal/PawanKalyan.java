@@ -25,4 +25,7 @@ public class PawanKalyan extends Model {
     public void display() {
         System.out.println("Displaying in PawanKalyan class");
     }
+    public void pawan() {
+        System.out.println("Displaying in PawanKalyan class");
+    }
 }

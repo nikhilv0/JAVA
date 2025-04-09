@@ -21,4 +21,7 @@ public class Panel extends Component {
     public void click(){
         System.out.println("running click in Panel");
     }
+    public void open(){
+        System.out.println("running click in Panel");
+    }
 }

@@ -25,4 +25,7 @@ public class KarthikeyaGummakonda extends Model {
     public void display() {
         System.out.println("Displaying in KarthikeyaGummakonda class");
     }
+    public void karthikeya() {
+        System.out.println("Karthikeya in KarthikeyaGummakonda class");
+    }
 }

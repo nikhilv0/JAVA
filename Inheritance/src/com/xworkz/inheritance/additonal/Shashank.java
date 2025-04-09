@@ -25,4 +25,7 @@ public class Shashank extends Model{
     public void display() {
         System.out.println("Displaying in Shashank class");
     }
+    public void shashank() {
+        System.out.println("Shashank in PawanKalyan class");
+    }
 }

@@ -26,5 +26,9 @@ public class AkhilAkkineni extends Model {
     public void display() {
         System.out.println("Displaying in AkhilAkkineni class");
     }
+    public void run() {
+        System.out.println("Run in AkhilAkkineni class");
+    }
+
 }
 

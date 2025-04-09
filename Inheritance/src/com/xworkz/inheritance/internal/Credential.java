@@ -21,4 +21,7 @@ public class Credential extends Resource{
     public void save(){
         System.out.println("running save in Credential");
     }
+    public void run(){
+        System.out.println("running save in Credential");
+    }
 }

@@ -21,4 +21,7 @@ public class Image extends Resource{
     public void save(){
         System.out.println("running save in Image");
     }
+    public void click(){
+        System.out.println("running click in Image");
+    }
 }

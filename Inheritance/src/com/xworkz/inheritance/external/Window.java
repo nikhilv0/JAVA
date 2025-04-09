@@ -21,4 +21,7 @@ public class Window extends Component {
     public void click(){
         System.out.println("running click in Window");
     }
+    public void shutdown(){
+        System.out.println("running shut down in Window");
+    }
 }

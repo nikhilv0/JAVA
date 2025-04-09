@@ -25,4 +25,7 @@ public class Venkatesh extends Model {
     public void display() {
         System.out.println("Displaying in Venkatesh class");
     }
+    public void venkatesh() {
+        System.out.println("Venkatesh in PawanKalyan class");
+    }
 }

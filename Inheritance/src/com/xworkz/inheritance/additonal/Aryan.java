@@ -25,4 +25,7 @@ public class Aryan extends Model {
     public void display() {
         System.out.println("Displaying in Aryan class");
     }
+    public void aryan() {
+        System.out.println("aryan in Aryan class");
+    }
 }

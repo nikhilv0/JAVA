@@ -25,4 +25,7 @@ public class Sharwanand extends Model {
     public void display() {
         System.out.println("Displaying in Sharwanand class");
     }
+    public void sharwand() {
+        System.out.println("Sharwand in PawanKalyan class");
+    }
 }

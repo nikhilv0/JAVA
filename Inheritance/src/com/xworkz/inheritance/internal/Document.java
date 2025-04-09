@@ -21,4 +21,7 @@ public class Document extends Resource{
     public void save(){
         System.out.println("running save in Document");
     }
+    public void doc(){
+        System.out.println("running document in Document");
+    }
 }

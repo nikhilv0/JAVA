@@ -21,4 +21,7 @@ public class User extends Resource{
     public void save(){
         System.out.println("running save in User");
     }
+    public void compile(){
+        System.out.println("running save in User");
+    }
 }

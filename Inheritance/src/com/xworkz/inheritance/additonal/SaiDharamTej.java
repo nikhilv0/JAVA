@@ -25,4 +25,7 @@ public class SaiDharamTej extends Model {
     public void display() {
         System.out.println("Displaying in SaiDharamTej class");
     }
+    public void sai() {
+        System.out.println("Sai tej in PawanKalyan class");
+    }
 }
