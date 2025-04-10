@@ -15,4 +15,8 @@ public class Leo {
     public String toString() {
         return "Leo{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 46;
+    }
 }

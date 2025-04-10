@@ -15,4 +15,9 @@ public class Rowan {
     public String toString() {
         return "Rowan{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 29;
+    }
+
 }

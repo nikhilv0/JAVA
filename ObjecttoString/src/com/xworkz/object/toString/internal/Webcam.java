@@ -12,4 +12,10 @@ public class Webcam {
     public String toString() {
         return "Webcam {Brand:" + this.brand + " Resolution:" + this.resolution + " HasMic:" + this.hasMic + "}";
     }
+
+    @Override
+    public int hashCode() {
+//        System.out.println("Webcam:"+super.hashCode());
+        return 1;
+    }
 }

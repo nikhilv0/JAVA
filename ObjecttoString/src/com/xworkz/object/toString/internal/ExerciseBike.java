@@ -12,4 +12,8 @@ public class ExerciseBike {
     public String toString() {
         return "ExerciseBike {Brand:" + this.brand + " Type:" + this.type + " ResistanceLevels:" + this.resistanceLevels + "}";
     }
+    @Override
+    public int hashCode() {
+        return 68;
+    }
 }

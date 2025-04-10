@@ -12,4 +12,8 @@ public class BankAccount {
     public String toString() {
         return "BankAccount {Account Number: " + this.accountNumber + ", Holder Name: " + this.holderName + ", Balance: $" + this.balance + "}";
     }
+    @Override
+    public int hashCode() {
+        return 90;
+    }
 }

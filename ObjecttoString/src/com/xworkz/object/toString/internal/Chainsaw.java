@@ -12,4 +12,8 @@ public class Chainsaw {
     public String toString() {
         return "Chainsaw {Brand:" + this.brand + " Model:" + this.model + " BarLength:" + this.barLength + "}";
     }
+    @Override
+    public int hashCode() {
+        return 84;
+    }
 }

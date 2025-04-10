@@ -13,4 +13,8 @@ public class Employee {
     public String toString() {
         return "Employee {Name: " + this.name + ", ID: " + this.id + ", Salary: $" + this.salary + "}";
     }
+    @Override
+    public int hashCode() {
+        return 69;
+    }
 }

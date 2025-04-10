@@ -12,4 +12,8 @@ public class ElectricGrill {
     public String toString() {
         return "ElectricGrill {Brand:" + this.brand + " Model:" + this.model + " Power:" + this.power + "}";
     }
+    @Override
+    public int hashCode() {
+        return 74;
+    }
 }

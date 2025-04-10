@@ -13,4 +13,8 @@ public class Microwave {
     public String toString() {
         return "Microwave {Brand: " + this.brand + ", Color: " + this.color;
     }
+    @Override
+    public int hashCode() {
+        return 42;
+    }
 }

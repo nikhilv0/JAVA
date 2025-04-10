@@ -12,4 +12,8 @@ public class IceCreamMaker {
     public String toString() {
         return "IceCreamMaker {Brand:" + this.brand + " Type:" + this.type + " BatchSize:" + this.batchSize + "}";
     }
+    @Override
+    public int hashCode() {
+        return 57;
+    }
 }

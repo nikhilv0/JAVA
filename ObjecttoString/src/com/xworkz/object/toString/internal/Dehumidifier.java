@@ -12,4 +12,8 @@ public class Dehumidifier {
     public String toString() {
         return "Dehumidifier {Brand:" + this.brand + " Model:" + this.model + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 78;
+    }
 }

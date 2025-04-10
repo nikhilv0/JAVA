@@ -12,4 +12,8 @@ public class SpaceHeater {
     public String toString() {
         return "SpaceHeater {Brand:" + this.brand + " Type:" + this.type + " HeatOutput:" + this.heatOutput + "}";
     }
+    @Override
+    public int hashCode() {
+        return 16;
+    }
 }

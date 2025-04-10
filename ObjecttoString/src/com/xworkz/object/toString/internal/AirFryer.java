@@ -12,4 +12,8 @@ public class AirFryer {
     public String toString() {
         return "AirFryer {Brand:" + this.brand + " Color:" + this.color + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 94;
+    }
 }

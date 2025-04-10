@@ -15,4 +15,8 @@ public class Elias {
     public String toString() {
         return "Elias{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 71;
+    }
 }

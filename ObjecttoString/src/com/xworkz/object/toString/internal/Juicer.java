@@ -12,4 +12,8 @@ public class Juicer {
     public String toString() {
         return "Juicer {Brand:" + this.brand + " Type:" + this.type + " Power:" + this.power + "}";
     }
+    @Override
+    public int hashCode() {
+        return 52;
+    }
 }

@@ -12,4 +12,8 @@ public class Speaker {
     public String toString() {
         return "Speaker {Brand:" + this.brand + " Type:" + this.type + " Wattage:" + this.wattage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 15;
+    }
 }

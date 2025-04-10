@@ -12,4 +12,8 @@ public class Mouse {
     public String toString() {
         return "Mouse {Brand:" + this.brand + " Type:" + this.type + " DPI:" + this.dpi + "}";
     }
+    @Override
+    public int hashCode() {
+        return 39;
+    }
 }

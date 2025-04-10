@@ -12,4 +12,8 @@ public class SlowCooker {
     public String toString() {
         return "SlowCooker {Brand:" + this.brand + " Shape:" + this.shape + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 23;
+    }
 }

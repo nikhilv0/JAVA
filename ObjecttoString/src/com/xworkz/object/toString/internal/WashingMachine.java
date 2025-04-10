@@ -12,4 +12,9 @@ public class WashingMachine {
     public String toString() {
         return "WashingMachine {Brand: " + this.brand + ", Model: " + this.model + ", Capacity: " + this.capacity + " kg}";
     }
+
+    @Override
+    public int hashCode() {
+        return 4;
+    }
 }

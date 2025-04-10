@@ -12,4 +12,8 @@ public class GPSDevice {
     public String toString() {
         return "GPSDevice {Brand:" + this.brand + " MapVersion:" + this.mapVersion + " BatteryLife:" + this.batteryLife + "}";
     }
+    @Override
+    public int hashCode() {
+        return 61;
+    }
 }

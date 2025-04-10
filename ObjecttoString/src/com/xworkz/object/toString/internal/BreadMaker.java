@@ -12,4 +12,8 @@ public class BreadMaker {
     public String toString() {
         return "BreadMaker {Brand:" + this.brand + " Color:" + this.color + " LoafSize:" + this.loafSize + "}";
     }
+    @Override
+    public int hashCode() {
+        return 87;
+    }
 }

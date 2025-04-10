@@ -12,4 +12,8 @@ public class SmokeDetector {
     public String toString() {
         return "SmokeDetector {Brand:" + this.brand + " Type:" + this.type + " SensitivityLevel:" + this.sensitivityLevel + "}";
     }
+    @Override
+    public int hashCode() {
+        return 18;
+    }
 }

@@ -12,4 +12,8 @@ public class LightBulb {
     public String toString() {
         return "LightBulb {Brand:" + this.brand + " Color:" + this.color + " Wattage:" + this.wattage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 45;
+    }
 }

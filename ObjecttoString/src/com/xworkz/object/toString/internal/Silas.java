@@ -15,4 +15,8 @@ public class Silas {
     public String toString() {
         return "Silas{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 24;
+    }
 }

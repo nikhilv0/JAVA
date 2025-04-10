@@ -12,4 +12,8 @@ public class ElectricSkillet {
     public String toString() {
         return "ElectricSkillet {Brand:" + this.brand + " Color:" + this.color + " TemperatureRange:" + this.temperatureRange + "}";
     }
+    @Override
+    public int hashCode() {
+        return 72;
+    }
 }

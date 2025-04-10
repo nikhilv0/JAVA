@@ -12,4 +12,8 @@ public class Projector {
     public String toString() {
         return "Projector {Brand:" + this.brand + " Resolution:" + this.resolution + " Lumens:" + this.lumens + "}";
     }
+    @Override
+    public int hashCode() {
+        return 33;
+    }
 }

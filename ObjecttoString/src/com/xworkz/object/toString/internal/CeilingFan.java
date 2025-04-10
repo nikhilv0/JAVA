@@ -12,4 +12,8 @@ public class CeilingFan {
     public String toString() {
         return "CeilingFan {Brand:" + this.brand + " Color:" + this.color + " BladeSize:" + this.bladeSize + "}";
     }
+    @Override
+    public int hashCode() {
+        return 85;
+    }
 }

@@ -12,4 +12,8 @@ public class Dishwasher {
     public String toString() {
         return "Dishwasher {Brand:" + this.brand + " Color:" + this.color + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 76;
+    }
 }

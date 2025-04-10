@@ -12,5 +12,9 @@ public class Smartphone {
     public String toString() {
         return "Smartphone {Brand:" + this.brand + " OS:" + this.os + " Storage:" + this.storage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 21;
+    }
 }
 

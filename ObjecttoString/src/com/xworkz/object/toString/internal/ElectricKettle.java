@@ -12,4 +12,8 @@ public class ElectricKettle {
     public String toString() {
         return "ElectricKettle {Brand:" + this.brand + " Material:" + this.material + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 73;
+    }
 }

@@ -12,4 +12,8 @@ public class Car {
     public String toString() {
         return "Car {Brand: " + this.brand + ", Model: " + this.model + ", Year: " + this.year + "}";
     }
+    @Override
+    public int hashCode() {
+        return 86;
+    }
 }

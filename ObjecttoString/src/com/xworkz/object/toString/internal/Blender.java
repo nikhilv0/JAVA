@@ -12,4 +12,8 @@ public class Blender {
     public String toString() {
         return "Blender {Brand:" + this.brand + " Color:" + this.color + " Power:" + this.power + "}";
     }
+    @Override
+    public int hashCode() {
+        return 89;
+    }
 }

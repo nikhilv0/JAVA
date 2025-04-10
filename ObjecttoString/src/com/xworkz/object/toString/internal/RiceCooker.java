@@ -12,4 +12,8 @@ public class RiceCooker {
     public String toString() {
         return "RiceCooker {Brand:" + this.brand + " Type:" + this.type + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 31;
+    }
 }

@@ -12,4 +12,8 @@ public class Chair {
     public String toString() {
         return "Chair {Material: " + this.material + ", Color: " + this.color + ", Height: " + this.height + " inches}";
     }
+    @Override
+    public int hashCode() {
+        return 83;
+    }
 }

@@ -12,4 +12,8 @@ public class LeafBlower {
     public String toString() {
         return "LeafBlower {Brand:" + this.brand + " Type:" + this.type + " AirSpeed:" + this.airSpeed + "}";
     }
+    @Override
+    public int hashCode() {
+        return 47;
+    }
 }

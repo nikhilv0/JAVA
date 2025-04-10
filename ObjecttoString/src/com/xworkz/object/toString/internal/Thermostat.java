@@ -12,4 +12,9 @@ public class Thermostat {
     public String toString() {
         return "Thermostat {Brand:" + this.brand + " Mode:" + this.mode + " Temperature:" + this.temperature + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 9;
+    }
 }

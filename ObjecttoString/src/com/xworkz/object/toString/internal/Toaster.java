@@ -12,4 +12,9 @@ public class Toaster {
     public String toString() {
         return "Toaster {Brand:" + this.brand + " Color:" + this.color + " Slots:" + this.slots + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 7;
+    }
 }

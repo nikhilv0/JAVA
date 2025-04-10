@@ -14,4 +14,9 @@ public class Tablet {
     public String toString() {
         return "Tablet {Brand:" + this.brand + " OS:" + this.os + " BatteryLife:" + this.batteryLife + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 11;
+    }
 }

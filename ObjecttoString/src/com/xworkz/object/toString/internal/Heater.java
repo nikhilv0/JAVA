@@ -12,4 +12,8 @@ public class Heater {
     public String toString() {
         return "Heater {Brand:" + this.brand + " Type:" + this.type + " Wattage:" + this.wattage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 59;
+    }
 }

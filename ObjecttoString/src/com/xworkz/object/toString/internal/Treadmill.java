@@ -12,4 +12,9 @@ public class Treadmill {
     public String toString() {
         return "Treadmill {Brand:" + this.brand + " Model:" + this.model + " MaxSpeed:" + this.maxSpeed + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 6;
+    }
 }

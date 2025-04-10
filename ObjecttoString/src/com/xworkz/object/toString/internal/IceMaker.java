@@ -12,4 +12,8 @@ public class IceMaker {
     public String toString() {
         return "IceMaker {Brand:" + this.brand + " Model:" + this.model + " DailyProduction:" + this.dailyProduction + "}";
     }
+    @Override
+    public int hashCode() {
+        return 56;
+    }
 }

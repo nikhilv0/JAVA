@@ -12,4 +12,8 @@ public class SnowBlower {
     public String toString() {
         return "SnowBlower {Brand:" + this.brand + " Model:" + this.model + " ClearingWidth:" + this.clearingWidth + "}";
     }
+    @Override
+    public int hashCode() {
+        return 17;
+    }
 }

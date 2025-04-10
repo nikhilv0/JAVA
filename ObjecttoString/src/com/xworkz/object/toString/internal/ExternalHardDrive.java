@@ -12,4 +12,8 @@ public class ExternalHardDrive {
     public String toString() {
         return "ExternalHardDrive {Brand:" + this.brand + " Type:" + this.type + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 67;
+    }
 }

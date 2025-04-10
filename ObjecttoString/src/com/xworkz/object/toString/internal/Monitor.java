@@ -12,4 +12,8 @@ public class Monitor {
     public String toString() {
         return "Monitor {Brand:" + this.brand + " Resolution:" + this.resolution + " Size:" + this.size + "}";
     }
+    @Override
+    public int hashCode() {
+        return 40;
+    }
 }

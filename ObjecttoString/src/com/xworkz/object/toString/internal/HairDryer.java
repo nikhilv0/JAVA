@@ -12,4 +12,8 @@ public class HairDryer {
     public String toString() {
         return "HairDryer {Brand:" + this.brand + " Color:" + this.color + " HeatSettings:" + this.heatSettings + "}";
     }
+    @Override
+    public int hashCode() {
+        return 60;
+    }
 }

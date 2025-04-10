@@ -12,4 +12,8 @@ public class Router {
     public String toString() {
         return "Router {Brand:" + this.brand + " Frequency:" + this.frequency + " Ports:" + this.ports + "}";
     }
+    @Override
+    public int hashCode() {
+        return 30;
+    }
 }

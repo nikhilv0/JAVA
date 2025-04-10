@@ -12,4 +12,8 @@ public class Scanner {
     public String toString() {
         return "Scanner {Brand:" + this.brand + " Type:" + this.type + " Resolution:" + this.resolution + "}";
     }
+    @Override
+    public int hashCode() {
+        return 27;
+    }
 }

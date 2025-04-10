@@ -12,4 +12,9 @@ public class Television {
     public String toString() {
         return "Television {Brand: " + this.brand + ", Resolution: " + this.resolution + ", Size: " + this.size + " inches}";
     }
+
+    @Override
+    public int hashCode() {
+        return 10;
+    }
 }

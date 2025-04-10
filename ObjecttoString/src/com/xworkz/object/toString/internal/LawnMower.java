@@ -12,4 +12,8 @@ public class LawnMower {
     public String toString() {
         return "LawnMower {Brand:" + this.brand + " Type:" + this.type + " BladeSize:" + this.bladeSize + "}";
     }
+    @Override
+    public int hashCode() {
+        return 48;
+    }
 }

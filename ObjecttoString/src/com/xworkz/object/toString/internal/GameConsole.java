@@ -12,4 +12,8 @@ public class GameConsole {
     public String toString() {
         return "GameConsole {Brand:" + this.brand + " Generation:" + this.generation + " Storage:" + this.storage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 63;
+    }
 }

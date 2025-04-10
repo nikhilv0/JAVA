@@ -12,4 +12,8 @@ public class SewingMachine {
     public String toString() {
         return "SewingMachine {Brand:" + this.brand + " Model:" + this.model + " StitchesPerMinute:" + this.stitchesPerMinute + "}";
     }
+    @Override
+    public int hashCode() {
+        return 25;
+    }
 }

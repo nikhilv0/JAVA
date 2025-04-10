@@ -12,4 +12,8 @@ public class FlashDrive {
     public String toString() {
         return "FlashDrive {Brand:" + this.brand + " Type:" + this.type + " Capacity:" + this.capacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 65;
+    }
 }

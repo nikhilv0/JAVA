@@ -12,4 +12,8 @@ public class SmartPlug {
     public String toString() {
         return "SmartPlug {Brand:" + this.brand + " Type:" + this.type + " Voltage:" + this.voltage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 20;
+    }
 }

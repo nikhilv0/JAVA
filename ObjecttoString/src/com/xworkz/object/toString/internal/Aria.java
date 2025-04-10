@@ -15,4 +15,8 @@ public class Aria {
     public String toString() {
         return "Aria{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 92;
+    }
 }

@@ -14,4 +14,8 @@ public class PressureCooker {
     public String toString() {
         return "PressureCooker {Brand:" + this.brand + " Color:" + this.color + " PSI:" + this.psi + "}";
     }
+    @Override
+    public int hashCode() {
+        return 34;
+    }
 }

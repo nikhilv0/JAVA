@@ -12,4 +12,9 @@ public class WaterPurifier {
     public String toString() {
         return "WaterPurifier {Brand:" + this.brand + " Method:" + this.method + " Capacity:" + this.capacity + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 2;
+    }
 }

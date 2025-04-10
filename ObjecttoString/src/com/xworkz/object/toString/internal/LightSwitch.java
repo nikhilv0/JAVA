@@ -12,4 +12,8 @@ public class LightSwitch {
     public String toString() {
         return "LightSwitch {Brand:" + this.brand + " Color:" + this.color + " Voltage:" + this.voltage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 44;
+    }
 }

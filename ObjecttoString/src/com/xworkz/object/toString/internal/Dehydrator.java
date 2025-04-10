@@ -12,4 +12,8 @@ public class Dehydrator {
     public String toString() {
         return "Dehydrator {Brand:" + this.brand + " Type:" + this.type + " TrayCount:" + this.trayCount + "}";
     }
+    @Override
+    public int hashCode() {
+        return 77;
+    }
 }

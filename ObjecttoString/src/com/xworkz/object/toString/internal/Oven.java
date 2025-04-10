@@ -12,4 +12,8 @@ public class Oven {
     public String toString() {
         return "Oven {Brand: " + this.brand + ", Type: " + this.type + ", Power: " + this.power + " watts}";
     }
+    @Override
+    public int hashCode() {
+        return 37;
+    }
 }

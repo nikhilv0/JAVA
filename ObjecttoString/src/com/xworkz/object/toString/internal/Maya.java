@@ -15,4 +15,8 @@ public class Maya {
     public String toString() {
         return "Maya{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 43;
+    }
 }

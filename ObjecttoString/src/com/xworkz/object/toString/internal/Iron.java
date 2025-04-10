@@ -12,4 +12,8 @@ public class Iron {
     public String toString() {
         return "Iron {Brand:" + this.brand + " Type:" + this.type + " Wattage:" + this.wattage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 55;
+    }
 }

@@ -12,4 +12,8 @@ public class EllipticalTrainer {
     public String toString() {
         return "EllipticalTrainer {Brand:" + this.brand + " Model:" + this.model + " StrideLength:" + this.strideLength + "}";
     }
+    @Override
+    public int hashCode() {
+        return 70;
+    }
 }

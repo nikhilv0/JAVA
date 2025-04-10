@@ -15,4 +15,8 @@ public class Isla {
     public String toString() {
         return "Isla{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 54;
+    }
 }

@@ -15,4 +15,8 @@ public class Ava {
     public String toString() {
         return "Ava{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 91;
+    }
 }

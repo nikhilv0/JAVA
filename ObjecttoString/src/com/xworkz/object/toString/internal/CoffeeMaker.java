@@ -12,4 +12,8 @@ public class CoffeeMaker {
     public String toString() {
         return "CoffeeMaker {Brand:" + this.brand + " Model:" + this.model + " Cups:" + this.cups + "}";
     }
+    @Override
+    public int hashCode() {
+        return 80;
+    }
 }

@@ -12,4 +12,9 @@ public class WaterHeater {
     public String toString() {
         return "WaterHeater {Brand:" + this.brand + " Type:" + this.type + " Liters:" + this.liters + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 3;
+    }
 }

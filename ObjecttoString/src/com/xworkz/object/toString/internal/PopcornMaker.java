@@ -12,4 +12,8 @@ public class PopcornMaker {
     public String toString() {
         return "PopcornMaker {Brand:" + this.brand + " Style:" + this.style + " BatchSize:" + this.batchSize + "}";
     }
+    @Override
+    public int hashCode() {
+        return 35;
+    }
 }

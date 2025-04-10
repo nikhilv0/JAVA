@@ -12,4 +12,9 @@ public class StandMixer {
     public String toString() {
         return "StandMixer {Brand:" + this.brand + " Color:" + this.color + " BowlCapacity:" + this.bowlCapacity + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 14;
+    }
 }

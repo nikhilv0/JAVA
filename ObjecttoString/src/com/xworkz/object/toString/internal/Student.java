@@ -13,4 +13,8 @@ public class Student {
     public String toString() {
         return "Student {Name: " + this.name + ", Roll Number: " + this.rollNumber + ", Grade: " + this.grade + "}";
     }
+    @Override
+    public int hashCode() {
+        return 13;
+    }
 }

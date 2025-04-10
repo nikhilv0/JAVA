@@ -12,4 +12,9 @@ public class VacuumCleaner {
     public String toString() {
         return "VacuumCleaner {Brand:" + this.brand + " Model:" + this.model + " SuctionPower:" + this.suctionPower + "}";
     }
+
+    @Override
+    public int hashCode() {
+        return 5;
+    }
 }

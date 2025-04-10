@@ -12,4 +12,8 @@ public class SmartLight {
     public String toString() {
         return "SmartLight {Brand:" + this.brand + " Color:" + this.color + " Lumens:" + this.lumens + "}";
     }
+    @Override
+    public int hashCode() {
+        return 22;
+    }
 }

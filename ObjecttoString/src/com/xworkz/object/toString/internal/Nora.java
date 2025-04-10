@@ -15,4 +15,8 @@ public class Nora {
     public String toString() {
         return "Nora{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 38;
+    }
 }

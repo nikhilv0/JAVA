@@ -12,4 +12,8 @@ public class Mixer {
     public String toString() {
         return "Mixer {Brand:" + this.brand + " Model:" + this.model + " Speed:" + this.speed + "}";
     }
+    @Override
+    public int hashCode() {
+        return 41;
+    }
 }

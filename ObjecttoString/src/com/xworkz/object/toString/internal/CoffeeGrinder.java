@@ -12,4 +12,8 @@ public class CoffeeGrinder {
     public String toString() {
         return "CoffeeGrinder {Brand:" + this.brand + " Type:" + this.type + " GrindSettings:" + this.grindSettings + "}";
     }
+    @Override
+    public int hashCode() {
+        return 81;
+    }
 }

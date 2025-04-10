@@ -12,4 +12,8 @@ public class SmartWatch {
     public String toString() {
         return "SmartWatch {Brand:" + this.brand + " OS:" + this.os + " BatteryLife:" + this.batteryLife + "}";
     }
+    @Override
+    public int hashCode() {
+        return 19;
+    }
 }

@@ -12,4 +12,8 @@ public class DoorLock {
     public String toString() {
         return "DoorLock {Brand:" + this.brand + " Type:" + this.type + " SecurityLevel:" + this.securityLevel + "}";
     }
+    @Override
+    public int hashCode() {
+        return 75;
+    }
 }

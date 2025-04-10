@@ -12,4 +12,8 @@ public class Generator {
     public String toString() {
         return "Generator {Brand:" + this.brand + " FuelType:" + this.fuelType + " Wattage:" + this.wattage + "}";
     }
+    @Override
+    public int hashCode() {
+        return 62;
+    }
 }

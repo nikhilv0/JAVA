@@ -12,4 +12,8 @@ public class SecurityCamera {
     public String toString() {
         return "SecurityCamera {Brand:" + this.brand + " Resolution:" + this.resolution + " FieldOfView:" + this.fieldOfView + "}";
     }
+    @Override
+    public int hashCode() {
+        return 26;
+    }
 }

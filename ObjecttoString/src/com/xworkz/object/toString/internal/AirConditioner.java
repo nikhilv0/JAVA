@@ -12,4 +12,8 @@ public class AirConditioner {
     public String toString() {
         return "AirConditioner {Brand: " + this.brand + ", Type: " + this.type + ", BTU: " + this.btu + "}";
     }
+    @Override
+    public int hashCode() {
+        return 95;
+    }
 }

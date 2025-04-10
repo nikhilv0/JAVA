@@ -12,4 +12,8 @@ public class DeepFryer {
     public String toString() {
         return "DeepFryer {Brand:" + this.brand + " Color:" + this.color + " OilCapacity:" + this.oilCapacity + "}";
     }
+    @Override
+    public int hashCode() {
+        return 79;
+    }
 }

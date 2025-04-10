@@ -12,4 +12,8 @@ public class Freezer {
     public String toString() {
         return "Freezer {Brand:" + this.brand + " Type:" + this.type + " Volume:" + this.volume + "}";
     }
+    @Override
+    public int hashCode() {
+        return 64;
+    }
 }

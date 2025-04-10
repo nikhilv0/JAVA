@@ -15,4 +15,8 @@ public class Jasper {
     public String toString() {
         return "Jasper{favoriteColor='" + favoriteColor + "', age=" + age + ", height=" + height + "}";
     }
+    @Override
+    public int hashCode() {
+        return 53;
+    }
 }

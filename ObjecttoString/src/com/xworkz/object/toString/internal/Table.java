@@ -12,4 +12,9 @@ public class Table {
     public String toString() {
         return "Table {Shape: " + this.shape + ", Material: " + this.material + ", Length: " + this.length + " inches}";
     }
+
+    @Override
+    public int hashCode() {
+        return 12;
+    }
 }
