@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Projector {
-    String brand, resolution;
-    int lumens;
+    private String brand, resolution;
+    private int lumens;
     public Projector(String brand, String resolution, int lumens) {
         this.brand = brand;
         this.resolution = resolution;

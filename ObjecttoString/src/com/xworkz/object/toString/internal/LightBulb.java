@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class LightBulb {
-    String brand, color;
-    int wattage;
+    private String brand, color;
+    private int wattage;
     public LightBulb(String brand, String color, int wattage) {
         this.brand = brand;
         this.color = color;

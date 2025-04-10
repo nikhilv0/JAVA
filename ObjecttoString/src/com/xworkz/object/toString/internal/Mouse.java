@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Mouse {
-    String brand, type;
-    int dpi;
+    private String brand, type;
+    private int dpi;
     public Mouse(String brand, String type, int dpi) {
         this.brand = brand;
         this.type = type;

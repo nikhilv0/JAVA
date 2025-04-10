@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class IceCreamMaker {
-    String brand, type;
-    int batchSize;
+    private String brand, type;
+    private int batchSize;
     public IceCreamMaker(String brand, String type, int batchSize) {
         this.brand = brand;
         this.type = type;

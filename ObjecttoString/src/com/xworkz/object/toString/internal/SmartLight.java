@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SmartLight {
-    String brand, color;
-    int lumens;
+    private String brand, color;
+    private int lumens;
     public SmartLight(String brand, String color, int lumens) {
         this.brand = brand;
         this.color = color;

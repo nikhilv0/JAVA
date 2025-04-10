@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Toaster {
-    String brand, color;
-    int slots;
+    private String brand, color;
+    private int slots;
     public Toaster(String brand, String color, int slots) {
         this.brand = brand;
         this.color = color;

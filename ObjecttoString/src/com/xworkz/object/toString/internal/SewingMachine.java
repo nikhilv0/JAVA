@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SewingMachine {
-    String brand, model;
-    int stitchesPerMinute;
+    private String brand, model;
+    private int stitchesPerMinute;
     public SewingMachine(String brand, String model, int stitchesPerMinute) {
         this.brand = brand;
         this.model = model;

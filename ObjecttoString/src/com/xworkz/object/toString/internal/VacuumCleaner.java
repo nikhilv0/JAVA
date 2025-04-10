@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class VacuumCleaner {
-    String brand, model;
-    int suctionPower;
+    private String brand, model;
+    private int suctionPower;
     public VacuumCleaner(String brand, String model, int suctionPower) {
         this.brand = brand;
         this.model = model;

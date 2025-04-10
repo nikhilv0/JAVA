@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Television {
-    String brand, resolution;
-    int size;
+    private String brand, resolution;
+    private int size;
     public Television(String brand, String resolution, int size) {
         this.brand = brand;
         this.resolution = resolution;

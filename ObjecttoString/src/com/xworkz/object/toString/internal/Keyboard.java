@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Keyboard {
-    String brand, layout;
-    boolean isMechanical;
+    private String brand, layout;
+    private boolean isMechanical;
     public Keyboard(String brand, String layout, boolean isMechanical) {
         this.brand = brand;
         this.layout = layout;

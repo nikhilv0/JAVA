@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class StandMixer {
-    String brand, color;
-    int bowlCapacity;
+    private String brand, color;
+    private int bowlCapacity;
     public StandMixer(String brand, String color, int bowlCapacity) {
         this.brand = brand;
         this.color = color;

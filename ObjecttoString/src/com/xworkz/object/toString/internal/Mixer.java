@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Mixer {
-    String brand, model;
-    int speed;
+    private String brand, model;
+    private int speed;
     public Mixer(String brand, String model, int speed) {
         this.brand = brand;
         this.model = model;

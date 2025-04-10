@@ -89,8 +89,8 @@ public class MainRunner {
         System.out.println(grill);
         System.out.println("____________________________________________________________________________________");
 
-        ElectricKettle kettle = new ElectricKettle("Hamilton Beach", "Stainless Steel", 1);
-        System.out.println(kettle);
+        ElectricKettle Ekettle = new ElectricKettle("Hamilton Beach", "Stainless Steel", 1);
+        System.out.println(Ekettle);
         System.out.println("____________________________________________________________________________________");
 
         ElectricSkillet skillet = new ElectricSkillet("Presto", "Black", 400);
@@ -153,757 +153,230 @@ public class MainRunner {
         System.out.println(heater);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
-
-
-        System.out.println(fan);
+        Humidifier humidifier = new Humidifier("Philips", "Cool Mist", 6);
+        System.out.println(humidifier);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        IceCreamMaker iceCreamMaker = new IceCreamMaker("Cuisinart", "Electric", 2);
+        System.out.println(iceCreamMaker);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        IceMaker iceMaker = new IceMaker("GE", "Opal 2.0", 24);
+        System.out.println(iceMaker);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Iron iron = new Iron("Philips", "Steam", 2400);
+        System.out.println(iron);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Isla isla = new Isla("Lavender", 7, 1.22);
+        System.out.println(isla);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Jasper jasper = new Jasper("Forest Green", 10, 1.35);
+        System.out.println(jasper);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Juicer juicer = new Juicer("Breville", "Centrifugal", 850);
+        System.out.println(juicer);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Kettle kettle = new Kettle("Hamilton Beach", "Red", 1_500);
+        System.out.println(kettle);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Keyboard keyboard = new Keyboard("Logitech", "QWERTY", true);
+        System.out.println(keyboard);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Laptop laptop = new Laptop("Intel Core i7", "Dell", 16);
+        System.out.println(laptop);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        LawnMower lawnMower = new LawnMower("Honda", "Gas-Powered", 21);
+        System.out.println(lawnMower);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        LeafBlower leafBlower = new LeafBlower("DeWalt", "Cordless", 125);
+        System.out.println(leafBlower);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Leo leo = new Leo("Sky Blue", 9, 1.28);
+        System.out.println(leo);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        LightBulb lightBulb = new LightBulb("Philips", "Warm White", 60);
+        System.out.println(lightBulb);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Maya maya = new Maya("Turquoise", 8, 1.25);
+        System.out.println(maya);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Microwave microwave = new Microwave("Panasonic", "Black", 1000);
+        System.out.println(microwave);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Mixer mixer = new Mixer("KitchenAid", "Artisan", 10);
+        System.out.println(mixer);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Monitor monitor = new Monitor("Dell", "1920x1080", 27);
+        System.out.println(monitor);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Mouse mouse = new Mouse("Logitech", "Wireless", 1600);
+        System.out.println(mouse);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Nora nora = new Nora("Peach", 6, 1.18);
+        System.out.println(nora);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Oven oven = new Oven("Whirlpool", "Convection", 2000);
+        System.out.println(oven);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Phone phone = new Phone("Samsung", "Galaxy S24", 999.99);
+        System.out.println(phone);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        PopcornMaker popcornMaker = new PopcornMaker("Presto", "Hot Air", 4);
+        System.out.println(popcornMaker);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        PressureCooker pressureCooker = new PressureCooker("Instant Pot", "Silver", 15);
+        System.out.println(pressureCooker);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Projector projector = new Projector("Epson", "1080p", 3200);
+        System.out.println(projector);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Refrigerator refrigerator = new Refrigerator("LG", "French Door", 600);
+        System.out.println(refrigerator);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        RiceCooker riceCooker = new RiceCooker("Zojirushi", "Micom", 5);
+        System.out.println(riceCooker);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Router router = new Router("Netgear", "Dual-Band", 4);
+        System.out.println(router);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Rowan rowan = new Rowan("Emerald Green", 11, 1.42);
+        System.out.println(rowan);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        SewingMachine sewingMachine = new SewingMachine("Singer", "Heavy Duty 4452", 10);
+        System.out.println(sewingMachine);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Scanner scanner = new Scanner("Canon", "Flatbed", 1200);
+        System.out.println(scanner);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        SecurityCamera securityCamera = new SecurityCamera("Arlo", "4K", 160);
+        System.out.println(securityCamera);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        RowingMachine rowingMachine = new RowingMachine("Concept2", "Model D", 500);
+        System.out.println(rowingMachine);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Silas silas = new Silas("Midnight Blue", 10, 1.35);
+        System.out.println(silas);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        SlowCooker slowCooker = new SlowCooker("Crock-Pot", "Oval", 6);
+        System.out.println(slowCooker);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        SmartLight smartLight = new SmartLight("Philips Hue", "Warm White", 800);
+        System.out.println(smartLight);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Smartphone smartphone = new Smartphone("Apple", "iOS", 128);
+        System.out.println(smartphone);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        SmartPlug smartPlug = new SmartPlug("TP-Link", "Wi-Fi", 120);
+        System.out.println(smartPlug);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        SmartWatch smartWatch = new SmartWatch("Samsung", "Tizen OS", 48);
+        System.out.println(smartWatch);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        SmokeDetector smokeDetector = new SmokeDetector("Nest", "Ionization", 7);
+        System.out.println(smokeDetector);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        SnowBlower snowBlower = new SnowBlower("Toro", "Power Max 824 OE", 24);
+        System.out.println(sewingMachine);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        SpaceHeater spaceHeater = new SpaceHeater("Dyson", "Ceramic", 1500);
+        System.out.println(spaceHeater);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Speaker speaker = new Speaker("Bose", "Bluetooth", 100);
+        System.out.println(speaker);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        StandMixer standMixer = new StandMixer("KitchenAid", "Red", 5);
+        System.out.println(standMixer);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Student student = new Student("John Doe", 101, 88.5);
+        System.out.println(student);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Table table = new Table("Rectangle", "Wood", 1.8);
+        System.out.println(table);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Tablet tablet = new Tablet("Apple", "iPadOS", 10);
+        System.out.println(tablet);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Television television = new Television("Samsung", "4K", 55);
+        System.out.println(television);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Thermostat thermostat = new Thermostat("Nest", "Cooling", 72);
+        System.out.println(thermostat);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        ToasterOven toasterOven = new ToasterOven("Breville", "Convection", 500);
+        System.out.println(toasterOven);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        Treadmill treadmill = new Treadmill("NordicTrack", "Commercial 1750", 12);
+        System.out.println(treadmill);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        VacuumCleaner vacuumCleaner = new VacuumCleaner("Dyson", "V11 Torque Drive", 185);
+        System.out.println(vacuumCleaner);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        WashingMachine washingMachine = new WashingMachine("LG", "TurboWash 360", 8.0);
+        System.out.println(washingMachine);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        WaterHeater waterHeater = new WaterHeater("Rheem", "Tankless", 15);
+        System.out.println(waterHeater);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
+        WaterPurifier waterPurifier = new WaterPurifier("Brita", "Activated Carbon", 3);
+        System.out.println(waterPurifier);
         System.out.println("____________________________________________________________________________________");
-
 
-        System.out.println(fan);
+        Webcam webcam = new Webcam("Logitech", "1080p", true);
+        System.out.println(webcam);
         System.out.println("____________________________________________________________________________________");
 
-
-        System.out.println(fan);
-        System.out.println("____________________________________________________________________________________");
 
 
     }

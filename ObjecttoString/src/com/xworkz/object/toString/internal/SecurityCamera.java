@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SecurityCamera {
-    String brand, resolution;
-    int fieldOfView;
+    private String brand, resolution;
+    private int fieldOfView;
     public SecurityCamera(String brand, String resolution, int fieldOfView) {
         this.brand = brand;
         this.resolution = resolution;

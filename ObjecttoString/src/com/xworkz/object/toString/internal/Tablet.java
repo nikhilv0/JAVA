@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Tablet {
-    String brand, os;
-    int batteryLife;
+    private String brand, os;
+    private int batteryLife;
 
     public Tablet(String brand, String os, int batteryLife) {
         this.brand = brand;

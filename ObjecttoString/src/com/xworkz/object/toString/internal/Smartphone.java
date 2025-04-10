@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Smartphone {
-    String brand, os;
-    int storage;
+    private String brand, os;
+    private int storage;
     public Smartphone(String brand, String os, int storage) {
         this.brand = brand;
         this.os = os;

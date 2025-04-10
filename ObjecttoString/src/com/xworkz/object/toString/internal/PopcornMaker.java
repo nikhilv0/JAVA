@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class PopcornMaker {
-    String brand, style;
-    int batchSize;
+    private String brand, style;
+    private int batchSize;
     public PopcornMaker(String brand, String style, int batchSize) {
         this.brand = brand;
         this.style = style;

@@ -1,9 +1,9 @@
 package com.xworkz.object.toString.internal;
 
 public class Student {
-    String name;
-    int rollNumber;
-    double grade;
+    private String name;
+    private int rollNumber;
+    private double grade;
     public Student(String name, int rollNumber, double grade) {
         this.name = name;
         this.rollNumber = rollNumber;

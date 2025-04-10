@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SnowBlower {
-    String brand, model;
-    int clearingWidth;
+    private String brand, model;
+    private int clearingWidth;
     public SnowBlower(String brand, String model, int clearingWidth) {
         this.brand = brand;
         this.model = model;

@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Router {
-    String brand, frequency;
-    int ports;
+    private String brand, frequency;
+    private int ports;
     public Router(String brand, String frequency, int ports) {
         this.brand = brand;
         this.frequency = frequency;

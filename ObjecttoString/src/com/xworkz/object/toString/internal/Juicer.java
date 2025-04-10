@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Juicer {
-    String brand, type;
-    int power;
+    private String brand, type;
+    private int power;
     public Juicer(String brand, String type, int power) {
         this.brand = brand;
         this.type = type;

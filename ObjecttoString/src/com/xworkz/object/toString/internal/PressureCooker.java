@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class PressureCooker {
-    String brand, color;
-    int psi;
+    private String brand, color;
+    private int psi;
 
     public PressureCooker(String brand, String color, int psi) {
         this.brand = brand;

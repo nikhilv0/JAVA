@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SpaceHeater {
-    String brand, type;
-    int heatOutput;
+    private String brand, type;
+    private int heatOutput;
     public SpaceHeater(String brand, String type, int heatOutput) {
         this.brand = brand;
         this.type = type;

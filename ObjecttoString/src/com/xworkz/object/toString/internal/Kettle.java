@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Kettle {
-    String brand, color;
-    int capacity;
+    private String brand, color;
+    private int capacity;
     public Kettle(String brand, String color, int capacity) {
         this.brand = brand;
         this.color = color;

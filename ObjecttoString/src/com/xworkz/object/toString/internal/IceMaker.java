@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class IceMaker {
-    String brand, model;
-    int dailyProduction;
+    private String brand, model;
+    private int dailyProduction;
     public IceMaker(String brand, String model, int dailyProduction) {
         this.brand = brand;
         this.model = model;

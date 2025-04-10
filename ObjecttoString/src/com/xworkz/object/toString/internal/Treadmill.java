@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Treadmill {
-    String brand, model;
-    int maxSpeed;
+    private String brand, model;
+    private int maxSpeed;
     public Treadmill(String brand, String model, int maxSpeed) {
         this.brand = brand;
         this.model = model;

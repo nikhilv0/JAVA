@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Thermostat {
-    String brand, mode;
-    int temperature;
+    private String brand, mode;
+    private int temperature;
     public Thermostat(String brand, String mode, int temperature) {
         this.brand = brand;
         this.mode = mode;

@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Iron {
-    String brand, type;
-    int wattage;
+    private String brand, type;
+    private int wattage;
     public Iron(String brand, String type, int wattage) {
         this.brand = brand;
         this.type = type;

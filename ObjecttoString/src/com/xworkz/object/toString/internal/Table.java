@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Table {
-    String shape, material;
-    double length;
+    private String shape, material;
+    private double length;
     public Table(String shape, String material, double length) {
         this.shape = shape;
         this.material = material;

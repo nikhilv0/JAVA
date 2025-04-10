@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class ToasterOven {
-    String brand, type;
-    int temperatureRange;
+    private String brand, type;
+    private int temperatureRange;
     public ToasterOven(String brand, String type, int temperatureRange) {
         this.brand = brand;
         this.type = type;

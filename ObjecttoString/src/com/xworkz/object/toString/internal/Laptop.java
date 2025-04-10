@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Laptop {
-    String processor, brand;
-    int ram;
+    private String processor, brand;
+    private int ram;
     public Laptop(String processor, String brand, int ram) {
         this.processor = processor;
         this.brand = brand;

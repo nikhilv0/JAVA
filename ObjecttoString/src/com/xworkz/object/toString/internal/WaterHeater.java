@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class WaterHeater {
-    String brand, type;
-    int liters;
+    private String brand, type;
+    private int liters;
     public WaterHeater(String brand, String type, int liters) {
         this.brand = brand;
         this.type = type;

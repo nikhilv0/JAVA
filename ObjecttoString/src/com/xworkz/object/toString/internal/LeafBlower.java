@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class LeafBlower {
-    String brand, type;
-    int airSpeed;
+    private String brand, type;
+    private int airSpeed;
     public LeafBlower(String brand, String type, int airSpeed) {
         this.brand = brand;
         this.type = type;

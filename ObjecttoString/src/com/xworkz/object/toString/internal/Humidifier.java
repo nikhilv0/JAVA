@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Humidifier {
-    String brand, type;
-    int tankSize;
+    private String brand, type;
+    private int tankSize;
     public Humidifier(String brand, String type, int tankSize) {
         this.brand = brand;
         this.type = type;

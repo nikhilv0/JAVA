@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Scanner {
-    String brand, type;
-    int resolution;
+    private String brand, type;
+    private int resolution;
     public Scanner(String brand, String type, int resolution) {
         this.brand = brand;
         this.type = type;

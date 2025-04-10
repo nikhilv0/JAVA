@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SmokeDetector {
-    String brand, type;
-    int sensitivityLevel;
+    private String brand, type;
+    private int sensitivityLevel;
     public SmokeDetector(String brand, String type, int sensitivityLevel) {
         this.brand = brand;
         this.type = type;

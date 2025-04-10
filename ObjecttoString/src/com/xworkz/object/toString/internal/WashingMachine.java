@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class WashingMachine {
-    String brand, model;
-    double capacity;
+    private String brand, model;
+    private double capacity;
     public WashingMachine(String brand, String model, double capacity) {
         this.brand = brand;
         this.model = model;

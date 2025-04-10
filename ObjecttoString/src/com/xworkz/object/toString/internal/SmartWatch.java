@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class SmartWatch {
-    String brand, os;
-    int batteryLife;
+    private String brand, os;
+    private int batteryLife;
     public SmartWatch(String brand, String os, int batteryLife) {
         this.brand = brand;
         this.os = os;

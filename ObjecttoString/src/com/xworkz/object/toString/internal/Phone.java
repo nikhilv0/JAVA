@@ -1,8 +1,8 @@
 package com.xworkz.object.toString.internal;
 
 public class Phone {
-    String brand, model;
-    double price;
+    private String brand, model;
+    private double price;
     public Phone(String brand, String model, double price) {
         this.brand = brand;
         this.model = model;
