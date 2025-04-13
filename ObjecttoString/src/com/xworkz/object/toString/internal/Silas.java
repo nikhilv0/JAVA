@@ -19,4 +19,17 @@ public class Silas {
     public int hashCode() {
         return 24;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Silas){
+                Silas silas=this;
+                Silas silas2=(Silas) obj;
+                if (silas.favoriteColor.equals(silas2.favoriteColor) && silas.age==(silas2.age) && silas.height==(silas2.height)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -19,4 +19,17 @@ public class Elias {
     public int hashCode() {
         return 71;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Elias){
+                Elias elias=this;
+                Elias elias2=(Elias) obj;
+                if (elias.favoriteColor.equals(elias2.favoriteColor)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

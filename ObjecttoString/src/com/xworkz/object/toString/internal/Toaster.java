@@ -17,4 +17,17 @@ public class Toaster {
     public int hashCode() {
         return 7;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Toaster){
+                Toaster toaster=this;
+                Toaster toaster2=(Toaster) obj;
+                if (toaster.brand.equals(toaster2.brand) && toaster.color.equals(toaster2.color) && toaster.slots==(toaster2.slots)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

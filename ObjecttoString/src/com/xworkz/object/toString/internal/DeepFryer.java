@@ -16,4 +16,17 @@ public class DeepFryer {
     public int hashCode() {
         return 79;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof DeepFryer){
+                DeepFryer Dfry=this;
+                DeepFryer Dfry2=(DeepFryer) obj;
+                if (Dfry.brand.equals(Dfry2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class RowingMachine {
     public int hashCode() {
         return 28;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof RowingMachine){
+                RowingMachine rowingMachie=this;
+                RowingMachine rowingMachie2=(RowingMachine) obj;
+                if (rowingMachie.brand.equals(rowingMachie2.brand) && rowingMachie.model.equals(rowingMachie2.model) && rowingMachie.maxWeightCapacity==(rowingMachie2.maxWeightCapacity)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class CoffeeMaker {
     public int hashCode() {
         return 80;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof CoffeeMaker){
+                CoffeeMaker coffeMaker=this;
+                CoffeeMaker coffeMaker2=(CoffeeMaker) obj;
+                if (coffeMaker.brand.equals(coffeMaker2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

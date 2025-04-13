@@ -16,4 +16,17 @@ public class Laptop {
     public int hashCode() {
         return 49;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Laptop){
+                Laptop laptop=this;
+                Laptop laptop2=(Laptop) obj;
+                if (laptop.brand.equals(laptop2.brand) && laptop.processor.equals(laptop2.processor)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

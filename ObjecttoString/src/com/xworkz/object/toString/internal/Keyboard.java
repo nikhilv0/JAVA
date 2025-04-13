@@ -16,4 +16,17 @@ public class Keyboard {
     public int hashCode() {
         return 50;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Keyboard){
+                Keyboard keyboard=this;
+                Keyboard keyboard2=(Keyboard) obj;
+                if (keyboard.brand.equals(keyboard2.brand) && keyboard.layout.equals(keyboard2.layout)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

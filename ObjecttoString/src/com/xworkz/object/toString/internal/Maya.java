@@ -19,4 +19,17 @@ public class Maya {
     public int hashCode() {
         return 43;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Maya){
+                Maya maya=this;
+                Maya maya2=(Maya) obj;
+                if (maya.favoriteColor.equals(maya2.favoriteColor) && maya.age==(maya2.age)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

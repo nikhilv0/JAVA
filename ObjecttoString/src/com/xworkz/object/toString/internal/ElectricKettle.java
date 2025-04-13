@@ -16,4 +16,17 @@ public class ElectricKettle {
     public int hashCode() {
         return 73;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof ElectricKettle){
+                ElectricKettle Ekettle=this;
+                ElectricKettle Ekette2=(ElectricKettle) obj;
+                if (Ekettle.brand.equals(Ekette2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

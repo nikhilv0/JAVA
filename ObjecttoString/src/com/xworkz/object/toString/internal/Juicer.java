@@ -16,4 +16,17 @@ public class Juicer {
     public int hashCode() {
         return 52;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Juicer){
+                Juicer juicer=this;
+                Juicer juicer2=(Juicer) obj;
+                if (juicer.brand.equals(juicer2.brand) && juicer.type.equals(juicer2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

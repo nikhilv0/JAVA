@@ -16,4 +16,17 @@ public class Monitor {
     public int hashCode() {
         return 40;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Monitor){
+                Monitor monitor=this;
+                Monitor monitor2=(Monitor) obj;
+                if (monitor.brand.equals(monitor2.brand) && monitor.resolution.equals(monitor2.resolution)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

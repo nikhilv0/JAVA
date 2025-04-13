@@ -16,4 +16,17 @@ public class Oven {
     public int hashCode() {
         return 37;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Oven){
+                Oven oven=this;
+                Oven oven2=(Oven) obj;
+                if (oven.brand.equals(oven2.brand) && oven.type.equals(oven2.type) && oven.power==(oven2.power)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

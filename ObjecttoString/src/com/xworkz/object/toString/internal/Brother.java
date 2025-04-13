@@ -16,4 +16,17 @@ public class Brother {
     public int hashCode() {
         return 99;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Brother){
+                Brother brother=this;
+                Brother brother2=(Brother) obj;
+                if (brother.name.equals(brother2.name)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

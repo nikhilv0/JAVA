@@ -16,4 +16,17 @@ public class Iron {
     public int hashCode() {
         return 55;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Iron){
+                Iron iron=this;
+                Iron iron2=(Iron) obj;
+                if (iron.brand.equals(iron2.brand) && iron.type.equals(iron2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

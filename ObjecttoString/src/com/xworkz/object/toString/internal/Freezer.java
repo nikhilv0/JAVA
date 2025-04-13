@@ -16,4 +16,17 @@ public class Freezer {
     public int hashCode() {
         return 64;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Freezer){
+                Freezer freezer=this;
+                Freezer freezer2=(Freezer) obj;
+                if (freezer.brand.equals(freezer2.brand) && freezer.type.equals(freezer2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

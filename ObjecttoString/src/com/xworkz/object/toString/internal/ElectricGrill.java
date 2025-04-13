@@ -16,4 +16,17 @@ public class ElectricGrill {
     public int hashCode() {
         return 74;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof ElectricGrill){
+                ElectricGrill grill=this;
+                ElectricGrill grill2=(ElectricGrill) obj;
+                if (grill.brand.equals(grill2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

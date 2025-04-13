@@ -16,4 +16,18 @@ public class AirFryer {
     public int hashCode() {
         return 94;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof AirFryer){
+                AirFryer fryer=this;
+                AirFryer fryer1=(AirFryer) obj;
+                if (fryer.brand.equals(fryer1.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

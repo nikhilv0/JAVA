@@ -19,4 +19,17 @@ public class Tablet {
     public int hashCode() {
         return 11;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Tablet) {
+                Tablet tablet=this;
+                Tablet tablet2=(Tablet) obj;
+                if (tablet.brand.equals(tablet2.brand) && tablet.os.equals(tablet2.os) && tablet.batteryLife==(tablet2.batteryLife)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

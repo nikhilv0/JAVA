@@ -19,4 +19,17 @@ public class Leo {
     public int hashCode() {
         return 46;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Leo){
+                Leo leo=this;
+                Leo leo2=(Leo) obj;
+                if (leo.favoriteColor.equals(leo2.favoriteColor) && leo.age==(leo2.age)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

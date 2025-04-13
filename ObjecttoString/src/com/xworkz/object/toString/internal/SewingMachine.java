@@ -16,4 +16,17 @@ public class SewingMachine {
     public int hashCode() {
         return 25;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SewingMachine){
+                SewingMachine nora=this;
+                SewingMachine nora2=(SewingMachine) obj;
+                if (nora.brand.equals(nora2.brand) && nora.model.equals(nora2.model) && nora.stitchesPerMinute==(nora2.stitchesPerMinute)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

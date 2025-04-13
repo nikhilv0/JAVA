@@ -16,4 +16,17 @@ public class BankAccount {
     public int hashCode() {
         return 90;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof BankAccount){
+                BankAccount bank=this;
+                BankAccount bank2=(BankAccount) obj;
+                if (bank.accountNumber.equals(bank2.accountNumber)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

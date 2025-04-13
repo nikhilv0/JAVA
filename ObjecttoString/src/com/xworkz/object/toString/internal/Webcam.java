@@ -18,4 +18,17 @@ public class Webcam {
 //        System.out.println("Webcam:"+super.hashCode());
         return 1;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Webcam){
+                Webcam webcam=this;
+                Webcam webcam2=(Webcam) obj;
+                if (webcam.brand.equals(webcam2.brand) && webcam.hasMic==(webcam2.hasMic) && webcam.resolution.equals(webcam2.resolution)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

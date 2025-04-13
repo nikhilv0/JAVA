@@ -16,4 +16,17 @@ public class Scanner {
     public int hashCode() {
         return 27;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Scanner){
+                Scanner scanner=this;
+                Scanner scanner2=(Scanner) obj;
+                if (scanner.brand.equals(scanner2.brand) && scanner.type.equals(scanner2.type) && scanner.resolution==(scanner2.resolution)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

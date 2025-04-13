@@ -16,5 +16,18 @@ public class Book {
     public int hashCode() {
         return 88;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Book){
+                Book book=this;
+                Book book2=(Book) obj;
+                if (book.title.equals(book2.title)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
 

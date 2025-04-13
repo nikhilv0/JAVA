@@ -16,4 +16,17 @@ public class SlowCooker {
     public int hashCode() {
         return 23;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SlowCooker){
+                SlowCooker slowCooker=this;
+                SlowCooker slowCooker2=(SlowCooker) obj;
+                if (slowCooker.brand.equals(slowCooker2.brand) && slowCooker.shape.equals(slowCooker2.shape) && slowCooker.capacity==(slowCooker2.capacity)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

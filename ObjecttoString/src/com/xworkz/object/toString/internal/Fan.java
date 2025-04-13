@@ -16,4 +16,17 @@ public class Fan {
     public int hashCode() {
         return 66;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Fan){
+                Fan fan=this;
+                Fan fan2=(Fan) obj;
+                if (fan.brand.equals(fan2.brand) && fan.type.equals(fan2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

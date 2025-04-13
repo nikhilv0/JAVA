@@ -16,4 +16,17 @@ public class PopcornMaker {
     public int hashCode() {
         return 35;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof PopcornMaker){
+                PopcornMaker popcornMaker=this;
+                PopcornMaker popcornMaker2=(PopcornMaker) obj;
+                if (popcornMaker.brand.equals(popcornMaker2.brand) && popcornMaker.style.equals(popcornMaker2.style) && popcornMaker.batchSize==(popcornMaker2.batchSize)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

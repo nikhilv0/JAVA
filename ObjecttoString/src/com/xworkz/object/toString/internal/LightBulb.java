@@ -16,4 +16,17 @@ public class LightBulb {
     public int hashCode() {
         return 45;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof LightBulb){
+                LightBulb lightBlub=this;
+                LightBulb lightBlub2=(LightBulb) obj;
+                if (lightBlub.brand.equals(lightBlub2.brand) && lightBlub.color.equals(lightBlub2.color)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Dehumidifier {
     public int hashCode() {
         return 78;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Dehumidifier){
+                Dehumidifier dehumidifier=this;
+                Dehumidifier dehumidifier2=(Dehumidifier) obj;
+                if (dehumidifier.brand.equals(dehumidifier2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

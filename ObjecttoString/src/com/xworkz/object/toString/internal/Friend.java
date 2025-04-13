@@ -16,4 +16,17 @@ public class Friend {
     public int hashCode() {
         return 98;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Friend){
+                Friend friend=this;
+                Friend friend2=(Friend) obj;
+                if (friend.name.equals(friend2.name) && friend.lastname.equals(friend2.lastname)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

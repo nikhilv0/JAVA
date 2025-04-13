@@ -16,4 +16,19 @@ public class AirConditioner {
     public int hashCode() {
         return 95;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof AirConditioner){
+                AirConditioner ac=this;
+                AirConditioner ac2=(AirConditioner) obj;
+                if (ac.brand.equals(ac2.brand)){
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
 }

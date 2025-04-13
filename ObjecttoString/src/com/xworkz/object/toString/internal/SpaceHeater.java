@@ -16,4 +16,17 @@ public class SpaceHeater {
     public int hashCode() {
         return 16;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SpaceHeater){
+                SpaceHeater spaceHeater=this;
+                SpaceHeater spaceHeater2=(SpaceHeater) obj;
+                if (spaceHeater.brand.equals(spaceHeater2.brand) && spaceHeater.type.equals(spaceHeater2.type) && spaceHeater.heatOutput==(spaceHeater2.heatOutput)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

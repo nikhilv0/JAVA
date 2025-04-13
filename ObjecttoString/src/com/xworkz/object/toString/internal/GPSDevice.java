@@ -16,4 +16,17 @@ public class GPSDevice {
     public int hashCode() {
         return 61;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof GPSDevice){
+                GPSDevice gps=this;
+                GPSDevice gps2=(GPSDevice) obj;
+                if (gps.brand.equals(gps2.brand) && gps.mapVersion.equals(gps2.mapVersion)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

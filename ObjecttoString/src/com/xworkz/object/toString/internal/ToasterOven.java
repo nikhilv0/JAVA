@@ -18,5 +18,17 @@ public class ToasterOven {
     @Override
     public int hashCode() {
         return 8;
+    }@Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof ToasterOven){
+                ToasterOven toasterOven=this;
+                ToasterOven toasterOven2=(ToasterOven) obj;
+                if (toasterOven.brand.equals(toasterOven2.brand) && toasterOven.type.equals(toasterOven2.type) && toasterOven.temperatureRange==(toasterOven2.temperatureRange)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

@@ -16,4 +16,17 @@ public class ExternalHardDrive {
     public int hashCode() {
         return 67;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof ExternalHardDrive){
+                ExternalHardDrive hardDrive=this;
+                ExternalHardDrive hardDrive2=(ExternalHardDrive) obj;
+                if (hardDrive.brand.equals(hardDrive2.brand) && hardDrive.type.equals(hardDrive2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Refrigerator {
     public int hashCode() {
         return 32;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Refrigerator){
+                Refrigerator refrigertor=this;
+                Refrigerator refrigertor2=(Refrigerator) obj;
+                if (refrigertor.brand.equals(refrigertor2.brand) && refrigertor.type.equals(refrigertor2.type) && refrigertor.capacity==(refrigertor2.capacity)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

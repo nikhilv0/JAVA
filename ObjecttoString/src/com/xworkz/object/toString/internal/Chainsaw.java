@@ -16,4 +16,17 @@ public class Chainsaw {
     public int hashCode() {
         return 84;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Chainsaw){
+                Chainsaw chainsaw=this;
+                Chainsaw chainsaw2=(Chainsaw) obj;
+                if (chainsaw.brand.equals(chainsaw2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Generator {
     public int hashCode() {
         return 62;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Generator){
+                Generator generator=this;
+                Generator generator2=(Generator) obj;
+                if (generator.brand.equals(generator2.brand) && generator.fuelType.equals(generator2.fuelType)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

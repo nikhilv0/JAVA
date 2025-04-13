@@ -16,4 +16,17 @@ public class SnowBlower {
     public int hashCode() {
         return 17;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SnowBlower){
+                SnowBlower snowBlower=this;
+                SnowBlower snowBlower2=(SnowBlower) obj;
+                if (snowBlower.brand.equals(snowBlower2.brand) && snowBlower.model.equals(snowBlower2.model) && snowBlower.clearingWidth==(snowBlower2.clearingWidth)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

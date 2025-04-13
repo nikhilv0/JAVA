@@ -16,4 +16,17 @@ public class RiceCooker {
     public int hashCode() {
         return 31;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof RiceCooker){
+                RiceCooker riceCooker=this;
+                RiceCooker riceCooker2=(RiceCooker) obj;
+                if (riceCooker.brand.equals(riceCooker2.brand) && riceCooker.type.equals(riceCooker2.type) && riceCooker.capacity==(riceCooker2.capacity)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

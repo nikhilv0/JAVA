@@ -16,4 +16,17 @@ public class Heater {
     public int hashCode() {
         return 59;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Heater){
+                Heater heater=this;
+                Heater heater2=(Heater) obj;
+                if (heater.brand.equals(heater2.brand) && heater.type.equals(heater2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Dehydrator {
     public int hashCode() {
         return 77;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Dehydrator){
+                Dehydrator dehydrator=this;
+                Dehydrator dehydrator2=(Dehydrator) obj;
+                if (dehydrator.brand.equals(dehydrator2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

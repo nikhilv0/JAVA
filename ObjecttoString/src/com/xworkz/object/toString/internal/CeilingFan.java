@@ -16,4 +16,17 @@ public class CeilingFan {
     public int hashCode() {
         return 85;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof CeilingFan){
+                CeilingFan Cfan=this;
+                CeilingFan Cfan2=(CeilingFan) obj;
+                if (Cfan.brand.equals(Cfan2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -18,4 +18,17 @@ public class PressureCooker {
     public int hashCode() {
         return 34;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof PressureCooker){
+                PressureCooker pressureCooker=this;
+                PressureCooker pressureCooker2=(PressureCooker) obj;
+                if (pressureCooker.brand.equals(pressureCooker2.brand) && pressureCooker.color.equals(pressureCooker2.color) && pressureCooker.psi==(pressureCooker2.psi)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

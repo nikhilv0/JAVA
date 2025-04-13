@@ -16,5 +16,18 @@ public class Smartphone {
     public int hashCode() {
         return 21;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Smartphone){
+                Smartphone smartphone=this;
+                Smartphone smartphone2=(Smartphone) obj;
+                if (smartphone.brand.equals(smartphone2.brand) && smartphone.os.equals(smartphone2.os) && smartphone.storage==(smartphone2.storage)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
 

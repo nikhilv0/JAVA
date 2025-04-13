@@ -16,4 +16,17 @@ public class CoffeeGrinder {
     public int hashCode() {
         return 81;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof CoffeeGrinder){
+                CoffeeGrinder grinder=this;
+                CoffeeGrinder grinder2=(CoffeeGrinder) obj;
+                if (grinder.brand.equals(grinder2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Car {
     public int hashCode() {
         return 86;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Car){
+                Car car=this;
+                Car car2=(Car) obj;
+                if (car.brand.equals(car2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class SmartLight {
     public int hashCode() {
         return 22;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SmartLight){
+                SmartLight smartLight=this;
+                SmartLight smartLight2=(SmartLight) obj;
+                if (smartLight.brand.equals(smartLight2.brand) && smartLight.color.equals(smartLight2.color) && smartLight.lumens==(smartLight2.lumens)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

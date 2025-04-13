@@ -16,4 +16,17 @@ public class Humidifier {
     public int hashCode() {
         return 58;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Humidifier){
+                Humidifier humidifier=this;
+                Humidifier humidifier2=(Humidifier) obj;
+                if (humidifier.brand.equals(humidifier2.brand) && humidifier.type.equals(humidifier2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

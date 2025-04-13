@@ -17,4 +17,17 @@ public class VacuumCleaner {
     public int hashCode() {
         return 5;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof VacuumCleaner){
+                VacuumCleaner vaccumCleaner=this;
+                VacuumCleaner vaccumCleaner2=(VacuumCleaner) obj;
+                if (vaccumCleaner.brand.equals(vaccumCleaner2.brand) && vaccumCleaner.model.equals(vaccumCleaner2.model) && vaccumCleaner.suctionPower==(vaccumCleaner2.suctionPower)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

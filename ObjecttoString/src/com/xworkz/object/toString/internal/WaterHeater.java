@@ -17,4 +17,17 @@ public class WaterHeater {
     public int hashCode() {
         return 3;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof WaterHeater){
+                WaterHeater waterHeater=this;
+                WaterHeater waterHeater2=(WaterHeater) obj;
+                if (waterHeater.brand.equals(waterHeater2.brand) && waterHeater.type==(waterHeater2.type) && waterHeater.liters==(waterHeater2.liters)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

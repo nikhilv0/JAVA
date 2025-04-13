@@ -17,4 +17,17 @@ public class Thermostat {
     public int hashCode() {
         return 9;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Thermostat){
+                Thermostat termostat=this;
+                Thermostat termostat2=(Thermostat) obj;
+                if (termostat.brand.equals(termostat2.brand) && termostat.mode.equals(termostat2.mode) && termostat.temperature==(termostat2.temperature)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

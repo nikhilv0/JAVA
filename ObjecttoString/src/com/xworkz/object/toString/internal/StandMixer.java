@@ -17,4 +17,17 @@ public class StandMixer {
     public int hashCode() {
         return 14;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof StandMixer){
+                StandMixer standMixer=this;
+                StandMixer standMixer2=(StandMixer) obj;
+                if (standMixer.brand.equals(standMixer2.brand) && standMixer.color.equals(standMixer2.color) && standMixer.bowlCapacity==(standMixer2.bowlCapacity)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

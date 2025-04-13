@@ -19,4 +19,17 @@ public class Jasper {
     public int hashCode() {
         return 53;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Jasper){
+                Jasper jasper=this;
+                Jasper jasper2=(Jasper) obj;
+                if (jasper.favoriteColor.equals(jasper2.favoriteColor) && jasper.age==(jasper2.age)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -17,4 +17,17 @@ public class WaterPurifier {
     public int hashCode() {
         return 2;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof WaterPurifier){
+                WaterPurifier waterPurifier=this;
+                WaterPurifier waterPurifier2=(WaterPurifier) obj;
+                if (waterPurifier.brand.equals(waterPurifier.brand) && waterPurifier.brand.equals(waterPurifier.brand) && waterPurifier.capacity==(waterPurifier.capacity)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

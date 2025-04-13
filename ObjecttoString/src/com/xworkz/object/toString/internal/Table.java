@@ -17,4 +17,17 @@ public class Table {
     public int hashCode() {
         return 12;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Table){
+                Table table=this;
+                Table table2=(Table) obj;
+                if (table.shape.equals(table2.shape) && table.material.equals(table2.material) && table.length==(table2.length)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

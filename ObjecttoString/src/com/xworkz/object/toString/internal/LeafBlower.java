@@ -16,4 +16,17 @@ public class LeafBlower {
     public int hashCode() {
         return 47;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof LeafBlower){
+                LeafBlower leafBlowe=this;
+                LeafBlower leafBlowe2=(LeafBlower) obj;
+                if (leafBlowe.brand.equals(leafBlowe2.brand) && leafBlowe.type.equals(leafBlowe2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

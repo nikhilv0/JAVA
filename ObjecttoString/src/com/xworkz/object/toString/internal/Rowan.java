@@ -19,5 +19,17 @@ public class Rowan {
     public int hashCode() {
         return 29;
     }
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Rowan){
+                Rowan rowan=this;
+                Rowan rowan2=(Rowan) obj;
+                if (rowan.favoriteColor.equals(rowan2.favoriteColor) && rowan.age==(rowan2.age) && rowan.height==(rowan2.height)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

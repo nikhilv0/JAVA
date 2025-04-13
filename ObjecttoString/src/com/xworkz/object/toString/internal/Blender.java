@@ -16,4 +16,17 @@ public class Blender {
     public int hashCode() {
         return 89;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Blender){
+                Blender blender=this;
+                Blender blender2=(Blender) obj;
+                if (blender.brand.equals(blender2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

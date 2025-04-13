@@ -19,4 +19,17 @@ public class Mom {
     public int hashCode() {
         return 96;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Mom){
+                Mom mom=this;
+                Mom mom2=(Mom) obj;
+                if (mom.name.equals(mom2.name) && mom.lastname.equals(mom2.lastname)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

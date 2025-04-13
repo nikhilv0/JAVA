@@ -16,4 +16,17 @@ public class SmartWatch {
     public int hashCode() {
         return 19;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SmartWatch){
+                SmartWatch smartWatch=this;
+                SmartWatch smartWatch2=(SmartWatch) obj;
+                if (smartWatch.brand.equals(smartWatch2.brand) && smartWatch.os.equals(smartWatch2.os) && smartWatch.batteryLife==(smartWatch2.batteryLife)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

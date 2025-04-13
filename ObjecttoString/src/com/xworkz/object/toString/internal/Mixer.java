@@ -16,4 +16,17 @@ public class Mixer {
     public int hashCode() {
         return 41;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Mixer){
+                Mixer mixer=this;
+                Mixer mixer2=(Mixer) obj;
+                if (mixer.brand.equals(mixer2.brand) && mixer.model.equals(mixer2.model)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

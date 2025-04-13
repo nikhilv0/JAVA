@@ -17,4 +17,17 @@ public class Employee {
     public int hashCode() {
         return 69;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Employee){
+                Employee empolyee=this;
+                Employee empolyee2=(Employee) obj;
+                if (empolyee.name.equals(empolyee2.name)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

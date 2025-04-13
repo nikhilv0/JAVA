@@ -19,4 +19,17 @@ public class Isla {
     public int hashCode() {
         return 54;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Isla){
+                Isla isla=this;
+                Isla isla2=(Isla) obj;
+                if (isla.favoriteColor.equals(isla2.favoriteColor) && isla.age==(isla2.age)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

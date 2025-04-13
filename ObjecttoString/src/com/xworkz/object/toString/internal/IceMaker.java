@@ -16,4 +16,17 @@ public class IceMaker {
     public int hashCode() {
         return 56;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof IceMaker){
+                IceMaker iceMaker=this;
+                IceMaker iceMaker2=(IceMaker) obj;
+                if (iceMaker.brand.equals(iceMaker2.brand) && iceMaker.model.equals(iceMaker2.model)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

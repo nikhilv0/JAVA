@@ -16,4 +16,17 @@ public class SmokeDetector {
     public int hashCode() {
         return 18;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SmokeDetector){
+                SmokeDetector smokeDetector=this;
+                SmokeDetector smokeDetector2=(SmokeDetector) obj;
+                if (smokeDetector.brand.equals(smokeDetector2.brand) && smokeDetector.type.equals(smokeDetector2.type) && smokeDetector.sensitivityLevel==(smokeDetector2.sensitivityLevel)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

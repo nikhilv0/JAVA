@@ -16,4 +16,17 @@ public class Chair {
     public int hashCode() {
         return 83;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Chair){
+                Chair chair=this;
+                Chair chair2=(Chair) obj;
+                if (chair.material.equals(chair2.material)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Speaker {
     public int hashCode() {
         return 15;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Speaker){
+                Speaker speaker=this;
+                Speaker speaker2=(Speaker) obj;
+                if (speaker.brand.equals(speaker2.brand) && speaker.type.equals(speaker2.type) && speaker.wattage==(speaker2.wattage)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

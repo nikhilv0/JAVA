@@ -19,4 +19,17 @@ public class Ava {
     public int hashCode() {
         return 91;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Ava){
+                Ava ava=this;
+                Ava ava2=(Ava) obj;
+                if (ava.favoriteColor.equals(ava2.favoriteColor)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

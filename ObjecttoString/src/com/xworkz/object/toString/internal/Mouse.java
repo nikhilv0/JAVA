@@ -16,4 +16,17 @@ public class Mouse {
     public int hashCode() {
         return 39;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Mouse){
+                Mouse mouse=this;
+                Mouse mouse2=(Mouse) obj;
+                if (mouse.brand.equals(mouse2.brand) && mouse.type.equals(mouse2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

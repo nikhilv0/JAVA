@@ -16,4 +16,17 @@ public class Kettle {
     public int hashCode() {
         return 51;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Kettle){
+                Kettle kettle=this;
+                Kettle kettle2=(Kettle) obj;
+                if (kettle.brand.equals(kettle2.brand) && kettle.color.equals(kettle2.color)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

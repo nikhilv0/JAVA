@@ -16,4 +16,17 @@ public class HairDryer {
     public int hashCode() {
         return 60;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof HairDryer){
+                HairDryer hairdryer=this;
+                HairDryer hairdryer2=(HairDryer) obj;
+                if (hairdryer.brand.equals(hairdryer2.brand) && hairdryer.color.equals(hairdryer2.color)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

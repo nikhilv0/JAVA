@@ -16,4 +16,17 @@ public class Clock {
     public int hashCode() {
         return 82;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Clock){
+                Clock clock=this;
+                Clock clock2=(Clock) obj;
+                if (clock.brand.equals(clock2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

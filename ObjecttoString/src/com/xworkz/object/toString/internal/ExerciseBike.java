@@ -16,4 +16,17 @@ public class ExerciseBike {
     public int hashCode() {
         return 68;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof ExerciseBike){
+                ExerciseBike bike=this;
+                ExerciseBike bike2=(ExerciseBike) obj;
+                if (bike.brand.equals(bike2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

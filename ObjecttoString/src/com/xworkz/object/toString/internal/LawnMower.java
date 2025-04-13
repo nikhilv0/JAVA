@@ -16,4 +16,16 @@ public class LawnMower {
     public int hashCode() {
         return 48;
     }
-}
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof LawnMower){
+                LawnMower lawnMower=this;
+                LawnMower lawnMower2=(LawnMower) obj;
+                if (lawnMower.brand.equals(lawnMower2.brand) && lawnMower.type.equals(lawnMower2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }}

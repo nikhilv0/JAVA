@@ -16,4 +16,17 @@ public class FlashDrive {
     public int hashCode() {
         return 65;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof FlashDrive){
+                FlashDrive flashDrive=this;
+                FlashDrive flashDrive2=(FlashDrive) obj;
+                if (flashDrive.brand.equals(flashDrive2.brand) && flashDrive.type.equals(flashDrive2.type)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

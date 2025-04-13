@@ -17,4 +17,17 @@ public class Treadmill {
     public int hashCode() {
         return 6;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Treadmill){
+                Treadmill treadMill=this;
+                Treadmill treadMill2=(Treadmill) obj;
+                if (treadMill.brand.equals(treadMill2.brand) && treadMill.model.equals(treadMill2.model) && treadMill.maxSpeed==(treadMill2.maxSpeed)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

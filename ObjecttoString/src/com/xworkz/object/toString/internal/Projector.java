@@ -15,5 +15,17 @@ public class Projector {
     @Override
     public int hashCode() {
         return 33;
+    }@Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Projector){
+                Projector projector=this;
+                Projector projector2=(Projector) obj;
+                if (projector.brand.equals(projector2.brand) && projector.resolution.equals(projector2.resolution) && projector.lumens==(projector2.lumens)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

@@ -16,4 +16,17 @@ public class Router {
     public int hashCode() {
         return 30;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Router) {
+                Router router=this;
+                Router router2=(Router) obj;
+                if (router.brand.equals(router2.brand) && router.frequency.equals(router2.frequency) && router.ports==(router2.ports)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

@@ -16,4 +16,17 @@ public class Phone {
     public int hashCode() {
         return 36;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Phone){
+                Phone phone=this;
+                Phone phone2=(Phone) obj;
+                if (phone.brand.equals(phone2.brand) && phone.model.equals(phone2.model) && phone.price==(phone2.price)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

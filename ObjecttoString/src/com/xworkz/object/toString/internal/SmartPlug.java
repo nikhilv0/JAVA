@@ -16,4 +16,17 @@ public class SmartPlug {
     public int hashCode() {
         return 20;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof SmartPlug){
+                SmartPlug smartPlug=this;
+                SmartPlug smartPlug2=(SmartPlug) obj;
+                if (smartPlug.brand.equals(smartPlug2.brand) && smartPlug.type.equals(smartPlug2.type) && smartPlug.voltage==(smartPlug2.voltage)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

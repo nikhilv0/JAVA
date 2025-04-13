@@ -16,4 +16,17 @@ public class AirPurifier {
     public int hashCode() {
         return 93;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof AirPurifier){
+                AirPurifier purifier=this;
+                AirPurifier purifier2=(AirPurifier) obj;
+                if (purifier.brand.equals(purifier2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

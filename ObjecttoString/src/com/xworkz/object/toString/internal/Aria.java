@@ -19,4 +19,17 @@ public class Aria {
     public int hashCode() {
         return 92;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof Aria){
+                Aria aria=this;
+                Aria aria2=(Aria) obj;
+                if (aria.favoriteColor.equals(aria2.favoriteColor)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

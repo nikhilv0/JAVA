@@ -16,4 +16,17 @@ public class DoorLock {
     public int hashCode() {
         return 75;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof DoorLock){
+                DoorLock doorLock=this;
+                DoorLock doorLock2=(DoorLock) obj;
+                if (doorLock.brand.equals(doorLock2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

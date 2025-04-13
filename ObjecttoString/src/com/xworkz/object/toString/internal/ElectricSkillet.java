@@ -16,4 +16,17 @@ public class ElectricSkillet {
     public int hashCode() {
         return 72;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof ElectricSkillet){
+                ElectricSkillet skillet=this;
+                ElectricSkillet skillet2=(ElectricSkillet) obj;
+                if (skillet.brand.equals(skillet2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

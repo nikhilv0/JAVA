@@ -16,4 +16,17 @@ public class BreadMaker {
     public int hashCode() {
         return 87;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj!=null){
+            if (obj instanceof BreadMaker){
+                BreadMaker breadMaker=this;
+                BreadMaker breadMaker2=(BreadMaker) obj;
+                if (breadMaker.brand.equals(breadMaker2.brand)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
