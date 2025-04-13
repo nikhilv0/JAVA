@@ -873,9 +873,12 @@ public class MainRunner {
         System.out.println(webcam1);
         System.out.println(webcam1.hashCode());
         System.out.println("Original:"+System.identityHashCode(webcam1));
-        Webcam webcam2 = new Webcam("ogitech", "1080p", true);
+        Webcam webcam2 = new Webcam("Logitech", "1080p", true);
         boolean isWebcamSame = webcam1.equals(webcam2);
         System.out.println("Comparing 3 properties are same:"+isWebcamSame);
+        Webcam webcam3 = new Webcam("Logitech", "1080p", true);
+        boolean isWebcamDiff = webcam1.equals(webcam3);
+        System.out.println("Comparing 3 properties are same:"+isWebcamDiff);
         System.out.println("____________________________________________________________________________________");
 
     }
