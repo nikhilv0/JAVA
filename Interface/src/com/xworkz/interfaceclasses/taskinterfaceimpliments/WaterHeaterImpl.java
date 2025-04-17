@@ -1,5 +1,6 @@
 package com.xworkz.interfaceclasses.taskinterfaceimpliments;
 
+
 import com.xworkz.interfaceclasses.taskinterfaceclasses.WaterHeater;
 
 public class WaterHeaterImpl implements WaterHeater {
@@ -18,3 +19,4 @@ public class WaterHeaterImpl implements WaterHeater {
         System.out.println("Setting water heater temperature.");
     }
 }
+
