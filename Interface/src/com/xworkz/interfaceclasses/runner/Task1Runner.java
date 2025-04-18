@@ -5,6 +5,9 @@ import com.xworkz.interfaceclasses.taskinterfaceimpliments.*;
 
 
 public class Task1Runner {
+    private static Router router;
+    private static SmartThermostat smartThermostat;
+
     public static void main(String[] args) {
 
         System.out.println("Car");
@@ -12,6 +15,7 @@ public class Task1Runner {
         car.startEngine();
         car.stopEngine();
         car.resetSystem();
+        car.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("BatteryCharger");
@@ -19,6 +23,7 @@ public class Task1Runner {
         batteryCharger.startCharging();
         batteryCharger.stopCharging();
         batteryCharger.checkBatteryStatus();
+        batteryCharger.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ElectricKettle");
@@ -26,6 +31,7 @@ public class Task1Runner {
         electricKettle.boilWater();
         electricKettle.turnOffAutomatically();
         electricKettle.keepWarm();
+        electricKettle.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SolarPanelSystem");
@@ -33,6 +39,7 @@ public class Task1Runner {
         solarPanelSystem.generatePower();
         solarPanelSystem.storeEnergy();
         solarPanelSystem.trackSunlight();
+        solarPanelSystem.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmokeDetector");
@@ -40,6 +47,7 @@ public class Task1Runner {
         smokeDetector.detectSmoke();
         smokeDetector.soundAlarm();
         smokeDetector.testSystem();
+        smokeDetector.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("CarbonMonoxideAlarm");
@@ -47,6 +55,7 @@ public class Task1Runner {
         carbonMonoxideAlarm.detectGas();
         carbonMonoxideAlarm.alert();
         carbonMonoxideAlarm.resetAlarm();
+        carbonMonoxideAlarm.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("MotionSensor");
@@ -54,6 +63,7 @@ public class Task1Runner {
         motionSensor.detectMovement();
         motionSensor.sendSignal();
         motionSensor.calibrateSensor();
+        motionSensor.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("AutomaticSoapDispenser");
@@ -61,6 +71,7 @@ public class Task1Runner {
         dispenser.dispenseSoap();
         dispenser.refillSoap();
         dispenser.cleanNozzle();
+        dispenser.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ElectricToothbrush");
@@ -68,6 +79,7 @@ public class Task1Runner {
         toothbrush.startBrushing();
         toothbrush.stopBrushing();
         toothbrush.changeMode();
+        toothbrush.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("DigitalThermometer");
@@ -75,6 +87,7 @@ public class Task1Runner {
         thermometer.measureTemperature();
         thermometer.displayReading();
         thermometer.resetDevice();
+        thermometer.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 
@@ -83,6 +96,7 @@ public class Task1Runner {
         fitnessTracker.countSteps();
         fitnessTracker.monitorHeartRate();
         fitnessTracker.syncData();
+        fitnessTracker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("BarcodeScanner");
@@ -90,6 +104,7 @@ public class Task1Runner {
         barcodeScanner.scanCode();
         barcodeScanner.transmitData();
         barcodeScanner.resetScanner();
+        barcodeScanner.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ElectricScooter");
@@ -97,6 +112,7 @@ public class Task1Runner {
         electricScooter.accelerate();
         electricScooter.applyBrake();
         electricScooter.chargeBattery();
+        electricScooter.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ElectricWheelchair");
@@ -104,6 +120,7 @@ public class Task1Runner {
         electricWheelchair.moveForward();
         electricWheelchair.turnLeft();
         electricWheelchair.adjustSpeed();
+        electricWheelchair.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("PowerInverter");
@@ -111,6 +128,7 @@ public class Task1Runner {
         powerInverter.convertPower();
         powerInverter.switchMode();
         powerInverter.displayStatus();
+        powerInverter.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Bike");
@@ -118,6 +136,7 @@ public class Task1Runner {
         bike.startEngine();
         bike.stopEngine();
         bike.resetSystem();
+        bike.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Bus");
@@ -125,6 +144,7 @@ public class Task1Runner {
         bus.startEngine();
         bus.stopEngine();
         bus.resetSystem();
+        bus.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Truck");
@@ -132,6 +152,7 @@ public class Task1Runner {
         truck.startEngine();
         truck.stopEngine();
         truck.resetSystem();
+        truck.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Train");
@@ -139,6 +160,7 @@ public class Task1Runner {
         train.startEngine();
         train.stopEngine();
         train.resetSystem();
+        train.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Airplane");
@@ -146,6 +168,7 @@ public class Task1Runner {
         airplane.startEngine();
         airplane.stopEngine();
         airplane.resetSystem();
+        airplane.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 
@@ -154,6 +177,7 @@ public class Task1Runner {
         helicopter.startEngine();
         helicopter.stopEngine();
         helicopter.resetSystem();
+        helicopter.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Ship");
@@ -161,6 +185,7 @@ public class Task1Runner {
         ship.startEngine();
         ship.stopEngine();
         ship.resetSystem();
+        ship.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Scooter");
@@ -168,6 +193,7 @@ public class Task1Runner {
         scooter.startEngine();
         scooter.stopEngine();
         scooter.resetSystem();
+        scooter.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Tram");
@@ -175,6 +201,7 @@ public class Task1Runner {
         tram.startEngine();
         tram.stopEngine();
         tram.resetSystem();
+        tram.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("WashingMachine");
@@ -182,6 +209,7 @@ public class Task1Runner {
         washingMachine.startCycle();
         washingMachine.stopCycle();
         washingMachine.drainWater();
+        washingMachine.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Refrigerator");
@@ -189,6 +217,7 @@ public class Task1Runner {
         refrigerator.coolItems();
         refrigerator.defrost();
         refrigerator.checkTemperature();
+        refrigerator.defrost();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Microwave");
@@ -196,6 +225,7 @@ public class Task1Runner {
         microwave.startHeating();
         microwave.stopHeating();
         microwave.setTimer();
+        microwave.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("AirConditioner");
@@ -203,6 +233,7 @@ public class Task1Runner {
         airConditioner.turnOn();
         airConditioner.turnOff();
         airConditioner.setTemperature();
+        airConditioner.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Television");
@@ -210,6 +241,7 @@ public class Task1Runner {
         television.powerOn();
         television.powerOff();
         television.changeChannel();
+        television.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Dishwasher");
@@ -217,6 +249,7 @@ public class Task1Runner {
         dishwasher.startWashing();
         dishwasher.stopWashing();
         dishwasher.dryDishes();
+        dishwasher.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 
@@ -225,6 +258,7 @@ public class Task1Runner {
         vacuumCleaner.startCleaning();
         vacuumCleaner.stopCleaning();
         vacuumCleaner.emptyDustBag();
+        vacuumCleaner.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("WaterHeater");
@@ -232,6 +266,7 @@ public class Task1Runner {
         waterHeater.heatWater();
         waterHeater.turnOffHeater();
         waterHeater.setTemperature();
+        waterHeater.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("CeilingFan");
@@ -239,13 +274,14 @@ public class Task1Runner {
         ceilingFan.turnOnFan();
         ceilingFan.turnOffFan();
         ceilingFan.adjustSpeed();
+        ceilingFan.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("CoffeeMaker");
         CoffeeMaker coffeeMaker = new CoffeeMakerImpl();
         coffeeMaker.brewCoffee();
         coffeeMaker.cleanMachine();
-        coffeeMaker.turnOff();
+        coffeeMaker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartPhone");
@@ -253,6 +289,7 @@ public class Task1Runner {
         smartPhone.makeCall();
         smartPhone.sendText();
         smartPhone.openApp();
+        scooter.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Tablet");
@@ -260,6 +297,7 @@ public class Task1Runner {
         tablet.draw();
         tablet.browseWeb();
         tablet.watchVideo();
+        tablet.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Laptop");
@@ -267,6 +305,7 @@ public class Task1Runner {
         laptop.compileCode();
         laptop.runApplication();
         laptop.shutDown();
+        laptop.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("DesktopComputer");
@@ -274,6 +313,7 @@ public class Task1Runner {
         desktopComputer.powerOn();
         desktopComputer.runDiagnostics();
         desktopComputer.powerOff();
+        dispenser.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartWatch");
@@ -281,6 +321,7 @@ public class Task1Runner {
         smartWatch.showTime();
         smartWatch.trackSteps();
         smartWatch.displayNotification();
+        smartWatch.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Printer");
@@ -288,6 +329,7 @@ public class Task1Runner {
         printer.printDocument();
         printer.scanDocument();
         printer.cancelJob();
+        printer.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 
@@ -296,6 +338,7 @@ public class Task1Runner {
         router.connectToInternet();
         router.resetRouter();
         router.updateFirmware();
+        router.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Camera");
@@ -303,6 +346,7 @@ public class Task1Runner {
         camera.takePhoto();
         camera.recordVideo();
         camera.adjustSettings();
+        camera.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Speaker");
@@ -310,6 +354,7 @@ public class Task1Runner {
         speaker.playSound();
         speaker.increaseVolume();
         speaker.decreaseVolume();
+        speaker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("EBookReader");
@@ -317,6 +362,7 @@ public class Task1Runner {
         eBookReader.openBook();
         eBookReader.turnPage();
         eBookReader.adjustBrightness();
+        eBookReader.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("CNC_Machine");
@@ -324,6 +370,7 @@ public class Task1Runner {
         cncMachine.startMachine();
         cncMachine.stopMachine();
         cncMachine.calibrate();
+        cncMachine.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ArcadeMachine");
@@ -331,12 +378,14 @@ public class Task1Runner {
         arcadeMachine.insertCoin();
         arcadeMachine.startGame();
         arcadeMachine.endGame();
+        arcadeMachine.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ToyRobot");
         ToyRobot toyRobot = new ToyRobotImpl();
         toyRobot.walk();
         toyRobot.talk();
+        toyRobot.dance();
         toyRobot.dance();
         System.out.println("----------------------------------------------------------------------------------------");
 
@@ -345,6 +394,7 @@ public class Task1Runner {
         droneCamera.fly();
         droneCamera.recordVideo();
         droneCamera.returnHome();
+        droneCamera.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ElectricTrainSet");
@@ -352,6 +402,7 @@ public class Task1Runner {
         trainSet.startTrain();
         trainSet.stopTrain();
         trainSet.switchTrack();
+        trainSet.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartLight");
@@ -359,6 +410,7 @@ public class Task1Runner {
         smartLight.turnOnLight();
         smartLight.turnOffLight();
         smartLight.changeColor();
+        smartLight.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 
@@ -367,6 +419,7 @@ public class Task1Runner {
         smartDoorLock.lockDoor();
         smartDoorLock.unlockDoor();
         smartDoorLock.checkStatus();
+        smartDoorLock.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartThermostat");
@@ -374,6 +427,7 @@ public class Task1Runner {
         smartThermostat.setTemperature();
         smartThermostat.turnOnHeating();
         smartThermostat.turnOffCooling();
+        smartThermostat.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartCamera");
@@ -381,6 +435,7 @@ public class Task1Runner {
         smartCamera.recordVideo();
         smartCamera.detectMotion();
         smartCamera.sendAlert();
+        smartCamera.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartSpeaker");
@@ -388,6 +443,7 @@ public class Task1Runner {
         smartSpeaker.playMusic();
         smartSpeaker.increaseVolume();
         smartSpeaker.askAssistant();
+        smartSpeaker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartDoorbell");
@@ -395,6 +451,7 @@ public class Task1Runner {
         smartDoorbell.ringBell();
         smartDoorbell.streamVideo();
         smartDoorbell.talkToVisitor();
+        smartDoorbell.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartMirror");
@@ -402,6 +459,7 @@ public class Task1Runner {
         smartMirror.displayTime();
         smartMirror.showWeather();
         smartMirror.adjustBrightness();
+        smartMirror.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartGarageOpener");
@@ -409,6 +467,7 @@ public class Task1Runner {
         smartGarageOpener.openGarage();
         smartGarageOpener.closeGarage();
         smartGarageOpener.checkGarageStatus();
+        smartGarageOpener.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Blender");
@@ -416,6 +475,7 @@ public class Task1Runner {
         blender.startBlending();
         blender.stopBlending();
         blender.pulseBlend();
+        blender.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("FoodProcessor");
@@ -423,6 +483,7 @@ public class Task1Runner {
         foodProcessor.chop();
         foodProcessor.grind();
         foodProcessor.slice();
+        foodProcessor.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("AirPurifier");
@@ -430,6 +491,7 @@ public class Task1Runner {
         airPurifier.purifyAir();
         airPurifier.changeFilter();
         airPurifier.adjustFanSpeed();
+        airPurifier.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 
@@ -438,6 +500,7 @@ public class Task1Runner {
         humidifier.releaseMist();
         humidifier.setHumidityLevel();
         humidifier.turnOff();
+        humidifier.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Dehumidifier");
@@ -445,6 +508,7 @@ public class Task1Runner {
         dehumidifier.removeMoisture();
         dehumidifier.setDryLevel();
         dehumidifier.emptyTank();
+        dehumidifier.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("InductionCooktop");
@@ -452,6 +516,7 @@ public class Task1Runner {
         inductionCooktop.turnOnCooktop();
         inductionCooktop.setHeatLevel();
         inductionCooktop.turnOffCooktop();
+        inductionCooktop.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("RiceCooker");
@@ -459,6 +524,7 @@ public class Task1Runner {
         riceCooker.startCooking();
         riceCooker.keepWarm();
         riceCooker.stopCooking();
+        riceCooker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SlowCooker");
@@ -466,6 +532,7 @@ public class Task1Runner {
         slowCooker.cookSlow();
         slowCooker.setTimer();
         slowCooker.turnOff();
+        slowCooker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("Juicer");
@@ -473,6 +540,7 @@ public class Task1Runner {
         juicer.extractJuice();
         juicer.cleanJuicer();
         juicer.stopJuicer();
+        juicer.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("WaterFilter");
@@ -480,6 +548,7 @@ public class Task1Runner {
         waterFilter.filterWater();
         waterFilter.replaceCartridge();
         waterFilter.resetIndicator();
+        waterFilter.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("ElectricGrill");
@@ -487,6 +556,7 @@ public class Task1Runner {
         electricGrill.preheat();
         electricGrill.grillFood();
         electricGrill.turnOffGrill();
+        electricGrill.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("IceMaker");
@@ -494,6 +564,7 @@ public class Task1Runner {
         iceMaker.startIceMaking();
         iceMaker.stopIceMaking();
         iceMaker.checkIceLevel();
+        iceMaker.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartCurtains");
@@ -501,6 +572,7 @@ public class Task1Runner {
         smartCurtains.openCurtains();
         smartCurtains.closeCurtains();
         smartCurtains.setSchedule();
+        smartCurtains.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("PetFeeder");
@@ -508,6 +580,7 @@ public class Task1Runner {
         petFeeder.dispenseFood();
         petFeeder.setFeedingSchedule();
         petFeeder.checkFoodLevel();
+        petFeeder.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartScale");
@@ -515,6 +588,7 @@ public class Task1Runner {
         smartScale.measureWeight();
         smartScale.syncWithApp();
         smartScale.resetScale();
+        smartScale.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartPlug");
@@ -522,6 +596,7 @@ public class Task1Runner {
         smartPlug.turnOn();
         smartPlug.turnOff();
         smartPlug.monitorPowerUsage();
+        smartPlug.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartSprinkler");
@@ -529,6 +604,7 @@ public class Task1Runner {
         smartSprinkler.startSprinkling();
         smartSprinkler.stopSprinkling();
         smartSprinkler.scheduleWatering();
+        smartSprinkler.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
         System.out.println("SmartVacuum");
@@ -536,6 +612,7 @@ public class Task1Runner {
         smartVacuum.startCleaning();
         smartVacuum.returnToDock();
         smartVacuum.emptyDustBin();
+        smartVacuum.display();
         System.out.println("----------------------------------------------------------------------------------------");
 
 

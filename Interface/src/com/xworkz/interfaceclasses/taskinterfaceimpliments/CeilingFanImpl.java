@@ -17,4 +17,9 @@ public class CeilingFanImpl implements CeilingFan {
     public void adjustSpeed() {
         System.out.println("Adjusting ceiling fan speed.");
     }
+
+    @Override
+    public void display() {
+        CeilingFan.super.display();
+    }
 }

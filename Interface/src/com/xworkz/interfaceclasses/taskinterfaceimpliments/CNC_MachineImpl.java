@@ -17,4 +17,9 @@ public class CNC_MachineImpl implements CNC_Machine {
     public void calibrate() {
         System.out.println("Calibrating CNC Machine.");
     }
+
+    @Override
+    public void display() {
+        CNC_Machine.super.display();
+    }
 }

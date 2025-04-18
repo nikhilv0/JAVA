@@ -17,4 +17,9 @@ public class VacuumCleanerImpl implements VacuumCleaner {
     public void emptyDustBag() {
         System.out.println("Vacuum cleaner dust bag emptied.");
     }
+
+    @Override
+    public void display() {
+        VacuumCleaner.super.display();
+    }
 }

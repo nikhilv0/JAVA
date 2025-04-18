@@ -17,4 +17,9 @@ public class TabletImpl implements Tablet {
     public void watchVideo() {
         System.out.println("Watching video on tablet.");
     }
+
+    @Override
+    public void display() {
+        Tablet.super.display();
+    }
 }

@@ -19,6 +19,11 @@ public class EverydayCompanion implements SmartPhone, Tablet, CoffeeMaker, Ceili
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void draw() {
         System.out.println("EverydayCompanion drawing...");
     }

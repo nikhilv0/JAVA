@@ -17,4 +17,9 @@ public class MotionSensorImpl implements MotionSensor {
     public void calibrateSensor() {
         System.out.println("Motion sensor calibrated successfully.");
     }
+
+    @Override
+    public void display() {
+        MotionSensor.super.display();
+    }
 }

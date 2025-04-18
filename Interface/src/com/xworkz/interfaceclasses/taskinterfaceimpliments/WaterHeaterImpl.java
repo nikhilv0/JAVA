@@ -18,5 +18,10 @@ public class WaterHeaterImpl implements WaterHeater {
     public void setTemperature() {
         System.out.println("Setting water heater temperature.");
     }
+
+    @Override
+    public void display() {
+        WaterHeater.super.display();
+    }
 }
 

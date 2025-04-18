@@ -19,6 +19,11 @@ public class OfficeMultiTool implements DesktopComputer, Printer, Tablet, SmartP
     }
 
     @Override
+    public void display() {
+        DesktopComputer.super.display();
+    }
+
+    @Override
     public void printDocument() {
         System.out.println("OfficeMultiTool printing document...");
     }

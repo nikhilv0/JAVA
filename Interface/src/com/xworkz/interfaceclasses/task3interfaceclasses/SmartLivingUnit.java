@@ -19,6 +19,11 @@ public class SmartLivingUnit implements SmartWatch, CeilingFan, Laptop, VacuumCl
     }
 
     @Override
+    public void display() {
+        SmartWatch.super.display();
+    }
+
+    @Override
     public void turnOnFan() {
         System.out.println("SmartLivingUnit turning on fan...");
     }

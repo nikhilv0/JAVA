@@ -19,6 +19,11 @@ public class HomeAutomationCore implements VacuumCleaner, CeilingFan, CoffeeMake
     }
 
     @Override
+    public void display() {
+        VacuumCleaner.super.display();
+    }
+
+    @Override
     public void turnOnFan() {
         System.out.println("HomeAutomationCore turning on ceiling fan...");
     }

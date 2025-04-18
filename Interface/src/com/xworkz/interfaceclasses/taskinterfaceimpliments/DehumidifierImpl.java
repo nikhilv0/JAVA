@@ -17,4 +17,9 @@ public class DehumidifierImpl implements Dehumidifier {
     public void emptyTank() {
         System.out.println("Emptying dehumidifier tank.");
     }
+
+    @Override
+    public void display() {
+        Dehumidifier.super.display();
+    }
 }

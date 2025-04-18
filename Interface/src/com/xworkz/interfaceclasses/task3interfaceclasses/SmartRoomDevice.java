@@ -19,6 +19,11 @@ public class SmartRoomDevice implements SmartPhone, VacuumCleaner, CeilingFan, W
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void startCleaning() {
         System.out.println("SmartRoomDevice starting cleaning...");
     }

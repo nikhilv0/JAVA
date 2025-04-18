@@ -17,4 +17,9 @@ public class DigitalThermometerImpl implements DigitalThermometer {
     public void resetDevice() {
         System.out.println("Thermometer reset to initial state.");
     }
+
+    @Override
+    public void display() {
+        DigitalThermometer.super.display();
+    }
 }

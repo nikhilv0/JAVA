@@ -77,4 +77,9 @@ public class DailyUtilityCenter implements VacuumCleaner, WaterHeater, SmartWatc
     public void adjustSpeed() {
         System.out.println("DailyUtilityCenter adjusting ceiling fan speed...");
     }
+
+    @Override
+    public void display() {
+        VacuumCleaner.super.display();
+    }
 }

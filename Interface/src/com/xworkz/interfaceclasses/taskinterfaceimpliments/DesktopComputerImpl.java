@@ -17,4 +17,9 @@ public class DesktopComputerImpl implements DesktopComputer {
     public void powerOff() {
         System.out.println("Desktop computer powered off.");
     }
+
+    @Override
+    public void display() {
+        DesktopComputer.super.display();
+    }
 }

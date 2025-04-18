@@ -21,6 +21,11 @@ public class BookRobotCompanion implements EBookReader, ToyRobot {
     }
 
     @Override
+    public void display() {
+        EBookReader.super.display();
+    }
+
+    @Override
     public void walk() {
         System.out.println("Companion robot walking...");
     }

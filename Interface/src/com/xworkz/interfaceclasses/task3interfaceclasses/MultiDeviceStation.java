@@ -19,6 +19,11 @@ public class MultiDeviceStation implements Tablet, SmartPhone, SmartWatch, Coffe
     }
 
     @Override
+    public void display() {
+        Tablet.super.display();
+    }
+
+    @Override
     public void makeCall() {
         System.out.println("MultiDeviceStation making a call...");
     }

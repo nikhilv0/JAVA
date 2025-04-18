@@ -29,5 +29,10 @@ public class CameraDroneCombo implements Camera, DroneCamera {
     public void returnHome() {
         System.out.println("Drone returning home...");
     }
+
+    @Override
+    public void display() {
+        Camera.super.display();
+    }
 }
 

@@ -19,6 +19,11 @@ public class EcoLivingDevice implements WaterHeater, SmartPhone, VacuumCleaner, 
     }
 
     @Override
+    public void display() {
+        WaterHeater.super.display();
+    }
+
+    @Override
     public void makeCall() {
         System.out.println("EcoLivingDevice making a call...");
     }

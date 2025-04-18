@@ -17,4 +17,9 @@ public class BikeImpl implements Bike {
     public void resetSystem() {
         System.out.println("Bike system reset.");
     }
+
+    @Override
+    public void display() {
+        Bike.super.display();
+    }
 }

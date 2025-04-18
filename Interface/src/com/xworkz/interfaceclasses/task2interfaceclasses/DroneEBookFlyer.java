@@ -34,4 +34,9 @@ public class DroneEBookFlyer implements DroneCamera, EBookReader {
     public void adjustBrightness() {
         System.out.println("Adjusting drone display brightness...");
     }
+
+    @Override
+    public void display() {
+        DroneCamera.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class DroneCameraImpl implements DroneCamera {
     public void returnHome() {
         System.out.println("Drone is returning home.");
     }
+
+    @Override
+    public void display() {
+        DroneCamera.super.display();
+    }
 }

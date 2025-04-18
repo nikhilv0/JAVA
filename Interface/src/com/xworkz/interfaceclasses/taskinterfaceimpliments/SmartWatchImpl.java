@@ -17,4 +17,9 @@ public class SmartWatchImpl implements SmartWatch {
     public void displayNotification() {
         System.out.println("Displaying notification on smartwatch.");
     }
+
+    @Override
+    public void display() {
+        SmartWatch.super.display();
+    }
 }

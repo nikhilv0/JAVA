@@ -17,4 +17,9 @@ public class ShipImpl implements Ship {
     public void resetSystem() {
         System.out.println("Ship system reset.");
     }
+
+    @Override
+    public void display() {
+        Ship.super.display();
+    }
 }

@@ -19,6 +19,11 @@ public class ProductivityHub implements Laptop, DesktopComputer, Printer, Tablet
     }
 
     @Override
+    public void display() {
+        Laptop.super.display();
+    }
+
+    @Override
     public void powerOn() {
         System.out.println("Powering on ProductivityHub...");
     }

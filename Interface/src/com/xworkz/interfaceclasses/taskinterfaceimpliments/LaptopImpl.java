@@ -17,4 +17,9 @@ public class LaptopImpl implements Laptop {
     public void shutDown() {
         System.out.println("Shutting down laptop.");
     }
+
+    @Override
+    public void display() {
+        Laptop.super.display();
+    }
 }

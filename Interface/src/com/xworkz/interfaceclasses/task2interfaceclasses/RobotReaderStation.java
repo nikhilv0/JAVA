@@ -34,4 +34,9 @@ public class RobotReaderStation implements ToyRobot, EBookReader {
     public void adjustBrightness() {
         System.out.println("Robot adjusting screen brightness...");
     }
+
+    @Override
+    public void display() {
+        ToyRobot.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class CoffeeMakerImpl implements CoffeeMaker {
     public void turnOff() {
         System.out.println("Turning off coffee maker.");
     }
+
+    @Override
+    public void display() {
+        CoffeeMaker.super.display();
+    }
 }

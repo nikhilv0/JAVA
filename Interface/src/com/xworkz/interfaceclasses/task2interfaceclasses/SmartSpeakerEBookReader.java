@@ -3,7 +3,6 @@ package com.xworkz.interfaceclasses.task2interfaceclasses;
 import com.xworkz.interfaceclasses.taskinterfaceclasses.EBookReader;
 import com.xworkz.interfaceclasses.taskinterfaceclasses.Speaker;
 
-// Implementing Speaker and EBookReader interfaces
 public class SmartSpeakerEBookReader implements Speaker, EBookReader {
 
     @Override
@@ -19,6 +18,11 @@ public class SmartSpeakerEBookReader implements Speaker, EBookReader {
     @Override
     public void decreaseVolume() {
         System.out.println("Decreasing volume...");
+    }
+
+    @Override
+    public void display() {
+        Speaker.super.display();
     }
 
     @Override

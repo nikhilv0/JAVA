@@ -17,4 +17,9 @@ public class SlowCookerImpl implements SlowCooker {
     public void turnOff() {
         System.out.println("Turning off slow cooker.");
     }
+
+    @Override
+    public void display() {
+        SlowCooker.super.display();
+    }
 }

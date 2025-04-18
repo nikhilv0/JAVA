@@ -34,4 +34,9 @@ public class RouterSpeakerStation implements Router, Speaker {
     public void decreaseVolume() {
         System.out.println("Decreasing speaker station volume...");
     }
+
+    @Override
+    public void display() {
+        Router.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class PrinterImpl implements Printer {
     public void cancelJob() {
         System.out.println("Cancelling print job.");
     }
+
+    @Override
+    public void display() {
+        Printer.super.display();
+    }
 }

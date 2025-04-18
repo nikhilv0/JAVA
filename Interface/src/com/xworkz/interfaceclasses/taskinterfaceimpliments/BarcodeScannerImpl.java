@@ -17,4 +17,9 @@ public class BarcodeScannerImpl implements BarcodeScanner {
     public void resetScanner() {
         System.out.println("Resetting barcode scanner.");
     }
+
+    @Override
+    public void display() {
+        BarcodeScanner.super.display();
+    }
 }

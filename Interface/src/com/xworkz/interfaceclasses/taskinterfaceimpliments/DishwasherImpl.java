@@ -17,4 +17,9 @@ public class DishwasherImpl implements Dishwasher {
     public void dryDishes() {
         System.out.println("Drying dishes in the dishwasher.");
     }
+
+    @Override
+    public void display() {
+        Dishwasher.super.display();
+    }
 }

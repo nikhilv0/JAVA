@@ -17,4 +17,9 @@ public class SmartPhoneImpl implements SmartPhone {
     public void openApp() {
         System.out.println("Opening an app.");
     }
+
+    @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
 }

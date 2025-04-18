@@ -17,4 +17,9 @@ public class WashingMachineImpl implements WashingMachine {
     public void drainWater() {
         System.out.println("Draining water from washing machine.");
     }
+
+    @Override
+    public void display() {
+        WashingMachine.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class BlenderImpl implements Blender {
     public void pulseBlend() {
         System.out.println("Pulse blending.");
     }
+
+    @Override
+    public void display() {
+        Blender.super.display();
+    }
 }

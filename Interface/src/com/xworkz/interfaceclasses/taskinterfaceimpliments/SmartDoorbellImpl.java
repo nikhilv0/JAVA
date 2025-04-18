@@ -17,4 +17,9 @@ public class SmartDoorbellImpl implements SmartDoorbell {
     public void talkToVisitor() {
         System.out.println("Talking to visitor.");
     }
+
+    @Override
+    public void display() {
+        SmartDoorbell.super.display();
+    }
 }

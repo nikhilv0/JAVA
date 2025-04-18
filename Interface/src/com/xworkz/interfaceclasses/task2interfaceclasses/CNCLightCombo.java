@@ -34,4 +34,9 @@ public class CNCLightCombo implements CNC_Machine, SmartLight {
     public void changeColor() {
         System.out.println("Shop light color changed...");
     }
+
+    @Override
+    public void display() {
+        CNC_Machine.super.display();
+    }
 }

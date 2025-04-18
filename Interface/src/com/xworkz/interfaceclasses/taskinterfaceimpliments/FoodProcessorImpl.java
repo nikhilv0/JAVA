@@ -17,4 +17,9 @@ public class FoodProcessorImpl implements FoodProcessor {
     public void slice() {
         System.out.println("Slicing food.");
     }
+
+    @Override
+    public void display() {
+        FoodProcessor.super.display();
+    }
 }

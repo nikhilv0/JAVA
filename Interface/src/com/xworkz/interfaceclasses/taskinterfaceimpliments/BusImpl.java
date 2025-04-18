@@ -17,4 +17,9 @@ public class BusImpl implements Bus {
     public void resetSystem() {
         System.out.println("Bus system reset.");
     }
+
+    @Override
+    public void display() {
+        Bus.super.display();
+    }
 }

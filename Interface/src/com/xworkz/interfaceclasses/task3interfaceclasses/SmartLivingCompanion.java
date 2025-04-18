@@ -19,6 +19,11 @@ public class SmartLivingCompanion implements VacuumCleaner, WaterHeater, SmartWa
     }
 
     @Override
+    public void display() {
+        VacuumCleaner.super.display();
+    }
+
+    @Override
     public void heatWater() {
         System.out.println("SmartLivingCompanion heating water...");
     }

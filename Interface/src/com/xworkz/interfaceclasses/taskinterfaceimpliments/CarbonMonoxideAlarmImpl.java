@@ -17,4 +17,9 @@ public class CarbonMonoxideAlarmImpl implements CarbonMonoxideAlarm {
     public void resetAlarm() {
         System.out.println("Carbon monoxide alarm has been reset.");
     }
+
+    @Override
+    public void display() {
+        CarbonMonoxideAlarm.super.display();
+    }
 }

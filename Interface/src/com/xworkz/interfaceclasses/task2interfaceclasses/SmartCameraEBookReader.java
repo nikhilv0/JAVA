@@ -21,6 +21,11 @@ public class SmartCameraEBookReader implements Camera, EBookReader {
     }
 
     @Override
+    public void display() {
+        Camera.super.display();
+    }
+
+    @Override
     public void openBook() {
         System.out.println("Opening eBook...");
     }

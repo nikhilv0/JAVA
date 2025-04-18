@@ -19,6 +19,11 @@ public class AllPurposeAssistant implements SmartPhone, Laptop, CoffeeMaker, Vac
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void compileCode() {
         System.out.println("AllPurposeAssistant compiling code...");
     }

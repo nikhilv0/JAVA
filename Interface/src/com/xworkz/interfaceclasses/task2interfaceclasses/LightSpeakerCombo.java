@@ -34,4 +34,9 @@ public class LightSpeakerCombo implements SmartLight, Speaker {
     public void decreaseVolume() {
         System.out.println("Decreasing speaker volume...");
     }
+
+    @Override
+    public void display() {
+        SmartLight.super.display();
+    }
 }

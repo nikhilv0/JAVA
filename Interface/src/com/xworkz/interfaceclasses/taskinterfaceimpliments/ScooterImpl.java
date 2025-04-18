@@ -17,4 +17,9 @@ public class ScooterImpl implements Scooter {
     public void resetSystem() {
         System.out.println("Scooter system reset.");
     }
+
+    @Override
+    public void display() {
+        Scooter.super.display();
+    }
 }

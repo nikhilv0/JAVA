@@ -17,4 +17,9 @@ public class SmartGarageOpenerImpl implements SmartGarageOpener {
     public void checkGarageStatus() {
         System.out.println("Checking garage status.");
     }
+
+    @Override
+    public void display() {
+        SmartGarageOpener.super.display();
+    }
 }

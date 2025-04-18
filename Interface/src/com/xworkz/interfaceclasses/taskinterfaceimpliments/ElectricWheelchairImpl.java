@@ -17,4 +17,9 @@ public class ElectricWheelchairImpl implements ElectricWheelchair {
     public void adjustSpeed() {
         System.out.println("Adjusting wheelchair speed.");
     }
+
+    @Override
+    public void display() {
+        ElectricWheelchair.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class MicrowaveImpl implements Microwave {
     public void setTimer() {
         System.out.println("Setting microwave timer.");
     }
+
+    @Override
+    public void display() {
+        Microwave.super.display();
+    }
 }

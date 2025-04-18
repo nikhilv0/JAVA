@@ -17,4 +17,9 @@ public class ElectricKettleImpl implements ElectricKettle {
     public void keepWarm() {
         System.out.println("Electric kettle is keeping water warm.");
     }
+
+    @Override
+    public void display() {
+        ElectricKettle.super.display();
+    }
 }

@@ -19,6 +19,11 @@ public class SmartOffice implements Printer, Laptop, CoffeeMaker, VacuumCleaner,
     }
 
     @Override
+    public void display() {
+        Printer.super.display();
+    }
+
+    @Override
     public void compileCode() {
         System.out.println("SmartOfficeDevice compiling code...");
     }

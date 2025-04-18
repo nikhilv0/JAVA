@@ -17,4 +17,9 @@ public class SmartMirrorImpl implements SmartMirror {
     public void adjustBrightness() {
         System.out.println("Adjusting brightness.");
     }
+
+    @Override
+    public void display() {
+        SmartMirror.super.display();
+    }
 }

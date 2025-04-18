@@ -17,4 +17,9 @@ public class RouterImpl implements Router {
     public void updateFirmware() {
         System.out.println("Router firmware is being updated.");
     }
+
+    @Override
+    public void display() {
+        Router.super.display();
+    }
 }

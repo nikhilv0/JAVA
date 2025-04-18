@@ -17,4 +17,9 @@ public class PetFeederImpl implements PetFeeder {
     public void checkFoodLevel() {
         System.out.println("Checking food level.");
     }
+
+    @Override
+    public void display() {
+        PetFeeder.super.display();
+    }
 }

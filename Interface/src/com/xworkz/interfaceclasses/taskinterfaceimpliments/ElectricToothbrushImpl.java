@@ -17,4 +17,9 @@ public class ElectricToothbrushImpl implements ElectricToothbrush {
     public void changeMode() {
         System.out.println("Toothbrush mode changed.");
     }
+
+    @Override
+    public void display() {
+        ElectricToothbrush.super.display();
+    }
 }

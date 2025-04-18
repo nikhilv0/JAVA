@@ -34,4 +34,9 @@ public class RobotTrainController implements ToyRobot, ElectricTrainSet {
     public void switchTrack() {
         System.out.println("Train track switched...");
     }
+
+    @Override
+    public void display() {
+        ToyRobot.super.display();
+    }
 }

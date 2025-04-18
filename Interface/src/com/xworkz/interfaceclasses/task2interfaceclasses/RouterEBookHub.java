@@ -34,4 +34,9 @@ public class RouterEBookHub implements Router, EBookReader {
     public void adjustBrightness() {
         System.out.println("Adjusting screen brightness...");
     }
+
+    @Override
+    public void display() {
+        Router.super.display();
+    }
 }

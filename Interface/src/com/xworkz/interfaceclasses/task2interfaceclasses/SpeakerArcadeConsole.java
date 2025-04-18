@@ -34,4 +34,9 @@ public class SpeakerArcadeConsole implements Speaker, ArcadeMachine {
     public void endGame() {
         System.out.println("Arcade game ended...");
     }
+
+    @Override
+    public void display() {
+        Speaker.super.display();
+    }
 }

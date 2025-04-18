@@ -17,4 +17,9 @@ public class ElectricGrillImpl implements ElectricGrill {
     public void turnOffGrill() {
         System.out.println("Turning off electric grill.");
     }
+
+    @Override
+    public void display() {
+        ElectricGrill.super.display();
+    }
 }

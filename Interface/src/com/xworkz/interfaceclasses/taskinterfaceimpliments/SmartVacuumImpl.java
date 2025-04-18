@@ -17,4 +17,9 @@ public class SmartVacuumImpl implements SmartVacuum {
     public void emptyDustBin() {
         System.out.println("Emptying dust bin.");
     }
+
+    @Override
+    public void display() {
+        SmartVacuum.super.display();
+    }
 }

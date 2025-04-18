@@ -17,4 +17,9 @@ public class BatteryChargerImpl implements BatteryCharger {
     public void checkBatteryStatus() {
         System.out.println("Battery status is healthy.");
     }
+
+    @Override
+    public void display() {
+        BatteryCharger.super.display();
+    }
 }

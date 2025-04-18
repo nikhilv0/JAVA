@@ -34,4 +34,9 @@ public class SmartArcadeDrone implements ArcadeMachine, DroneCamera {
     public void returnHome() {
         System.out.println("Drone is returning home...");
     }
+
+    @Override
+    public void display() {
+        ArcadeMachine.super.display();
+    }
 }

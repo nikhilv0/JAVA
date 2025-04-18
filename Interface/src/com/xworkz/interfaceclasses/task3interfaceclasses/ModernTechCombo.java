@@ -19,6 +19,11 @@ public class ModernTechCombo implements Tablet, Laptop, DesktopComputer, SmartPh
     }
 
     @Override
+    public void display() {
+        Tablet.super.display();
+    }
+
+    @Override
     public void compileCode() {
         System.out.println("ModernTechCombo compiling code...");
     }

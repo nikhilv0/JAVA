@@ -21,6 +21,11 @@ public class ArcadePhotoBooth implements Camera, ArcadeMachine {
     }
 
     @Override
+    public void display() {
+        Camera.super.display();
+    }
+
+    @Override
     public void insertCoin() {
         System.out.println("Coin inserted for photo session...");
     }

@@ -34,4 +34,9 @@ public class CNCMusicBot implements CNC_Machine, Speaker {
     public void decreaseVolume() {
         System.out.println("Decreasing CNC sound volume...");
     }
+
+    @Override
+    public void display() {
+        CNC_Machine.super.display();
+    }
 }

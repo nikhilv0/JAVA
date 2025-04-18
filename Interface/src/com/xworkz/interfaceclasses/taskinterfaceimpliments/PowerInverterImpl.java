@@ -17,4 +17,9 @@ public class PowerInverterImpl implements PowerInverter {
     public void displayStatus() {
         System.out.println("Displaying inverter status.");
     }
+
+    @Override
+    public void display() {
+        PowerInverter.super.display();
+    }
 }

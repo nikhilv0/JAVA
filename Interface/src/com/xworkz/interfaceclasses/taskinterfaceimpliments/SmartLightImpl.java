@@ -17,4 +17,9 @@ public class SmartLightImpl implements SmartLight {
     public void changeColor() {
         System.out.println("Changing light color.");
     }
+
+    @Override
+    public void display() {
+        SmartLight.super.display();
+    }
 }

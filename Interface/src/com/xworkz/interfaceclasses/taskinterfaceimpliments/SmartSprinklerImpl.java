@@ -17,4 +17,9 @@ public class SmartSprinklerImpl implements SmartSprinkler {
     public void scheduleWatering() {
         System.out.println("Scheduling watering.");
     }
+
+    @Override
+    public void display() {
+        SmartSprinkler.super.display();
+    }
 }

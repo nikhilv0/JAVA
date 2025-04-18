@@ -17,4 +17,9 @@ public class FitnessTrackerImpl implements FitnessTracker {
     public void syncData() {
         System.out.println("Syncing data.");
     }
+
+    @Override
+    public void display() {
+        FitnessTracker.super.display();
+    }
 }

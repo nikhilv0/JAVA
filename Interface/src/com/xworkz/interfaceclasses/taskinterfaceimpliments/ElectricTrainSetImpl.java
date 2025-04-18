@@ -17,4 +17,9 @@ public class ElectricTrainSetImpl implements ElectricTrainSet {
     public void switchTrack() {
         System.out.println("Switching train track.");
     }
+
+    @Override
+    public void display() {
+        ElectricTrainSet.super.display();
+    }
 }

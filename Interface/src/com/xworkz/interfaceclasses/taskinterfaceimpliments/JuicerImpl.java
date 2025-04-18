@@ -17,4 +17,9 @@ public class JuicerImpl implements Juicer {
     public void stopJuicer() {
         System.out.println("Stopping juicer.");
     }
+
+    @Override
+    public void display() {
+        Juicer.super.display();
+    }
 }

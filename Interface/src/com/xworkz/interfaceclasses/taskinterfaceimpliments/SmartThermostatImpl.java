@@ -17,4 +17,9 @@ public class SmartThermostatImpl implements SmartThermostat {
     public void turnOffCooling() {
         System.out.println("Cooling is turned off.");
     }
+
+    @Override
+    public void display() {
+        SmartThermostat.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class SmartScaleImpl implements SmartScale {
     public void resetScale() {
         System.out.println("Resetting scale.");
     }
+
+    @Override
+    public void display() {
+        SmartScale.super.display();
+    }
 }

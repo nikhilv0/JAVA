@@ -19,6 +19,11 @@ public class HybridOfficeGadget implements DesktopComputer, Tablet, SmartPhone, 
     }
 
     @Override
+    public void display() {
+        DesktopComputer.super.display();
+    }
+
+    @Override
     public void draw() {
         System.out.println("HybridOfficeGadget drawing...");
     }

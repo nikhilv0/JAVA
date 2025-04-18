@@ -19,6 +19,11 @@ public class HybridWorkStation implements DesktopComputer, Printer, Tablet, Coff
     }
 
     @Override
+    public void display() {
+        DesktopComputer.super.display();
+    }
+
+    @Override
     public void printDocument() {
         System.out.println("HybridWorkStation printing document...");
     }

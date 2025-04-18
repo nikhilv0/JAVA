@@ -17,4 +17,9 @@ public class HelicopterImpl implements Helicopter {
     public void resetSystem() {
         System.out.println("Helicopter system reset.");
     }
+
+    @Override
+    public void display() {
+        Helicopter.super.display();
+    }
 }

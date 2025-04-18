@@ -17,4 +17,9 @@ public class SmartCurtainsImpl implements SmartCurtains {
     public void setSchedule() {
         System.out.println("Setting curtain schedule.");
     }
+
+    @Override
+    public void display() {
+        SmartCurtains.super.display();
+    }
 }

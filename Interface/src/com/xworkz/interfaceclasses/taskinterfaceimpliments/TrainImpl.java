@@ -17,4 +17,9 @@ public class TrainImpl implements Train {
     public void resetSystem() {
         System.out.println("Train system reset.");
     }
+
+    @Override
+    public void display() {
+        Train.super.display();
+    }
 }

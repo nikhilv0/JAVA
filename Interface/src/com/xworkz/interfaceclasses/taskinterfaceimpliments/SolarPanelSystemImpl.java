@@ -17,4 +17,9 @@ public class SolarPanelSystemImpl implements SolarPanelSystem {
     public void trackSunlight() {
         System.out.println("Tracking sunlight for optimal positioning.");
     }
+
+    @Override
+    public void display() {
+        SolarPanelSystem.super.display();
+    }
 }

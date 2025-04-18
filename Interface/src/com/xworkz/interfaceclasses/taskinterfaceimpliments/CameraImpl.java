@@ -17,4 +17,9 @@ public class CameraImpl implements Camera {
     public void adjustSettings() {
         System.out.println("Camera settings have been adjusted.");
     }
+
+    @Override
+    public void display() {
+        Camera.super.display();
+    }
 }

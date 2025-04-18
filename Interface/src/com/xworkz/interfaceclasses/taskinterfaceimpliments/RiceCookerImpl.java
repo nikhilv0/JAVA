@@ -17,4 +17,9 @@ public class RiceCookerImpl implements RiceCooker {
     public void stopCooking() {
         System.out.println("Stopping rice cooking.");
     }
+
+    @Override
+    public void display() {
+        RiceCooker.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class TramImpl implements Tram {
     public void resetSystem() {
         System.out.println("Tram system reset.");
     }
+
+    @Override
+    public void display() {
+        Tram.super.display();
+    }
 }

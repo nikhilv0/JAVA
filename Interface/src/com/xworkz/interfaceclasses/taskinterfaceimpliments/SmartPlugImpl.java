@@ -17,4 +17,9 @@ public class SmartPlugImpl implements SmartPlug {
     public void monitorPowerUsage() {
         System.out.println("Monitoring power usage.");
     }
+
+    @Override
+    public void display() {
+        SmartPlug.super.display();
+    }
 }

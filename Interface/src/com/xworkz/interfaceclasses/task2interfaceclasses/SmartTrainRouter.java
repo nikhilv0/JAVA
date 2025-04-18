@@ -21,6 +21,11 @@ public class SmartTrainRouter implements ElectricTrainSet, Router {
     }
 
     @Override
+    public void display() {
+        ElectricTrainSet.super.display();
+    }
+
+    @Override
     public void connectToInternet() {
         System.out.println("Train connected to internet...");
     }

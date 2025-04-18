@@ -34,4 +34,9 @@ public class LightArcadeCombo implements SmartLight, ArcadeMachine {
     public void endGame() {
         System.out.println("Arcade game ended...");
     }
+
+    @Override
+    public void display() {
+        SmartLight.super.display();
+    }
 }

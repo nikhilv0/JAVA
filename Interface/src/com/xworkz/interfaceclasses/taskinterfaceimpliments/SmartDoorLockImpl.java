@@ -17,4 +17,9 @@ public class SmartDoorLockImpl implements SmartDoorLock {
     public void checkStatus() {
         System.out.println("Checking door lock status.");
     }
+
+    @Override
+    public void display() {
+        SmartDoorLock.super.display();
+    }
 }

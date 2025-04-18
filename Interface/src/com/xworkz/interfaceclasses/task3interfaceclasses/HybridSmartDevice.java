@@ -19,6 +19,11 @@ public class HybridSmartDevice implements Tablet, VacuumCleaner, SmartPhone, Sma
     }
 
     @Override
+    public void display() {
+        Tablet.super.display();
+    }
+
+    @Override
     public void startCleaning() {
         System.out.println("Vacuum cleaning started on HybridSmartDevice...");
     }

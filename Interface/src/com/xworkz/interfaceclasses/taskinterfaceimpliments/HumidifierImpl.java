@@ -17,4 +17,9 @@ public class HumidifierImpl implements Humidifier {
     public void turnOff() {
         System.out.println("Turning off humidifier.");
     }
+
+    @Override
+    public void display() {
+        Humidifier.super.display();
+    }
 }

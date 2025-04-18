@@ -17,4 +17,9 @@ public class SpeakerImpl implements Speaker {
     public void decreaseVolume() {
         System.out.println("Decreasing volume.");
     }
+
+    @Override
+    public void display() {
+        Speaker.super.display();
+    }
 }

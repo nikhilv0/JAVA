@@ -17,4 +17,9 @@ public class SmokeDetectorImpl implements SmokeDetector {
     public void testSystem() {
         System.out.println("Smoke detector self-test complete.");
     }
+
+    @Override
+    public void display() {
+        SmokeDetector.super.display();
+    }
 }

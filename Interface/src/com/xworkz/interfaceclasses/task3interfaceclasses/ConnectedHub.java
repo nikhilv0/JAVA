@@ -19,6 +19,11 @@ public class ConnectedHub implements SmartPhone, Tablet, SmartWatch, Laptop, Des
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void draw() {
         System.out.println("ConnectedHub drawing...");
     }

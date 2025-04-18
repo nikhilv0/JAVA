@@ -19,6 +19,11 @@ public class DigitalDeskSet implements Laptop, DesktopComputer, CoffeeMaker, Sma
     }
 
     @Override
+    public void display() {
+        Laptop.super.display();
+    }
+
+    @Override
     public void powerOn() {
         System.out.println("DigitalDeskSet powering on...");
     }

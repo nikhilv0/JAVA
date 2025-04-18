@@ -17,4 +17,9 @@ public class EBookReaderImpl implements EBookReader {
     public void adjustBrightness() {
         System.out.println("Adjusting brightness.");
     }
+
+    @Override
+    public void display() {
+        EBookReader.super.display();
+    }
 }

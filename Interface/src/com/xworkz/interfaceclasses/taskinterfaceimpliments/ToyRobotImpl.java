@@ -17,4 +17,9 @@ public class ToyRobotImpl implements ToyRobot {
     public void dance() {
         System.out.println("Toy robot is dancing.");
     }
+
+    @Override
+    public void display() {
+        ToyRobot.super.display();
+    }
 }

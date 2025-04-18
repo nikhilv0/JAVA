@@ -17,4 +17,9 @@ public class TruckImpl implements Truck {
     public void resetSystem() {
         System.out.println("Truck system reset.");
     }
+
+    @Override
+    public void display() {
+        Truck.super.display();
+    }
 }

@@ -17,4 +17,9 @@ public class ElectricScooterImpl implements ElectricScooter {
     public void chargeBattery() {
         System.out.println("Charging electric scooter.");
     }
+
+    @Override
+    public void display() {
+        ElectricScooter.super.display();
+    }
 }

@@ -18,6 +18,11 @@ public class SmartOfficeDevice implements Laptop, DesktopComputer, Printer, Smar
     }
 
     @Override
+    public void display() {
+        Laptop.super.display();
+    }
+
+    @Override
     public void powerOn() {
         System.out.println("Powering on SmartOfficeDevice...");
     }

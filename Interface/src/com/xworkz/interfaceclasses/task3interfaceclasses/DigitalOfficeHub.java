@@ -19,6 +19,11 @@ public class DigitalOfficeHub implements SmartPhone, Laptop, Tablet, Printer, Ce
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void compileCode() {
         System.out.println("DigitalOfficeHub compiling code...");
     }

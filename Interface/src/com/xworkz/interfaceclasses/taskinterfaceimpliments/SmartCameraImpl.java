@@ -17,4 +17,9 @@ public class SmartCameraImpl implements SmartCamera {
     public void sendAlert() {
         System.out.println("Sending alert.");
     }
+
+    @Override
+    public void display() {
+        SmartCamera.super.display();
+    }
 }

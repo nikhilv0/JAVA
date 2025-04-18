@@ -17,4 +17,9 @@ public class IceMakerImpl implements IceMaker {
     public void checkIceLevel() {
         System.out.println("Checking ice level.");
     }
+
+    @Override
+    public void display() {
+        IceMaker.super.display();
+    }
 }

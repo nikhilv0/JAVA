@@ -17,4 +17,9 @@ public class RefrigeratorImpl implements Refrigerator {
     public void checkTemperature() {
         System.out.println("Checking refrigerator temperature.");
     }
+
+    @Override
+    public void display() {
+        Refrigerator.super.display();
+    }
 }

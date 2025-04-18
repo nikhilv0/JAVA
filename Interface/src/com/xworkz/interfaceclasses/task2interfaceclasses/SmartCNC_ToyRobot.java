@@ -34,4 +34,9 @@ public class SmartCNC_ToyRobot implements CNC_Machine, ToyRobot {
     public void dance() {
         System.out.println("Toy robot is dancing...");
     }
+
+    @Override
+    public void display() {
+        CNC_Machine.super.display();
+    }
 }

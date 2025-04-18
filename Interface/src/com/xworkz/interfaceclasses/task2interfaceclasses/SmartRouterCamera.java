@@ -20,6 +20,11 @@ public class SmartRouterCamera implements Router, Camera {
     }
 
     @Override
+    public void display() {
+        Router.super.display();
+    }
+
+    @Override
     public void takePhoto() {
         System.out.println("Taking a photo...");
     }

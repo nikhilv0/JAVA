@@ -34,4 +34,9 @@ public class SmartTrainLight implements ElectricTrainSet, SmartLight {
     public void changeColor() {
         System.out.println("Changing light color...");
     }
+
+    @Override
+    public void display() {
+        ElectricTrainSet.super.display();
+    }
 }

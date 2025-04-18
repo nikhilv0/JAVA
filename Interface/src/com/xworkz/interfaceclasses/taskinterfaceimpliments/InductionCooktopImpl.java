@@ -17,4 +17,9 @@ public class InductionCooktopImpl implements InductionCooktop {
     public void turnOffCooktop() {
         System.out.println("Turning off induction cooktop.");
     }
+
+    @Override
+    public void display() {
+        InductionCooktop.super.display();
+    }
 }

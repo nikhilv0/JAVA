@@ -19,6 +19,11 @@ public class AllInOneAssistant implements CoffeeMaker, DesktopComputer, SmartWat
     }
 
     @Override
+    public void display() {
+        CoffeeMaker.super.display();
+    }
+
+    @Override
     public void powerOn() {
         System.out.println("AllInOneAssistant powering on desktop...");
     }

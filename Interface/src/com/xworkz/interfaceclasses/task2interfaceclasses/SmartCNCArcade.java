@@ -34,4 +34,9 @@ public class SmartCNCArcade implements CNC_Machine, ArcadeMachine {
     public void endGame() {
         System.out.println("Ending arcade game...");
     }
+
+    @Override
+    public void display() {
+        CNC_Machine.super.display();
+    }
 }

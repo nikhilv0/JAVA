@@ -19,6 +19,11 @@ public class HomeAssistant implements SmartPhone, CoffeeMaker, WaterHeater, Smar
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void brewCoffee() {
         System.out.println("Brewing coffee with HomeAssistant...");
     }

@@ -17,4 +17,9 @@ public class WaterFilterImpl implements WaterFilter {
     public void resetIndicator() {
         System.out.println("Resetting filter indicator.");
     }
+
+    @Override
+    public void display() {
+        WaterFilter.super.display();
+    }
 }

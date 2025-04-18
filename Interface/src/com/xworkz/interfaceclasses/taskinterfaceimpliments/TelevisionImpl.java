@@ -17,4 +17,9 @@ public class TelevisionImpl implements Television {
     public void changeChannel() {
         System.out.println("Changing television channel.");
     }
+
+    @Override
+    public void display() {
+        Television.super.display();
+    }
 }

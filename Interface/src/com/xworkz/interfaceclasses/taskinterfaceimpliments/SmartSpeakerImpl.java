@@ -17,4 +17,9 @@ public class SmartSpeakerImpl implements SmartSpeaker {
     public void askAssistant() {
         System.out.println("Asking assistant.");
     }
+
+    @Override
+    public void display() {
+        SmartSpeaker.super.display();
+    }
 }

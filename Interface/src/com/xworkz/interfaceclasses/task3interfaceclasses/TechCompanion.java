@@ -19,6 +19,11 @@ public class TechCompanion implements SmartPhone, Tablet, Laptop, DesktopCompute
     }
 
     @Override
+    public void display() {
+        SmartPhone.super.display();
+    }
+
+    @Override
     public void draw() {
         System.out.println("TechCompanion drawing...");
     }

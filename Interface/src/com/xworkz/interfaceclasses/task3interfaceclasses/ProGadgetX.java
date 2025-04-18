@@ -19,6 +19,11 @@ public class ProGadgetX implements Laptop, Printer, DesktopComputer, WaterHeater
     }
 
     @Override
+    public void display() {
+        Laptop.super.display();
+    }
+
+    @Override
     public void printDocument() {
         System.out.println("ProGadgetX printing document...");
     }

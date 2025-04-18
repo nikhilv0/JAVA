@@ -34,4 +34,9 @@ public class DroneRobotHybrid implements DroneCamera, ToyRobot {
     public void dance() {
         System.out.println("Hybrid robot dancing...");
     }
+
+    @Override
+    public void display() {
+        DroneCamera.super.display();
+    }
 }

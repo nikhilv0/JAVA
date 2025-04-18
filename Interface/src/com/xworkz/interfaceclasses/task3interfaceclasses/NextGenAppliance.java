@@ -19,6 +19,11 @@ public class NextGenAppliance implements CoffeeMaker, VacuumCleaner, Printer, Ce
     }
 
     @Override
+    public void display() {
+        CoffeeMaker.super.display();
+    }
+
+    @Override
     public void startCleaning() {
         System.out.println("NextGenAppliance starting vacuum...");
     }
