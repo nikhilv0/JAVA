@@ -1,6 +1,7 @@
 package com.xworkz.servlet;
 
 import com.xworkz.dto.PassportDTO;
+import com.xworkz.service.*;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -27,10 +28,17 @@ public class PassportServlet extends HttpServlet {
         String passportType = req.getParameter("passportType");
         String paymentRefNo = req.getParameter("paymentRefNo");
 
+        Thread thread=Thread.currentThread();
+        System.out.println(thread);
+
         System.out.println("applicantName:"+applicantName + "\naadharNo: " + aadharNo + "\naddress: " + address + "\npanNo: " + panNo + "\ncountry: " + country + "\nstate: " + state + "\ncity: " + city + "\npinCode: " + pinCode + "\npassportType: " + passportType + "\npaymentRefNo: " + paymentRefNo);
 
         PassportDTO dto = new PassportDTO(applicantName, aadharNo, address, panNo, country, state, city, pinCode, passportType, paymentRefNo);
         req.setAttribute("passportDTO", dto);
+
+        PassportService passportService =new PassportServiceImp();
+        String result=passportService.validateandsave(dto);
+        System.out.println("result"+result);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Result");
         dispatcher.forward(req, resp);

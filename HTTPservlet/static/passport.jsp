@@ -47,7 +47,7 @@
                     <a class="nav-link active" aria-current="page" href="death.jsp">death Certificate</a>
                 </li>
 <!--                <li class="nav-item">-->
-<!--                    <a class="nav-link active" aria-current="page" href="#">Passport</a>-->
+<!--                    <a class="nav-link active" aria-current="page" href="#">PassportService</a>-->
 <!--                </li>-->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="marriage.jsp">Marriage Certificate</a>

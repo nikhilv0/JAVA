@@ -1,13 +1,14 @@
 package com.xworkz.servlet;
 
 import com.xworkz.dto.DrivingLicenseDTO;
+import com.xworkz.service.*;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/DrivingLicense", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/DrivingLicenseService", loadOnStartup = 1)
 public class DrivingLicenseServlet extends HttpServlet {
 
     public DrivingLicenseServlet() {
@@ -22,10 +23,17 @@ public class DrivingLicenseServlet extends HttpServlet {
         String appliedDate = req.getParameter("appliedDate");
         String vehicleType = req.getParameter("vehicleType");
 
+        Thread thread=Thread.currentThread();
+        System.out.println(thread);
+
         System.out.println("name: " + name + "\naddress: " + address + "\nmobile: " + mobile + "\nappliedDate: " + appliedDate + "\nvehicleType: " + vehicleType);
 
         DrivingLicenseDTO dto = new DrivingLicenseDTO(name, address, mobile, appliedDate, vehicleType);
         req.setAttribute("licenseDTO", dto);
+
+        DrivingLicenseService drivingLicenseService = new DrivingLicenseServiceImp();
+        String result=drivingLicenseService.validateandsave(dto);
+        System.out.println("result"+result);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("Result");
         dispatcher.forward(req, resp);
