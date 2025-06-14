@@ -12,7 +12,7 @@ public class DealthCertificateServiceImp implements DeathCertificateService{
 
         if (deathCertificateDTO!=null){
             DeathCertificateRepository deathCertificateRepository=new DeathCertificateRepositoryImp();
-            deathCertificateRepository.save();
+            deathCertificateRepository.save(deathCertificateDTO);
         }
 
         return "sucess";

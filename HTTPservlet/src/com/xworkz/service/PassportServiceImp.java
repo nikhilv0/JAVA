@@ -10,7 +10,7 @@ public class PassportServiceImp implements PassportService{
 
         if (passportDTO!=null){
             PassportRepository passportRepository=new PassportRepositoryImp();
-            passportRepository.save();
+            passportRepository.save(passportDTO);
         }
         return "sucess";
     }

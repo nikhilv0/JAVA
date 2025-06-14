@@ -12,7 +12,7 @@ public class DrivingLicenseServiceImp implements DrivingLicenseService{
 
         if (drivingLicenseDTO!=null){
             DrivingLicenseRepository drivingLicenseRepository=new DrivingLicenseRepositoryImp();
-            drivingLicenseRepository.save();
+            drivingLicenseRepository.save(drivingLicenseDTO);
         }
         return "sucess";
     }

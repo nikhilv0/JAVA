@@ -2,7 +2,7 @@ package com.xworkz.dto;
 
 import java.io.Serializable;
 
-public class jobDTO implements Serializable {
+public class JobDTO implements Serializable {
 
     private String name;
     private String email;
@@ -11,11 +11,11 @@ public class jobDTO implements Serializable {
     private Double expectedSalary;
     private String experience;
 
-    public jobDTO(){
-        System.out.println("running jobDTO const");
+    public JobDTO(){
+        System.out.println("running JobDTO const");
     }
 
-    public jobDTO(String name, String email, String experience, Double expectedSalary, String skills, String education) {
+    public JobDTO(String name, String email, String experience, Double expectedSalary, String skills, String education) {
         this.name = name;
         this.email = email;
         this.experience = experience;

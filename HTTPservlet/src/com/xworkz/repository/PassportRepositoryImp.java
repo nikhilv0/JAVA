@@ -1,12 +1,14 @@
 package com.xworkz.repository;
 
+import com.xworkz.dto.PassportDTO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class PassportRepositoryImp implements PassportRepository{
     @Override
-    public void save() {
+    public void save(PassportDTO passportDTO) {
         System.out.println("running save in PassportRepository");
         System.out.println("WARN:should save in DB");
 

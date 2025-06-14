@@ -1,20 +1,21 @@
 package com.xworkz.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class DrivingLicenseDTO implements Serializable {
 
     private String name;
     private String address;
-    private String mobile;
-    private String appliedDate;
+    private Long mobile;
+    private LocalDateTime appliedDate;
     private String vehicleType;
 
     public DrivingLicenseDTO() {
         System.out.println("running DrivingLicenseDTO const");
     }
 
-    public DrivingLicenseDTO(String name, String address, String mobile, String appliedDate, String vehicleType) {
+    public DrivingLicenseDTO(String name, String address, Long mobile, LocalDateTime appliedDate, String vehicleType) {
         this.name = name;
         this.address = address;
         this.mobile = mobile;
@@ -38,19 +39,19 @@ public class DrivingLicenseDTO implements Serializable {
         this.address = address;
     }
 
-    public String getMobile() {
+    public Long getMobile() {
         return mobile;
     }
 
-    public void setMobile(String mobile) {
+    public void setMobile(Long mobile) {
         this.mobile = mobile;
     }
 
-    public String getAppliedDate() {
+    public LocalDateTime getAppliedDate() {
         return appliedDate;
     }
 
-    public void setAppliedDate(String appliedDate) {
+    public void setAppliedDate(LocalDateTime appliedDate) {
         this.appliedDate = appliedDate;
     }
 
@@ -62,5 +63,5 @@ public class DrivingLicenseDTO implements Serializable {
         this.vehicleType = vehicleType;
     }
 
-    // Getters and setters...
+
 }

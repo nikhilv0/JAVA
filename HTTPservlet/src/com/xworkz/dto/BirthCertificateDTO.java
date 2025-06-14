@@ -1,6 +1,7 @@
 package com.xworkz.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class BirthCertificateDTO implements Serializable {
 
@@ -8,7 +9,7 @@ public class BirthCertificateDTO implements Serializable {
     private String hospitalName;
     private String fatherName;
     private String motherName;
-    private String dateTime;
+    private LocalDateTime dateTime;
     private String doctorName;
     private String nurseName;
     private String hospitalType;
@@ -17,7 +18,7 @@ public class BirthCertificateDTO implements Serializable {
         System.out.println("running BirthCertificateDTO const");
     }
 
-    public BirthCertificateDTO(String birthId, String hospitalName, String fatherName, String motherName, String dateTime, String doctorName, String nurseName, String hospitalType) {
+    public BirthCertificateDTO(String birthId, String hospitalName, String fatherName, String motherName, LocalDateTime dateTime, String doctorName, String nurseName, String hospitalType) {
         this.birthId = birthId;
         this.hospitalName = hospitalName;
         this.fatherName = fatherName;
@@ -60,11 +61,11 @@ public class BirthCertificateDTO implements Serializable {
         this.motherName = motherName;
     }
 
-    public String getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(String dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
 
@@ -92,6 +93,4 @@ public class BirthCertificateDTO implements Serializable {
         this.hospitalType = hospitalType;
     }
 
-    // Getters and setters...
-    // [Generate as needed]
 }

@@ -1,12 +1,14 @@
 package com.xworkz.repository;
 
+import com.xworkz.dto.JobDTO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JobRepositoryImp implements JobRepository {
     @Override
-    public void save() {
+    public void save(JobDTO jobDTO) {
         System.out.println("running save in JobRepository");
         System.out.println("WARN:should save in DB");
 

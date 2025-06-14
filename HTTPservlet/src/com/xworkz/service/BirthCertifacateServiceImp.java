@@ -10,7 +10,7 @@ public class BirthCertifacateServiceImp implements BirthCertificateservice{
 
         if (birthCertificateDTO!=null){
             BirthCertificateRepository birthCertificateRepository=new BirthCertifacateRepositoryImp();
-            birthCertificateRepository.save();
+            birthCertificateRepository.save(birthCertificateDTO);
         }
         return "sucess";
 

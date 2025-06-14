@@ -18,15 +18,15 @@ public class PassportServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String applicantName = req.getParameter("applicantName");
-        String aadharNo = req.getParameter("aadharNo");
+        Long aadharNo = Long.valueOf(req.getParameter("aadharNo"));
         String address = req.getParameter("address");
         String panNo = req.getParameter("panNo");
         String country = req.getParameter("country");
         String state = req.getParameter("state");
         String city = req.getParameter("city");
-        String pinCode = req.getParameter("pinCode");
+        int pinCode = Integer.parseInt(req.getParameter("pinCode"));
         String passportType = req.getParameter("passportType");
-        String paymentRefNo = req.getParameter("paymentRefNo");
+        Double paymentRefNo = Double.valueOf(req.getParameter("paymentRefNo"));
 
         Thread thread=Thread.currentThread();
         System.out.println(thread);

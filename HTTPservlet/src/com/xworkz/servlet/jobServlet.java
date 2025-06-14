@@ -1,6 +1,6 @@
 package com.xworkz.servlet;
 
-import com.xworkz.dto.jobDTO;
+import com.xworkz.dto.JobDTO;
 import com.xworkz.service.Jobservice;
 import com.xworkz.service.JobserviceImp;
 
@@ -26,16 +26,16 @@ public class jobServlet extends HttpServlet {
         String email=req.getParameter("email");
         String education=req.getParameter("education");
         String skills=req.getParameter("skills");
-        String salary=req.getParameter("salary");
+        Double salary= Double.valueOf(req.getParameter("salary"));
         String experience=req.getParameter("experience");
-        double expectsal=Double.parseDouble(salary);
+
 
         Thread thread=Thread.currentThread();
         System.out.println(thread);
         System.out.println("name: "+name+"\n email :"+email+"\n education: "+education+"\n skills: "+skills+"\n salary: "+salary+"\n experience: "+experience);
 
-        jobDTO jobDTO1=new jobDTO(name,email,education,expectsal,experience,skills);
-        req.setAttribute("jobDTO",jobDTO1);
+        JobDTO jobDTO1=new JobDTO(name,email,education,salary,experience,skills);
+        req.setAttribute("JobDTO",jobDTO1);
 
         Jobservice jobservice =new JobserviceImp();
         String result=jobservice.validateandsave(jobDTO1);

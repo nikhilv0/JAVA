@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @WebServlet(urlPatterns = "/MarriageCertificateService", loadOnStartup = 1)
 public class MarriageCertificateServlet extends HttpServlet {
@@ -22,7 +23,7 @@ public class MarriageCertificateServlet extends HttpServlet {
         String location = req.getParameter("location");
         String address = req.getParameter("address");
         String religion = req.getParameter("religion");
-        String date = req.getParameter("date");
+        LocalDateTime date = LocalDateTime.parse(req.getParameter("date"));
         String witness1 = req.getParameter("witness1");
         String witness2 = req.getParameter("witness2");
         String officer = req.getParameter("officer");

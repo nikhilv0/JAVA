@@ -10,7 +10,7 @@ public class MarriageCertificateServiceImp implements MarriageCertificateService
 
         if (marriageCertificateDTO!=null){
             MarriageCertificateRepository marriageCertificateRepository=new MarriageCertificateRepositoryImp();
-            marriageCertificateRepository.save();
+            marriageCertificateRepository.save(marriageCertificateDTO);
         }
 
         return "sucess";

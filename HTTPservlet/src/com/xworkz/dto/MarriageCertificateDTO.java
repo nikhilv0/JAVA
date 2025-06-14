@@ -1,6 +1,7 @@
 package com.xworkz.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class MarriageCertificateDTO implements Serializable {
 
@@ -9,7 +10,7 @@ public class MarriageCertificateDTO implements Serializable {
     private String location;
     private String address;
     private String religion;
-    private String date;
+    private LocalDateTime date;
     private String witness1;
     private String witness2;
     private String officerPresent;
@@ -18,7 +19,7 @@ public class MarriageCertificateDTO implements Serializable {
         System.out.println("running MarriageCertificateDTO const");
     }
 
-    public MarriageCertificateDTO(String groomName, String brideName, String location, String address, String religion, String date, String witness1, String witness2, String officerPresent) {
+    public MarriageCertificateDTO(String groomName, String brideName, String location, String address, String religion, LocalDateTime date, String witness1, String witness2, String officerPresent) {
         this.groomName = groomName;
         this.brideName = brideName;
         this.location = location;
@@ -70,11 +71,11 @@ public class MarriageCertificateDTO implements Serializable {
         this.religion = religion;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
@@ -102,6 +103,5 @@ public class MarriageCertificateDTO implements Serializable {
         this.officerPresent = officerPresent;
     }
 
-    // Getters and setters...
 }
 

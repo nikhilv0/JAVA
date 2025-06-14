@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @WebServlet(urlPatterns = "/DrivingLicenseService", loadOnStartup = 1)
 public class DrivingLicenseServlet extends HttpServlet {
@@ -19,8 +20,8 @@ public class DrivingLicenseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String address = req.getParameter("address");
-        String mobile = req.getParameter("mobile");
-        String appliedDate = req.getParameter("appliedDate");
+        Long mobile = Long.valueOf(req.getParameter("mobile"));
+        LocalDateTime appliedDate = LocalDateTime.parse(req.getParameter("appliedDate"));
         String vehicleType = req.getParameter("vehicleType");
 
         Thread thread=Thread.currentThread();

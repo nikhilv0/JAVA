@@ -1,12 +1,14 @@
 package com.xworkz.repository;
 
+import com.xworkz.dto.MarriageCertificateDTO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MarriageCertificateRepositoryImp implements MarriageCertificateRepository{
     @Override
-    public void save() {
+    public void save(MarriageCertificateDTO marriageCertificateDTO) {
         System.out.println("running save in MarriageCertificateRepository");
         System.out.println("WARN:should save in DB");
 

@@ -5,21 +5,21 @@ import java.io.Serializable;
 public class PassportDTO implements Serializable {
 
     private String applicantName;
-    private String aadharNo;
+    private Long aadharNo;
     private String address;
     private String panNo;
     private String country;
     private String state;
     private String city;
-    private String pinCode;
+    private int pinCode;
     private String passportType;
-    private String paymentRefNo;
+    private Double paymentRefNo;
 
     public PassportDTO() {
         System.out.println("running PassportDTO const");
     }
 
-    public PassportDTO(String applicantName, String aadharNo, String address, String panNo, String country, String state, String city, String pinCode, String passportType, String paymentRefNo) {
+    public PassportDTO(String applicantName, Long aadharNo, String address, String panNo, String country, String state, String city, int pinCode, String passportType, Double paymentRefNo) {
         this.applicantName = applicantName;
         this.aadharNo = aadharNo;
         this.address = address;
@@ -40,11 +40,11 @@ public class PassportDTO implements Serializable {
         this.applicantName = applicantName;
     }
 
-    public String getAadharNo() {
+    public Long getAadharNo() {
         return aadharNo;
     }
 
-    public void setAadharNo(String aadharNo) {
+    public void setAadharNo(Long aadharNo) {
         this.aadharNo = aadharNo;
     }
 
@@ -88,11 +88,11 @@ public class PassportDTO implements Serializable {
         this.city = city;
     }
 
-    public String getPinCode() {
+    public int getPinCode() {
         return pinCode;
     }
 
-    public void setPinCode(String pinCode) {
+    public void setPinCode(int pinCode) {
         this.pinCode = pinCode;
     }
 
@@ -104,11 +104,11 @@ public class PassportDTO implements Serializable {
         this.passportType = passportType;
     }
 
-    public String getPaymentRefNo() {
+    public Double getPaymentRefNo() {
         return paymentRefNo;
     }
 
-    public void setPaymentRefNo(String paymentRefNo) {
+    public void setPaymentRefNo(Double paymentRefNo) {
         this.paymentRefNo = paymentRefNo;
     }
 }

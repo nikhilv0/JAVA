@@ -1,8 +1,8 @@
 package com.xworkz.service;
 
-import com.xworkz.dto.jobDTO;
+import com.xworkz.dto.JobDTO;
 
 public interface Jobservice {
 
-    public String validateandsave(jobDTO jobdto);
+    public String validateandsave(JobDTO jobdto);
 }

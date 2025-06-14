@@ -1,12 +1,14 @@
 package com.xworkz.repository;
 
+import com.xworkz.dto.DrivingLicenseDTO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DrivingLicenseRepositoryImp implements DrivingLicenseRepository{
     @Override
-    public void save() {
+    public void save(DrivingLicenseDTO drivingLicenseDTO) {
         System.out.println("running save in DrivingLicenseRepository");
         System.out.println("WARN:should save in DB");
 

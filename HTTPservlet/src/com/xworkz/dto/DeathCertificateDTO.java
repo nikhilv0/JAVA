@@ -1,13 +1,14 @@
 package com.xworkz.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class DeathCertificateDTO implements Serializable {
 
     private String name;
     private String cause;
-    private String date;
-    private String time;
+    private LocalDateTime date;
+//    private String time;
     private int ageAtDeath;
     private String certifiedBy;
     private String hospitalName;
@@ -19,11 +20,11 @@ public class DeathCertificateDTO implements Serializable {
         System.out.println("running DeathCertificateDTO const");
     }
 
-    public DeathCertificateDTO(String name, String cause, String date, String time, int ageAtDeath, String certifiedBy, String hospitalName, String mannerOfDeath, String gender, String marks) {
+    public DeathCertificateDTO(String name, String cause, LocalDateTime date, int ageAtDeath, String certifiedBy, String hospitalName, String mannerOfDeath, String gender, String marks) {
         this.name = name;
         this.cause = cause;
         this.date = date;
-        this.time = time;
+//        this.time = time;
         this.ageAtDeath = ageAtDeath;
         this.certifiedBy = certifiedBy;
         this.hospitalName = hospitalName;
@@ -48,21 +49,21 @@ public class DeathCertificateDTO implements Serializable {
         this.cause = cause;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
-    public String getTime() {
-        return time;
-    }
+//    public String getTime() {
+//        return time;
+//    }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
+//    public void setTime(String time) {
+//        this.time = time;
+//    }
 
     public int getAgeAtDeath() {
         return ageAtDeath;
@@ -111,5 +112,5 @@ public class DeathCertificateDTO implements Serializable {
     public void setMarks(String marks) {
         this.marks = marks;
     }
-// Getters and setters...
+
 }
