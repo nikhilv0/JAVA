@@ -86,7 +86,7 @@
 
             <div class="mb-3">
                 <label for="appliedDate" class="form-label">Applied Date</label>
-                <input type="date" class="form-control" id="appliedDate" name="appliedDate" required>
+                <input type="datetime-local" class="form-control" id="appliedDate" name="appliedDate" required>
             </div>
 
             <div class="mb-3">

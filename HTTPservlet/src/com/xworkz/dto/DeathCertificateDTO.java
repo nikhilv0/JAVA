@@ -1,14 +1,16 @@
 package com.xworkz.dto;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class DeathCertificateDTO implements Serializable {
 
     private String name;
     private String cause;
-    private LocalDateTime date;
-//    private String time;
+    private LocalDate date;
+    private String time;
     private int ageAtDeath;
     private String certifiedBy;
     private String hospitalName;
@@ -20,11 +22,11 @@ public class DeathCertificateDTO implements Serializable {
         System.out.println("running DeathCertificateDTO const");
     }
 
-    public DeathCertificateDTO(String name, String cause, LocalDateTime date, int ageAtDeath, String certifiedBy, String hospitalName, String mannerOfDeath, String gender, String marks) {
+    public DeathCertificateDTO(String name, String cause, LocalDate date,String time, int ageAtDeath, String certifiedBy, String hospitalName, String mannerOfDeath, String gender, String marks) {
         this.name = name;
         this.cause = cause;
         this.date = date;
-//        this.time = time;
+        this.time = time;
         this.ageAtDeath = ageAtDeath;
         this.certifiedBy = certifiedBy;
         this.hospitalName = hospitalName;
@@ -49,21 +51,21 @@ public class DeathCertificateDTO implements Serializable {
         this.cause = cause;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-//    public String getTime() {
-//        return time;
-//    }
+    public String getTime() {
+        return time;
+    }
 
-//    public void setTime(String time) {
-//        this.time = time;
-//    }
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public int getAgeAtDeath() {
         return ageAtDeath;

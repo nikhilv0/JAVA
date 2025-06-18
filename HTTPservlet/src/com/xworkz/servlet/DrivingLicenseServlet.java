@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@WebServlet(urlPatterns = "/DrivingLicenseService", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/DrivingLicense", loadOnStartup = 1)
 public class DrivingLicenseServlet extends HttpServlet {
 
     public DrivingLicenseServlet() {

@@ -105,8 +105,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="manner" class="form-label">Manner of Death</label>
-                <input type="text" class="form-control" id="manner" name="manner" required>
+                <label for="mannerOfDeath" class="form-label">Manner of Death</label>
+                <input type="text" class="form-control" id="mannerOfDeath" name="mannerOfDeath" required>
             </div>
 
             <div class="mb-3">

@@ -95,7 +95,7 @@
 
             <div class="mb-3">
                 <label for="date" class="form-label">Marriage Date</label>
-                <input type="date" class="form-control" id="date" name="date" required>
+                <input type="datetime-local" class="form-control" id="date" name="date" required>
             </div>
 
             <div class="mb-3">

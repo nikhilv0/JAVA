@@ -18,22 +18,22 @@ public class PassportServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String applicantName = req.getParameter("applicantName");
-        Long aadharNo = Long.valueOf(req.getParameter("aadharNo"));
+        Long aadharNo = Long.valueOf(req.getParameter("aadhaarNo"));
         String address = req.getParameter("address");
         String panNo = req.getParameter("panNo");
         String country = req.getParameter("country");
         String state = req.getParameter("state");
         String city = req.getParameter("city");
-        int pinCode = Integer.parseInt(req.getParameter("pinCode"));
+        int pincode = Integer.parseInt(req.getParameter("pincode"));
         String passportType = req.getParameter("passportType");
-        Double paymentRefNo = Double.valueOf(req.getParameter("paymentRefNo"));
+        Long paymentRefNo = Long.valueOf(req.getParameter("paymentRef"));
 
         Thread thread=Thread.currentThread();
         System.out.println(thread);
 
-        System.out.println("applicantName:"+applicantName + "\naadharNo: " + aadharNo + "\naddress: " + address + "\npanNo: " + panNo + "\ncountry: " + country + "\nstate: " + state + "\ncity: " + city + "\npinCode: " + pinCode + "\npassportType: " + passportType + "\npaymentRefNo: " + paymentRefNo);
+        System.out.println("applicantName:"+applicantName + "\naadharNo: " + aadharNo + "\naddress: " + address + "\npanNo: " + panNo + "\ncountry: " + country + "\nstate: " + state + "\ncity: " + city + "\npinCode: " + pincode + "\npassportType: " + passportType + "\npaymentRefNo: " + paymentRefNo);
 
-        PassportDTO dto = new PassportDTO(applicantName, aadharNo, address, panNo, country, state, city, pinCode, passportType, paymentRefNo);
+        PassportDTO dto = new PassportDTO(applicantName, aadharNo, address, panNo, country, state, city, pincode, passportType, paymentRefNo);
         req.setAttribute("passportDTO", dto);
 
         PassportService passportService =new PassportServiceImp();

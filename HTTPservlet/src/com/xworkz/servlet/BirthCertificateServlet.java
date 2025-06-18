@@ -34,7 +34,7 @@ public class BirthCertificateServlet extends HttpServlet {
         Thread thread=Thread.currentThread();
         System.out.println(thread);
 
-        System.out.println("birthId: " + birthId + "\nhospitalName: " + hospitalName + "\nfatherName: " + fatherName + "\nmotherName: " + motherName + "\ndateTime: " + dateTime + "\ndoctorName: " + doctorName + "\nnurseName: " + nurseName + "\nhospitalType: " + hospitalType);
+        System.out.println("birthId: " + birthId + "\nhospitalName: " + hospitalName + "\nfatherName: " + fatherName + "\nmotherName: " + motherName + "\ndateTime: " + dateTime1 + "\ndoctorName: " + doctorName + "\nnurseName: " + nurseName + "\nhospitalType: " + hospitalType);
 
         BirthCertificateDTO dto = new BirthCertificateDTO(birthId, hospitalName, fatherName, motherName, dateTime1, doctorName, nurseName, hospitalType);
         req.setAttribute("birthDTO", dto);

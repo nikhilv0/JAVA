@@ -13,13 +13,13 @@ public class PassportDTO implements Serializable {
     private String city;
     private int pinCode;
     private String passportType;
-    private Double paymentRefNo;
+    private Long paymentRefNo;
 
     public PassportDTO() {
         System.out.println("running PassportDTO const");
     }
 
-    public PassportDTO(String applicantName, Long aadharNo, String address, String panNo, String country, String state, String city, int pinCode, String passportType, Double paymentRefNo) {
+    public PassportDTO(String applicantName, Long aadharNo, String address, String panNo, String country, String state, String city, int pinCode, String passportType, Long paymentRefNo) {
         this.applicantName = applicantName;
         this.aadharNo = aadharNo;
         this.address = address;
@@ -104,11 +104,11 @@ public class PassportDTO implements Serializable {
         this.passportType = passportType;
     }
 
-    public Double getPaymentRefNo() {
+    public Long getPaymentRefNo() {
         return paymentRefNo;
     }
 
-    public void setPaymentRefNo(Double paymentRefNo) {
+    public void setPaymentRefNo(Long paymentRefNo) {
         this.paymentRefNo = paymentRefNo;
     }
 }

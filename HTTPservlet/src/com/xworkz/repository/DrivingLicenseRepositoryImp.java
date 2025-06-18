@@ -5,6 +5,7 @@ import com.xworkz.dto.DrivingLicenseDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DrivingLicenseRepositoryImp implements DrivingLicenseRepository{
     @Override
@@ -18,12 +19,13 @@ public class DrivingLicenseRepositoryImp implements DrivingLicenseRepository{
             String url="jdbc:mysql://localhost:3306/Connection";
             String username="root";
             String password="Nikki6360";
-            try {
-                Connection connection= DriverManager.getConnection(url,username,password);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (ClassNotFoundException e) {
+
+            Connection connection= DriverManager.getConnection(url,username,password);
+            String sql="insert into Driving_License values(0,'"+drivingLicenseDTO.getName()+"','"+drivingLicenseDTO.getAddress()+"','"+drivingLicenseDTO.getMobile()+"','"+drivingLicenseDTO.getAppliedDate()+"','"+drivingLicenseDTO.getVehicleType()+"')";
+            Statement statement=connection.createStatement();
+
+            statement.executeUpdate(sql);
+        } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
     }

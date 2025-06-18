@@ -77,7 +77,7 @@
 
             <div class="mb-3">
                 <label for="aadhaarNo" class="form-label">Aadhaar Number</label>
-                <input type="text" class="form-control" id="aadhaarNo" name="aadhaarNo" required>
+                <input type="number" class="form-control" id="aadhaarNo" name="aadhaarNo" required>
             </div>
 
             <div class="mb-3">
@@ -107,7 +107,7 @@
 
             <div class="mb-3">
                 <label for="pincode" class="form-label">Pin Code</label>
-                <input type="text" class="form-control" id="pincode" name="pincode" required>
+                <input type="number" class="form-control" id="pincode" name="pincode" required>
             </div>
 
             <div class="mb-3">
@@ -123,7 +123,7 @@
 
             <div class="mb-3">
                 <label for="paymentRef" class="form-label">Payment Reference Number</label>
-                <input type="text" class="form-control" id="paymentRef" name="paymentRef" required>
+                <input type="number" class="form-control" id="paymentRef" name="paymentRef" required>
             </div>
 
             <button type="submit" class="btn btn-dark">Submit</button>

@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@WebServlet(urlPatterns = "/MarriageCertificateService", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/MarriageCertificate", loadOnStartup = 1)
 public class MarriageCertificateServlet extends HttpServlet {
 
     public MarriageCertificateServlet() {
