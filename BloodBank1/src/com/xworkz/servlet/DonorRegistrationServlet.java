@@ -37,10 +37,16 @@ public class DonorRegistrationServlet extends HttpServlet {
         DonorRegistrationService donorRegistrationService=new DonorRegistrationServiceImp();
         String result=donorRegistrationService.validateAndSave(dto);
         System.out.println(result);
+//        req.setAttribute("dto",dto);
+//      it will pass all the dto
 
-        req.setAttribute("dto",dto);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("Result.jsp");
+//servlet chaining
+        RequestDispatcher dispatcher = req.getRequestDispatcher("DonorRegistration.jsp");
+        req.setAttribute("result",result);
+        if (!result.equals("sucess")){
+            req.setAttribute("dto",dto);
+//          where this will pass with condition
+        }
         dispatcher.forward(req, resp);
 
     }

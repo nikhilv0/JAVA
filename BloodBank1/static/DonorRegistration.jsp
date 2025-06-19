@@ -13,24 +13,25 @@
             <h4 class="mb-0">Donor Registration Form</h4>
         </div>
         <div class="card-body">
+            ${result}
             <form action="Donorregister" method="post">
 
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" required>
+                    <input type="text" class="form-control" name="name" id="name" value="${dto.name}" required>
                 </div>
 
 
                 <div class="mb-3">
                     <label for="age" class="form-label">Age</label>
-                    <input type="number" class="form-control" name="age" id="age" required>
+                    <input type="number" class="form-control" name="age" id="age" value="${dto.age}" required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label d-block">Gender</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male"  required>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -45,7 +46,7 @@
 
                 <div class="mb-3">
                     <label for="bloodGroup" class="form-label">Blood Group</label>
-                    <select class="form-select" name="bloodGroup" id="bloodGroup" required>
+                    <select class="form-select" name="bloodGroup" id="bloodGroup"  required>
                         <option value="">-- Select Blood Group --</option>
                         <option value="A+">A+</option>
                         <option value="A-">A-</option>
@@ -70,7 +71,7 @@
 
                 <div class="mb-3">
                     <label for="lastDonation" class="form-label">Last Donation Date</label>
-                    <input type="date" class="form-control" name="lastDonation" id="lastDonation">
+                    <input type="date" class="form-control" name="lastDonation" id="lastDonation" >
                 </div>
 
                 <button type="submit" class="btn btn-danger">Register</button>
