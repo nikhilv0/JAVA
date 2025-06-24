@@ -4,5 +4,7 @@ import com.xworkz.dto.DonorRegistrationDTO;
 
 public interface DonorRegistrationRepository {
 
-     void save(DonorRegistrationDTO donorRegistrationDTO);
+     String save(DonorRegistrationDTO donorRegistrationDTO);
+
+     DonorRegistrationDTO findById(int id);
 }

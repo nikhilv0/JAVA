@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="UTF-8">
     <title>Donor Registration Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body class="bg-light p-4">
 
@@ -19,7 +20,7 @@
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" value="${dto.name}" required>
+                    <input type="text" class="form-control" name="name" id="name" style="color-red"  value="${dto.name}" required>
                 </div>
 
 
@@ -31,7 +32,8 @@
                 <div class="mb-3">
                     <label class="form-label d-block">Gender</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male"  required>
+                        <input class="form-check-input" type="radio" name="gender" id="male"  value="Male" required >
+                        <c:if test="${dto.gender == 'Male'}"></c:if>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -61,17 +63,17 @@
 
                 <div class="mb-3">
                     <label for="contact" class="form-label">Contact Number</label>
-                    <input type="number" class="form-control" name="contact" id="contact" required>
+                    <input type="number" class="form-control" name="contact" id="contact" value="${dto.contact}" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <textarea class="form-control" name="address" id="address" rows="3" required></textarea>
+                    <textarea class="form-control" name="address" id="address" rows="3" vocab="${dto.address}" required></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="lastDonation" class="form-label">Last Donation Date</label>
-                    <input type="date" class="form-control" name="lastDonation" id="lastDonation" >
+                    <input type="date" class="form-control" name="lastDonation" id="lastDonation" required >
                 </div>
 
                 <button type="submit" class="btn btn-danger">Register</button>

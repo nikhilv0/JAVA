@@ -17,8 +17,17 @@ import java.time.LocalDate;
 @WebServlet(urlPatterns = "/Donorregister",loadOnStartup = 1)
 public class DonorRegistrationServlet extends HttpServlet {
 
+
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        int id1=Integer.parseInt(id);
+        System.out.println("ID:"+id1);
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String name=req.getParameter("name");
         int age= Integer.parseInt(req.getParameter("age"));
@@ -37,13 +46,13 @@ public class DonorRegistrationServlet extends HttpServlet {
         DonorRegistrationService donorRegistrationService=new DonorRegistrationServiceImp();
         String result=donorRegistrationService.validateAndSave(dto);
         System.out.println(result);
-//        req.setAttribute("dto",dto);
+//      req.setAttribute("dto",dto);
 //      it will pass all the dto
 
 //servlet chaining
         RequestDispatcher dispatcher = req.getRequestDispatcher("DonorRegistration.jsp");
         req.setAttribute("result",result);
-        if (!result.equals("sucess")){
+        if (!result.equals("successfully submitted Application")){
             req.setAttribute("dto",dto);
 //          where this will pass with condition
         }

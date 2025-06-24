@@ -5,6 +5,7 @@ import com.xworkz.repository.DonorRegistrationRepository;
 import com.xworkz.repository.DonorRegistrationRepositoryImp;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class DonorRegistrationServiceImp implements DonorRegistrationService {
 
@@ -13,14 +14,43 @@ public class DonorRegistrationServiceImp implements DonorRegistrationService {
 
         if (donorRegistrationDTO!=null){
         String name=donorRegistrationDTO.getName();
-        if (name==null || name.length()<5 || name.length()>30)
-        {
+        int age=donorRegistrationDTO.getAge();
+        String gender=donorRegistrationDTO.getName();
+//        String bloodGroup=donorRegistrationDTO.getName();
+        long contact=donorRegistrationDTO.getContact();
+//        String address=donorRegistrationDTO.getName();
+        LocalDate lastDonationDate=donorRegistrationDTO.getLastDonationDate();
+
+        if (name==null || name.length()<5 || name.length()>30) {
             System.out.println("name is invalid");
-            return "please enter valid name";
+            return "Name must be between 5 and 30 characters";
         }
+        if (age<17 || age>100){
+            System.out.println("age is invalid");
+            return "Age must be between 17 and 100";
+        }
+        if (String.valueOf(contact).length() != 10){
+            System.out.println("contact is invalid");
+            return "Contact number must be exactly 10 digits";
+
+        }
+        if (gender == null || !(gender.equals("Male") || gender.equals("Female") || gender.equals("Other"))){
+            System.out.println("gender is invalid");
+            return "Please select a valid gender";
+        }
+
             DonorRegistrationRepository donorRegistrationRepository=new DonorRegistrationRepositoryImp();
-            donorRegistrationRepository.save(donorRegistrationDTO);
+            donorRegistrationRepository.
+                    save(donorRegistrationDTO);
+
         }
-        return "sucess";
+        return "successfully submitted Application";
+    }
+
+    public DonorRegistrationDTO findById(int id){
+        if (id<0){
+            System.out.println("ID is Invalid");
+        }
+        return null;
     }
 }
