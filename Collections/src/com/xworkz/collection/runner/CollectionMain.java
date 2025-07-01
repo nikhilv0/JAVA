@@ -1,0 +1,99 @@
+package com.xworkz.collection.runner;
+
+import com.xworkz.collection.main.Bike;
+import com.xworkz.collection.main.Car;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+
+public class CollectionMain{
+
+    public static void main(String[] args) {
+        Collection <String> bike=new ArrayList<>();
+        bike.add("Kawasaki Ninja H2R");
+        bike.add("Ducati Panigale V4 R");
+        bike.add("BMW M 1000 RR");
+        bike.add("Honda CBR1000RR");
+        bike.add("Triumph");
+        bike.add("KTM RC");
+        bike.add("Harley-Davidson");
+        bike.add("Husqvarna");
+        bike.add("Benelli 1200GT");
+        bike.add("GT");
+        System.out.println("Before clear bike size:");
+        System.out.println(bike.size());
+        bike.clear();
+        System.out.println("After clear bike size:");
+        System.out.println(bike.size());
+
+        Collection <String> car=new ArrayList<>();
+        car.add("Lamborghini");
+        car.add("Ferrari 488");
+        car.add("Porsche 911");
+        car.add("McLaren");
+        car.add("Bugatti Chiron");
+        car.add("Rolls-Royce");
+        car.add("Bentley");
+        car.add("BMW M5");
+        car.add("Volkswagen");
+        car.add("Toyota Supra GR");
+        System.out.println("Before clear car size:");
+        System.out.println(car.size());
+        car.clear();
+        System.out.println("After clear car size:");
+        System.out.println(car.size());
+
+        Collection <String> food=new ArrayList<>();
+        food.add("Butter Chicken");
+        food.add("Chicken Biryani");
+        food.add("Mutton Rogan Josh");
+        food.add("Tandoori Chicken");
+        food.add("Prawn Masala");
+        food.add("Chicken Shawarma");
+        food.add("Chicken 65");
+        food.add("Chicken Chettinad");
+        food.add("Fish Curry");
+        food.add("Boneless Strips");
+        System.out.println("Before clear food size:");
+        System.out.println(food.size());
+        food.clear();
+        System.out.println("After clear food size:");
+        System.out.println(food.size());
+
+        Collection <String> laptop=new ArrayList<>();
+        laptop.add("Apple MacBook Pro M3");
+        laptop.add("Apple MacBook Air M2");
+        laptop.add("Dell");
+        laptop.add("HP");
+        laptop.add("Lenovo ThinkPad ");
+        laptop.add("Asus ROG");
+        laptop.add("MSI");
+        laptop.add("Accer Swift X");
+        laptop.add("Microsof");
+        laptop.add("Samsung Galaxy Book3 Pro");
+        System.out.println("Before clear laptop size:");
+        System.out.println(laptop.size());
+        laptop.clear();
+        System.out.println("After clear laptop size:");
+        System.out.println(laptop.size());
+
+        Collection <String> phone=new ArrayList<>();
+        phone.add("Apple iPhone 15 Pro Max");
+        phone.add("Samsung Galaxy S24 Ultra");
+        phone.add("OnePlus 12");
+        phone.add("Google Pixel 8 Pro");
+        phone.add("Xiaomi 14 Ultra");
+        phone.add("Realme GT 6");
+        phone.add("Vivo X100 Pro");
+        phone.add("Asus ROG Phone 8 Pro");
+        phone.add("Motorola Edge 50 Ultra");
+        phone.add("Nothing Phone (2)");
+        System.out.println("Before clear phone size:");
+        System.out.println(phone.size());
+        phone.clear();
+        System.out.println("After clear phone size:");
+        System.out.println(phone.size());
+
+    }
+}
