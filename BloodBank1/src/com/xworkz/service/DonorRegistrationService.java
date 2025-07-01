@@ -12,4 +12,5 @@ public interface DonorRegistrationService extends Serializable {
 
         return null;
     }
+
 }

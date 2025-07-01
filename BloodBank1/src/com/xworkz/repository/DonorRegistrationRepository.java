@@ -6,5 +6,5 @@ public interface DonorRegistrationRepository {
 
      String save(DonorRegistrationDTO donorRegistrationDTO);
 
-     DonorRegistrationDTO findById(int id);
+     DonorRegistrationDTO findBy(int id);
 }

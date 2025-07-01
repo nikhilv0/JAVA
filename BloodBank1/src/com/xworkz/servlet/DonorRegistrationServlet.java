@@ -17,13 +17,8 @@ import java.time.LocalDate;
 @WebServlet(urlPatterns = "/Donorregister",loadOnStartup = 1)
 public class DonorRegistrationServlet extends HttpServlet {
 
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id=req.getParameter("id");
-        int id1=Integer.parseInt(id);
-        System.out.println("ID:"+id1);
-
+    public DonorRegistrationServlet(){
+        System.out.println("servlet const");
     }
 
     @Override
@@ -50,6 +45,7 @@ public class DonorRegistrationServlet extends HttpServlet {
 //      it will pass all the dto
 
 //servlet chaining
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("DonorRegistration.jsp");
         req.setAttribute("result",result);
         if (!result.equals("successfully submitted Application")){
@@ -59,4 +55,33 @@ public class DonorRegistrationServlet extends HttpServlet {
         dispatcher.forward(req, resp);
 
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+//        String name=req.getParameter("name");
+        int id1=Integer.parseInt(id);
+        System.out.println("id1:"+id1);
+
+        DonorRegistrationService donorRegistrationService=new DonorRegistrationServiceImp();
+        DonorRegistrationDTO dto=donorRegistrationService.findById(id1);
+
+        if (dto!=null) {
+            System.out.println("data is found");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("search.jsp");
+            req.setAttribute("id", dto);
+            requestDispatcher.forward(req,resp);
+        }
+        else {
+            String message="*data not found";
+            System.out.println(message);
+            req.setAttribute("message",message);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("search.jsp");
+            requestDispatcher.forward(req,resp);
+        }
+    }
+
 }
+
+
+

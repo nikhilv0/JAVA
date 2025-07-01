@@ -40,8 +40,7 @@ public class DonorRegistrationServiceImp implements DonorRegistrationService {
         }
 
             DonorRegistrationRepository donorRegistrationRepository=new DonorRegistrationRepositoryImp();
-            donorRegistrationRepository.
-                    save(donorRegistrationDTO);
+            donorRegistrationRepository.save(donorRegistrationDTO);
 
         }
         return "successfully submitted Application";
@@ -50,7 +49,14 @@ public class DonorRegistrationServiceImp implements DonorRegistrationService {
     public DonorRegistrationDTO findById(int id){
         if (id<0){
             System.out.println("ID is Invalid");
+            return null;
         }
-        return null;
+        else {
+            System.out.println("id is valid");
+            DonorRegistrationRepository donorRegistrationRepository=new DonorRegistrationRepositoryImp();
+            return donorRegistrationRepository.findBy(id);
+
+        }
+
     }
 }

@@ -11,7 +11,7 @@ public enum DBconstant {
     private String value;
 
     private DBconstant(String value){
-        System.out.println("DBconstant const");
+
         this.value=value;
     }
 
