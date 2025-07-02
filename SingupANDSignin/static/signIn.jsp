@@ -62,6 +62,9 @@
                 <button type="submit" class="btn btn-dark">Login</button>
             </div>
             <div class="text-center">
+                <a href="forgot.jsp">Forgot userId | password</a>
+            </div>
+            <div class="text-center">
                 <a href="signUp.jsp">Don't have an account? Sign Up</a> |
                 <a href="index.jsp">Back to Home</a>
             </div>

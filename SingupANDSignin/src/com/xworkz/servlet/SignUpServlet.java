@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.SecureRandom;
 
 @WebServlet(urlPatterns = "/signUp",loadOnStartup = 1)
 
@@ -53,7 +54,7 @@ public class SignUpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId=req.getParameter("userId");
         String password=req.getParameter("password");
-        System.out.println("ID:"+userId);
+        System.out.println("\nID:"+userId);
         System.out.println("password:"+password);
 
         SignUpService service=new SignUpServiceImp();
@@ -61,9 +62,14 @@ public class SignUpServlet extends HttpServlet {
 
         if (signUpDTO!=null){
             System.out.println("data found");
-            RequestDispatcher requestDispatcher=req.getRequestDispatcher("home.jsp");
-            req.setAttribute("dto",signUpDTO);
-            requestDispatcher.forward(req,resp);
+
+            SecureRandom secureRandom = new SecureRandom();
+            String otp1 = String.valueOf(secureRandom.nextInt(1000000));
+            System.out.println("Secure OTP: "+ otp1);
+            req.setAttribute("otp", otp1);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("otp.jsp");
+            req.setAttribute("dto", signUpDTO);
+            requestDispatcher.forward(req, resp);
 
         }
         else {
@@ -73,9 +79,6 @@ public class SignUpServlet extends HttpServlet {
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("signIn.jsp");
             requestDispatcher.forward(req,resp);
         }
-
-
-
-
     }
+
 }

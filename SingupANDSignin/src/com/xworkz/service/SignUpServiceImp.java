@@ -4,6 +4,8 @@ import com.xworkz.dto.SignUpDTO;
 import com.xworkz.repository.SignUpRepository;
 import com.xworkz.repository.SignUpRepositoryImp;
 
+import java.security.SecureRandom;
+
 public class SignUpServiceImp implements SignUpService {
     @Override
     public String validateAndsave(SignUpDTO signUpDTO) {
@@ -13,7 +15,7 @@ public class SignUpServiceImp implements SignUpService {
             String password = signUpDTO.getPassword();
             String confPassword = signUpDTO.getConfirmPassword();
 
-            if (email==null) {
+            if (email == null) {
                 System.out.println("invalid mail");
                 return "enter valid email";
             }
@@ -38,15 +40,43 @@ public class SignUpServiceImp implements SignUpService {
 
     @Override
     public SignUpDTO findBy(String userId, String password) {
-        if (userId.length()>4 && password.length()>5){
+        if (userId.length() > 4 && password.length() > 5) {
             System.out.println("valid userId and password");
-            SignUpRepository signUpRepository=new SignUpRepositoryImp();
-            return signUpRepository.findById(userId,password);
+            SignUpRepository signUpRepository = new SignUpRepositoryImp();
+            return signUpRepository.findById(userId, password);
 
-        }
-        else {
+        } else {
             System.out.println("invalid user Id and password");
         }
         return null;
     }
+
+    @Override
+    public SignUpDTO findByUser(String userId, String email) {
+
+        if (userId != null && email != null) {
+            System.out.println("valid userId or email");
+            SignUpRepository signUpRepository = new SignUpRepositoryImp();
+            SignUpDTO signUpDTO = signUpRepository.findByUser(userId, email);
+            return signUpDTO;
+
+        } else {
+            System.out.println("invalid user Id and password");
+        }
+        return null;
+    }
+
+    @Override
+    public String generateOtp(String otp) {
+            if (otp.length()>2){//doubt
+                System.out.println("valid otp");
+                return otp;
+            }
+            else {
+                return null;
+            }
+
+    }
 }
+
+
