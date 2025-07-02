@@ -10,6 +10,7 @@ import java.util.Collection;
 public class CollectionMain{
 
     public static void main(String[] args) {
+
         Collection <String> bike=new ArrayList<>();
         bike.add("Kawasaki Ninja H2R");
         bike.add("Ducati Panigale V4 R");
