@@ -10,4 +10,7 @@ public interface SignUpService {
 
         return null;
     }
+    SignUpDTO findByUser(String userId,String email);
+
+    String generateOtp(String otp);
 }

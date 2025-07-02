@@ -10,7 +10,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
     @Override
     public String save(SignUpDTO signUpDTO) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(DBconstant.DRIVER.getProp());
             Connection connection = DriverManager.getConnection(DBconstant.URL.getProp(), DBconstant.USERNAME.getProp(), DBconstant.PASSWORD.getProp());
 
             String sql = "insert into sign_up values(?,?,?,?,?)";
@@ -36,7 +36,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
     public SignUpDTO findById(String userId,String password) {
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(DBconstant.DRIVER.getProp());
             Connection connection=DriverManager.getConnection(DBconstant.URL.getProp(),DBconstant.USERNAME.getProp(), DBconstant.PASSWORD.getProp());
 
             String sql = "SELECT * FROM sign_up WHERE user_id = '" + userId + "' AND password = '" + password + "'";
@@ -45,13 +45,13 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
             while (resultSet.next()) {
                 int pk = resultSet.getInt("id");
-                String name = resultSet.getString("user_id");
+                String user = resultSet.getString("user_id");
                 String Password= resultSet.getString("password");
                 String email=resultSet.getString("email");
 //                String conformPassword=resultSet.getString("confirmPassword");
 
 
-                SignUpDTO signUpDTO1 = new SignUpDTO(name,email,Password);
+                SignUpDTO signUpDTO1 = new SignUpDTO(user,email,Password);
                 System.out.println(signUpDTO1);
                 return signUpDTO1;
             }
@@ -62,4 +62,32 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
         return null;
  }
+
+    @Override
+    public SignUpDTO findByUser(String userId, String email) {
+
+        try {
+            Class.forName(DBconstant.DRIVER.getProp());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getProp(),DBconstant.USERNAME.getProp(), DBconstant.PASSWORD.getProp());
+
+            String sql="select * from sign_up where user_Id= '"+ userId +"'or email= '"+email+"' ";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            ResultSet resultSet=preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                int pk=resultSet.getInt("id");
+                String user1=resultSet.getString("user_Id");
+                String mail=resultSet.getString("email");
+                String password=resultSet.getString("password");
+
+                SignUpDTO signUpDTO=new SignUpDTO(user1,mail,password);
+                System.out.println(signUpDTO);
+                return signUpDTO;
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
 }

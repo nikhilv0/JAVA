@@ -7,4 +7,6 @@ public interface SignUpRepository {
     String save(SignUpDTO signUpDTO);
 
     SignUpDTO findById(String userId,String password);
+
+    SignUpDTO findByUser(String userId,String email);
 }
