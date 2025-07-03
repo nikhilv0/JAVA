@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.SecureRandom;
 
@@ -62,11 +63,11 @@ public class SignUpServlet extends HttpServlet {
 
         if (signUpDTO!=null){
             System.out.println("data found");
-
             SecureRandom secureRandom = new SecureRandom();
             String otp1 = String.valueOf(secureRandom.nextInt(1000000));
             System.out.println("Secure OTP: "+ otp1);
-            req.setAttribute("otp", otp1);
+            HttpSession  httpSession= req.getSession();
+            httpSession.setAttribute("otp", otp1);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("otp.jsp");
             req.setAttribute("dto", signUpDTO);
             requestDispatcher.forward(req, resp);

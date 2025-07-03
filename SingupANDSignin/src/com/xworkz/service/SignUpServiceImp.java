@@ -67,8 +67,8 @@ public class SignUpServiceImp implements SignUpService {
     }
 
     @Override
-    public String generateOtp(String otp) {
-            if (otp.length()>2){//doubt
+    public String generateOtp(String otp,String otpFromSession) {
+            if (otp.equals(otpFromSession)){
                 System.out.println("valid otp");
                 return otp;
             }

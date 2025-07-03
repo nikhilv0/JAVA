@@ -22,8 +22,11 @@ public class OtpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String otp=req.getParameter("otp");
 
+        String otpFromSession=(String)req.getSession(false).getAttribute("otp");
+
         SignUpService service=new SignUpServiceImp();
-        String send=service.generateOtp(otp);
+        String send=service.generateOtp(otp,otpFromSession);
+
 
         if (send!=null){
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("index.jsp");
@@ -31,7 +34,7 @@ public class OtpServlet extends HttpServlet {
         }else {
             System.out.println("enter valid otp");
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("otp.jsp");
-            String mess="Back to sign In page";
+            String mess="Enter valid otp";
             req.setAttribute("opt1",otp);
             req.setAttribute("mess",mess);
             requestDispatcher.forward(req,resp);

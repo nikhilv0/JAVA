@@ -12,5 +12,5 @@ public interface SignUpService {
     }
     SignUpDTO findByUser(String userId,String email);
 
-    String generateOtp(String otp);
+    String generateOtp(String otp,String otpFromSession);
 }
