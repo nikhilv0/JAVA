@@ -51,7 +51,7 @@ public class Main {
 
 
         Iterator<BikeDTO> bikeDTOIterator= bikeDtos.iterator();
-        while (bikeDTOIterator.hasNext()){      //why not for FOR loop
+        while (bikeDTOIterator.hasNext()){      
             System.out.println(bikeDTOIterator.next());
         }
         System.out.println("================================================");
