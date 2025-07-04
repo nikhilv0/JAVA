@@ -7,12 +7,12 @@ public class Main {
 //
 //
 //         Bottle bottle=(no)-> {
-            // if(no>0) return true;
+            // if(no>0) return true;`                    2 type
 //        return false;
 //         };
 
 
-        Customer customer=new Customer();
+        Customer customer=new Customer();              // 3 type
         customer.buy((no -> no>0));
 
     }
