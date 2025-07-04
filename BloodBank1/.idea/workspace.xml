@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d4d77e9-49e5-478d-9d6d-fc98602b6f3e" name="Changes" comment="uploaded Assignment">
+      <change afterPath="$PROJECT_DIR$/../Abstract/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Abstract/Abstract.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AccessSpecifier/AccessSpecifier.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Association/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Association/Association.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodBank1 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BloodBank1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClassWork/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClassWork/ClassWork.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CollectionDTO/CollectionDTO.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CollectionWithIterable/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Collections/Collections.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exception/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exception/.idea/Exception.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exception/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exception/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exception/Exception 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exception/Exception.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HTTPservlet/HTTPservlet 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HTTPservlet/HTTPservlet.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Inheritance/Inheritance.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../InheritanceTypes/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../InheritanceTypes/InheritanceTypes.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interface/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interface/Interface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Jsp/Jsp 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Jsp/Jsp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LamdaExpression/LamdaExpression.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/Object.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Airplane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Bag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Bicycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Bottle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Chair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Fan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Hat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Keyboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Laptop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Microwave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Monitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Mouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/MusicAlbum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Oven.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Pants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Pen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Refrigerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Router.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Scanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/School.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Shirt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Shoes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Speaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Switch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Television.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Wallet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Watch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/ObjecttoString.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PrivateInstanceVar/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PrivateInstanceVar/PrivateInstanceVar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ReferencAndVar/ReferencAndVar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletJdbcProjec/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/.idea/libraries/mysql_connector_j_8_0_33__1_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/.idea/libraries/servlet_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/ServletTest 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServletTest/ServletTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SingupANDSignin/SingupANDSignin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/StaticAndEncapsulation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/Test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/external/ConectorImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/internal/Connector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/runner/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/use/ConnectorUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/.idea/libraries/servlet_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/Test1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test1/src/com/xworkz/hippo/servlet/Hippo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Testing/Testing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/SingleInheritance.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/UseandImplicitInterface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/src/com/xworkz/interfaces/implicit/IndianCricketTeamImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/src/com/xworkz/interfaces/interfaces/Icc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/src/com/xworkz/interfaces/use/Bcci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/xworkz/servlet/DonorRegistrationForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interface/src/com/xworkz/interfaceclasses/runner/Task3Runnner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interface/src/com/xworkz/interfaceclasses/task2interfaceclasses/SmartTrainLightt.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nikhilv0&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nikhilv0/JAVA.git&quot;,
+    &quot;accountId&quot;: &quot;9ecdefa7-b7fb-44f7-9954-c48f5c698699&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/xworkz/servlet/DonorRegistrationForm.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ybAxggN9b6Q6ptuRqz5B8Tp6E7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Smart Tomcat.tomcat.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/webapp" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="tomcat" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="adminPort" value="8007" />
+      <option name="catalinaBase" value="$USER_HOME$/.SmartTomcat/BloodBank1/BloodBank1" />
+      <option name="contextPath" value="bloodbank1" />
+      <option name="docBase" value="$PROJECT_DIR$/static" />
+      <option name="extraClassPath" value="" />
+      <option name="port" value="8085" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.104" />
+          <option name="path" value="$PROJECT_DIR$/../../../apache-tomcat-9.0.104" />
+          <option name="version" value="9.0.104.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d4d77e9-49e5-478d-9d6d-fc98602b6f3e" name="Changes" comment="" />
+      <created>1750093148806</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750093148806</updated>
+    </task>
+    <task id="LOCAL-00001" summary="uploaded Assignment">
+      <option name="closed" value="true" />
+      <created>1750094887558</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750094887558</updated>
+    </task>
+    <task id="LOCAL-00002" summary="uploaded Assignment">
+      <option name="closed" value="true" />
+      <created>1750217568449</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750217568449</updated>
+    </task>
+    <task id="LOCAL-00003" summary="uploaded Assignment">
+      <option name="closed" value="true" />
+      <created>1750310043167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750310043167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="uploaded Assignment">
+      <option name="closed" value="true" />
+      <created>1750780811239</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1750780811240</updated>
+    </task>
+    <task id="LOCAL-00005" summary="uploaded Assignment">
+      <option name="closed" value="true" />
+      <created>1751387341734</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751387341734</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="uploaded Assignment" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploaded Assignment" />
+  </component>
+</project>

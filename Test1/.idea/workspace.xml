@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="faaeed97-b333-4b80-87ea-f70b7815d42b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Abstract/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Abstract/Abstract.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AccessSpecifier/AccessSpecifier.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Association/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Association/Association.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClassWork/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClassWork/ClassWork.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Inheritance/Inheritance.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../InheritanceTypes/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../InheritanceTypes/InheritanceTypes.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interface/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interface/Interface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/Object.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Airplane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Bag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Bicycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Bottle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Chair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Fan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Hat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Keyboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Laptop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Microwave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Monitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Mouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/MusicAlbum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Oven.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Pants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Pen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Printer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Refrigerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Router.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Scanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/School.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Shirt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Shoes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Speaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Switch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Television.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Wallet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Object/src/com/xworkz/Object/tostring/Watch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ObjecttoString/ObjecttoString.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PrivateInstanceVar/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PrivateInstanceVar/PrivateInstanceVar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ReferencAndVar/ReferencAndVar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/StaticAndEncapsulation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/Test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/external/ConectorImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/internal/Connector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/runner/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test/src/com/xworkz/testing/use/ConnectorUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/servlet_api.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/xworkz/hippo/servlet/Hippo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Testing/Testing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TypesOfInheritance/SingleInheritance.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/UseandImplicitInterface.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/src/com/xworkz/interfaces/implicit/IndianCricketTeamImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/src/com/xworkz/interfaces/interfaces/Icc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UseandImplicitInterface/src/com/xworkz/interfaces/use/Bcci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Abstract/src/com/xworkz/abstractclass/external/ChadiBuddy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Abstract/src/com/xworkz/abstractclass/external/ChadiBuddy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Association/src/com/xworkz/hasasRelation/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Association/src/com/xworkz/hasasRelation/Battery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClassWork/src/com/xwork/classWork/external/Keyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClassWork/src/com/xwork/classWork/external/Keyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClassWork/src/com/xwork/classWork/internal/ArmyVechicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClassWork/src/com/xwork/classWork/internal/ArmyVechicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClassWork/src/com/xwork/classWork/internal/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClassWork/src/com/xwork/classWork/internal/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClassWork/src/com/xworkz/Runner/Eunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClassWork/src/com/xworkz/Runner/Eunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EnumObjects/src/com/xworkz/enumObjects/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EnumObjects/src/com/xworkz/enumObjects/Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InheritanceTypes/src/com/xworkz/inheritancetypes/Runner/HierarchicalRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../InheritanceTypes/src/com/xworkz/inheritancetypes/Runner/HierarchicalRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interface/src/com/xworkz/interfaceclasses/runner/Task3Runnner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interface/src/com/xworkz/interfaceclasses/task2interfaceclasses/SmartTrainLightt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ObjecttoString/src/com/xworkz/object/toString/internal/AirConditioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ObjecttoString/src/com/xworkz/object/toString/internal/AirConditioner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ObjecttoString/src/com/xworkz/object/toString/internal/Webcam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ObjecttoString/src/com/xworkz/object/toString/internal/Webcam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ObjecttoString/src/com/xworkz/object/toString/runner/MainRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ObjecttoString/src/com/xworkz/object/toString/runner/MainRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrivateInstanceVar/src/com/xworkz/GetterAndSetter/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PrivateInstanceVar/src/com/xworkz/GetterAndSetter/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrivateInstanceVar/src/com/xworkz/GetterAndSetter/MainRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PrivateInstanceVar/src/com/xworkz/GetterAndSetter/MainRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrivateInstanceVar/src/com/xworkz/GetterAndSetter/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PrivateInstanceVar/src/com/xworkz/GetterAndSetter/Station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xowrkz/staticAndencapsulation/Build.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xowrkz/staticAndencapsulation/Build.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xowrkz/staticAndencapsulation/Construct.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xowrkz/staticAndencapsulation/Construct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xworkz/encapsulation/MainRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xworkz/encapsulation/MainRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xworkz/encapsulation/Use.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StaticAndEncapsulation/src/com/xworkz/encapsulation/Use.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nikhilv0&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nikhilv0/JAVA.git&quot;,
+    &quot;accountId&quot;: &quot;9ecdefa7-b7fb-44f7-9954-c48f5c698699&quot;
+  }
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2wLNqNlhwHbUfoQf7PowxbijVeY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Smart Tomcat.Unnamed.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/nikki/Documents/apache-tomcat-9.0.104/lib/servlet-api.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" nameIsGenerated="true">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="" />
+      <option name="contextPath" value="test" />
+      <option name="docBase" value="$PROJECT_DIR$/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.104" />
+          <option name="path" value="$PROJECT_DIR$/../../../apache-tomcat-9.0.104" />
+          <option name="version" value="9.0.104.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="Test1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="faaeed97-b333-4b80-87ea-f70b7815d42b" name="Changes" comment="" />
+      <created>1745817083924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745817083924</updated>
+    </task>
+    <servers />
+  </component>
+</project>
