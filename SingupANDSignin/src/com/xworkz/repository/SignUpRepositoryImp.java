@@ -10,8 +10,8 @@ public class SignUpRepositoryImp implements SignUpRepository {
     @Override
     public String save(SignUpDTO signUpDTO) {
         try {
-            Class.forName(DBconstant.DRIVER.getProp());
-            Connection connection = DriverManager.getConnection(DBconstant.URL.getProp(), DBconstant.USERNAME.getProp(), DBconstant.PASSWORD.getProp());
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
             String sql = "insert into sign_up values(?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -36,8 +36,8 @@ public class SignUpRepositoryImp implements SignUpRepository {
     public SignUpDTO findById(String userId,String password) {
 
         try {
-            Class.forName(DBconstant.DRIVER.getProp());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getProp(),DBconstant.USERNAME.getProp(), DBconstant.PASSWORD.getProp());
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
             String sql = "SELECT * FROM sign_up WHERE user_id = '" + userId + "' AND password = '" + password + "'";
             Statement statement=connection.createStatement();
@@ -67,8 +67,8 @@ public class SignUpRepositoryImp implements SignUpRepository {
     public SignUpDTO findByUser(String userId, String email) {
 
         try {
-            Class.forName(DBconstant.DRIVER.getProp());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getProp(),DBconstant.USERNAME.getProp(), DBconstant.PASSWORD.getProp());
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
             String sql="select * from sign_up where user_Id= '"+ userId +"'or email= '"+email+"' ";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
