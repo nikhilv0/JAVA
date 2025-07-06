@@ -54,20 +54,24 @@ public class SignUpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId=req.getParameter("userId");
+        String mail=req.getParameter("userId");
+        HttpSession httpSessionMail= req.getSession();
+        httpSessionMail.setAttribute("mail",mail);
         String password=req.getParameter("password");
         System.out.println("\nID:"+userId);
+        System.out.println("mail:"+mail);
         System.out.println("password:"+password);
 
         SignUpService service=new SignUpServiceImp();
-        SignUpDTO signUpDTO=service.findBy(userId,password);
+        SignUpDTO signUpDTO=service.findBy(userId,mail,password);
 
         if (signUpDTO!=null){
             System.out.println("data found");
             SecureRandom secureRandom = new SecureRandom();
             String otp1 = String.valueOf(secureRandom.nextInt(1000000));
             System.out.println("Secure OTP: "+ otp1);
-            HttpSession  httpSession= req.getSession();
-            httpSession.setAttribute("otp", otp1);
+            HttpSession  httpSessionOTP= req.getSession();
+            httpSessionOTP.setAttribute("otp", otp1);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("otp.jsp");
             req.setAttribute("dto", signUpDTO);
             requestDispatcher.forward(req, resp);

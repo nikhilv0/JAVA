@@ -1,8 +1,9 @@
 package com.xworkz.dto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class DonorRegistrationDTO {
+public class DonorRegistrationDTO implements Serializable {
 
     String name;
     int age;

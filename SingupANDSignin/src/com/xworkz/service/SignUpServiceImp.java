@@ -4,8 +4,6 @@ import com.xworkz.dto.SignUpDTO;
 import com.xworkz.repository.SignUpRepository;
 import com.xworkz.repository.SignUpRepositoryImp;
 
-import java.security.SecureRandom;
-
 public class SignUpServiceImp implements SignUpService {
     @Override
     public String validateAndsave(SignUpDTO signUpDTO) {
@@ -39,11 +37,11 @@ public class SignUpServiceImp implements SignUpService {
     }
 
     @Override
-    public SignUpDTO findBy(String userId, String password) {
+    public SignUpDTO findBy(String userId, String mail,String password) {
         if (userId.length() > 4 && password.length() > 5) {
             System.out.println("valid userId and password");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
-            return signUpRepository.findById(userId, password);
+            return signUpRepository.findById(userId,mail,password);
 
         } else {
             System.out.println("invalid user Id and password");

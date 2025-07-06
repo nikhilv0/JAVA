@@ -33,13 +33,13 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public SignUpDTO findById(String userId,String password) {
+    public SignUpDTO findById(String userId,String mail,String password) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql = "SELECT * FROM sign_up WHERE user_id = '" + userId + "' AND password = '" + password + "'";
+            String sql = "SELECT * FROM sign_up WHERE user_id = '" + userId + "' AND email = '" + mail + "'" + "' AND password = '" + password + "'";
             Statement statement=connection.createStatement();
             ResultSet resultSet=statement.executeQuery(sql);
 

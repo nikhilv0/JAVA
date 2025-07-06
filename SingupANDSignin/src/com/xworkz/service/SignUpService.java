@@ -6,7 +6,7 @@ public interface SignUpService {
 
     String validateAndsave(SignUpDTO dto);
 
-    default SignUpDTO findBy(String userId,String password){
+    default SignUpDTO findBy(String userId,String email,String password){
 
         return null;
     }
