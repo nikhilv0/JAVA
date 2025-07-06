@@ -215,7 +215,6 @@ public class Main  {
         countries1.add("Suriname");
         countries1.add("Guyana");
         countries1.add("me");
-        countries1.add("madam");
 
 
 //        CountriesImp countriesImp=new CountriesImp();
@@ -248,7 +247,8 @@ public class Main  {
         System.out.println("____________________________________________________________________________________________");
         countries1.forEach((e)-> System.out.println(e+" :"+e.length()));
         System.out.println("____________________________________________________________________________________________");
-        countries1.stream().filter(e -> e.equalsIgnoreCase((new StringBuilder(e).reverse().toString()))).forEach(System.out::println);
+        countries1.stream().filter(e -> e.equalsIgnoreCase(new StringBuilder(e).reverse().toString())).forEach(System.out::println);
+
 
     }
 
