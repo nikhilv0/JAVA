@@ -16,7 +16,7 @@ public class DonorRegistrationRepositoryImp implements DonorRegistrationReposito
 
         try {
 //           load  and register
-            Class.forName("com.mysql.cj.jdbc.Driver");//FQN
+            Class.forName(DBconstant.DRIVER.getValue());//FQN
 //            String url="jdbc:mysql://localhost:3306/Blood_Bank";
 //            String username="root";
 //            String password="Nikki6360";
