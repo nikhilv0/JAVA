@@ -83,7 +83,7 @@
                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="${dto.confirmPassword}" required />
             </div>
             <div class="d-grid">
-                <button type="submit" class="btn btn-black">Register</button>
+                <input type="submit" class="btn btn-black" value="signup" name="action">Register</input>
             </div>
             <div class="text-center">
                 <a href="signIn.jsp">Do have an account? Sign In</a> |

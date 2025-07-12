@@ -54,18 +54,18 @@
 <div class="container">
     <div class="form-container shadow-sm">
         <h4 class="text-center mb-4">Sign In</h4>
-        <form action="signUp" method="get">
+        <form action="signUp" method="post">
             <div class="mb-3">
                 <h6>${message}</h6>
-                <label for="userId" class="form-label">User ID</label>
-                <input type="text" class="form-control" id="userId" name="userId"  required>
+                <label for="userId" class="form-label">E-mail</label>
+                <input type="text" class="form-control" id="userId" name="email"  required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password"  name="password" required>
             </div>
             <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-dark">Login</button>
+                <input type="submit" class="btn btn-dark" value="signin" name="action"></input>
             </div>
             <div class="text-center">
                 <a href="forgot.jsp">Forgot userId | password</a>

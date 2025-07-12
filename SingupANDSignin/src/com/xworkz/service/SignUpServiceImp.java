@@ -37,11 +37,11 @@ public class SignUpServiceImp implements SignUpService {
     }
 
     @Override
-    public SignUpDTO findBy(String userId, String mail,String password) {
-        if (userId.length() > 4 && password.length() > 5) {
+    public SignUpDTO findBy(String mail,String password) {
+        if ((mail.length() > 4 && password.length() > 5)) {
             System.out.println("valid userId and password");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
-            return signUpRepository.findById(userId,mail,password);
+            return signUpRepository.findById(mail,password);
 
         } else {
             System.out.println("invalid user Id and password");

@@ -4,13 +4,13 @@ import com.xworkz.dto.SignUpDTO;
 
 public interface SignUpService {
 
-    String validateAndsave(SignUpDTO dto);
+    String validateAndsave(SignUpDTO dto);//signUp
 
-    default SignUpDTO findBy(String userId,String email,String password){
+    default SignUpDTO findBy(String mail,String password){//signIn
 
         return null;
     }
-    SignUpDTO findByUser(String userId,String email);
+    SignUpDTO findByUser(String userId,String email);//forgot
 
-    String generateOtp(String otp,String otpFromSession);
+    String generateOtp(String otp,String otpFromSession);//otp
 }

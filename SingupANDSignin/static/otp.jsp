@@ -65,11 +65,8 @@
 <body>
 <div class="form-box text-center">
     <h4 class="form-title mb-4">Enter OTP</h4>
-    <div class="otp-message text-center text-dark">
-        OTP for login: <strong>${otp}</strong>
-    </div>
     ${mess}
-    <form action="otp" method="get">
+    <form action="otp" method="post">
         <div class="mb-3 text-start">
             <label for="otp" class="form-label">One-Time Password (OTP)</label>
             <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter 6-digit OTP" maxlength="6" required>

@@ -19,7 +19,7 @@ public class OtpServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String otp=req.getParameter("otp");
 
         String otpFromSession=(String)req.getSession(false).getAttribute("otp");
@@ -35,7 +35,6 @@ public class OtpServlet extends HttpServlet {
             System.out.println("enter valid otp");
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("otp.jsp");
             String mess="Enter valid otp";
-            req.setAttribute("opt1",otp);
             req.setAttribute("mess",mess);
             requestDispatcher.forward(req,resp);
 

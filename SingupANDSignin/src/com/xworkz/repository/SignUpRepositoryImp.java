@@ -33,13 +33,13 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public SignUpDTO findById(String userId,String mail,String password) {
+    public SignUpDTO findById(String mail,String password) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql = "SELECT * FROM sign_up WHERE user_id = '" + userId + "' AND email = '" + mail + "'" + "' AND password = '" + password + "'";
+            String sql = "SELECT * FROM sign_up WHERE email = '" + mail + "'";
             Statement statement=connection.createStatement();
             ResultSet resultSet=statement.executeQuery(sql);
 
@@ -50,7 +50,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
                 String email=resultSet.getString("email");
 //                String conformPassword=resultSet.getString("confirmPassword");
 
-
+                System.out.println("from DB");
                 SignUpDTO signUpDTO1 = new SignUpDTO(user,email,Password);
                 System.out.println(signUpDTO1);
                 return signUpDTO1;
@@ -70,7 +70,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql="select * from sign_up where user_Id= '"+ userId +"'or email= '"+email+"' ";
+            String sql="select * from sign_up where user_Id= '"+ userId +"'or email= '"+email+"'";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
             ResultSet resultSet=preparedStatement.executeQuery();
 
