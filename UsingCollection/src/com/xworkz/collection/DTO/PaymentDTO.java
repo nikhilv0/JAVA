@@ -8,7 +8,8 @@ public class PaymentDTO implements Serializable {
     private String name;
     private String lastName;
     private String email;
-    private String country;
+    private String address;
+//    private String country;
     private String zipCode;
     private String upiID;
 //    private String cardName;
@@ -16,11 +17,12 @@ public class PaymentDTO implements Serializable {
 //    private String date;
 //    private short cvv;
 
-    public PaymentDTO(String name,String lastName,String email,String country, String zipCode,String upiID){ //cardName, int cardNumber, String date,short cvv)
+    public PaymentDTO(String name,String lastName,String email,String address, String zipCode,String upiID){ //cardName, int cardNumber, String date,short cvv)
         this.name=name;
         this.lastName=lastName;
         this.email=email;
-        this.country=country;
+        this.address=address;
+//        this.country=country;
         this.zipCode=zipCode;
         this.upiID=upiID;
 //        this.cardName=cardName;
@@ -53,13 +55,21 @@ public class PaymentDTO implements Serializable {
         this.email = email;
     }
 
-    public String getCountry() {
-        return country;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setAddress(String address) {
+        this.address = address;
     }
+
+//    public String getCountry() {
+//        return country;
+//    }
+
+//    public void setCountry(String country) {
+//        this.country = country;
+//    }
 
     public String getZipCode() {
         return zipCode;
@@ -115,7 +125,7 @@ public class PaymentDTO implements Serializable {
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", country='" + country + '\'' +
+                ", address='" + address + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 ", upiID='" + upiID + '\'' +
 //                ", cardName='" + cardName + '\'' +

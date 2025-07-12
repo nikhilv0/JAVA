@@ -1,6 +1,8 @@
 package com.xworkz.collection.servlet;
 
 import com.xworkz.collection.DTO.PaymentDTO;
+import com.xworkz.collection.service.PaymentService;
+import com.xworkz.collection.service.PaymentServiceImp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,16 +24,19 @@ public class PaymentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name=req.getParameter("name");
-        String lastName=req.getParameter("lastName"); //???
+        String lastName=req.getParameter("lastName");
+        String email=req.getParameter("email");
+        String address=req.getParameter("address");
+        String zipCode=req.getParameter("ZIPCode");
+        String upiID=req.getParameter("upi-id");
 
-//        PaymentDTO paymentDTO=new PaymentDTO(name,lastName);
-//        System.out.println(paymentDTO);
+        PaymentDTO paymentDTO=new PaymentDTO(name,lastName,email,address,zipCode,upiID);
+        System.out.println(paymentDTO);
 
-        List<PaymentDTO> list=new ArrayList<>();
-        list.add(new PaymentDTO(name,lastName));
-        for (PaymentDTO paymentDTO:list){
-            System.out.println(paymentDTO);
+        PaymentService paymentService=new PaymentServiceImp();
+        String validate=paymentService.validateAndSave(paymentDTO);
+        System.out.println(validate);
+
         }
     }
-}
 

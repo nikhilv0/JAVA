@@ -22,10 +22,10 @@
                         <input type="text" class="form-control" placeholder="Last name" name="lastName" required>
                     </div>
                     <div class="col-12">
-                        <input type="email" class="form-control" placeholder="Email" required>
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
                     </div>
                     <div class="col-12">
-                        <input type="text" class="form-control" placeholder="Address" required>
+                        <input type="text" class="form-control" placeholder="Address" name="address" required>
                     </div>
                     <div class="col-md-6">
                         <select class="form-select" required>
@@ -35,7 +35,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="ZIP Code" required>
+                        <input type="text" class="form-control" placeholder="ZIP Code" name="ZIPCode" required>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                 <!-- UPI Input -->
                 <div class="mt-3">
                     <label for="upi-id" class="form-label">Enter UPI ID</label>
-                    <input type="text" class="form-control" id="upi-id" placeholder="example@upi">
+                    <input type="text" class="form-control" id="upi-id" placeholder="example@upi" name="upi-id"  >
                 </div>
 
                 <!-- QR Code Scan -->
