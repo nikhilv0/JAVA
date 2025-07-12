@@ -90,4 +90,28 @@ public class SignUpRepositoryImp implements SignUpRepository {
         }
         return null;
     }
+
+    @Override
+    public String storeOTP(String emailSession,String otpSession) {
+
+        try {
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(),DBconstant.PASSWORD.getValue());
+
+            String sql="insert into otp values(?,?,?,?)";
+            PreparedStatement preparedStatement= connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1,0);
+            preparedStatement.setString(2,emailSession);
+            preparedStatement.setString(3,otpSession);
+            preparedStatement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
+
+            preparedStatement.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return "working";
+    }
 }

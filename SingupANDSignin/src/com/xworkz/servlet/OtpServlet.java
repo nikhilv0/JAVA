@@ -23,9 +23,10 @@ public class OtpServlet extends HttpServlet {
         String otp=req.getParameter("otp");
 
         String otpFromSession=(String)req.getSession(false).getAttribute("otp");
+        String emailSession=(String)req.getSession(false).getAttribute("mail");
 
         SignUpService service=new SignUpServiceImp();
-        String send=service.generateOtp(otp,otpFromSession);
+        String send=service.generateOtp(otp,otpFromSession,emailSession);
 
 
         if (send!=null){

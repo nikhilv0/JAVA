@@ -65,9 +65,11 @@ public class SignUpServiceImp implements SignUpService {
     }
 
     @Override
-    public String generateOtp(String otp,String otpFromSession) {
+    public String generateOtp(String otp,String otpFromSession,String emailSession) {
             if (otp.equals(otpFromSession)){
                 System.out.println("valid otp");
+                SignUpRepository signUpRepository=new SignUpRepositoryImp();
+                signUpRepository.storeOTP(otpFromSession,emailSession);
                 return otp;
             }
             else {
