@@ -24,10 +24,11 @@ public class SendOtp extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
         String otpFromSession = generateOtp();
+        System.out.println(otpFromSession);
         String mail=req.getParameter("email");
 //        String mailFromSession = (String) req.getSession(false).getAttribute("mail");
 

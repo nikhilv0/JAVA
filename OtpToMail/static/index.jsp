@@ -4,6 +4,7 @@
     </title>
 </head>
 <body>
-<a href="otp.jsp">opt</a>
+<button><a href="otp.jsp">opt</a></button>
+
 </body>
 </html>
