@@ -25,14 +25,29 @@ public class OtpServlet extends HttpServlet {
         String otpFromSession=(String)req.getSession(false).getAttribute("otp");
         String emailSession=(String)req.getSession(false).getAttribute("mail");
 
+        String Forgototp=(String)req.getSession(false).getAttribute("otp2");
+        String Forgotemail=(String)req.getSession(false).getAttribute("email");
+
+
+
         SignUpService service=new SignUpServiceImp();
-        String send=service.generateOtp(otp,otpFromSession,emailSession);
+        String send=service.generateOtp(otp,otpFromSession,emailSession,Forgototp,Forgotemail);
 
 
-        if (send!=null){
+
+        if (send.equals("validated otp for singIn")){
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("index.jsp");
             requestDispatcher.forward(req,resp);
-        }else {
+        }
+        else if (send.equals("validated otp for forgot")){
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgot.jsp");
+            String value="User Details:";
+            req.setAttribute("value",value);
+            String forgotDTO=(String)req.getSession(false).getAttribute("fogotsignupDTO") ;
+            req.setAttribute("dto", forgotDTO);
+            requestDispatcher.forward(req, resp);
+        }
+        else {
             System.out.println("enter valid otp");
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("otp.jsp");
             String mess="Enter valid otp";

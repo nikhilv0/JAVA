@@ -64,14 +64,15 @@ public class SignUpRepositoryImp implements SignUpRepository {
  }
 
     @Override
-    public SignUpDTO findByUser(String userId, String email) {
+    public SignUpDTO findByUser( String email) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql="select * from sign_up where user_Id= '"+ userId +"'or email= '"+email+"'";
+            String sql="select * from sign_up where email= ? ";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            preparedStatement.setString(1,email);
             ResultSet resultSet=preparedStatement.executeQuery();
 
             while(resultSet.next()){
@@ -98,7 +99,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(),DBconstant.PASSWORD.getValue());
 
-            String sql="insert into otp values(?,?,?,?)";
+            String sql="insert into otp_signIn values(?,?,?,?)";
             PreparedStatement preparedStatement= connection.prepareStatement(sql);
 
             preparedStatement.setInt(1,0);
@@ -113,5 +114,28 @@ public class SignUpRepositoryImp implements SignUpRepository {
         }
 
         return "working";
+    }
+
+    @Override
+    public String forgotStoreOTP(String forgotMail, String forgotOTP) {
+
+        try {
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
+
+            String sql="insert into otp_forgot values(?,?,?,?)";
+            PreparedStatement preparedStatement= connection.prepareStatement(sql);
+
+            preparedStatement.setInt(1,0);
+            preparedStatement.setString(2,forgotMail);
+            preparedStatement.setString(3,forgotOTP);
+            preparedStatement.setTimestamp(4,new Timestamp(System.currentTimeMillis()));
+
+            preparedStatement.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return "Successfully stored forgot otp";
     }
 }

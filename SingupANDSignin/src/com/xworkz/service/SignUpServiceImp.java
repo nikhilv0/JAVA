@@ -50,12 +50,18 @@ public class SignUpServiceImp implements SignUpService {
     }
 
     @Override
-    public SignUpDTO findByUser(String userId, String email) {
+    public String validateForgototp(String otp, String email) {
 
-        if (userId != null && email != null) {
+        return "valic otp";
+    }
+
+    @Override
+    public SignUpDTO findByUser( String email) {
+
+        if ( email != null) {
             System.out.println("valid userId or email");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
-            SignUpDTO signUpDTO = signUpRepository.findByUser(userId, email);
+            SignUpDTO signUpDTO = signUpRepository.findByUser(email);
             return signUpDTO;
 
         } else {
@@ -65,15 +71,18 @@ public class SignUpServiceImp implements SignUpService {
     }
 
     @Override
-    public String generateOtp(String otp,String otpFromSession,String emailSession) {
+    public String generateOtp(String otp,String otpFromSession,String emailSession,String forgotOTP,String forgotMail) {
             if (otp.equals(otpFromSession)){
-                System.out.println("valid otp");
+                System.out.println("valid otp for singIn");
                 SignUpRepository signUpRepository=new SignUpRepositoryImp();
                 signUpRepository.storeOTP(otpFromSession,emailSession);
-                return otp;
+                return "validated otp for singIn";
             }
             else {
-                return null;
+                System.out.println("valid otp for Forgot");
+                SignUpRepository signUpRepository=new SignUpRepositoryImp();
+                signUpRepository.forgotStoreOTP(forgotOTP,forgotMail);
+                return "validated otp for forgot";
             }
 
     }

@@ -8,7 +8,9 @@ public interface SignUpRepository {
 
     SignUpDTO findById(String mail,String password);//sign in
 
-    SignUpDTO findByUser(String userId,String email); //forget
+    SignUpDTO findByUser(String email); //forget
 
     String storeOTP(String otp,String emailSession);
+
+    String forgotStoreOTP(String forgotOTP, String forgotMail);
 }

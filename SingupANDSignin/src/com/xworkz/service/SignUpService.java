@@ -10,7 +10,12 @@ public interface SignUpService {
 
         return null;
     }
-    SignUpDTO findByUser(String userId,String email);//forgot
 
-    String generateOtp(String otp,String otpFromSession,String emailSession);//otp
+    String validateForgototp(String otp,String email);
+
+    SignUpDTO findByUser(String email);//forgot
+
+    String generateOtp(String otp,String otpFromSession,String emailSession,String forgotOTP,String forgotMail);//otp
+
+
 }
