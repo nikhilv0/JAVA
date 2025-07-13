@@ -1,9 +1,12 @@
 package com.xworkz.collection.servlet;
 
 import com.xworkz.collection.DTO.PaymentDTO;
+import com.xworkz.collection.repository.PaymentRepository;
+import com.xworkz.collection.repository.PaymentRepositoryImp;
 import com.xworkz.collection.service.PaymentService;
 import com.xworkz.collection.service.PaymentServiceImp;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +25,7 @@ public class PaymentServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name=req.getParameter("name");
         String lastName=req.getParameter("lastName");
         String email=req.getParameter("email");
@@ -36,7 +39,24 @@ public class PaymentServlet extends HttpServlet {
         PaymentService paymentService=new PaymentServiceImp();
         String validate=paymentService.validateAndSave(paymentDTO);
         System.out.println(validate);
+        RequestDispatcher requestDispatcher= req.getRequestDispatcher("payment.jsp");
+        req.setAttribute("dto",paymentDTO);
+        requestDispatcher.forward(req,resp);
 
         }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String gmail=req.getParameter("mail");
+        System.out.println(gmail);
+
+        PaymentService paymentService=new PaymentServiceImp();
+        List list=paymentService.retrived(gmail);
+
+        RequestDispatcher requestDispatcher=req.getRequestDispatcher("retrived.jsp");
+        req.setAttribute("list",list);
+        requestDispatcher.forward(req,resp);
+
     }
+}
 

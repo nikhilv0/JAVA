@@ -11,7 +11,7 @@
     <h2 class="text-center mb-4">Checkout</h2>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form action="payment" >
+            <form action="payment" method="post" >
                 <!-- Billing Details -->
                 <h5 class="mb-3">Billing Details</h5>
                 <div class="row g-3">
