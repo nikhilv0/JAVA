@@ -11,11 +11,11 @@ public interface SignUpService {
         return null;
     }
 
-    String validateForgototp(String otp,String email);
+    String validateForgototp(String forgototp,String otp,String email);//forgot
 
     SignUpDTO findByUser(String email);//forgot
 
-    String generateOtp(String otp,String otpFromSession,String emailSession,String forgotOTP,String forgotMail);//otp
+    String generateOtp(String otp,String otpFromSession,String emailSession);//otp
 
 
 }

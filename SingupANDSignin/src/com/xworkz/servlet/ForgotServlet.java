@@ -51,7 +51,7 @@ public class ForgotServlet extends HttpServlet {
 
             doGet(req,resp);
 
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("otp.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgotOTP.jsp");
 //            req.setAttribute("dto", signUpDTO);
             requestDispatcher.forward(req, resp);
         } else {

@@ -1,5 +1,6 @@
 package com.xworkz.servlet;
 
+import com.xworkz.dto.SignUpDTO;
 import com.xworkz.service.SignUpService;
 import com.xworkz.service.SignUpServiceImp;
 
@@ -14,46 +15,70 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/otp",loadOnStartup = 1)
 public class OtpServlet extends HttpServlet {
 
-    public OtpServlet() {
-        System.out.println("OtpServlet constructor");
-    }
-
+     public OtpServlet(){
+         System.out.println("OtpServlet Constructor");
+     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String otp=req.getParameter("otp");
 
-        String otpFromSession=(String)req.getSession(false).getAttribute("otp");
-        String emailSession=(String)req.getSession(false).getAttribute("mail");
+            if (req.getParameter("otp1").equals("signotp")) {
+            signinotp(req, resp);
+
+            } else if (req.getParameter("otp1").equals("forgototp")) {
+            forgototp(req, resp);
+//            doGet(req, resp);
+            }
+     }
+
+    private static void signinotp (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String otp = req.getParameter("otp");
+
+        String otpFromSession = (String) req.getSession(false).getAttribute("otp");
+        String emailSession = (String) req.getSession(false).getAttribute("mail");
+
+        SignUpService service = new SignUpServiceImp();
+        String send = service.generateOtp(otp, otpFromSession, emailSession);
+        System.out.println(send);
+
+
+        if (send != null) {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+            requestDispatcher.forward(req, resp);
+        } else {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("otp.jsp");
+            req.setAttribute("mess", send);
+            requestDispatcher.forward(req, resp);
+
+        }
+    }
+
+    private static void forgototp(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String forgototp=req.getParameter("forgototp");
 
         String Forgototp=(String)req.getSession(false).getAttribute("otp2");
         String Forgotemail=(String)req.getSession(false).getAttribute("email");
 
-
-
         SignUpService service=new SignUpServiceImp();
-        String send=service.generateOtp(otp,otpFromSession,emailSession,Forgototp,Forgotemail);
+        String validate=service.validateForgototp(forgototp,Forgototp,Forgotemail);
+        System.out.println(validate);
 
-
-
-        if (send.equals("validated otp for singIn")){
-            RequestDispatcher requestDispatcher=req.getRequestDispatcher("index.jsp");
-            requestDispatcher.forward(req,resp);
-        }
-        else if (send.equals("validated otp for forgot")){
+        if (validate!=null){
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgot.jsp");
             String value="User Details:";
             req.setAttribute("value",value);
-            String forgotDTO=(String)req.getSession(false).getAttribute("fogotsignupDTO") ;
+            SignUpDTO forgotDTO=(SignUpDTO) req.getSession(false).getAttribute("fogotsignupDTO") ;
             req.setAttribute("dto", forgotDTO);
             requestDispatcher.forward(req, resp);
         }
         else {
-            System.out.println("enter valid otp");
             RequestDispatcher requestDispatcher=req.getRequestDispatcher("otp.jsp");
-            String mess="Enter valid otp";
-            req.setAttribute("mess",mess);
+            req.setAttribute("mess",validate);
             requestDispatcher.forward(req,resp);
-
         }
     }
 }
+
+
+
+
+

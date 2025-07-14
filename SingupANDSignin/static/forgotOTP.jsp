@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -67,11 +68,11 @@
     ${mess}
     <form action="otp" method="post">
         <div class="mb-3 text-start">
-            <label for="otp" class="form-label">One-Time Password (OTP)</label>
-            <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter 6-digit OTP" maxlength="6" required>
+            <label for="forgototp" class="form-label">One-Time Password (OTP)</label>
+            <input type="text" class="form-control" id="forgototp" name="forgototp" placeholder="Enter 6-digit OTP" maxlength="6" required>
         </div>
         <div class="d-grid mb-3">
-            <input type="submit" class="btn btn-black" value="signotp" name="otp1"></input>
+            <input type="submit" class="btn btn-black" value="forgototp" name="otp1"></input>
         </div>
         <div class="form-links text-center">
             <a href="signIn.jsp">Back to Sign In</a> |

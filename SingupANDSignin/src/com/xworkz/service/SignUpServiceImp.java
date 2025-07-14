@@ -49,42 +49,46 @@ public class SignUpServiceImp implements SignUpService {
         return null;
     }
 
-    @Override
-    public String validateForgototp(String otp, String email) {
-
-        return "valic otp";
-    }
 
     @Override
     public SignUpDTO findByUser( String email) {
 
         if ( email != null) {
-            System.out.println("valid userId or email");
+            System.out.println("valid email");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
             SignUpDTO signUpDTO = signUpRepository.findByUser(email);
             return signUpDTO;
 
         } else {
-            System.out.println("invalid user Id and password");
+            System.out.println("invalid email");
         }
         return null;
     }
 
     @Override
-    public String generateOtp(String otp,String otpFromSession,String emailSession,String forgotOTP,String forgotMail) {
+    public String generateOtp(String otp,String otpFromSession,String emailSession) {  //otp for sign
             if (otp.equals(otpFromSession)){
-                System.out.println("valid otp for singIn");
+                System.out.println("valid otp for signIn");
                 SignUpRepository signUpRepository=new SignUpRepositoryImp();
                 signUpRepository.storeOTP(otpFromSession,emailSession);
                 return "validated otp for singIn";
             }
             else {
-                System.out.println("valid otp for Forgot");
-                SignUpRepository signUpRepository=new SignUpRepositoryImp();
-                signUpRepository.forgotStoreOTP(forgotOTP,forgotMail);
-                return "validated otp for forgot";
+//                System.out.println("Enter valid otp ");
+                return "Enter valid otp";
             }
-
+    }
+    @Override
+    public String validateForgototp(String forgototp,String otp, String email) { //otp for forgot
+        if (forgototp.equals(otp)) {
+            System.out.println("valid otp for Forgot");
+            SignUpRepository signUpRepository = new SignUpRepositoryImp();
+            signUpRepository.forgotStoreOTP(otp, email);
+            return "validated otp for forgot";
+        }
+        else {
+            return "Enter valid otp";
+        }
     }
 }
 
