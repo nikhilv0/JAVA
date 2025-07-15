@@ -67,6 +67,7 @@
     ${mess}
     <form action="otp" method="post">
         <div class="mb-3 text-start">
+            <input type="hidden" name="email" value="${dto.email}" />
             <label for="otp" class="form-label">One-Time Password (OTP)</label>
             <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter 6-digit OTP" maxlength="6" required>
         </div>

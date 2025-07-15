@@ -52,7 +52,7 @@ public class ForgotServlet extends HttpServlet {
             doGet(req,resp);
 
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgotOTP.jsp");
-//            req.setAttribute("dto", signUpDTO);
+            req.setAttribute("dto", signUpDTO);
             requestDispatcher.forward(req, resp);
         } else {
             String message = "Enter valid mail and Password";

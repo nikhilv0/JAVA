@@ -26,7 +26,6 @@ public class OtpServlet extends HttpServlet {
 
             } else if (req.getParameter("otp1").equals("forgototp")) {
             forgototp(req, resp);
-//            doGet(req, resp);
             }
      }
 
