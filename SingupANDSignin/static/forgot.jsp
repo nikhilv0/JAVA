@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -35,6 +34,7 @@
     <div class="form-box shadow-sm">
         <h4 class="text-center mb-4">Recover Account</h4>
         <form action="Forgot" method="post">
+            <div align="center">${message}</div>
             <div class="mb-3">
                 <label for="emailOrUserId" class="form-label">Email or User ID</label>
                 <input type="text" class="form-control" id="emailOrUserId" name="emailOrUserId" required>

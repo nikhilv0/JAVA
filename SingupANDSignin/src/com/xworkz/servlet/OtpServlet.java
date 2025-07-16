@@ -40,7 +40,7 @@ public class OtpServlet extends HttpServlet {
         System.out.println(send);
 
 
-        if (send != null) {
+        if (send.equals("validated otp for singIn")) {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
             requestDispatcher.forward(req, resp);
         } else {
@@ -61,7 +61,7 @@ public class OtpServlet extends HttpServlet {
         String validate=service.validateForgototp(forgototp,Forgototp,Forgotemail);
         System.out.println(validate);
 
-        if (validate!=null){
+        if (validate.equals("validated otp for forgot")){
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgot.jsp");
             String value="User Details:";
             req.setAttribute("value",value);
@@ -70,8 +70,8 @@ public class OtpServlet extends HttpServlet {
             requestDispatcher.forward(req, resp);
         }
         else {
-            RequestDispatcher requestDispatcher=req.getRequestDispatcher("otp.jsp");
             req.setAttribute("mess",validate);
+            RequestDispatcher requestDispatcher=req.getRequestDispatcher("forgotOTP.jsp");
             requestDispatcher.forward(req,resp);
         }
     }

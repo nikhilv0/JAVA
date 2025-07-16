@@ -55,7 +55,7 @@ public class ForgotServlet extends HttpServlet {
             req.setAttribute("dto", signUpDTO);
             requestDispatcher.forward(req, resp);
         } else {
-            String message = "Enter valid mail and Password";
+            String message = "Enter valid mail";
             System.out.println(message);
             req.setAttribute("message", message);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgot.jsp");
