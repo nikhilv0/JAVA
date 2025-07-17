@@ -10,7 +10,9 @@ public interface SignUpRepository {
 
     SignUpDTO findByUser(String email); //forget
 
-    String storeOTP(String otp,String emailSession);
+    String storeOTP(String otp,String emailSession);//store otp
 
-    String forgotStoreOTP(String forgotOTP, String forgotMail);
+    String forgotStoreOTP(String forgotOTP, String forgotMail);//store forgototp
+
+    String saveCredentials(String newPassword,String forgotmail);//save forgot credentials
 }

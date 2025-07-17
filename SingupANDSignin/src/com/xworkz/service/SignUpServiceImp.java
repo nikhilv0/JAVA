@@ -13,7 +13,12 @@ public class SignUpServiceImp implements SignUpService {
             String password = signUpDTO.getPassword();
             String confPassword = signUpDTO.getConfirmPassword();
 
-            if (email == null) {
+            if (!(email.length() > 4 &&
+                    email.contains("@") &&
+                    email.contains(".") &&
+                    email.indexOf('@') > 0 &&
+                    email.lastIndexOf('.') > email.indexOf('@') + 1 &&
+                    !email.contains(" "))){
                 System.out.println("invalid mail");
                 return "enter valid email";
             }
@@ -39,7 +44,7 @@ public class SignUpServiceImp implements SignUpService {
     @Override
     public SignUpDTO findBy(String mail,String password) {
         if ((mail.length() > 4 && password.length() > 5)) {
-            System.out.println("valid userId and password");
+            System.out.println("valid mail and password");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
             return signUpRepository.findById(mail,password);
 
@@ -53,7 +58,13 @@ public class SignUpServiceImp implements SignUpService {
     @Override
     public SignUpDTO findByUser( String email) {
 
-        if ( email != null) {
+        if ( email.length() > 4 &&
+                email.contains("@") &&
+                email.contains(".") &&
+                email.indexOf('@') > 0 &&
+                email.lastIndexOf('.') > email.indexOf('@') + 1 &&
+                !email.contains(" ")){
+
             System.out.println("valid email");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
             SignUpDTO signUpDTO = signUpRepository.findByUser(email);
@@ -70,7 +81,7 @@ public class SignUpServiceImp implements SignUpService {
             if (otp.equals(otpFromSession)){
                 System.out.println("valid otp for signIn");
                 SignUpRepository signUpRepository=new SignUpRepositoryImp();
-                signUpRepository.storeOTP(otpFromSession,emailSession);
+                signUpRepository.storeOTP(emailSession,otpFromSession);
                 return "validated otp for singIn";
             }
             else {
@@ -78,17 +89,42 @@ public class SignUpServiceImp implements SignUpService {
                 return "Enter valid otp";
             }
     }
+
+
     @Override
     public String validateForgototp(String forgototp,String otp, String email) { //otp for forgot
         if (forgototp.equals(otp)) {
             System.out.println("valid otp for Forgot");
             SignUpRepository signUpRepository = new SignUpRepositoryImp();
-            signUpRepository.forgotStoreOTP(otp, email);
+            signUpRepository.forgotStoreOTP(email, otp);
             return "validated otp for forgot";
         }
         else {
             return "Enter valid otp";
         }
+    }
+
+    @Override
+    public String resetPass(String newPassword, String confirmPass,String forgotmail) {
+        if (passwordPattern(newPassword)){
+                System.out.println("Password is valid");
+
+                SignUpRepository signUpRepository=new SignUpRepositoryImp();
+                String savedCredentials=signUpRepository.saveCredentials(newPassword,forgotmail);
+
+                return "Password is valid";
+        } else if (!newPassword.equals(confirmPass)) {
+            return "Missmatched password*";
+
+        }
+        return "Password must be >6 chars, digit, upper, lower, and special character*";
+    }
+
+    private static boolean passwordPattern(String newPassword) {
+        return newPassword.length() > 6 && newPassword.matches(".*\\d.*")
+                && newPassword.matches(".*[A-Z].*")
+                && newPassword.matches(".*[a-z].*")
+                && newPassword.matches(".*[@#$%^&+=!].*");
     }
 }
 

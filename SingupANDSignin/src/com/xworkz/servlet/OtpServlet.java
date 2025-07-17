@@ -62,11 +62,7 @@ public class OtpServlet extends HttpServlet {
         System.out.println(validate);
 
         if (validate.equals("validated otp for forgot")){
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgot.jsp");
-            String value="User Details:";
-            req.setAttribute("value",value);
-            SignUpDTO forgotDTO=(SignUpDTO) req.getSession(false).getAttribute("fogotsignupDTO") ;
-            req.setAttribute("dto", forgotDTO);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgotCredentials.jsp");
             requestDispatcher.forward(req, resp);
         }
         else {

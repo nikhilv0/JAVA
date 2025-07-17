@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -65,7 +64,7 @@
 <body>
 <div class="form-box text-center">
     <h4 class="form-title mb-4">Enter OTP</h4>
-    ${mess}
+    <div style="color:red">${mess}</div>
     <form action="otp" method="post">
         <div class="mb-3 text-start">
             <input type="hidden" name="email" value="${dto.email}" />

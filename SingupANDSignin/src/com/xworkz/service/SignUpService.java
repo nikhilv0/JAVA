@@ -17,5 +17,7 @@ public interface SignUpService {
 
     String generateOtp(String otp,String otpFromSession,String emailSession);//otp
 
+    String resetPass(String newPassword,String confirmPass,String forgotmail);//reset forgot credentials
+
 
 }

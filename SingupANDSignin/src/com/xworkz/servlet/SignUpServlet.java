@@ -94,7 +94,7 @@ public class SignUpServlet extends HttpServlet {
             requestDispatcher.forward(req, resp);
         }
         else {
-            String message="Enter valid User ID and Password";
+            String message="Enter valid mail and Password";
             System.out.println(message);
             req.setAttribute("message",message);
             RequestDispatcher requestDispatcher= req.getRequestDispatcher("signIn.jsp");

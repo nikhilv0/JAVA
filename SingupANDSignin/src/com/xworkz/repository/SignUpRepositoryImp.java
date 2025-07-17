@@ -138,4 +138,25 @@ public class SignUpRepositoryImp implements SignUpRepository {
         }
         return "Successfully stored forgot otp";
     }
+
+    @Override
+    public String saveCredentials(String newPassword,String forgotmail) {
+
+        try {
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(),DBconstant.PASSWORD.getValue());
+
+            String sql="update sign_up SET password = ?,updated_date = CURRENT_TIMESTAMP WHERE email = ?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+
+            preparedStatement.setString(1,newPassword);
+            preparedStatement.setString(2,forgotmail);
+            preparedStatement.executeUpdate();
+
+            System.out.println("Forgot Credentials Stored");
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return "Forgot Credentials Stored";
+    }
 }

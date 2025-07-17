@@ -34,18 +34,20 @@ public class ForgotServlet extends HttpServlet {
         httpSession.setAttribute("email",email);
 //        String userId = req.getParameter("emailOrUserId");
         System.out.println("Mail:" + email);
+        HttpSession forgotmailsession=req.getSession();
+        forgotmailsession.setAttribute("forgotmail",email);
 //        System.out.println("userId:" + userId);
 
         SignUpService service = new SignUpServiceImp();
         SignUpDTO signUpDTO = service.findByUser(email);
-        HttpSession forgotdto=req.getSession();
-        httpSession.setAttribute("fogotsignupDTO",signUpDTO);
+//        HttpSession forgotdto=req.getSession();
+//        httpSession.setAttribute("fogotsignupDTO",signUpDTO);   needed for setting values in front
 
         if (signUpDTO != null) {
             System.out.println("data found");
             SecureRandom secureRandom=new SecureRandom();
             String otp2 = String.format("%06d",secureRandom.nextInt(1000000));
-            System.out.println("OTP: "+ otp2 + "for ForgotPage ");
+            System.out.println("OTP: "+ otp2 + " for ForgotPage ");
             HttpSession httpSession1=req.getSession();
             httpSession1.setAttribute("otp2",otp2);
 
@@ -55,7 +57,7 @@ public class ForgotServlet extends HttpServlet {
             req.setAttribute("dto", signUpDTO);
             requestDispatcher.forward(req, resp);
         } else {
-            String message = "Enter valid mail";
+            String message = "Enter valid mail*";
             System.out.println(message);
             req.setAttribute("message", message);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("forgot.jsp");
