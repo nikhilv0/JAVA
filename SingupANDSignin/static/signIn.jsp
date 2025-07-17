@@ -56,7 +56,7 @@
         <h4 class="text-center mb-4">Sign In</h4>
         <form action="signUp" method="post">
             <div class="mb-3">
-                <h6>${message}</h6>
+                <h6 align="center" style="color:red">${message}</h6>
                 <label for="userId" class="form-label">E-mail</label>
                 <input type="text" class="form-control" id="userId" name="email"  required>
             </div>
