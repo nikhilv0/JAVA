@@ -2,6 +2,7 @@ package com.xworkz.repository;
 
 import com.xworkz.constant.DBconstant;
 import com.xworkz.dto.SignUpDTO;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -13,13 +14,14 @@ public class SignUpRepositoryImp implements SignUpRepository {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
+            String hashedPassword = BCrypt.hashpw(signUpDTO.getPassword(), BCrypt.gensalt());
             String sql = "insert into sign_up (id,email, user_id, password, reg_date) values(?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setInt(1, 0);
             preparedStatement.setString(2, signUpDTO.getEmail());
             preparedStatement.setString(3, signUpDTO.getUserId());
-            preparedStatement.setString(4, signUpDTO.getPassword());
+            preparedStatement.setString(4, hashedPassword);
 //            preparedStatement.setString(5,signUpDTO.getConfirmPassword());
             preparedStatement.setDate(5, java.sql.Date.valueOf(LocalDate.now()));
 
@@ -33,7 +35,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public SignUpDTO findById(String mail,String password) {
+    public SignUpDTO findById(String mail,String enteredPassword) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
@@ -46,14 +48,18 @@ public class SignUpRepositoryImp implements SignUpRepository {
             while (resultSet.next()) {
                 int pk = resultSet.getInt("id");
                 String user = resultSet.getString("user_id");
-                String Password= resultSet.getString("password");
+                String storedHashedPassword= resultSet.getString("password");
                 String email=resultSet.getString("email");
 //                String conformPassword=resultSet.getString("confirmPassword");
 
-                System.out.println("from DB");
-                SignUpDTO signUpDTO1 = new SignUpDTO(user,email,Password);
+                if (BCrypt.checkpw(enteredPassword, storedHashedPassword)) {
+//                    System.out.println(enteredPassword);
+                    System.out.println(storedHashedPassword);
+                    System.out.println("from DB");
+                SignUpDTO signUpDTO1 = new SignUpDTO(user,email,enteredPassword);
                 System.out.println(signUpDTO1);
                 return signUpDTO1;
+                }
             }
 
         } catch (ClassNotFoundException | SQLException e) {
