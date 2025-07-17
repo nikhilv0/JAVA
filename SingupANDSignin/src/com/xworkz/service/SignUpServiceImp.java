@@ -64,11 +64,11 @@ public class SignUpServiceImp implements SignUpService {
                 System.out.println("invalid mail");
                 return "enter valid email";
             }
-            if (userId.length() < 5 || userId.length() > 20) {
+            if (userId.length() < 2 || userId.length() > 20) {
                 System.out.println("Invalid userId");
                 return "enter valid userID";
             }
-            if (passwordPattern(password)) {
+            if (!passwordPattern(password)) {
                 System.out.println("Invalid password");
                 return "enter valid password";
             }
@@ -165,6 +165,7 @@ public class SignUpServiceImp implements SignUpService {
                 && newPassword.matches(".*[a-z].*")
                 && newPassword.matches(".*[@#$%^&+=!].*");
     }
+
 
     private static boolean mailPattern(String email) {
         return email.length() > 4 &&

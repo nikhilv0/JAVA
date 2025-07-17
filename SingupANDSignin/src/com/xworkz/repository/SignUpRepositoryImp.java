@@ -13,7 +13,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql = "insert into sign_up values(?,?,?,?,?)";
+            String sql = "insert into sign_up (id,email, user_id, password, reg_date) values(?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setInt(1, 0);
@@ -157,13 +157,15 @@ public class SignUpRepositoryImp implements SignUpRepository {
             preparedStatement.executeUpdate();
 
             ResultSet resultSet=preparedStatement.executeQuery();
-            while (resultSet.next()){
-                String password=resultSet.getString("password");
+            while (resultSet.next()) {
+                String password = resultSet.getString("password");
 
                 System.out.println("password from db");
                 SignUpDTO signUpDTO2 = new SignUpDTO(password);
+
                 System.out.println(signUpDTO2);
 //                return password;
+
             }
 
             System.out.println("Forgot Credentials Stored");

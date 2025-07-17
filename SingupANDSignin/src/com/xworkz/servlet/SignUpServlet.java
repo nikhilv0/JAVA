@@ -110,6 +110,7 @@ public class SignUpServlet extends HttpServlet {
         SignUpService service=new SignUpServiceImp();
         String mail=service.sendOtpToMAil(mailTo,otp);
 
+
     }
 
 

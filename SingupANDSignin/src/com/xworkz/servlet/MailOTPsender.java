@@ -18,7 +18,7 @@ import java.io.PrintWriter;
 import java.util.Properties;
 
 
-@WebServlet(urlPatterns = "/signUp",loadOnStartup = 1)
+@WebServlet(urlPatterns = "/",loadOnStartup = 1)
 public class MailOTPsender extends HttpServlet {
 
     public MailOTPsender() {

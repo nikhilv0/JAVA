@@ -9,9 +9,6 @@ public class SignUpDTO implements Serializable {
     private String password;
     private String confirmPassword;
 
-    public SignUpDTO() {
-
-    }
     public SignUpDTO(String email, String userId, String password, String confirmPassword) {
         this.email = email;
         this.userId = userId;
@@ -28,7 +25,6 @@ public class SignUpDTO implements Serializable {
     public SignUpDTO(String password) {
         this.password=password;
     }
-
 
     public void setEmail(String email) {
         this.email = email;
