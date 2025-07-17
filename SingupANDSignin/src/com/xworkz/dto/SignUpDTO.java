@@ -22,6 +22,10 @@ public class SignUpDTO implements Serializable {
         this.password=password;
     }
 
+    public SignUpDTO(String password) {
+        this.password=password;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }

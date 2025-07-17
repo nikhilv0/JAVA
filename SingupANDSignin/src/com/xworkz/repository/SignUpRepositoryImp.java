@@ -94,6 +94,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
     @Override
     public String storeOTP(String emailSession,String otpSession) {
+        if (emailSession.length() > 100) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
@@ -111,6 +112,8 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
+        }
+            throw new IllegalArgumentException("Email too long to be stored");
         }
 
         return "working";
@@ -152,6 +155,14 @@ public class SignUpRepositoryImp implements SignUpRepository {
             preparedStatement.setString(1,newPassword);
             preparedStatement.setString(2,forgotmail);
             preparedStatement.executeUpdate();
+
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String password=resultSet.getString("password");
+
+                System.out.println("password from db");
+                SignUpDTO signUpDTO2 = new SignUpDTO(password);
+            }
 
             System.out.println("Forgot Credentials Stored");
         } catch (ClassNotFoundException | SQLException e) {

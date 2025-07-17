@@ -3,8 +3,55 @@ package com.xworkz.service;
 import com.xworkz.dto.SignUpDTO;
 import com.xworkz.repository.SignUpRepository;
 import com.xworkz.repository.SignUpRepositoryImp;
+import jakarta.mail.*;
+import jakarta.mail.internet.AddressException;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
+import javax.servlet.ServletResponse;
+import java.io.IOException;
+import java.util.Properties;
 
 public class SignUpServiceImp implements SignUpService {
+
+    @Override
+    public String sendOtpToMAil(String mailfromSession, String otpfromSession)  throws IOException{
+
+        final String fromEmail = "nikhilnikki6360@gmail.com";
+        final String password = "tdxgmresdnwqvgdd";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        });
+
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(fromEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mailfromSession));
+            message.setSubject("Your OTP Code");
+            message.setText("Your One-Time Password (OTP) is: " + otpfromSession);
+
+            Transport.send(message);
+            System.out.println("✅ OTP email sent to " + mailfromSession);
+
+        } catch (AddressException ae) {
+            System.out.println("<h3 style='color:red;'>Invalid email address</h3>");
+        } catch (MessagingException me) {
+            System.out.println("<h3 style='color:red;'>Email sending failed</h3>");
+        }
+        return "success";
+    }
+
+
     @Override
     public String validateAndsave(SignUpDTO signUpDTO) {
         if (signUpDTO != null) {
@@ -120,12 +167,15 @@ public class SignUpServiceImp implements SignUpService {
         return "Password must be >6 chars, digit, upper, lower, and special character*";
     }
 
+
     private static boolean passwordPattern(String newPassword) {
         return newPassword.length() > 6 && newPassword.matches(".*\\d.*")
                 && newPassword.matches(".*[A-Z].*")
                 && newPassword.matches(".*[a-z].*")
                 && newPassword.matches(".*[@#$%^&+=!].*");
     }
+
+
 }
 
 
