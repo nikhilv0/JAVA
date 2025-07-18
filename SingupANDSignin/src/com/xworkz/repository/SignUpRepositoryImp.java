@@ -100,7 +100,6 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
     @Override
     public String storeOTP(String emailSession,String otpSession) {
-        if (emailSession.length() > 100) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
@@ -119,11 +118,9 @@ public class SignUpRepositoryImp implements SignUpRepository {
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
-            throw new IllegalArgumentException("Email too long to be stored");
+        return "working";
         }
 
-        return "working";
-    }
 
     @Override
     public String forgotStoreOTP(String forgotMail, String forgotOTP) {
