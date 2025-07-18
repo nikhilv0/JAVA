@@ -15,7 +15,7 @@ import java.util.Properties;
 public class SignUpServiceImp implements SignUpService {
 
     @Override
-    public String sendOtpToMAil(String mailfromSession, String otpfromSession)  throws IOException{
+    public String sendOtpToMAil(String mailfromSession, String otpfromSession){
 
         final String fromEmail = "nikhilnikki6360@gmail.com";
         final String password = "tdxgmresdnwqvgdd";

@@ -21,7 +21,7 @@ public interface SignUpService {
 
     String resetPass(String newPassword,String confirmPass,String forgotmail);//reset forgot credentials
 
-    String sendOtpToMAil(String mailfromSession, String otpfromSession) throws IOException;
+    String sendOtpToMAil(String mailfromSession, String otpfromSession);
 
 
 

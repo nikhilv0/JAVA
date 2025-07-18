@@ -103,7 +103,7 @@ public class SignUpServlet extends HttpServlet {
     }
 
 
-    private static void sendOtpEmail(String mailTo, String otp, HttpServletResponse resp) throws IOException {
+    private static void sendOtpEmail(String mailTo, String otp, HttpServletResponse resp) {
         final String fromEmail = "nikhilnikki6360@gmail.com";
         final String password = "tdxgmresdnwqvgdd";
 
