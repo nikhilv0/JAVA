@@ -23,8 +23,4 @@ public interface SignUpService {
 
     String sendOtpToMAil(String mailfromSession, String otpfromSession);
 
-
-
-
-
 }

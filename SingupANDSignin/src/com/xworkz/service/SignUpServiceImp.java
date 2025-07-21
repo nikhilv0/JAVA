@@ -176,7 +176,6 @@ public class SignUpServiceImp implements SignUpService {
                 !email.contains(" ");
     }
 
-
 }
 
 
