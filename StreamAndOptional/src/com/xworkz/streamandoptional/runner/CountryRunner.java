@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class CountryRunner {
     public static void main(String[] args) {
-        Collection<CountryDTO> collection= new ArrayList(Arrays.asList(
+        Collection<CountryDTO>collection= new ArrayList(Arrays.asList(
                 new CountryDTO("Afghanistan", 4, 41.1, 34, 652.2, null, "Pashto", "Dari", 20),
                 new CountryDTO("Albania", 8, 2.8, 12, 28.7, "Edi Rama", "Albanian", null, 18),
                 new CountryDTO("Algeria", 12, 44.9, 58, 2381.7, "Abdelmadjid Tebboune", "Arabic", "Berber", 193),
@@ -219,12 +219,15 @@ public class CountryRunner {
                 new CountryDTO("Monaco", 492, 0.04, 1, 0.002, "Pierre Dartout", "French", null, 8),
                 new CountryDTO("Andorra", 20, 0.08, 7, 0.468, "Xavier Espot Zamora", "Catalan", "Spanish", 3),
                 new CountryDTO("Liechtenstein", 438, 0.04, 11, 0.16, "Daniel Risch", "German", null, 6)));
-                Collection<Optional<CountryDTO>> optionalCollection=new ArrayList<>(Arrays.asList(Optional.of(new CountryDTO("Vatican City", 336, 0.0005, 0, 0.00049, "Pope Francis", "Latin", "Italian", 0))));
+
+                Collection<Optional<CountryDTO>> optionalCollection=new ArrayList<>(Arrays.asList(Optional.of(new CountryDTO("Vatican City", 336, 0.0005, 0, 0.00049, "Pope Francis", null, "Italian", 0))));
 
                 collection.forEach((w)-> System.out.println(w.getName()));
                 collection.stream().filter(e->e.getName().toLowerCase().endsWith("a")).forEach((e)-> System.out.println(e));
                 collection.stream().filter((e)->e.getName().toLowerCase().startsWith("r")).forEach((e)-> System.out.println(e));
                 collection.stream().filter((e)->e.getISOcode()==678).forEach((e)-> System.out.println(e));
+               Collection<Optional>op= collection.stream().filter((e)-> Optional.of(e.getPrimaryLang()).isPresent()).forEach((s)-> System.out.println(s.getPrimaryLang()));
+
 
 
 
