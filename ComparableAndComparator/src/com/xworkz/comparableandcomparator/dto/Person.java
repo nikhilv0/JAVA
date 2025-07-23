@@ -2,6 +2,8 @@ package com.xworkz.comparableandcomparator.dto;
 
 import lombok.*;
 
+import java.util.Comparator;
+
 @EqualsAndHashCode
 @NoArgsConstructor
 @ToString
@@ -9,14 +11,16 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 
-public class Person implements Comparable{
+public class Person implements Comparator {
     private String name;
     private String age;
 
-
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compare(Object o1, Object o2) {
+        if (){
+
+        }
+        return 1;
     }
 }
 
