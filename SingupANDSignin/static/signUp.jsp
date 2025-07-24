@@ -53,6 +53,9 @@
                     <a class="nav-link active" aria-current="page" href="donorRegistration.jsp">Donor Registration</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="bloodStock.jsp">Blood Stock</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="search.jsp"> Search </a>
                 </li>
             </ul>
@@ -60,7 +63,6 @@
     </div>
 </nav>
 
-<body>
 <div class="container">
     <div class="form-container shadow-sm">
         <h4 class="text-center mb-4">SignUp</h4>
@@ -87,7 +89,7 @@
             </div>
             <div class="text-center">
                 <a href="signIn.jsp">Do have an account? Sign In</a> |
-                <a href="index.jsp">Back to Home</a>
+                <a href="home.jsp">Back to Home</a>
             </div>
         </form>
     </div>

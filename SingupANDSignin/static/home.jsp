@@ -28,6 +28,9 @@
                     <a class="nav-link active" aria-current="page" href="donorRegistration.jsp">Donor Registration</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="bloodStock.jsp">Blood Stock</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="search.jsp"> Search </a>
                 </li>
             </ul>

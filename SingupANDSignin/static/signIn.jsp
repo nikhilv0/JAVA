@@ -40,6 +40,9 @@
                     <a class="nav-link active" aria-current="page" href="donorRegistration.jsp">Donor Registration</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="bloodStock.jsp">Blood Stock</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="search.jsp"> Search </a>
                 </li>
 <!--                <li class="nav-item">-->
@@ -72,7 +75,7 @@
             </div>
             <div class="text-center">
                 <a href="signUp.jsp">Don't have an account? Sign Up</a> |
-                <a href="index.jsp">Back to Home</a>
+                <a href="home.jsp">Back to Home</a>
             </div>
         </form>
     </div>

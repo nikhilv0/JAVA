@@ -1,0 +1,81 @@
+package com.xworkz.servlet;
+
+import com.xworkz.dto.BloodStockDTO;
+import com.xworkz.service.BloodStockService;
+import com.xworkz.service.BloodStockServiceImp;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet(urlPatterns = "/bloodStock", loadOnStartup = 1)
+public class BloodStockServlet extends HttpServlet {
+
+    public BloodStockServlet() {
+        System.out.println(" BloodStockServlet Constructor");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(req.getParameter("action").equals("stock")){
+        AddStock(req, resp);
+    }
+        else {
+            updateStock(req,resp);
+        }
+    }
+
+    private static void AddStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String bloodgroup = req.getParameter("bloodGroup");
+        String quantity = req.getParameter("Quantity");
+
+        BloodStockDTO bloodStockDTO = new BloodStockDTO(bloodgroup, quantity);
+
+        BloodStockService bloodStockService = new BloodStockServiceImp();
+        String validate = bloodStockService.validateAndSave(bloodStockDTO);
+        System.out.println(validate);
+
+        if (validate.equals("validated")) {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+            String send = "SucessFully Submitted";
+            req.setAttribute("mess", send);
+            req.setAttribute("dto", bloodStockDTO);
+            requestDispatcher.forward(req, resp);
+        } else {
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("bloodStock.jsp");
+            req.setAttribute("valid", validate);
+            requestDispatcher.forward(req, resp);
+        }
+    }
+    private static void updateStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id=req.getParameter("id");
+        int id1=Integer.parseInt(id);
+        System.out.println(id1);
+
+        BloodStockService bloodStockService=new BloodStockServiceImp();
+        String valid=bloodStockService.updateByid(id1);
+        System.out.println(valid);
+
+        if (valid.equals("valid Id")){
+            RequestDispatcher requestDispatcher=req.getRequestDispatcher("updateStock.jsp");
+            req.setAttribute("mess",valid);
+            requestDispatcher.forward(req,resp);
+        }else {
+            RequestDispatcher requestDispatcher=req.getRequestDispatcher("IdForUpdateStock.jsp");
+            req.setAttribute("mess",valid);
+            requestDispatcher.forward(req,resp);
+        }
+
+    }
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+    }
+}
