@@ -13,7 +13,9 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <form class="d-flex" role="search" action="updateStock" method="post">
-            <input class="form-control me-2" type="search" name="id" placeholder="Search" aria-label="Search"/>
+            <div  style="color:green">${mess}</div>
+            <div  style="color:red">${valid}</div>
+            <input class="form-control me-2" type="search" name="bloodGroup" placeholder="Search" aria-label="Search"/>
             <input type="submit" class="btn btn-danger" value="delete" name="action"></input>
         </form>
     </div>

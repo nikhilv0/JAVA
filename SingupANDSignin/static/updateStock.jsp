@@ -90,10 +90,9 @@
                                        value="${dto.quantity}" required/>
                             </div>
                             <div class="d-grid">
-                                <input type="submit" class="btn btn-danger" value="submit" name="action"></input>
+                                <input type="submit" class="btn btn-danger" value="update" name="action"></input>
                             </div>
                             <div class="text-center">
-
                                 <a href="home.jsp">Back to Home</a>
                             </div>
                         </form>

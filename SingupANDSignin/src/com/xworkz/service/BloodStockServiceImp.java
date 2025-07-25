@@ -45,13 +45,13 @@ public class BloodStockServiceImp implements BloodStockService {
     }
 
     @Override
-    public String deleteNupdate(int id) {
-        if (id>0){
+    public String deleteNupdate(String bloodGroup) {
+        if (bloodGroup.matches("^(A|B|AB|O)[+-]$")){
             BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
-            System.out.println(bloodStockRepository.delete(id));
-            return "valid Id";
+            System.out.println(bloodStockRepository.delete(bloodGroup));
+            return "valid bloodGroup";
         }else {
-        return "Enter valid Id";
+        return "Enter valid bloodGroup";
         }
     }
 

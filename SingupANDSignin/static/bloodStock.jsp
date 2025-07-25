@@ -88,7 +88,7 @@
                             </div>
                             <div class="text-center">
                                 <a href="IdForUpdateStock.jsp">Update Stock</a> |
-                                <a href="home.jsp">Delete Stock</a> |
+                                <a href="IdForDeleteStock.jsp">Delete Stock</a> <br>
                                 <a href="home.jsp">Back to Home</a>
                             </div>
                         </form>

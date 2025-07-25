@@ -22,6 +22,22 @@ public class UpdateBloodStock extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getParameter("action").equals("update")) {
+            UpdateStock(req, resp);
+        }else {
+            DeleteStock(req, resp);
+        }
+    }
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+
+
+    private static void UpdateStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String bloodGroup = req.getParameter("bloodGroup");
         int Quantity = Integer.parseInt(req.getParameter("Quantity"));
         int idfromSession = (int) req.getSession(false).getAttribute("id");
@@ -41,6 +57,27 @@ public class UpdateBloodStock extends HttpServlet {
         } else {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("updateStock.jsp");
             req.setAttribute("valid", valid);
+            requestDispatcher.forward(req, resp);
+        }
+    }
+
+
+    private static void DeleteStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String bloodGroup= req.getParameter("bloodGroup");
+        System.out.println("bloodGroup:" +bloodGroup);
+
+        BloodStockService bloodStockService=new BloodStockServiceImp();
+        String valid=bloodStockService.deleteNupdate(bloodGroup);
+        System.out.println(valid);
+
+        if (valid.equals("valid bloodGroup")){
+            RequestDispatcher requestDispatcher= req.getRequestDispatcher("IdForDeleteStock.jsp");
+            String mess="Successfully deleted";
+            req.setAttribute("mess",mess);
+            requestDispatcher.forward(req, resp);
+        }else {
+            RequestDispatcher requestDispatcher= req.getRequestDispatcher("IdForDeleteStock.jsp");
+            req.setAttribute("valid",valid);
             requestDispatcher.forward(req, resp);
         }
     }

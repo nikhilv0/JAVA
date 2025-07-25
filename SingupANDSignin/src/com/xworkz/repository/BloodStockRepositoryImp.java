@@ -72,15 +72,15 @@ public class BloodStockRepositoryImp implements BloodStockRepository {
 
 
     @Override
-    public String delete(int id) {
+    public String delete(String bloodGroup) {
         try {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection = DriverManager.getConnection(DBconstant.URL2.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql = "delete from    blood_stock WHERE id=?";
+            String sql = "delete from blood_stock WHERE blood_group=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1,bloodGroup);
             preparedStatement.executeUpdate();
 
         } catch (ClassNotFoundException | SQLException e) {

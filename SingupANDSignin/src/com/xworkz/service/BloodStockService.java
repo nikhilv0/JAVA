@@ -10,5 +10,5 @@ public interface BloodStockService {
 
     String ValidateNupdate(BloodStockDTO bloodStockDTO,int id);//update stock
 
-    String deleteNupdate(int id);//delete stock
+    String deleteNupdate(String bloodGroup);//delete stock
 }

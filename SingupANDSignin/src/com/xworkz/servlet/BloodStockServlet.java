@@ -26,7 +26,7 @@ public class BloodStockServlet extends HttpServlet {
         AddStock(req, resp);
     }
         else {
-            updateStock(req,resp);
+            updateStockbyID(req,resp);
         }
     }
 
@@ -46,16 +46,16 @@ public class BloodStockServlet extends HttpServlet {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("bloodStock.jsp");
             String send = "SucessFully Submitted";
             req.setAttribute("mess", send);
-            req.setAttribute("dto", bloodStockDTO);
             requestDispatcher.forward(req, resp);
         } else {
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("bloodStock.jsp");
             req.setAttribute("valid", validate);
+            req.setAttribute("dto", bloodStockDTO);
             requestDispatcher.forward(req, resp);
         }
     }
 
-    private static void updateStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private static void updateStockbyID(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
         int id1=Integer.parseInt(id);
         HttpSession idfromHttpSession=req.getSession();

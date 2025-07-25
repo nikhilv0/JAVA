@@ -10,6 +10,6 @@ public interface BloodStockRepository {
 
     String update(BloodStockDTO bloodStockDTO,int id);//update stock
 
-    String delete(int id);//delete stock
+    String delete(String bloodGroup);//delete stock
 
 }
