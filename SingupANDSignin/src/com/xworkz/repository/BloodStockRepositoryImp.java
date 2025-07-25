@@ -12,12 +12,12 @@ public class BloodStockRepositoryImp implements BloodStockRepository {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection = DriverManager.getConnection(DBconstant.URL2.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql = "insert into blood_stock (id,group,quantity,created_at) values(?,?,?,?)";
+            String sql = "insert into blood_stock (id,blood_group,quantity,created_at) values(?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, 0);
-            preparedStatement.setString(1, bloodStockDTO.getBloodGroup());
-            preparedStatement.setString(2, bloodStockDTO.getQuantity());
-            preparedStatement.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+            preparedStatement.setInt(1, 0   );
+            preparedStatement.setString(2, bloodStockDTO.getBloodGroup());
+            preparedStatement.setInt(3, bloodStockDTO.getQuantity());
+            preparedStatement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
 
             preparedStatement.executeUpdate();
 
@@ -37,11 +37,16 @@ public class BloodStockRepositoryImp implements BloodStockRepository {
             String sql = "select * from blood_stock where id=?";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setInt(1,id);
-            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return "Id is present";
+            } else {
+                return "Id not found";
+            }
 
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
-        return "Id is present";
     }
 }

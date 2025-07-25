@@ -76,7 +76,7 @@
                         <h4 class="text-center mb-4">Update Stock</h4>
                     </div>
                     <div class="card-body">
-                        <form action="bloodStock" method="post">
+                        <form action="updateStock" method="post">
                             <div class="mb-3">
                                 <div style="color:green">${mess}</div>
                                 <div style="color:red">${valid}</div>

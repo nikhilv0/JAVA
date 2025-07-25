@@ -7,7 +7,7 @@ import com.xworkz.repository.BloodStockRepositoryImp;
 public class BloodStockServiceImp implements BloodStockService {
     @Override
     public String validateAndSave(BloodStockDTO bloodStockDTO) {
-        if (bloodStockDTO.getBloodGroup().matches("[A-Z],-,+") && (!bloodStockDTO.getQuantity().isEmpty())) {
+        if (bloodStockDTO.getBloodGroup().matches("^(A|B|AB|O)[+-]$") && (bloodStockDTO.getQuantity()!=0)) {
             BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
             System.out.println(bloodStockRepository.stock(bloodStockDTO));
             return "validated";
