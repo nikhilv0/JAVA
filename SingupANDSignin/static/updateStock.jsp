@@ -93,7 +93,7 @@
                                 <input type="submit" class="btn btn-danger" value="submit" name="action"></input>
                             </div>
                             <div class="text-center">
-                                <a href="signUp.jsp">Update Stock</a> |
+
                                 <a href="home.jsp">Back to Home</a>
                             </div>
                         </form>

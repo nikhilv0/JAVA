@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/bloodStock", loadOnStartup = 1)
@@ -33,7 +34,7 @@ public class BloodStockServlet extends HttpServlet {
         String bloodgroup = req.getParameter("bloodGroup");
         String quantity = req.getParameter("Quantity");
         int quantity1=Integer.parseInt(quantity);
-        System.out.println("bloodgroup: "+bloodgroup+"quantity: "+quantity1);
+        System.out.println("bloodgroup:" +bloodgroup+"quantity:"+quantity1);
 
         BloodStockDTO bloodStockDTO = new BloodStockDTO(bloodgroup, quantity1);
 
@@ -57,7 +58,9 @@ public class BloodStockServlet extends HttpServlet {
     private static void updateStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id=req.getParameter("id");
         int id1=Integer.parseInt(id);
-        System.out.println("Id: "+id1);
+        HttpSession idfromHttpSession=req.getSession();
+        idfromHttpSession.setAttribute("id",id1);
+        System.out.println("Id:"+id1);
 
         BloodStockService bloodStockService=new BloodStockServiceImp();
         String valid=bloodStockService.updateByid(id1);
