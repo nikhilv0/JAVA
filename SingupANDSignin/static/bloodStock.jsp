@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Donor Registration Form</title>
@@ -73,7 +74,7 @@
                         <h4 class="text-center mb-4">Blood Stock</h4>
                     </div>
                     <div class="card-body">
-                        <form action="bloodStock" method="post">
+                        <form action="bloodStock" method="post" onsubmit="return validateBloodStock();">
                             <div class="mb-3">
                                 <div style="color:green">${mess}</div>
                                 <div style="color:red">${valid}</div>
@@ -83,7 +84,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="Quantity" class="form-label">Quantity (units):</label>
-                                <input type="text" class="form-control" id="Quantity" name="Quantity"
+                                <input type="number" class="form-control" id="Quantity" name="Quantity"
                                        value="${dto.quantity}" required/>
                             </div>
                             <div class="d-grid">
@@ -100,12 +101,30 @@
             </div>
         </div>
 
+        <script>
+            function validateBloodStock() {
+                const bloodGroup = document.getElementById("bloodGroup").value.trim();
+                const quantity = document.getElementById("Quantity").value.trim();
+
+                const bloodGroupPattern = /^(A|B|AB|O)[+-]$/;
+
+                if (!bloodGroupPattern.test(bloodGroup)) {
+                    alert("Please enter a valid blood group (e.g., A+, B-, AB+, O-)");
+                    document.getElementById("bloodGroup").focus();
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
                 integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
                 crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
                 integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
                 crossorigin="anonymous"></script>
+    </div>
 
 </body>
 </html>
