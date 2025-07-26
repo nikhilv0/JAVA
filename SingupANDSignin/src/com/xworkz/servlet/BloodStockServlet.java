@@ -66,15 +66,14 @@ public class BloodStockServlet extends HttpServlet {
         String valid=bloodStockService.updateByid(id1);
         System.out.println(valid);
 
+        RequestDispatcher requestDispatcher;
         if (valid.equals("valid Id")){
-            RequestDispatcher requestDispatcher=req.getRequestDispatcher("updateStock.jsp");
-            req.setAttribute("mess",valid);
-            requestDispatcher.forward(req,resp);
+            requestDispatcher = req.getRequestDispatcher("updateStock.jsp");
         }else {
-            RequestDispatcher requestDispatcher=req.getRequestDispatcher("IdForUpdateStock.jsp");
-            req.setAttribute("mess",valid);
-            requestDispatcher.forward(req,resp);
+            requestDispatcher = req.getRequestDispatcher("IdForUpdateStock.jsp");
         }
+        req.setAttribute("mess",valid);
+        requestDispatcher.forward(req,resp);
 
     }
 

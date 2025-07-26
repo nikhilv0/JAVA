@@ -25,6 +25,12 @@
                     <a class="nav-link active" aria-current="page" href="signIn.jsp">Sign In</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="bloodStock.jsp">Blood Stock</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="viewBloodStock.jsp">View BloodStock</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="search.jsp"> Search </a>
                 </li>
             </ul>

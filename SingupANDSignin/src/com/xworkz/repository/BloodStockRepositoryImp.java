@@ -4,6 +4,8 @@ import com.xworkz.constant.DBconstant;
 import com.xworkz.dto.BloodStockDTO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BloodStockRepositoryImp implements BloodStockRepository {
     @Override
@@ -72,15 +74,15 @@ public class BloodStockRepositoryImp implements BloodStockRepository {
 
 
     @Override
-    public String delete(String bloodGroup) {
+    public String delete(int id) {
         try {
             Class.forName(DBconstant.DRIVER.getValue());
             Connection connection = DriverManager.getConnection(DBconstant.URL2.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql = "delete from blood_stock WHERE blood_group=?";
+            String sql = "delete from blood_stock WHERE id=?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setString(1,bloodGroup);
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -89,5 +91,36 @@ public class BloodStockRepositoryImp implements BloodStockRepository {
         return "Successfully deleted";
     }
 
+    @Override
+    public List<BloodStockDTO> viewStock(String bloodGroup) {
+        List<BloodStockDTO> list = new ArrayList<>();
 
+        try {
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL2.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
+
+            String sql = "select * from blood_stock WHERE blood_group=?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, bloodGroup);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String blood_group = resultSet.getString("blood_group");
+                int quantity = resultSet.getInt("quantity");
+                Timestamp created_at = resultSet.getTimestamp("created_at");
+                Timestamp updated_at = resultSet.getTimestamp("updated_at");
+
+                BloodStockDTO bloodStockDTO = new BloodStockDTO(blood_group, quantity, id, created_at, updated_at);
+                list.add(bloodStockDTO);
+            }
+            list.forEach(System.out::println);
+            System.out.println("data found");
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
 }

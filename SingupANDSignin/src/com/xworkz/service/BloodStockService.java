@@ -2,6 +2,8 @@ package com.xworkz.service;
 
 import com.xworkz.dto.BloodStockDTO;
 
+import java.util.List;
+
 public interface BloodStockService {
 
     String validateAndSave(BloodStockDTO bloodStockDTO);//stock blood
@@ -10,5 +12,7 @@ public interface BloodStockService {
 
     String ValidateNupdate(BloodStockDTO bloodStockDTO,int id);//update stock
 
-    String deleteNupdate(String bloodGroup);//delete stock
+    String deleteNupdate(int id);//delete stock
+
+    List<BloodStockDTO> viewStock(String bloodGroup);//view bloodStock
 }

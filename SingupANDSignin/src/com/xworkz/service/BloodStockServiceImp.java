@@ -4,6 +4,8 @@ import com.xworkz.dto.BloodStockDTO;
 import com.xworkz.repository.BloodStockRepository;
 import com.xworkz.repository.BloodStockRepositoryImp;
 
+import java.util.List;
+
 public class BloodStockServiceImp implements BloodStockService {
     @Override
     public String validateAndSave(BloodStockDTO bloodStockDTO) {
@@ -32,7 +34,7 @@ public class BloodStockServiceImp implements BloodStockService {
 
     @Override
     public String ValidateNupdate(BloodStockDTO bloodStockDTO, int id) {
-        if (bloodStockDTO != null) {
+        if (bloodStockDTO != null && id>0) {
             if (bloodDTOcheck(bloodStockDTO)) {
                 BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
                 System.out.println(bloodStockRepository.update(bloodStockDTO, id));
@@ -45,13 +47,25 @@ public class BloodStockServiceImp implements BloodStockService {
     }
 
     @Override
-    public String deleteNupdate(String bloodGroup) {
-        if (bloodGroup.matches("^(A|B|AB|O)[+-]$")){
+    public String deleteNupdate(int id) {
+        if (id!=0) {
             BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
-            System.out.println(bloodStockRepository.delete(bloodGroup));
-            return "valid bloodGroup";
+            System.out.println(bloodStockRepository.delete(id));
+            return "valid id";
         }else {
-        return "Enter valid bloodGroup";
+        return "Enter valid id";
+        }
+    }
+
+    @Override
+    public List<BloodStockDTO> viewStock(String bloodGroup) {
+        if (bloodGroup.matches("^(A|B|AB|O)[+-]$")){
+            System.out.println("valid bloodGroup");
+            BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
+            return bloodStockRepository.viewStock(bloodGroup);
+        }else {
+            System.out.println("Enter valid bloodGroup");
+            return null;
         }
     }
 
