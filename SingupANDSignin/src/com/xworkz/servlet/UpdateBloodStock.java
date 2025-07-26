@@ -56,9 +56,9 @@ public class UpdateBloodStock extends HttpServlet {
         String bloodGroup = req.getParameter("bloodGroup");
         int Quantity = Integer.parseInt(req.getParameter("Quantity"));
         int idfromSession = (int) req.getSession(false).getAttribute("id");
-        System.out.println("bloodGroup:" + bloodGroup + " " + "Quantity:" + Quantity);
 
         BloodStockDTO bloodStockDTO = new BloodStockDTO(bloodGroup, Quantity);
+        System.out.println(bloodStockDTO);
 
         BloodStockService bloodStockService = new BloodStockServiceImp();
         String valid = bloodStockService.ValidateNupdate(bloodStockDTO, idfromSession);

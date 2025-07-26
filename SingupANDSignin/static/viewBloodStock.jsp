@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+
 <html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/html">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
-    <meta charset="UTF-8">
-    <title>Donor Registration Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blood Bank</title>
+    <title>View Blood Stock</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <style>
@@ -55,7 +54,7 @@
                     <a class="nav-link active" aria-current="page" href="donorRegistration.jsp">Donor Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="viewBloodStock.jsp">View BloodStock</a>
+                    <a class="nav-link active" aria-current="page" href="bloodStock.jsp">Blood Stock</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="search.jsp"> Search </a>
@@ -70,31 +69,37 @@
             <div class="col-md-5">
                 <div class="card shadow">
                     <div class="card-header bg-danger text-white">
-                        <h4 class="text-center mb-4">Blood Stock</h4>
+                        <h4 class="text-center mb-4">View Stock</h4>
                     </div>
                     <div class="card-body">
-                        <form action="bloodStock" method="post">
+                        <form action="updateStock" method="get">
                             <div class="mb-3">
                                 <div style="color:green">${mess}</div>
                                 <div style="color:red">${valid}</div>
-                                <label for="bloodGroup" class="form-label">Blood Group:</label>
-                                <input type="text" class="form-control" id="bloodGroup" name="bloodGroup"
-                                       value="${dto.bloodGroup}" required/>
-                            </div>
-                            <div class="mb-3">
-                                <label for="Quantity" class="form-label">Quantity (units):</label>
-                                <input type="text" class="form-control" id="Quantity" name="Quantity"
-                                       value="${dto.quantity}" required/>
+                                <label for="bloodGroup" class="form-label">Enter Blood Group:</label>
+                                <input type="text" class="form-control" id="bloodGroup" name="bloodGroup" required/>
                             </div>
                             <div class="d-grid">
-                                <input type="submit" class="btn btn-danger" value="stock" name="action"></input>
+                                <input type="submit" class="btn btn-danger" value="viewStock" name="action"></input>
                             </div>
                             <div class="text-center">
+                                <a href="bloodStock.jsp">Blood Stock</a> |
                                 <a href="IdForUpdateStock.jsp">Update Stock</a> |
                                 <a href="IdForDeleteStock.jsp">Delete Stock</a> <br>
                                 <a href="home.jsp">Back to Home</a>
                             </div>
                         </form>
+                        <ul class="list-group mt-3">
+                            <c:forEach var="stock" items="${list}">
+                                <li class="list-group-item">
+                                    <strong>Id:</strong> ${stock.id} <br>
+                                    <strong>Blood Group:</strong> ${stock.bloodGroup} <br>
+                                    <strong>Quantity:</strong> ${stock.quantity} ml <br>
+                                    <strong>Created At</strong> ${stock.createdat} <br>
+                                    <strong>Last Updated:</strong> ${stock.updatedat}
+                                </li>
+                            </c:forEach>
+                        </ul>
                     </div>
                 </div>
             </div>

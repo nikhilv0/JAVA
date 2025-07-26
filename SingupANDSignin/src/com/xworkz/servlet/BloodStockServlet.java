@@ -34,9 +34,9 @@ public class BloodStockServlet extends HttpServlet {
         String bloodgroup = req.getParameter("bloodGroup");
         String quantity = req.getParameter("Quantity");
         int quantity1=Integer.parseInt(quantity);
-        System.out.println("bloodgroup:" +bloodgroup+"quantity:"+quantity1);
 
         BloodStockDTO bloodStockDTO = new BloodStockDTO(bloodgroup, quantity1);
+        System.out.println(bloodStockDTO);
 
         BloodStockService bloodStockService = new BloodStockServiceImp();
         String validate = bloodStockService.validateAndSave(bloodStockDTO);
