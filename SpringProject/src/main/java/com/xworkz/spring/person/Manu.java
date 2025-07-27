@@ -3,9 +3,8 @@ package com.xworkz.spring.person;
 import org.springframework.stereotype.Component;
 
 @Component
-class Aryan {
-    public Aryan() {
-        System.out.println("Aryan Constructor");
+class Manu {
+    public Manu() {
+        System.out.println("Manu Constructor");
     }
 }
-

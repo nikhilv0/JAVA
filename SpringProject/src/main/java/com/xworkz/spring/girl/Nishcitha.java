@@ -3,8 +3,8 @@ package com.xworkz.spring.girl;
 import org.springframework.stereotype.Component;
 
 @Component
-class Bhoomika {
-    public Bhoomika() {
-        System.out.println("Bhoomika Constructor");
+class Nishcitha {
+    public Nishcitha() {
+        System.out.println("Nishcitha Constructor");
     }
 }
