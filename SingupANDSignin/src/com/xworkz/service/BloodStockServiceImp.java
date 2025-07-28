@@ -7,11 +7,13 @@ import com.xworkz.repository.BloodStockRepositoryImp;
 import java.util.List;
 
 public class BloodStockServiceImp implements BloodStockService {
+
+    BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
+
     @Override
     public String validateAndSave(BloodStockDTO bloodStockDTO) {
         if (bloodStockDTO != null) {
             if (bloodDTOcheck(bloodStockDTO)) {
-                BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
                 System.out.println(bloodStockRepository.stock(bloodStockDTO));
                 return "validated";
             } else {
@@ -25,7 +27,6 @@ public class BloodStockServiceImp implements BloodStockService {
     @Override
     public String updateByid(int id) {
         if (id > 0) {
-            BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
             System.out.println(bloodStockRepository.updateBYid(id));
             return "valid Id";
         }
@@ -36,7 +37,6 @@ public class BloodStockServiceImp implements BloodStockService {
     public String ValidateNupdate(BloodStockDTO bloodStockDTO, int id) {
         if (bloodStockDTO != null && id>0) {
             if (bloodDTOcheck(bloodStockDTO)) {
-                BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
                 System.out.println(bloodStockRepository.update(bloodStockDTO, id));
                 return "validated";
             } else {
@@ -49,7 +49,6 @@ public class BloodStockServiceImp implements BloodStockService {
     @Override
     public String deleteNupdate(int id) {
         if (id!=0) {
-            BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
             System.out.println(bloodStockRepository.delete(id));
             return "valid id";
         }else {
@@ -61,7 +60,6 @@ public class BloodStockServiceImp implements BloodStockService {
     public List<BloodStockDTO> viewStock(String bloodGroup) {
         if (bloodGroup.matches("^(A|B|AB|O)[+-]$")){
             System.out.println("valid bloodGroup");
-            BloodStockRepository bloodStockRepository = new BloodStockRepositoryImp();
             return bloodStockRepository.viewStock(bloodGroup);
         }else {
             System.out.println("Enter valid bloodGroup");

@@ -16,9 +16,8 @@ public class DonorRegistrationServiceImp implements DonorRegistrationService {
             String name=donorRegistrationDTO.getName();
             int age=donorRegistrationDTO.getAge();
             String gender=donorRegistrationDTO.getName();
-//        String bloodGroup=donorRegistrationDTO.getName();
             long contact=donorRegistrationDTO.getContact();
-//        String address=donorRegistrationDTO.getName();
+
             LocalDate lastDonationDate=donorRegistrationDTO.getLastDonationDate();
 
             if (name==null || name.length()<5 || name.length()>30) {

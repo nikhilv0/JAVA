@@ -14,6 +14,8 @@ import java.util.Properties;
 
 public class SignUpServiceImp implements SignUpService {
 
+    SignUpRepository signUpRepository = new SignUpRepositoryImp();
+
     @Override
     public String sendOtpToMAil(String mailfromSession, String otpfromSession){
 
@@ -76,7 +78,6 @@ public class SignUpServiceImp implements SignUpService {
                 System.out.println("mismatched password");
                 return "mismatched password";
             }
-            SignUpRepository signUpRepository = new SignUpRepositoryImp();
             signUpRepository.save(signUpDTO);
 
         }
@@ -87,7 +88,6 @@ public class SignUpServiceImp implements SignUpService {
     public SignUpDTO findBy(String mail,String password) {
         if (mailPattern(mail) && passwordPattern(password)){
             System.out.println("valid mail and password");
-            SignUpRepository signUpRepository = new SignUpRepositoryImp();
             return signUpRepository.findById(mail,password);
 
         } else {
@@ -102,7 +102,6 @@ public class SignUpServiceImp implements SignUpService {
 
         if (mailPattern(email)){
             System.out.println("valid email");
-            SignUpRepository signUpRepository = new SignUpRepositoryImp();
             return signUpRepository.findByUser(email);
 
         } else {
@@ -116,7 +115,6 @@ public class SignUpServiceImp implements SignUpService {
     public String generateOtp(String otp,String otpFromSession,String emailSession) {  //otp for sign
             if (otp.equals(otpFromSession)){
                 System.out.println("valid otp for signIn");
-                SignUpRepository signUpRepository=new SignUpRepositoryImp();
                 signUpRepository.storeOTP(emailSession,otpFromSession);
                 return "validated otp for singIn";
             }
@@ -131,7 +129,6 @@ public class SignUpServiceImp implements SignUpService {
     public String validateForgototp(String forgototp,String otp, String email) { //otp for forgot
         if (forgototp.equals(otp)) {
             System.out.println("valid otp for Forgot");
-            SignUpRepository signUpRepository = new SignUpRepositoryImp();
             signUpRepository.forgotStoreOTP(email, otp);
             return "validated otp for forgot";
         }
@@ -144,10 +141,7 @@ public class SignUpServiceImp implements SignUpService {
     public String resetPass(String newPassword, String confirmPass,String forgotmail) {
         if (passwordPattern(newPassword)){
                 System.out.println("Password is valid");
-
-                SignUpRepository signUpRepository=new SignUpRepositoryImp();
                 String savedCredentials=signUpRepository.saveCredentials(newPassword,forgotmail);
-
                 return "Password is valid";
         } else if (!newPassword.equals(confirmPass)) {
             return "Missmatched password*";
