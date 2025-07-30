@@ -17,7 +17,6 @@ import java.util.List;
 @MultipartConfig
 public class ExcelReader extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-//        List<String> list=new ArrayList<>();
         try {
             Part filePart = request.getPart("file"); // Get uploaded file
             InputStream inputStream = filePart.getInputStream(); // Get input stream
@@ -32,8 +31,7 @@ public class ExcelReader extends HttpServlet {
 //                    rowText.append(cell.toString());//.append(" | ")
 //                }
 //                System.out.println(rowText.toString());
-
-
+            int count =0;
             for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Skip header row (i=2)
                 Row row = sheet.getRow(i); // Get each row
                 if (row == null) continue;
@@ -45,7 +43,8 @@ public class ExcelReader extends HttpServlet {
                 String email = row.getCell(1) != null ? row.getCell(1).toString() : "";
 
                 if (!name.isEmpty() && !email.isEmpty()) {
-                    System.out.println("Sending mail to: " + name + " | " + email);
+                    count ++;
+                    System.out.println("Sending mail to: "+ count +"|"+ name + " | " + email);
                     FromExcelService fromExcelService=new FromExcelServiceImp();
                     String result = fromExcelService.sendOtpToMAil(email);
                     System.out.println("Status: " + result);
