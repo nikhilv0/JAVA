@@ -28,19 +28,34 @@ public class ExcelReader extends HttpServlet {
 //                    rowText.append(cell.toString());//.append(" | ")
 //                }
 //                System.out.println(rowText.toString());
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
-            for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Skip header row (i=1)
+            for (int i = 2; i <= sheet.getLastRowNum(); i++) { // Skip header row (i=1)
                 Row row = sheet.getRow(i); // Get each row
                 if (row == null) continue;
 
-                // Extract Name, Age, Gender assuming they are in first 3 columns (0,1,2)
-                Date date = row.getCell(0).getDateCellValue();
-                String name = row.getCell(1).getStringCellValue();
-                int amount = (int) row.getCell(2).getNumericCellValue();
-                String formatedDate=dateFormat.format(date);
+//                String date = row.getCell(0).getStringCellValue();
+//                String name = row.getCell(1).getStringCellValue();
+//                int amount = (int) row.getCell(2).getNumericCellValue();
 
-                System.out.println("Date: "+formatedDate +" | "+ "Name: " + name + " | "+"Amount:" + amount);
+                String date = "";
+                String name = "";
+                int amount = 0;
+                if (row.getCell(0) != null) {
+                    date = row.getCell(0).toString(); // works for both string/date cells
+                }
+                if (row.getCell(1) != null) {
+                    name = row.getCell(1).toString();
+                }
+                if (row.getCell(2) != null) {
+                    try {
+                        amount = (int) row.getCell(2).getNumericCellValue();
+                    } catch (Exception e) {
+                        amount = 0;
+                    }
+                }
+
+
+                System.out.println("Date: "+date +" | "+ "Name: " + name + " | "+"Amount:" + amount);
                 workbook.close();
                 inputStream.close();
             }
