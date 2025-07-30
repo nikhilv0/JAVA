@@ -51,18 +51,6 @@ public class ExcelReader extends HttpServlet {
                     System.out.println("Status: " + result);
                 }
             }
-//                if (row.getCell(2) != null) {
-//                    try {
-//                        amount = (int) row.getCell(2).getNumericCellValue();
-//                    } catch (Exception e) {
-//                    }
-//                }
-//                List<Object> list=new ArrayList<>(Arrays.asList(name,email));
-//                System.out.println(list);
-//            }
-//            FromExcelService fromExcelService=new FromExcelServiceImp();
-//            String listofExcel=fromExcelService.sendOtpToMAil(email);
-
             workbook.close();
             inputStream.close();
             System.out.println("-----------------------");
