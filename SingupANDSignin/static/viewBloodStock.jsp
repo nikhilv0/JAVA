@@ -94,34 +94,41 @@
                             </div>
                             <div class="text-center">
                                 <a href="bloodStock.jsp">Blood Stock</a> |
-                                <a href="IdForUpdateStock.jsp">Update Stock</a> |
-                                <a href="IdForDeleteStock.jsp">Delete Stock</a> <br>
                                 <a href="home.jsp">Back to Home</a>
                             </div>
                         </form>
-                            <ul class="list-group mt-3">
-                                <c:forEach var="stock" items="${list}">
-                                    <li class="list-group-item">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <strong>Id:</strong> ${stock.id}<br>
-                                                <strong>Blood Group:</strong> ${stock.bloodGroup}<br>
-                                                <strong>Quantity:</strong> ${stock.quantity} ml<br>
-                                                <strong>Created At:</strong> ${stock.createdat}<br>
-                                                <strong>Last Updated:</strong> ${stock.updatedat}
-                                            </div>
-
-                                            <div>
-                                                <!-- modal -->
-                                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#updateModal${stock.id}">Update</button>
-                                            </div>
+                        <ul class="list-group mt-3">
+                            <c:forEach var="stock" items="${list}">
+                                <li class="list-group-item">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Id:</strong> ${stock.id}<br>
+                                            <strong>Blood Group:</strong> ${stock.bloodGroup}<br>
+                                            <strong>Quantity:</strong> ${stock.quantity} ml<br>
+                                            <strong>Created At:</strong> ${stock.createdat}<br>
+                                            <strong>Last Updated:</strong> ${stock.updatedat}
                                         </div>
-                                    </li>
+                                        <div>
+                                            <!-- modal -->
+                                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                                    data-bs-target="#updateModal${stock.id}">Update
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <form  action="updateStock" method="post" style="margin: 0;" onsubmit="return validateOnDelete(${stock.id})">
+                                                <input type="hidden" name="id" value="${stock.id}">
+                                                <input type="submit" class="btn btn-danger btn-sm" value="Delete"
+                                                       name="action">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="updateModal${stock.id}" tabindex="-1" aria-labelledby="updateModalLabel${stock.id}" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <form action="updateStock" method="post">
+                                <!-- Modal -->
+                                <div class="modal fade" id="updateModal${stock.id}" tabindex="-1"
+                                     aria-labelledby="updateModalLabel${stock.id}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <form action="updateStock" method="post">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="updateModalLabel${stock.id}">Update
@@ -145,24 +152,31 @@
                                                     <button type="button" class="btn btn-secondary btn-sm"
                                                             data-bs-dismiss="modal">Cancel
                                                     </button>
-                                                    <input type="submit" class="btn btn-danger btn-sm" name="action" value="Save Changes" ></input>
+                                                    <input type="submit" class="btn btn-danger btn-sm" name="action"
+                                                           value="Save Changes"></input>
                                                 </div>
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </ul>
                     </div>
                 </div>
-                </c:forEach>
-                </ul>
             </div>
         </div>
-    </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
-        crossorigin="anonymous"></script>
+        <script>
+            function validateOnDelete(id){
+                   return confirm("Are Sure to Delete id:"+id+"?");
+            }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+                integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+                crossorigin="anonymous"></script>
 </body>
 </html>

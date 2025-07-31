@@ -63,13 +63,12 @@ public class UpdateBloodStock extends HttpServlet {
         String valid = bloodStockService.ValidateNupdate(bloodStockDTO, id);
         System.out.println(valid);
 
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
         if (valid.equals("validated")) {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
             String mess = "Successfully Updated";
             req.setAttribute("mess", mess);
             requestDispatcher.forward(req, resp);
         } else {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
             req.setAttribute("valid", valid);
             requestDispatcher.forward(req, resp);
         }
@@ -89,7 +88,7 @@ public class UpdateBloodStock extends HttpServlet {
             valid = bloodStockService.deleteNupdate(id);
             System.out.println(valid);
 
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("IdForDeleteStock.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
 
             if (valid.equals("valid id")) {
                 String mess = "Successfully deleted";
