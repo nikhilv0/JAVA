@@ -8,7 +8,7 @@ public interface BloodStockService {
 
     String validateAndSave(BloodStockDTO bloodStockDTO);//stock blood
 
-    String updateByid(int id);//search id for update stock
+    String updateByid(int id,int units);// id for update stock
 
     String ValidateNupdate(BloodStockDTO bloodStockDTO,int id);//update stock
 

@@ -22,18 +22,17 @@ public class BloodStockServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getParameter("action").equals("stock")){
-        AddStock(req, resp);
-    }
-        else {
-            updateStockbyID(req,resp);
+        if (req.getParameter("action").equals("stock")) {
+            AddStock(req, resp);
+        } else {
+            updateStockbyID(req, resp);
         }
     }
 
     private static void AddStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String bloodgroup = req.getParameter("bloodGroup");
         String quantity = req.getParameter("Quantity");
-        int quantity1=Integer.parseInt(quantity);
+        int quantity1 = Integer.parseInt(quantity);
 
         BloodStockDTO bloodStockDTO = new BloodStockDTO(bloodgroup, quantity1);
         System.out.println(bloodStockDTO);
@@ -56,24 +55,22 @@ public class BloodStockServlet extends HttpServlet {
     }
 
     private static void updateStockbyID(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id=req.getParameter("id");
-        int id1=Integer.parseInt(id);
-        HttpSession idfromHttpSession=req.getSession();
-        idfromHttpSession.setAttribute("id",id1);
-        System.out.println("Id:"+id1);
+        int id = Integer.parseInt(req.getParameter("id"));
+        int uints = Integer.parseInt(req.getParameter("units"));
+        System.out.println("Id:" + id + "Units:" +uints);
 
-        BloodStockService bloodStockService=new BloodStockServiceImp();
-        String valid=bloodStockService.updateByid(id1);
+        BloodStockService bloodStockService = new BloodStockServiceImp();
+        String valid = bloodStockService.updateByid(id,uints);
         System.out.println(valid);
 
         RequestDispatcher requestDispatcher;
-        if (valid.equals("valid Id")){
+        if (valid.equals("valid Id")) {
             requestDispatcher = req.getRequestDispatcher("updateStock.jsp");
-        }else {
-            requestDispatcher = req.getRequestDispatcher("IdForUpdateStock.jsp");
+        } else {
+            requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
         }
-        req.setAttribute("mess",valid);
-        requestDispatcher.forward(req,resp);
+        req.setAttribute("mess", valid);
+        requestDispatcher.forward(req, resp);
 
     }
 

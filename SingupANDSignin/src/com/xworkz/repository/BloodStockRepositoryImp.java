@@ -115,8 +115,8 @@ public class BloodStockRepositoryImp implements BloodStockRepository {
                 BloodStockDTO bloodStockDTO = new BloodStockDTO(blood_group, quantity, id, created_at, updated_at);
                 list.add(bloodStockDTO);
             }
-            list.forEach(System.out::println);
             System.out.println("data found");
+            list.forEach(System.out::println);
 
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);

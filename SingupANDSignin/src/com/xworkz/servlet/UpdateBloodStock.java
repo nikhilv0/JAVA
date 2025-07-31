@@ -22,7 +22,7 @@ public class UpdateBloodStock extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getParameter("action").equals("update")) {
+        if (req.getParameter("action").equals("Save Changes")) {
             UpdateStock(req, resp);
         } else {
             DeleteStock(req, resp);
@@ -53,24 +53,23 @@ public class UpdateBloodStock extends HttpServlet {
 
 
     private static void UpdateStock(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String bloodGroup = req.getParameter("bloodGroup");
-        int Quantity = Integer.parseInt(req.getParameter("Quantity"));
-        int idfromSession = (int) req.getSession(false).getAttribute("id");
+        int Quantity = Integer.parseInt(req.getParameter("quantity"));
+        int id=Integer.parseInt(req.getParameter("id"));
 
-        BloodStockDTO bloodStockDTO = new BloodStockDTO(bloodGroup, Quantity);
+        BloodStockDTO bloodStockDTO = new BloodStockDTO(Quantity);
         System.out.println(bloodStockDTO);
 
         BloodStockService bloodStockService = new BloodStockServiceImp();
-        String valid = bloodStockService.ValidateNupdate(bloodStockDTO, idfromSession);
+        String valid = bloodStockService.ValidateNupdate(bloodStockDTO, id);
         System.out.println(valid);
 
         if (valid.equals("validated")) {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("updateStock.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
             String mess = "Successfully Updated";
             req.setAttribute("mess", mess);
             requestDispatcher.forward(req, resp);
         } else {
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("updateStock.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("viewBloodStock.jsp");
             req.setAttribute("valid", valid);
             requestDispatcher.forward(req, resp);
         }

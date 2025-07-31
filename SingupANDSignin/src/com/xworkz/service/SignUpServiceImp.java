@@ -34,7 +34,6 @@ public class SignUpServiceImp implements SignUpService {
             }
         });
 
-
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));

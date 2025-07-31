@@ -23,4 +23,7 @@ public class BloodStockDTO implements Serializable {
         this.quantity = quantity;
     }
 
+    public BloodStockDTO(int quantity) {
+        this.quantity=quantity;
+    }
 }

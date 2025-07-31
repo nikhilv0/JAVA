@@ -79,8 +79,19 @@
                                 <div style="color:green">${mess}</div>
                                 <div style="color:red">${valid}</div>
                                 <label for="bloodGroup" class="form-label">Blood Group:</label>
-                                <input type="text" class="form-control" id="bloodGroup" name="bloodGroup"
-                                       value="${dto.bloodGroup}" required/>
+<!--                                <input type="text" class="form-control" id="bloodGroup" name="bloodGroup"-->
+<!--                                       value="${dto.bloodGroup}" required/>-->
+                                <select class="form-select" name="bloodGroup" id="bloodGroup" value="${dto.bloodGroup}" required>
+                                    <option value="">-- Select Blood Group --</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="Quantity" class="form-label">Quantity (units):</label>
