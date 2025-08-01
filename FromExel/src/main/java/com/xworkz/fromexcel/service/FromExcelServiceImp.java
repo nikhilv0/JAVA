@@ -8,11 +8,6 @@ import java.util.Properties;
 
 public class FromExcelServiceImp implements FromExcelService {
 
-    @Override
-    public String validateExcel(List<Object> list) {
-
-        return "";
-    }
 
     @Override
     public String sendOtpToMAil(String mailfromSession){
