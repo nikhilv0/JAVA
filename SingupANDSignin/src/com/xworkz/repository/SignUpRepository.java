@@ -15,4 +15,6 @@ public interface SignUpRepository {
     String forgotStoreOTP(String forgotOTP, String forgotMail);//store forgototp
 
     String saveCredentials(String newPassword,String forgotmail);//save forgot credentials
+
+    boolean isEmailExists(String email);// emailExits
 }

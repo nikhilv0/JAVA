@@ -48,21 +48,25 @@ public class SignUpServlet extends HttpServlet {
         String confirmPassword = req.getParameter("confirmPassword");
 
         SignUpDTO dto = new SignUpDTO(email, userId, password, confirmPassword);
-
-//        System.out.println(dto);
-
         SignUpService service = new SignUpServiceImp();
-        String result = service.validateAndsave(dto);
 
-        if (!result.equals("SuccessFully sumbitted")) {
-            System.out.println("form not submitted");
+        if (service.isEmailExists(email)) {
+            req.setAttribute("error", "Email already exists. Please use another email.");
             req.setAttribute("dto", dto);
+            req.getRequestDispatcher("signUp.jsp").forward(req, resp);
+            return;
         }
-        System.out.println(dto);
-        System.out.println("Result:" + result);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
-        req.setAttribute("result", result);
-        requestDispatcher.forward(req, resp);
+
+            String result = service.validateAndsave(dto);
+            if (!result.equals("SuccessFully sumbitted")) {
+                System.out.println("form not submitted");
+                req.setAttribute("dto", dto);
+            }
+            System.out.println(dto);
+            System.out.println("Result:" + result);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("signUp.jsp");
+            req.setAttribute("result", result);
+            requestDispatcher.forward(req, resp);
     }
 
 

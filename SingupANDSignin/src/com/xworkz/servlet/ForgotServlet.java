@@ -32,16 +32,13 @@ public class ForgotServlet extends HttpServlet {
         String email = req.getParameter("emailOrUserId");
         HttpSession httpSession= req.getSession();
         httpSession.setAttribute("email",email);
-//        String userId = req.getParameter("emailOrUserId");
         System.out.println("Mail:" + email);
         HttpSession forgotmailsession=req.getSession();
         forgotmailsession.setAttribute("forgotmail",email);
-//        System.out.println("userId:" + userId);
 
         SignUpService service = new SignUpServiceImp();
         SignUpDTO signUpDTO = service.findByUser(email);
-//        HttpSession forgotdto=req.getSession();
-//        httpSession.setAttribute("fogotsignupDTO",signUpDTO);   needed for setting values in front
+
 
         if (signUpDTO != null) {
             System.out.println("data found");

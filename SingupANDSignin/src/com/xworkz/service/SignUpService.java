@@ -21,6 +21,8 @@ public interface SignUpService {
 
     String resetPass(String newPassword,String confirmPass,String forgotmail);//reset forgot credentials
 
-    String sendOtpToMAil(String mailfromSession, String otpfromSession);
+    String sendOtpToMAil(String mailfromSession, String otpfromSession);//sending otp to mail
+
+    boolean isEmailExists(String email);//email exits
 
 }

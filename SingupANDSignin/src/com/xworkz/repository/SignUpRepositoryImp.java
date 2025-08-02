@@ -35,30 +35,29 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public SignUpDTO findById(String mail,String enteredPassword) {
+    public SignUpDTO findById(String mail, String enteredPassword) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
             String sql = "SELECT * FROM sign_up WHERE email = '" + mail + "'";
-            Statement statement=connection.createStatement();
-            ResultSet resultSet=statement.executeQuery(sql);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
                 int pk = resultSet.getInt("id");
                 String user = resultSet.getString("user_id");
-                String storedHashedPassword= resultSet.getString("password");
-                String email=resultSet.getString("email");
+                String storedHashedPassword = resultSet.getString("password");
+                String email = resultSet.getString("email");
 //                String conformPassword=resultSet.getString("confirmPassword");
 
                 if (BCrypt.checkpw(enteredPassword, storedHashedPassword)) {
-//                    System.out.println(enteredPassword);
                     System.out.println(storedHashedPassword);
                     System.out.println("from DB");
-                SignUpDTO signUpDTO1 = new SignUpDTO(user,email,enteredPassword);
-                System.out.println(signUpDTO1);
-                return signUpDTO1;
+                    SignUpDTO signUpDTO1 = new SignUpDTO(user, email, enteredPassword);
+                    System.out.println(signUpDTO1);
+                    return signUpDTO1;
                 }
             }
 
@@ -67,27 +66,26 @@ public class SignUpRepositoryImp implements SignUpRepository {
         }
 
         return null;
- }
+    }
 
     @Override
-    public SignUpDTO findByUser( String email) {
+    public SignUpDTO findByUser(String email) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql="select * from sign_up where email= ? ";
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
-            preparedStatement.setString(1,email);
-            ResultSet resultSet=preparedStatement.executeQuery();
+            String sql = "select * from sign_up where email= ? ";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            while(resultSet.next()){
-                int pk=resultSet.getInt("id");
-                String user1=resultSet.getString("user_Id");
-                String mail=resultSet.getString("email");
-                String password=resultSet.getString("password");
+            while (resultSet.next()) {
 
-                SignUpDTO signUpDTO=new SignUpDTO(user1,mail,password);
+                String mail = resultSet.getString("email");
+                String password = resultSet.getString("password");
+
+                SignUpDTO signUpDTO = new SignUpDTO(mail, password);
                 System.out.println(signUpDTO);
                 return signUpDTO;
             }
@@ -99,18 +97,18 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public String storeOTP(String emailSession,String otpSession) {
+    public String storeOTP(String emailSession, String otpSession) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(),DBconstant.PASSWORD.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql="insert into otp_signIn values(?,?,?,?)";
-            PreparedStatement preparedStatement= connection.prepareStatement(sql);
+            String sql = "insert into otp_signIn values(?,?,?,?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1,0);
-            preparedStatement.setString(2,emailSession);
-            preparedStatement.setString(3,otpSession);
+            preparedStatement.setInt(1, 0);
+            preparedStatement.setString(2, emailSession);
+            preparedStatement.setString(3, otpSession);
             preparedStatement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
 
             preparedStatement.executeUpdate();
@@ -119,7 +117,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
             throw new RuntimeException(e);
         }
         return "working";
-        }
+    }
 
 
     @Override
@@ -127,15 +125,15 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql="insert into otp_forgot values(?,?,?,?)";
-            PreparedStatement preparedStatement= connection.prepareStatement(sql);
+            String sql = "insert into otp_forgot values(?,?,?,?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1,0);
-            preparedStatement.setString(2,forgotMail);
-            preparedStatement.setString(3,forgotOTP);
-            preparedStatement.setTimestamp(4,new Timestamp(System.currentTimeMillis()));
+            preparedStatement.setInt(1, 0);
+            preparedStatement.setString(2, forgotMail);
+            preparedStatement.setString(3, forgotOTP);
+            preparedStatement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
 
             preparedStatement.executeUpdate();
 
@@ -146,20 +144,20 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public String saveCredentials(String newPassword,String forgotmail) {
+    public String saveCredentials(String newPassword, String forgotmail) {
 
         try {
             Class.forName(DBconstant.DRIVER.getValue());
-            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(),DBconstant.PASSWORD.getValue());
+            Connection connection = DriverManager.getConnection(DBconstant.URL.getValue(), DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
 
-            String sql="update sign_up SET password = ?,updated_date = CURRENT_TIMESTAMP WHERE email = ?";
-            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            String sql = "update sign_up SET password = ?,updated_date = CURRENT_TIMESTAMP WHERE email = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setString(1,newPassword);
-            preparedStatement.setString(2,forgotmail);
+            preparedStatement.setString(1, newPassword);
+            preparedStatement.setString(2, forgotmail);
             preparedStatement.executeUpdate();
 
-            ResultSet resultSet=preparedStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String password = resultSet.getString("password");
 
@@ -168,7 +166,6 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
                 System.out.println(signUpDTO2);
 //                return password;
-
             }
 
             System.out.println("Forgot Credentials Stored");
@@ -177,4 +174,31 @@ public class SignUpRepositoryImp implements SignUpRepository {
         }
         return "Forgot Credentials Stored";
     }
+
+    public boolean isEmailExists(String email) {
+        boolean exists = false;
+        try {
+
+            Class.forName(DBconstant.DRIVER.getValue());
+            Connection connection=DriverManager.getConnection(DBconstant.URL.getValue(),DBconstant.USERNAME.getValue(), DBconstant.PASSWORD.getValue());
+
+            String sql = "SELECT COUNT(*) FROM sign_up WHERE email = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                exists = rs.getInt(1) > 0;
+            }
+            rs.close();
+            ps.close();
+            connection.close();
+        }  catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return exists;
+    }
+
+
 }

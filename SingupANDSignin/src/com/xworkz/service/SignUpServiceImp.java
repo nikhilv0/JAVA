@@ -140,7 +140,7 @@ public class SignUpServiceImp implements SignUpService {
     public String resetPass(String newPassword, String confirmPass,String forgotmail) {
         if (passwordPattern(newPassword)){
                 System.out.println("Password is valid");
-                String savedCredentials=signUpRepository.saveCredentials(newPassword,forgotmail);
+                signUpRepository.saveCredentials(newPassword,forgotmail);
                 return "Password is valid";
         } else if (!newPassword.equals(confirmPass)) {
             return "Missmatched password*";
@@ -149,7 +149,13 @@ public class SignUpServiceImp implements SignUpService {
         return "Password must be >6 chars, digit, upper, lower, and special character*";
     }
 
-
+    @Override
+    public boolean isEmailExists(String email) {
+        if (!mailPattern(email)) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
+        return signUpRepository.isEmailExists(email);
+    }
 
 
     private static boolean passwordPattern(String newPassword) {
@@ -168,6 +174,7 @@ public class SignUpServiceImp implements SignUpService {
                 email.lastIndexOf('.') > email.indexOf('@') + 1 &&
                 !email.contains(" ");
     }
+
 
 }
 

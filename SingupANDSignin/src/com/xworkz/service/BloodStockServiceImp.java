@@ -23,7 +23,6 @@ public class BloodStockServiceImp implements BloodStockService {
         return "false";
     }
 
-
     @Override
     public String updateByid(int id, int units) {
         if ((id > 0) && (units > 0)) {
@@ -63,7 +62,6 @@ public class BloodStockServiceImp implements BloodStockService {
             return null;
         }
     }
-
 
     private static boolean bloodDTOcheck(BloodStockDTO bloodStockDTO) {
         return bloodStockDTO.getBloodGroup().matches("^(A|B|AB|O)[+-]$") && (bloodStockDTO.getQuantity() != 0);
