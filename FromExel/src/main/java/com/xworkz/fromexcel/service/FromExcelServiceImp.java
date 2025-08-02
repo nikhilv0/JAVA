@@ -8,7 +8,6 @@ import java.util.Properties;
 
 public class FromExcelServiceImp implements FromExcelService {
 
-
     @Override
     public String sendOtpToMAil(String mailfromSession){
 
@@ -44,5 +43,4 @@ public class FromExcelServiceImp implements FromExcelService {
         }
         return "success";
     }
-
 }

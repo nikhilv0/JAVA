@@ -9,9 +9,6 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @WebServlet("/upload")
 @MultipartConfig
@@ -27,7 +24,6 @@ public class ExcelReader extends HttpServlet {
             Workbook workbook = new XSSFWorkbook(inputStream); // For .xlsx files
             Sheet sheet = workbook.getSheetAt(0); // Get first sheet
             System.out.println("---- Excel Content ----");
-
 //            for (Row row : sheet) {
 //                StringBuilder rowText = new StringBuilder();
 //                for (Cell cell : row) {
@@ -35,10 +31,9 @@ public class ExcelReader extends HttpServlet {
 //                }
 //                System.out.println(rowText.toString());
             int count =0;
-            for (int i = 1; i <= sheet.getLastRowNum(); i++) { // Skip header row (i=2)
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i); // Get each row
                 if (row == null) continue;
-
 //                String date = row.getCell(0).getStringCellValue();
 //                String name = row.getCell(1).getStringCellValue();
 //                int amount = (int) row.getCell(2).getNumericCellValue();
@@ -56,7 +51,6 @@ public class ExcelReader extends HttpServlet {
             inputStream.close();
             System.out.println("-----------------------");
 
-            
         } catch (Exception e) {
         }
     }
