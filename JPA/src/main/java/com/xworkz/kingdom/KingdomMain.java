@@ -17,10 +17,12 @@ public class KingdomMain {
 
         List<KingdomEntity> kingdom=new ArrayList<>(Arrays.asList(new KingdomEntity(1,"nikki","nikitha"),new KingdomEntity(2,"aryan","megha")));
         for (KingdomEntity kingdom1:kingdom){
-        em.persist(kingdom1);
+//        em.persist(kingdom1);
+            em.remove(kingdom1);
         }
 
 //        KingdomEntity kingdomEntity=em.find(k.class);
+
         et.commit();
         em.close();
 
