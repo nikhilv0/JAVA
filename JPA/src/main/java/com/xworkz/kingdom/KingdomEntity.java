@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Setter
 @ToString
 @EqualsAndHashCode
+@NoArgsConstructor
 @Table(name = "kingdom_table")
 public class KingdomEntity {
 
@@ -24,4 +25,6 @@ public class KingdomEntity {
 
     @Column(name = "queen_name")
     private String queenName;
+
+
 }
