@@ -1,4 +1,7 @@
 <html>
+<head>
+    <title>Web Map</title>
+</head>
 <body>
 <a href="soap.jsp">Soap</a>
 <a href="biryani.jsp">biryani</a>

@@ -10,8 +10,8 @@ public class Butter {
         System.out.println("Butter Constructor");
     }
 
-    @RequestMapping("/onSubmit")
-    public String onSubmit(){
+    @RequestMapping("/onClickButter")
+    public String onClickButter(){
         System.out.println("Running Butter method");
         return "butter.jsp";
     }

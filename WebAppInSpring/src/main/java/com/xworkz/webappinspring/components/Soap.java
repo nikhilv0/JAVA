@@ -10,8 +10,8 @@ public class Soap {
         System.out.println("Soap Constructor");
     }
 
-    @RequestMapping("/onClick")
-    public String onClick(){
+    @RequestMapping("/onClickSoap")
+    public String onClickSoap(){
         System.out.println("Running Soap method");
         return "soap.jsp";
     }
