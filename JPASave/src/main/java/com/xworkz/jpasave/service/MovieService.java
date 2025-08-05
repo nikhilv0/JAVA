@@ -4,5 +4,11 @@ import com.xworkz.jpasave.entity.MovieEntity;
 
 public interface MovieService {
 
-    MovieEntity save(MovieEntity movieEntity);
+    String save(MovieEntity movieEntity);
+
+    MovieEntity findById(int id);
+
+    String updateNameByID(int id,String name);
+
+    String deleteByID(int id);
 }
