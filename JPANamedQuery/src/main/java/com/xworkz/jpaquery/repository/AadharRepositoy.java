@@ -17,4 +17,12 @@ public interface AadharRepositoy {
    AadharEntity getEntityByNameAndPhoneNum(String name,Long number);
 
    List<AadharEntity> getEntityByAge(int age);
+
+   List<AadharEntity> getEntityBtwAge(int minAge,int maxAge);
+
+   AadharEntity getEntityByEmail(String mail);
+
+   AadharEntity getEntityByPhoneNum(Long phoneNum);
+
+
 }

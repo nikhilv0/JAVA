@@ -11,7 +11,8 @@ public class GetEntityByAge {
 
         AadharService aadharService=new AadharServiceImp();
         List<AadharEntity> aadharEntity=aadharService.getEntityByAge(18);
-        List<AadharEntity> aadharEntity1=aadharService.getEntityByAge(20);
-        System.out.println(aadharEntity.toString()+" \n"+aadharEntity1.toString());
+        for ( AadharEntity aadharEntities:aadharEntity){    /// ?????
+            System.out.println(aadharEntities);
+        }
     }
 }

@@ -4,14 +4,11 @@ import com.xworkz.jpaquery.entity.AadharEntity;
 import com.xworkz.jpaquery.service.AadharService;
 import com.xworkz.jpaquery.service.AadharServiceImp;
 
-import java.util.List;
-
-public class FindAll {
+public class GetEntityByPhoneNum {
     public static void main(String[] args) {
         AadharService aadharService=new AadharServiceImp();
-        List<AadharEntity> aadharEntities=aadharService.findAll();
-        for (AadharEntity aadharEntity:aadharEntities){
-            System.out.println(aadharEntity);
-        }
+        AadharEntity aadharEntity=aadharService.getEntityByPhoneNum(9012345678L);
+        System.out.println(aadharEntity);
     }
+
 }

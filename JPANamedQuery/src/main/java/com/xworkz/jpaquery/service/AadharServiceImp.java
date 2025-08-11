@@ -46,4 +46,22 @@ public class AadharServiceImp implements AadharService{
         System.out.println("getEntityByAge");
         return aadharRepositoy.getEntityByAge(age);
     }
+
+    @Override
+    public List<AadharEntity> getEntityBtwAge(int minAge, int maxAge) {
+        System.out.println("getEntityBtwAge");
+        return aadharRepositoy.getEntityBtwAge(minAge,maxAge);
+    }
+
+    @Override
+    public AadharEntity getEntityByEmail(String mail) {
+        System.out.println("getEntityByEmail");
+        return aadharRepositoy.getEntityByEmail(mail);
+    }
+
+    @Override
+    public AadharEntity getEntityByPhoneNum(Long phoneNum) {
+        System.out.println("getEntityByPhoneNum");
+        return aadharRepositoy.getEntityByPhoneNum(phoneNum);
+    }
 }

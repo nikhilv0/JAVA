@@ -4,14 +4,10 @@ import com.xworkz.jpaquery.entity.AadharEntity;
 import com.xworkz.jpaquery.service.AadharService;
 import com.xworkz.jpaquery.service.AadharServiceImp;
 
-import java.util.List;
-
-public class FindAll {
+public class GetEntityByEmail {
     public static void main(String[] args) {
         AadharService aadharService=new AadharServiceImp();
-        List<AadharEntity> aadharEntities=aadharService.findAll();
-        for (AadharEntity aadharEntity:aadharEntities){
-            System.out.println(aadharEntity);
-        }
+        AadharEntity aadharEntity=aadharService.getEntityByEmail("priya.kumar@yahoo.com");
+        System.out.println(aadharEntity);
     }
 }

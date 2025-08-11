@@ -6,12 +6,12 @@ import com.xworkz.jpaquery.service.AadharServiceImp;
 
 import java.util.List;
 
-public class FindAll {
+public class GetEntityBtwAge {
     public static void main(String[] args) {
         AadharService aadharService=new AadharServiceImp();
-        List<AadharEntity> aadharEntities=aadharService.findAll();
-        for (AadharEntity aadharEntity:aadharEntities){
-            System.out.println(aadharEntity);
+        List<AadharEntity> aadharEntity=aadharService.getEntityBtwAge(10,20);
+        for ( AadharEntity aadharEntities:aadharEntity){    /// ?????
+            System.out.println(aadharEntities);
         }
     }
 }
