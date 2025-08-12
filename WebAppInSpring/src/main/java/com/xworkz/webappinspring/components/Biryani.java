@@ -1,8 +1,10 @@
 package com.xworkz.webappinspring.components;
 
+import com.xworkz.webappinspring.dto.BiriyaniDTO;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Component
 @RequestMapping("/")
@@ -12,9 +14,16 @@ public class Biryani {
     }
 
     @RequestMapping("/onClickBiryani")
-    public String onClickBiryani(@RequestParam String name,@RequestParam int price){
+    public ModelAndView onClickBiryani(ModelAndView model){
         System.out.println("Running Biryani method");
-        System.out.println(name+" "+price);
-        return "biryani.jsp";
+
+//        model.addAttribute("name","name is working");                        //1st way using model
+//        System.out.println(model);
+
+
+        model.addObject("name","hooo kttaaa");        // 2nd way using modelAndView
+        model.setViewName("biryani");
+        return model;
+
     }
 }

@@ -16,5 +16,6 @@
 <a href="parota.jsp">parota</a>
 <a href="shoe.jsp">shoe</a>
 <a href="soap.jsp">soap</a>
+<img src="IMG_7119_Original.png">
 </body>
 </html>

@@ -20,6 +20,6 @@ public class WebInit extends AbstractAnnotationConfigDispatcherServletInitialize
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/onClickBiryani","/onClickBottle","/onClickButter","/onClickChappal","/onClickChuntey","/onClickCurry","/onClickEgg","/onClickMilk","/onClickOnion","/onClickParota","/onClickShoe","/onClickSoap","/onClickSocks"};
+        return new String[]{"/"};
     }
 }

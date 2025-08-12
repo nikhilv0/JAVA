@@ -1,6 +1,8 @@
 package com.xworkz.webappinspring.components;
 
+import com.xworkz.webappinspring.dto.CurryDTO;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,9 +14,13 @@ public class Curry {
     }
 
     @RequestMapping("/onClickCurry")
-    public String onClickCurry(@RequestParam String name, @RequestParam int price){
+    public String onClickCurry(Model model){
         System.out.println("Running Curry method");
-        System.out.println(name+" "+price);
-        return "curry.jsp";
+//        System.out.println(curryDTO.toString());
+
+        model.addAttribute("name","name is working");                        //1st way using model
+        System.out.println(model);
+        return "curry";
+
     }
 }

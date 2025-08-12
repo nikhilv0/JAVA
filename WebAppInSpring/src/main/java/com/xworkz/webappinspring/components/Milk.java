@@ -1,8 +1,9 @@
 package com.xworkz.webappinspring.components;
 
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Component
 @RequestMapping("/")
@@ -12,9 +13,12 @@ public class Milk {
     }
 
     @RequestMapping("/onClickMilk")
-    public String onClickMilk(@RequestParam String name, @RequestParam int price){
+    public String onClickMilk(Model model){
         System.out.println("Running Milk method");
-        System.out.println(name+" "+price);
-        return "milk.jsp";
+//        System.out.println(milkDTO.toString());
+
+        model.addAttribute("name","name is working");                        //1st way using model
+        System.out.println(model);
+        return "milk";
     }
 }

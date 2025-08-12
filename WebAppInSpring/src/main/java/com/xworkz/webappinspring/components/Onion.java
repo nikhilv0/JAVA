@@ -1,8 +1,9 @@
 package com.xworkz.webappinspring.components;
 
+import com.xworkz.webappinspring.dto.OnionDTO;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
 @RequestMapping("/")
@@ -12,9 +13,13 @@ public class Onion {
     }
 
     @RequestMapping("/onClickOnion")
-    public String onClickOnion(@RequestParam String name, @RequestParam int price){
+    public String onClickOnion(Model model){
         System.out.println("Running Onion method");
-        System.out.println(name+" "+price);
-        return "onion.jsp";
+//        System.out.println(onionDTO.toString());
+
+        model.addAttribute("name","name is working");                        //1st way using model
+        System.out.println(model);
+        return "onion";
+
     }
 }
