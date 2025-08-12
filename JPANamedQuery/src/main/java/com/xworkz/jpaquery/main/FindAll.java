@@ -1,17 +1,17 @@
 package com.xworkz.jpaquery.main;
 
-import com.xworkz.jpaquery.entity.AadharEntity;
-import com.xworkz.jpaquery.service.AadharService;
-import com.xworkz.jpaquery.service.AadharServiceImp;
+import com.xworkz.jpaquery.entity.AadhaarEntity;
+import com.xworkz.jpaquery.service.AadhaarService;
+import com.xworkz.jpaquery.service.AadhaarServiceImp;
 
 import java.util.List;
 
 public class FindAll {
     public static void main(String[] args) {
-        AadharService aadharService=new AadharServiceImp();
-        List<AadharEntity> aadharEntities=aadharService.findAll();
-        for (AadharEntity aadharEntity:aadharEntities){
-            System.out.println(aadharEntity);
+        AadhaarService aadhaarService =new AadhaarServiceImp();
+        List<AadhaarEntity> aadharEntities= aadhaarService.findAll();
+        for (AadhaarEntity aadhaarEntity :aadharEntities){
+            System.out.println(aadhaarEntity);
         }
     }
 }

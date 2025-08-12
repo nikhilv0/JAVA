@@ -4,15 +4,12 @@ import com.xworkz.jpaquery.entity.AadhaarEntity;
 import com.xworkz.jpaquery.service.AadhaarService;
 import com.xworkz.jpaquery.service.AadhaarServiceImp;
 
-import java.util.List;
-
-public class GetEntityByAge {
+public class GetEmailAndPhoneNumByName {
     public static void main(String[] args) {
 
         AadhaarService aadhaarService =new AadhaarServiceImp();
-        List<AadhaarEntity> aadhaarEntity = aadhaarService.getEntityByAge(18);
-        for ( AadhaarEntity aadharEntities: aadhaarEntity){    /// ?????
-            System.out.println(aadharEntities);
-        }
+        AadhaarEntity aadhaarEntity = aadhaarService.getEmailAndPhoneNumByName("Rahul");
+        System.out.println("Mail:"+ aadhaarEntity.getEmail());
+        System.out.println("Phone Number"+ aadhaarEntity.getPhoneNumber());
     }
 }

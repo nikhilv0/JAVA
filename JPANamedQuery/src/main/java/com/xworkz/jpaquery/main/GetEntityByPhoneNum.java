@@ -1,14 +1,14 @@
 package com.xworkz.jpaquery.main;
 
-import com.xworkz.jpaquery.entity.AadharEntity;
-import com.xworkz.jpaquery.service.AadharService;
-import com.xworkz.jpaquery.service.AadharServiceImp;
+import com.xworkz.jpaquery.entity.AadhaarEntity;
+import com.xworkz.jpaquery.service.AadhaarService;
+import com.xworkz.jpaquery.service.AadhaarServiceImp;
 
 public class GetEntityByPhoneNum {
     public static void main(String[] args) {
-        AadharService aadharService=new AadharServiceImp();
-        AadharEntity aadharEntity=aadharService.getEntityByPhoneNum(9012345678L);
-        System.out.println(aadharEntity);
+        AadhaarService aadhaarService =new AadhaarServiceImp();
+        AadhaarEntity aadhaarEntity = aadhaarService.getEntityByPhoneNum(9012345678L);
+        System.out.println(aadhaarEntity);
     }
 
 }

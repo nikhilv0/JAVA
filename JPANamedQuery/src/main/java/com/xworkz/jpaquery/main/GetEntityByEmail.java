@@ -1,13 +1,13 @@
 package com.xworkz.jpaquery.main;
 
-import com.xworkz.jpaquery.entity.AadharEntity;
-import com.xworkz.jpaquery.service.AadharService;
-import com.xworkz.jpaquery.service.AadharServiceImp;
+import com.xworkz.jpaquery.entity.AadhaarEntity;
+import com.xworkz.jpaquery.service.AadhaarService;
+import com.xworkz.jpaquery.service.AadhaarServiceImp;
 
 public class GetEntityByEmail {
     public static void main(String[] args) {
-        AadharService aadharService=new AadharServiceImp();
-        AadharEntity aadharEntity=aadharService.getEntityByEmail("priya.kumar@yahoo.com");
-        System.out.println(aadharEntity);
+        AadhaarService aadhaarService =new AadhaarServiceImp();
+        AadhaarEntity aadhaarEntity = aadhaarService.getEntityByEmail("priya.kumar@yahoo.com");
+        System.out.println(aadhaarEntity);
     }
 }
