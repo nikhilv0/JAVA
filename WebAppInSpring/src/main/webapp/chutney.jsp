@@ -1,15 +1,28 @@
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>Chutney</title>
 </head>
 <body>
-<form action="onClickChuntey" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name"  id="name" required>
-    <br>
-    <label for="price">price</label>
-    <input type="number" name="price"  id="price" required>
-    <input type="submit" value="submit">
-</form>
+
+    <form action="onClickChutney" method="post">
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Type (Tomato/Mint/Coconut):</label>
+        <input type="text" name="type" required><br>
+
+        <label>Spice Level:</label>
+        <input type="text" name="spiceLevel" required><br>
+
+        <label>Quantity (grams):</label>
+        <input type="number" name="quantity" required><br>
+
+        <label>Price:</label>
+        <input type="number" name="price" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
 </body>
 </html>

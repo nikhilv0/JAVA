@@ -1,10 +1,16 @@
 package com.xworkz.webappinspring.dto;
 
 
-import java.io.Serializable;
+import lombok.Data;
 
+import java.io.Serializable;
+@Data
 public class OnionDTO implements Serializable {
 
-    private String name;
-    private int price;
+    private String type;
+    private String origin;
+    private double weight;
+    private String quality;
+    private double pricePerKg;
+
 }

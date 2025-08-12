@@ -1,9 +1,14 @@
 package com.xworkz.webappinspring.dto;
 
-import java.io.Serializable;
+import lombok.Data;
 
+import java.io.Serializable;
+@Data
 public class SocksDTO implements Serializable {
 
-    private String name;
-    private int price;
+    private String color;
+    private String material;
+    private String size;
+    private String brand;
+    private double price;
 }

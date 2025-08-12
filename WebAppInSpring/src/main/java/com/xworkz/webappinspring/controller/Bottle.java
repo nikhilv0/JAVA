@@ -1,5 +1,6 @@
-package com.xworkz.webappinspring.components;
+package com.xworkz.webappinspring.controller;
 
+import com.xworkz.webappinspring.dto.BottleDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +14,10 @@ public class Bottle {
     }
 
     @RequestMapping("/onClickBottle")
-    public String onClickBottle(Model model){
+    public String onClickBottle(Model model, BottleDTO bottleDTO){
         System.out.println("Running Bottle method");
-//        System.out.println(bottleDTO.toString());
 
-        model.addAttribute("name","name is working");                        //1st way using model
-        System.out.println(model);
+        model.addAttribute("value",bottleDTO);
         return "bottle";
 
     }

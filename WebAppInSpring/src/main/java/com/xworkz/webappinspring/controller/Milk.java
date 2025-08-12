@@ -1,5 +1,6 @@
-package com.xworkz.webappinspring.components;
+package com.xworkz.webappinspring.controller;
 
+import com.xworkz.webappinspring.dto.MilkDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +14,11 @@ public class Milk {
     }
 
     @RequestMapping("/onClickMilk")
-    public String onClickMilk(Model model){
+    public String onClickMilk(Model model, MilkDTO milkDTO){
         System.out.println("Running Milk method");
 //        System.out.println(milkDTO.toString());
 
-        model.addAttribute("name","name is working");                        //1st way using model
-        System.out.println(model);
+        model.addAttribute("value",milkDTO);
         return "milk";
     }
 }

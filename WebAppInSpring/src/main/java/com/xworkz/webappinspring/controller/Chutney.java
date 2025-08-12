@@ -1,5 +1,6 @@
-package com.xworkz.webappinspring.components;
+package com.xworkz.webappinspring.controller;
 
+import com.xworkz.webappinspring.dto.ChutneyDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,11 @@ public class Chutney {
     }
 
     @RequestMapping("/onClickChuntey")
-    public String onClickChutney(Model model){
+    public String onClickChutney(Model model, ChutneyDTO chutneyDTO){
         System.out.println("Running Chutney method");
 //        System.out.println(chutneyDTO.toString());
 
-        model.addAttribute("name","name is working");                        //1st way using model
-        System.out.println(model);
+        model.addAttribute("value",chutneyDTO);
         return "chutney";
 
     }

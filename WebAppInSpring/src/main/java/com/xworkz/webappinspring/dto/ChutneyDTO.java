@@ -7,5 +7,8 @@ import java.io.Serializable;
 public class ChutneyDTO implements Serializable {
 
     private String name;
-    private int price;
+    private String type;
+    private String spiceLevel;
+    private double quantity;
+    private double price;
 }

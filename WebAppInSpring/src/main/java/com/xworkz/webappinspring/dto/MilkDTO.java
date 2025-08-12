@@ -6,6 +6,9 @@ import java.io.Serializable;
 @Data
 public class MilkDTO implements Serializable {
 
-    private String name;
-    private int price;
+    private String type;
+    private double quantity;
+    private String expiryDate;
+    private String brand;
+    private double price;
 }

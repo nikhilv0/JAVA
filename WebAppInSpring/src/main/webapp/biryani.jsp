@@ -4,14 +4,21 @@
     <title>Biryani</title>
 </head>
 <body>
-<h2>${name}</h2>
 <form action="onClickBiryani" method="post">
-    <label for="name">Name</label>
-        <input type="text" name="name"  id="name" required>
-    <br>
-    <label for="price">price</label>
-        <input type="number" name="price"  id="price" required>
-    <input type="submit" value="submit">
+    <label>Name:</label>
+    <input type="text" name="name" required><br>
+
+    <label>Price:</label>
+    <input type="number" name="price" required><br>
+
+    <label>Type (Veg/Non-Veg):</label>
+    <input type="text" name="type" required><br>
+
+    <label>Spice Level:</label>
+    <input type="text" name="spiceLevel" required><br>
+
+    <label>Quantity (plates):</label>
+    <input type="number" name="quantity" required><br>
+
+    <input type="submit" value="Submit">
 </form>
-</body>
-</html>

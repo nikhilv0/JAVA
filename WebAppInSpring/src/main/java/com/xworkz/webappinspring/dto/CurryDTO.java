@@ -1,9 +1,14 @@
 package com.xworkz.webappinspring.dto;
 
-import java.io.Serializable;
+import lombok.Data;
 
+import java.io.Serializable;
+@Data
 public class CurryDTO implements Serializable {
 
     private String name;
-    private int price;
+    private String type;
+    private String spiceLevel;
+    private int quantity;
+    private double price;
 }

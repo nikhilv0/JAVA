@@ -1,5 +1,6 @@
-package com.xworkz.webappinspring.components;
+package com.xworkz.webappinspring.controller;
 
+import com.xworkz.webappinspring.dto.SocksDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +14,11 @@ public class Socks {
     }
 
     @RequestMapping("/onClickSocks")
-    public String onClickSocks(Model model){
+    public String onClickSocks(Model model, SocksDTO socksDTO){
         System.out.println("Running Socks method");
 //        System.out.println(socksDTO.toString());
 
-        model.addAttribute("name","name is working");                        //1st way using model
-        System.out.println(model);
+        model.addAttribute("name",socksDTO);
         return "socks";
     }
 }

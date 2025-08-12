@@ -1,9 +1,14 @@
 package com.xworkz.webappinspring.dto;
 
-import java.io.Serializable;
+import lombok.Data;
 
+import java.io.Serializable;
+@Data
 public class ChappalDTO implements Serializable {
 
-    private String name;
-    private int price;
+    private String brand;
+    private String size;
+    private String color;
+    private double price;
+    private String material;
 }

@@ -1,9 +1,14 @@
 package com.xworkz.webappinspring.dto;
 
-import java.io.Serializable;
+import lombok.Data;
 
+import java.io.Serializable;
+@Data
 public class ShoeDTO implements Serializable {
 
-    private String name;
-    private int price;
+    private String brand;
+    private String size;
+    private String color;
+    private String material;
+    private double price;
 }
