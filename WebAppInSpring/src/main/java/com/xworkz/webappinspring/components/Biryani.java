@@ -1,12 +1,9 @@
 package com.xworkz.webappinspring.components;
-
-import com.xworkz.webappinspring.dto.BiriyaniDTO;
-import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@Component
+@Controller
 @RequestMapping("/")
 public class Biryani {
     public Biryani() {

@@ -1,13 +1,10 @@
 package com.xworkz.webappinspring.components;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import com.xworkz.webappinspring.dto.ChappalDTO;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@Component
+@Controller
 @RequestMapping("/")
 public class Chappal {
     public Chappal() {

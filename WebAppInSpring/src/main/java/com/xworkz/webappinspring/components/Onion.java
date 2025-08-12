@@ -1,11 +1,10 @@
 package com.xworkz.webappinspring.components;
 
-import com.xworkz.webappinspring.dto.OnionDTO;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Component
+@Controller
 @RequestMapping("/")
 public class Onion {
     public Onion() {

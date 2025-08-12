@@ -1,12 +1,11 @@
 package com.xworkz.webappinspring.components;
 
-import com.xworkz.webappinspring.dto.SocksDTO;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-@Component
+
+@Controller
 @RequestMapping("/")
 public class Socks {
     public Socks() {
