@@ -4,7 +4,9 @@ import com.xworkz.jpaquery.entity.AadhaarEntity;
 import com.xworkz.jpaquery.repository.AadhaarRepository;
 import com.xworkz.jpaquery.repository.AadhaarRepositoryImp;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class AadhaarServiceImp implements AadhaarService {
 
@@ -80,6 +82,12 @@ public class AadhaarServiceImp implements AadhaarService {
     public AadhaarEntity getPhoneNumAndPlaceByMail(String mail) {
         System.out.println("getPhoneNumAndPlaceByMail");
         return aadhaarRepository.getPhoneNumAndPlaceByMail(mail);
+    }
+
+    @Override
+    public Set<AadhaarEntity> getAgeAndPhoneNum() {
+        System.out.println("getAgeAndPhoneNum");
+        return aadhaarRepository.getAgeAndPhoneNum();
     }
 
 

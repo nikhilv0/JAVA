@@ -1,5 +1,8 @@
 package com.xworkz.jpaquery.entity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Data
@@ -17,7 +20,8 @@ import javax.persistence.*;
 @NamedQuery(name = "getEmailAndPhoneNumByName",query = "select entity.email,entity.phoneNumber from AadhaarEntity entity where entity.name =:name")
 @NamedQuery(name = "getIdAndNameByNameAndPlace",query = "select entity.id,entity.name from AadhaarEntity entity where entity.name =:name and entity.place =:place")
 @NamedQuery(name = "getPhoneNumAndPlaceByMail",query = "select entity.phoneNumber,entity.place from AadhaarEntity entity where entity.email =:email")
-public class AadhaarEntity {
+@NamedQuery(name = "getAgeAndPhoneNum",query = "select entity.age,entity.phoneNumber from AadhaarEntity entity ")
+public class AadhaarEntity implements Comparable<AadhaarEntity> {
     public AadhaarEntity() {
         System.out.println("AadhaarEntity Constructor");
     }
@@ -48,5 +52,10 @@ public class AadhaarEntity {
         this.age=age;
         this.phoneNumber=phoneNumber;
         this.place=place;
+    }
+
+    @Override
+    public int compareTo(AadhaarEntity o) {
+        return Integer.compare(this.age,o.age);
     }
 }

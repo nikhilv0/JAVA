@@ -3,6 +3,7 @@ package com.xworkz.jpaquery.repository;
 import com.xworkz.jpaquery.entity.AadhaarEntity;
 
 import java.util.List;
+import java.util.Set;
 
 public interface AadhaarRepository {
 
@@ -30,4 +31,5 @@ public interface AadhaarRepository {
 
    AadhaarEntity getPhoneNumAndPlaceByMail(String mail);
 
+   Set<AadhaarEntity> getAgeAndPhoneNum();
 }

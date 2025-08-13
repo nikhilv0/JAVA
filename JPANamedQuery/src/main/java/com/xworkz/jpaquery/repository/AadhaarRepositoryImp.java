@@ -3,8 +3,7 @@ package com.xworkz.jpaquery.repository;
 import com.xworkz.jpaquery.entity.AadhaarEntity;
 
 import javax.persistence.*;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 
 public class AadhaarRepositoryImp implements AadhaarRepository {
@@ -292,5 +291,38 @@ public class AadhaarRepositoryImp implements AadhaarRepository {
             if (et.isActive()) et.rollback();
         }
         return null;
+    }
+
+    @Override
+    public Set getAgeAndPhoneNum() {
+        EntityManager em=emf.createEntityManager();
+        EntityTransaction et= em.getTransaction();
+//        Set<AadhaarEntity> aadhaarEntities=new HashSet<>();
+        Set<AadhaarEntity> aadhaarEntities = new TreeSet<>(Comparator.comparing(AadhaarEntity::getPhoneNumber).thenComparing(AadhaarEntity::getPhoneNumber));
+
+//        List<AadhaarEntity> aadhaarEntities=new ArrayList<>();
+        try {
+            et.begin();
+            Query query= em.createNamedQuery("getAgeAndPhoneNum");
+            List<Object[]> objects = query.getResultList();
+
+            for (Object[] object:objects){
+            AadhaarEntity aadhaarEntity = new AadhaarEntity();
+            int age=(int)object[0];
+            aadhaarEntity.setAge(age);
+
+            Long phoneNumb=(Long) object[1];
+            aadhaarEntity.setPhoneNumber(phoneNumb);
+
+            aadhaarEntities.add(aadhaarEntity);
+//            Collections.sort(aadhaarEntities);
+            }
+            et.commit();
+            return aadhaarEntities;
+        }catch (Exception e){
+            if (et.isActive()) et.rollback();
+            System.out.println("No record found");
+        }
+        return Collections.EMPTY_SET;
     }
 }
