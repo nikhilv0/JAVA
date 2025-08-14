@@ -13,20 +13,16 @@ public class SignUp {
     @Autowired
     SignUpService signUpService;
 
-    @Autowired
-    SignUpDTO sign;
-
     public SignUp() {
         System.out.println("SignUp Constructor");
     }
     @RequestMapping("/signUp")
-    public String onClick(Model model,SignUpDTO sign1 ){
+    public String onClick(Model model,SignUpDTO sign ){
         System.out.println("onClick Method");
         model.addAttribute("value",sign);
         System.out.println(sign.toString());
 
-        this.sign=sign1;
-        System.out.println(signUpService.save(sign1));
+        System.out.println(signUpService.save(sign));
         return "SignUp";
     }
 

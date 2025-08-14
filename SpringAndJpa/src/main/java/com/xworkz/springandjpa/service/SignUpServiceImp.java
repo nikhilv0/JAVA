@@ -10,12 +10,11 @@ import org.springframework.stereotype.Service;
 public class SignUpServiceImp implements SignUpService{
     @Autowired
     SignUpRepository signUpRepository;
-    @Autowired
-    SignUpEntity signUpEntity;
-    
+
     @Override
     public String save(SignUpDTO sign) {
 
+        SignUpEntity signUpEntity=new SignUpEntity();
         signUpEntity.setName(sign.getName());
         signUpEntity.setEmail(sign.getEmail());
         signUpEntity.setPassword(sign.getPassword());

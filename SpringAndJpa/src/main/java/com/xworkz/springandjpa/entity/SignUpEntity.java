@@ -4,7 +4,6 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-@Component
 @Data
 @Entity
 @Table(name = "SignUp")
