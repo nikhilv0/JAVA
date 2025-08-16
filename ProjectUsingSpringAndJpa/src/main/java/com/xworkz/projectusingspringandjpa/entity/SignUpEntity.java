@@ -5,11 +5,16 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Data
 @Entity
 @Table(name = "SignUp_table")
-public class SignUpEntity implements Serializable {
+@NamedQueries({
+        @NamedQuery(name = "SignUpEntity.existsByEmail", query = "SELECT COUNT(entity) FROM SignUpEntity entity WHERE entity.email = :email"),
+        @NamedQuery(name = "SignUpEntity.findByEmail", query = "SELECT entity FROM SignUpEntity entity WHERE entity.email = :email")
+})
+public class SignUpEntity  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,4 +42,6 @@ public class SignUpEntity implements Serializable {
     @Column(name = "user_password", nullable = false, length = 70)
     private String password;
 
+    @Column(name = "user_createdDate" ,nullable = false)
+    private Timestamp createdAt;
 }

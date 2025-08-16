@@ -7,13 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-<h2>${message}</h2>
+
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow-lg p-4 rounded-4" style="max-width: 500px; width: 100%;">
         <h2 class="text-center mb-4">Sign Up</h2>
 
-        <form action="signUp" method="post" onsubmit="return validateForm()">
+        <div class="mt-3">
+            <p class="text-success">${message}</p>
+            <p class="text-danger">${error}</p>
+        </div>
 
+        <form action="signUp" method="post" onsubmit="return validateForm()">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" name="fullName" value="${signUpDTO.fullName}" placeholder="Enter your full name"
@@ -22,53 +26,53 @@
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                <input type="email" class="form-control" id="email" name="email" value="${signUpDTO.email}"  placeholder="Enter your email"
                        required>
             </div>
 
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                <input type="number" class="form-control" id="phone" name="phone" value="${signUpDTO.phone} placeholder="Enter your phone number"
                        required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label d-block">Gender</label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="MALE" required>
                     <label class="form-check-label" for="male">Male</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="FEMALE">
                     <label class="form-check-label" for="female">Female</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="other" value="Other">
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="OTHER">
                     <label class="form-check-label" for="other">Other</label>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" min="1"
+                <input type="number" class="form-control" id="age" name="age" value="${signUpDTO.age} placeholder="Enter your age" min="1"
                        required>
             </div>
 
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
-                <textarea class="form-control" id="address" name="address" rows="2" placeholder="Enter your address"
+                <textarea class="form-control" id="address" name="address" rows="2" value="${signUpDTO.address} placeholder="Enter your address"
                           required></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                <input type="password" class="form-control" id="password" name="password" value="${signUpDTO.password} placeholder="Enter password"
                        required>
             </div>
 
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" value="${signUpDTO.confirmPassword}
                        placeholder="Confirm password" required>
             </div>
 
@@ -82,7 +86,7 @@
 
 <script>
     function validateForm() {
-      let name = document.getElementById("name").value.trim();
+      let name = document.getElementById("name").value;
       let email = document.getElementById("email").value.trim();
 <!--          let gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;-->
       let gmailPattern = /^(?=.*[0-9])[a-zA-Z0-9._%+-]+@gmail\.com$/;
