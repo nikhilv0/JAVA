@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<a href="SignUp.jsp">SignUP</a>
+<a href="SignIn.jsp">SIgnIn</a>
 </body>
 </html>
