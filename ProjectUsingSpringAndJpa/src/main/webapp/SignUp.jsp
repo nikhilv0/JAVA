@@ -102,7 +102,7 @@
       }
 
       if (!gmailPattern.test(email)) {
-        alert(`Invalid email: ${email}. It must be a Gmail address and at least one number .`);
+       `` alert(`Invalid email: ${email}. It must be a Gmail address and at least one number .`);``
         return false;
       }
 

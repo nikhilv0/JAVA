@@ -1,9 +1,11 @@
 package com.xworkz.projectusingspringandjpa.repository;
 
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
+import org.springframework.stereotype.Repository;
+
 import javax.persistence.*;
 
-@org.springframework.stereotype.Repository
+@Repository
 public class SignUpRepositoryImp implements SignUpRepository {
 
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("Spring_Project");

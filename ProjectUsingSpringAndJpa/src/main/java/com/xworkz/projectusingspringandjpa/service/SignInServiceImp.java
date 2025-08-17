@@ -7,11 +7,12 @@ import com.xworkz.projectusingspringandjpa.repository.SignInRepository;
 import com.xworkz.projectusingspringandjpa.repository.SignUpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 
 
-@org.springframework.stereotype.Service
+@Service
 public class SignInServiceImp implements SignInService {
     @Autowired
     SignUpRepository signUpRepository;
