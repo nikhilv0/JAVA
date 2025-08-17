@@ -1,8 +1,6 @@
 package com.xworkz.projectusingspringandjpa.repository;
 
-import com.xworkz.projectusingspringandjpa.entity.SignInEntity;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
-
 import javax.persistence.*;
 
 @org.springframework.stereotype.Repository

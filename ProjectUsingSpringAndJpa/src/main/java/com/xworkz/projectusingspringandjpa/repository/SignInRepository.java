@@ -9,5 +9,4 @@ public interface SignInRepository {
 
     String login(SignInEntity signInEntity);
 
-
 }
