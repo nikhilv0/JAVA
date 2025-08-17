@@ -1,8 +1,8 @@
 package com.xworkz.projectusingspringandjpa.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
-import com.xworkz.projectusingspringandjpa.service.Service;
+import com.xworkz.projectusingspringandjpa.service.SignInService;
+import com.xworkz.projectusingspringandjpa.service.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/")
 public class SignIn {
     @Autowired
-    Service service;
+    SignInService signInService;
 
     public SignIn() {
         System.out.println("SignIn Construct");
@@ -33,7 +33,7 @@ public class SignIn {
            }
         }
         System.out.println(signInDTO.toString());
-        String valid=service.login(signInDTO);
+        String valid= signInService.login(signInDTO);
         if (valid.equals("Login successful!")) {
             model.addAttribute("mess", valid);
             return "SignIn";

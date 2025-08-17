@@ -1,7 +1,7 @@
 package com.xworkz.projectusingspringandjpa.controller;
 
 import com.xworkz.projectusingspringandjpa.dto.SignUpDTO;
-import com.xworkz.projectusingspringandjpa.service.Service;
+import com.xworkz.projectusingspringandjpa.service.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/")
 public class SignUp {
     @Autowired
-    Service service;
+    SignUpService signUpService;
 
     public SignUp() {
         System.out.println("SignUp Constructor");
@@ -34,7 +34,7 @@ public class SignUp {
         }
         System.out.println(signUpDTO.toString());
 
-        String valid= service.save(signUpDTO);
+        String valid= signUpService.save(signUpDTO);
         if (valid.equals("Successfully Saved")){
             model.addAttribute("message","Form Successfully submitted");
         }

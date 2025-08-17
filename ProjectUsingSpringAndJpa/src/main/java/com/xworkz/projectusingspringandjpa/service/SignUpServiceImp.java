@@ -4,16 +4,16 @@ import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
 import com.xworkz.projectusingspringandjpa.dto.SignUpDTO;
 import com.xworkz.projectusingspringandjpa.entity.SignInEntity;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
-import com.xworkz.projectusingspringandjpa.repository.Repository;
+import com.xworkz.projectusingspringandjpa.repository.SignUpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.sql.Timestamp;
 
 
 @org.springframework.stereotype.Service
-public class ServiceImp implements Service {
+public class SignUpServiceImp implements SignUpService {
     @Autowired
-    Repository repository;
+    SignUpRepository signUpRepository;
 
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -21,7 +21,7 @@ public class ServiceImp implements Service {
     public String save(SignUpDTO signUpDTO) {
         System.out.println("Validation for save");
 
-        if (repository.existsByEmail(signUpDTO.getEmail())){
+        if (signUpRepository.existsByEmail(signUpDTO.getEmail())){
             return "Email already exists!";
         }
 
@@ -36,27 +36,7 @@ public class ServiceImp implements Service {
         signUpEntity.setPassword(encryptedPassword);
         signUpEntity.setCreatedAt(new Timestamp(System.currentTimeMillis()));
 
-        return repository.save(signUpEntity);
+        return signUpRepository.save(signUpEntity);
     }
 
-    @Override
-    public String login(SignInDTO signInDTO) {
-
-        SignUpEntity storedUser = repository.getEntityByMail(signInDTO.getEmail());
-        if (storedUser == null) {
-            return "User not Found";
-        }
-        if (passwordEncoder.matches(signInDTO.getPassword(), storedUser.getPassword())) {
-            SignInEntity signInEntity = new SignInEntity();
-            signInEntity.setEmail(signInDTO.getEmail());
-            signInEntity.setPassword(storedUser.getPassword());
-            signInEntity.setVisitedAt(new Timestamp(System.currentTimeMillis()));
-            System.out.println(repository.login(signInEntity));
-            return "Login successful!";
-        }
-        else {
-            return "Invalid password!";
-        }
-
-    }
 }
