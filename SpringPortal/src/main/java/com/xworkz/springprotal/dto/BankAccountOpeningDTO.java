@@ -2,10 +2,8 @@ package com.xworkz.springprotal.dto;
 
 import com.xworkz.springprotal.enm.AccountType;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
@@ -18,18 +16,19 @@ public class BankAccountOpeningDTO {
 
     @NotNull(message = "Date of birth is required")
     @Past(message = "Date of birth must be in the past")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dob;
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
     private String email;
 
-    @NotBlank(message = "Phone number is required")
-    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Phone number must be a valid 10-digit Indian number")
-    private long phone;
+    @NotNull(message = "Phone number is required")
+    @Min(value = 6000000000L, message = "Invalid phone number")
+    @Max(value = 9999999999L, message = "Invalid phone number")
+    private Long phone;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "account_type", nullable = false)
+    @NotNull(message = "Account type is required")
     private AccountType accountType;
 
     @NotBlank(message = "Aadhaar number is required")

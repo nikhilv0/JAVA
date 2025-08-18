@@ -24,25 +24,27 @@ public class BankAccountOpening {
     }
 
     @RequestMapping("/accountOpen")
-    public String accountOpen(@Valid Model model, BankAccountOpeningDTO bankAccountOpeningDTO, BindingResult bindingResult) {
-        System.out.println("SignUp page");
+    public String accountOpen(@Valid BankAccountOpeningDTO bankAccountOpeningDTO,
+                              BindingResult bindingResult,
+                              Model model) {
+        System.out.println("BankAccountOpening page");
+        System.out.println("DTO: " + bankAccountOpeningDTO);
 
         if (bindingResult.hasErrors()) {
-            List<ObjectError> objectErrors = bindingResult.getAllErrors();
-            for (ObjectError objectError : objectErrors) {
-                System.err.println(objectError.getDefaultMessage());
-            }
+            model.addAttribute("errors", bindingResult.getAllErrors());
+            model.addAttribute("bankAccountOpeningDTO", bankAccountOpeningDTO);
+            return "BankAccountOpening";
         }
-        System.out.println(bankAccountOpeningDTO.toString());
+
 
         String valid = bankAccountOpeningService.save(bankAccountOpeningDTO);
+
         if (valid.equals("Successfully Saved")) {
             model.addAttribute("message", "Form Successfully submitted");
         } else {
-            model.addAttribute("signUpDTO", bankAccountOpeningDTO);
+            model.addAttribute("bankAccountOpeningDTO", bankAccountOpeningDTO);
             model.addAttribute("error", "Form Not submitted");
         }
         return "BankAccountOpening";
     }
-
 }

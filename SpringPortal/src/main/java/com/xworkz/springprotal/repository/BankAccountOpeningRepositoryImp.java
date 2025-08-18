@@ -1,12 +1,14 @@
 package com.xworkz.springprotal.repository;
 
 import com.xworkz.springprotal.entity.BankAccountOpeningEntity;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+@Repository
 public class BankAccountOpeningRepositoryImp implements BankAccountOpeningRepository{
 
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("Spring_Portal");
