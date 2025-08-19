@@ -2,6 +2,7 @@ package com.xworkz.projectusingspringandjpa.controller;
 
 import com.xworkz.projectusingspringandjpa.dto.SignUpDTO;
 import com.xworkz.projectusingspringandjpa.service.SignUpService;
+import com.xworkz.projectusingspringandjpa.service.SignUpServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class SignUp {
+
     @Autowired
     SignUpService signUpService;
 
@@ -35,15 +37,14 @@ public class SignUp {
         System.out.println(signUpDTO.toString());
 
         String valid= signUpService.save(signUpDTO);
-        if (valid.equals("Successfully Saved")){
+        System.out.println(valid);
+        if (valid.equals("Successfully Saved")) {
             model.addAttribute("message","Form Successfully submitted");
-        }
-        if (valid.equals("Email already exists!")){
-            model.addAttribute("signUpDTO",signUpDTO);
+        } else if (valid.equals("Email already exists!")) {
+            model.addAttribute("signUpDTO", signUpDTO);
             model.addAttribute("error", valid);
-        }
-        else {
-            model.addAttribute("signUpDTO",signUpDTO);
+        } else {
+            model.addAttribute("signUpDTO", signUpDTO);
             model.addAttribute("error", "Form Not submitted");
         }
         return "SignUp";

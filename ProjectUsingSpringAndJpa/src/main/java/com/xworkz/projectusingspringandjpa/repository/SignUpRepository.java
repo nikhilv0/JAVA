@@ -6,6 +6,7 @@ public interface SignUpRepository {
 
     String save(SignUpEntity signUpEntity);
 
+
     boolean existsByEmail(String email);
 
 }

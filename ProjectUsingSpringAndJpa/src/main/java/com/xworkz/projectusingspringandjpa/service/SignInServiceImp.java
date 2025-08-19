@@ -15,9 +15,6 @@ import java.sql.Timestamp;
 @Service
 public class SignInServiceImp implements SignInService {
     @Autowired
-    SignUpRepository signUpRepository;
-
-    @Autowired
     SignInRepository signInRepository;
 
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
