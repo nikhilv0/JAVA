@@ -12,7 +12,7 @@ public class SignInRepositoryImp implements SignInRepository {
     EntityManagerFactory emf= Persistence.createEntityManagerFactory("Spring_Project");
 
     @Override
-    public SignUpEntity getEntityByMail(String  mail) {
+    public SignUpEntity getEntityByMail(String mail) {
         EntityManager em= emf.createEntityManager();
         EntityTransaction et=em.getTransaction();
 

@@ -31,6 +31,9 @@
         <div class="d-grid">
             <button type="submit" class="btn btn-primary">Login</button>
         </div>
+        <div class="text-center mt-3">
+            <a href="Forgot.jsp" class="text-decoration-none">Forgot Password?</a>
+        </div>
     </form>
 
 </div>

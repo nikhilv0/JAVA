@@ -4,8 +4,8 @@ import com.xworkz.projectusingspringandjpa.enm.Gender;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -44,4 +44,13 @@ public class SignUpEntity  {
 
     @Column(name = "user_createdDate" ,nullable = false)
     private Timestamp createdAt;
+
+    @Column(name = "reset_token")
+    private String resetToken;
+
+    @Column(name = "token_expiry")
+    private LocalDateTime tokenExpiry;
+
+    @Column(name = "user_updatedAt")
+    private Timestamp updatedAt;
 }

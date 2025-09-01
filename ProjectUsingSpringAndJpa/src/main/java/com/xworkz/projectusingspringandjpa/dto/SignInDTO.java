@@ -1,8 +1,6 @@
 package com.xworkz.projectusingspringandjpa.dto;
 
 import lombok.Data;
-import org.springframework.stereotype.Controller;
-
 import javax.validation.constraints.*;
 import java.io.Serializable;
 

@@ -4,7 +4,6 @@ import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
 import com.xworkz.projectusingspringandjpa.entity.SignInEntity;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import com.xworkz.projectusingspringandjpa.repository.SignInRepository;
-import com.xworkz.projectusingspringandjpa.repository.SignUpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
