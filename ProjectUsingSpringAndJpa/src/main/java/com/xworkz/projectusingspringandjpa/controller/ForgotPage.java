@@ -1,10 +1,10 @@
 package com.xworkz.projectusingspringandjpa.controller;
 
 import com.xworkz.projectusingspringandjpa.dto.ForgotDTO;
-import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import com.xworkz.projectusingspringandjpa.service.ForgotService;
-import com.xworkz.projectusingspringandjpa.service.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +20,8 @@ import java.util.UUID;
 public class ForgotPage {
     @Autowired
     ForgotService forgotService;
+    @Autowired
+    JavaMailSender mailSender;
 
     public ForgotPage() {
         System.out.println("ForgotPage Constructor");
@@ -42,10 +44,35 @@ public class ForgotPage {
         }
 
         String token= UUID.randomUUID().toString();
-        String save=forgotService.updateToken(token,forgotDTO);
-        System.out.println(save);
+        String updateToken=forgotService.updateToken(token,forgotDTO);
+        System.out.println(updateToken);
 
+        if (updateToken.equals("token saved successfully")) {
+            String link = getSiteURL(request) + "/reset?token=" + token;
 
-        return "forget";
+            sendResetEmail(forgotDTO, link);
+            model.addAttribute("msg", "A password reset link has been sent to your email.");
+
+            return "Forgot";
+        }
+        else {
+            model.addAttribute("token",updateToken);
+            return "Forgot";
+        }
     }
+
+    private String getSiteURL(HttpServletRequest request) {
+        return request.getRequestURL().toString().replace(request.getServletPath(), "");
+    }
+
+    private void sendResetEmail(ForgotDTO forgotDTO, String link) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("nikhilnikki6360@gmail.com");
+        message.setTo(forgotDTO.getEmail());
+        message.setSubject("Password Reset Request");
+        message.setText("Click the link below to reset your password:\n" + link);
+
+        mailSender.send(message);
+    }
+
 }

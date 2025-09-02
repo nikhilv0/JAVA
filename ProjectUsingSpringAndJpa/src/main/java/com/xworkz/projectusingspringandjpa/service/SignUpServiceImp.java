@@ -36,7 +36,7 @@ public class SignUpServiceImp implements SignUpService {
         signUpEntity.setAddress(signUpDTO.getAddress());
         String encryptedPassword = passwordEncoder.encode(signUpDTO.getPassword());
         signUpEntity.setPassword(encryptedPassword);
-        signUpEntity.setCreatedAt(new Timestamp(System.currentTimeMillis()));
+//        signUpEntity.setCreatedAt(new Timestamp(System.currentTimeMillis()));
 
         return signUpRepository.save(signUpEntity);
     }

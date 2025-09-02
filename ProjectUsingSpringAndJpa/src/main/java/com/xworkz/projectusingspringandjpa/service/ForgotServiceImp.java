@@ -7,6 +7,7 @@ import com.xworkz.projectusingspringandjpa.repository.SignUpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Service
@@ -14,6 +15,7 @@ public class ForgotServiceImp implements ForgotService{
     @Autowired
     ForgotRepository forgotRepository;
 
+    @Autowired
     SignUpRepository signUpRepository;
 
     @Override
@@ -25,13 +27,17 @@ public class ForgotServiceImp implements ForgotService{
 
     @Override
     public String updateToken(String token, ForgotDTO forgotDTO) {
-        if (!forgotRepository.MailExits(forgotDTO)){
+        SignUpEntity signUpEntity = signUpRepository.findByEmail(forgotDTO.getEmail());
+        if (signUpEntity == null) {
             return "User not found to store token";
         }
-        SignUpEntity signUpEntity=new SignUpEntity();
         signUpEntity.setResetToken(token);
         signUpEntity.setTokenExpiry(LocalDateTime.now().plusMinutes(15));
-        signUpRepository.save(signUpEntity);
+        signUpEntity.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
+        String save=signUpRepository.save(signUpEntity);
+        if (save.equals("Successfully Saved")){
         return "token saved successfully";
+        }
+        else return "Token not Saved ";
     }
 }

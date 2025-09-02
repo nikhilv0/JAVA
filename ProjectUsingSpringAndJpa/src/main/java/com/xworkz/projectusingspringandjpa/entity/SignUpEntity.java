@@ -2,6 +2,8 @@ package com.xworkz.projectusingspringandjpa.entity;
 
 import com.xworkz.projectusingspringandjpa.enm.Gender;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -10,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "SignUp_table")
+
 @NamedQueries({
         @NamedQuery(name = "SignUpEntity.existsByEmail", query = "SELECT COUNT(entity) FROM SignUpEntity entity WHERE entity.email = :email"),
         @NamedQuery(name = "SignUpEntity.findByEmail", query = "SELECT entity FROM SignUpEntity entity WHERE entity.email = :email")
@@ -42,6 +45,7 @@ public class SignUpEntity  {
     @Column(name = "user_password", nullable = false, length = 70)
     private String password;
 
+    @CreationTimestamp
     @Column(name = "user_createdDate" ,nullable = false)
     private Timestamp createdAt;
 
@@ -51,6 +55,8 @@ public class SignUpEntity  {
     @Column(name = "token_expiry")
     private LocalDateTime tokenExpiry;
 
+    @UpdateTimestamp
     @Column(name = "user_updatedAt")
     private Timestamp updatedAt;
+
 }
