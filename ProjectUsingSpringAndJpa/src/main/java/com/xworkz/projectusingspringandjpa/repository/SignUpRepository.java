@@ -10,4 +10,7 @@ public interface SignUpRepository {
     boolean existsByEmail(String email);
 
     SignUpEntity findByEmail(String email);
+
+    SignUpEntity isValidToken(String token);
+
 }

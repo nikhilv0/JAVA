@@ -7,4 +7,8 @@ public interface ForgotService {
     boolean MailExits(ForgotDTO forgotDTO);
 
     String updateToken(String token,ForgotDTO forgotDTO);
+
+    boolean isValidToken(String token);
+
+    String resetPassword(String token, String password);
 }

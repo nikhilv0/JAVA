@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 
 @NamedQueries({
         @NamedQuery(name = "SignUpEntity.existsByEmail", query = "SELECT COUNT(entity) FROM SignUpEntity entity WHERE entity.email = :email"),
-        @NamedQuery(name = "SignUpEntity.findByEmail", query = "SELECT entity FROM SignUpEntity entity WHERE entity.email = :email")
+        @NamedQuery(name = "SignUpEntity.findByEmail", query = "SELECT entity FROM SignUpEntity entity WHERE entity.email = :email"),
+        @NamedQuery(name = "findEntityByToken",query = "SELECT entity FROM SignUpEntity entity WHERE entity.resetToken = :resetToken")
 })
 public class SignUpEntity  {
 

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +15,9 @@ pageEncoding="UTF-8"%>
 
     <div class="mt-2">
         <p class="text-success"><%= request.getAttribute("msg") != null ? request.getAttribute("msg") : "" %></p>
-        <p class="text-danger"><%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %></p>
+        <p class="text-danger"><%= request.getAttribute("error") != null ? request.getAttribute("err") : "" %></p>
     </div>
+
 
     <form action="forgotPassword" method="post" onsubmit="return validateForget()">
         <div class="mb-3">

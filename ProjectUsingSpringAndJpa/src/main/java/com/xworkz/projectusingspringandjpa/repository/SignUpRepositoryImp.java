@@ -71,4 +71,25 @@ public class SignUpRepositoryImp implements SignUpRepository {
         return null;
     }
 
+    @Override
+    public SignUpEntity isValidToken(String token) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction et = em.getTransaction();
+        try {
+            et.begin();
+            Query query= em.createNamedQuery("findEntityByToken");
+            query.setParameter("resetToken",token);
+            SignUpEntity signUpEntity=(SignUpEntity) query.getSingleResult();
+            et.commit();
+            return signUpEntity;
+        }
+        catch (Exception e){
+            System.out.println("No record found for resetToken: " + token);
+            if (et.isActive()) et.rollback();
+        } finally {
+            em.close();
+        }
+        return null;
+    }
+
 }
