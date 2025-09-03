@@ -31,7 +31,7 @@ public class SignUpEntity  {
     private String email;
 
     @Column(name = "user_phone", nullable = false, unique = true, length = 10)
-    private String phone;
+    private Long phone;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "user_gender", nullable = false, length = 10)
@@ -50,14 +50,15 @@ public class SignUpEntity  {
     @Column(name = "user_createdDate" ,nullable = false)
     private Timestamp createdAt;
 
+    @UpdateTimestamp
+    @Column(name = "user_updatedAt")
+    private Timestamp updatedAt;
+
     @Column(name = "reset_token")
     private String resetToken;
 
     @Column(name = "token_expiry")
     private LocalDateTime tokenExpiry;
 
-    @UpdateTimestamp
-    @Column(name = "user_updatedAt")
-    private Timestamp updatedAt;
 
 }

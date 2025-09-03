@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:c="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
@@ -7,6 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light d-flex align-items-center justify-content-center" style="height:100vh;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand d-flex align-items-center" href="index.jsp">
+            <img src="${pageContext.request.contextPath}/images/xworkz-logo.jpeg"
+                 alt="Logo"
+                 style="height:60px; width:auto; margin-right:10px;">
+            <span style="font-size:22px; font-weight:bold;">MyWebsite</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="navbar-nav">
+                <div class="nav-item">
+                    <a class="nav-link" href="SignUp.jsp">SignUp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <div class="card shadow-lg p-4" style="width: 350px; border-radius: 15px;">
     <h3 class="text-center mb-3">Sign In</h3>

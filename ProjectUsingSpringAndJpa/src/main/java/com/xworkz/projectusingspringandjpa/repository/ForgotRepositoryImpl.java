@@ -11,19 +11,19 @@ public class ForgotRepositoryImpl implements ForgotRepository{
     EntityManagerFactory emf= Persistence.createEntityManagerFactory("Spring_Project");
 
     @Override
-    public boolean MailExits(ForgotDTO forgotDTO) {
+    public boolean mailExits(String email) {
         EntityManager em= emf.createEntityManager();
         EntityTransaction et= em.getTransaction();
         try {
             et.begin();
             Query query = em.createNamedQuery("SignUpEntity.existsByEmail");
-            query.setParameter("email", forgotDTO.getEmail());
+            query.setParameter("email", email);
             Long count = (Long) query.getSingleResult();
             et.commit();
             return count != null && count > 0;
 
         } catch (Exception e) {
-            System.out.println("Error checking email existence: " + forgotDTO.getEmail());
+            System.out.println("Error checking email existence: " + email);
             if (et.isActive()) et.rollback();
         }
         finally {

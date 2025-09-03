@@ -4,7 +4,7 @@ import com.xworkz.projectusingspringandjpa.dto.ForgotDTO;
 
 public interface ForgotService {
 
-    boolean MailExits(ForgotDTO forgotDTO);
+    boolean mailExits(ForgotDTO forgotDTO);
 
     String updateToken(String token,ForgotDTO forgotDTO);
 

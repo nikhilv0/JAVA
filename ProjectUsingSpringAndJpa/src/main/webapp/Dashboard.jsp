@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spring Project</title>
+    <title>Dashboard</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -30,11 +30,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="SignIn.jsp">SignIn</a>
                 </li>
+                <li class="nav-item">
+                    <form action="Profile" method="post">
+                        <button type="submit" >My Profile</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-
+<div class="container mt-5">
+    <h3 class="mb-4 text-center">Dashboard</h3>
+</div>
 
 <!-- Bootstrap JS (for responsive toggle) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

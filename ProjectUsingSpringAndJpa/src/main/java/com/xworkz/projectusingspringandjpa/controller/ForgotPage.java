@@ -41,7 +41,7 @@ public class ForgotPage {
             }
         }
         System.out.println(forgotDTO.toString());
-        boolean exists = forgotService.MailExits(forgotDTO);
+        boolean exists = forgotService.mailExits(forgotDTO);
         if (!exists) {
             model.addAttribute("err", "Email not found!");
             return "Forgot";

@@ -1,5 +1,6 @@
 package com.xworkz.projectusingspringandjpa.controller;
 
+import com.mysql.cj.Session;
 import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
 import com.xworkz.projectusingspringandjpa.service.SignInService;
 import com.xworkz.projectusingspringandjpa.service.SignUpService;
@@ -10,7 +11,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/")
@@ -23,8 +26,10 @@ public class SignIn {
     }
 
     @RequestMapping("/signIn")
-    public String signIn(Model model, SignInDTO signInDTO, BindingResult bindingResult){
+    public String signIn(Model model, SignInDTO signInDTO, BindingResult bindingResult, HttpSession httpSession){
         System.out.println("SignIn Page");
+
+        httpSession.setAttribute("emailFromSession",signInDTO.getEmail());
 
         if (bindingResult.hasErrors()){
            List<ObjectError> bindingResults=bindingResult.getAllErrors();
@@ -36,7 +41,7 @@ public class SignIn {
         String valid= signInService.login(signInDTO);
         if (valid.equals("Login successful!")) {
             model.addAttribute("mess", valid);
-            return "SignIn";
+            return "Dashboard";
         }
         if (valid.equals("User not Found")){
             model.addAttribute("signInDTO", signInDTO);

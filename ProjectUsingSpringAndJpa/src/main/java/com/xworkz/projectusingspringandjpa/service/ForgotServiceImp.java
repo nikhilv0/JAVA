@@ -22,10 +22,10 @@ public class ForgotServiceImp implements ForgotService {
     private final BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
 
     @Override
-    public boolean MailExits(ForgotDTO forgotDTO) {
+    public boolean mailExits(ForgotDTO forgotDTO) {
         System.out.println("Validating user exits!");
 
-        return forgotRepository.MailExits(forgotDTO);
+        return forgotRepository.mailExits(forgotDTO.getEmail());
     }
 
     //    ???
@@ -56,10 +56,7 @@ public class ForgotServiceImp implements ForgotService {
         System.out.println("Validating token exits!");
             SignUpEntity signUpEntity = signUpRepository.isValidToken(token);
 
-        if (signUpEntity != null && signUpEntity.getTokenExpiry().isAfter(LocalDateTime.now())) {
-            return true;
-        }
-        return false;
+        return signUpEntity != null && signUpEntity.getTokenExpiry().isAfter(LocalDateTime.now());
     }
 
     @Override

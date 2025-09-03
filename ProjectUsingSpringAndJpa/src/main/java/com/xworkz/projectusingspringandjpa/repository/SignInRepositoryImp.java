@@ -5,6 +5,8 @@ import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
+import java.util.Collections;
+import java.util.List;
 
 @Repository
 public class SignInRepositoryImp implements SignInRepository {
@@ -18,7 +20,7 @@ public class SignInRepositoryImp implements SignInRepository {
 
         try {
             et.begin();
-            Query query=em.createNamedQuery("getEntityByMail");
+            Query query=em.createNamedQuery("SignUpEntity.findByEmail");
             query.setParameter("email",mail);
             SignUpEntity signUpEntity=(SignUpEntity) query.getSingleResult();
             et.commit();
@@ -27,10 +29,12 @@ public class SignInRepositoryImp implements SignInRepository {
         } catch (Exception e) {
             System.out.println("No record found for email: " + mail);
             if (et.isActive()) et.rollback();
+            return null;
         }
-        return null;
+        finally {
+            em.close();
+        }
     }
-
 
     @Override
     public String login(SignInEntity signInEntity) {
