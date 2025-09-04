@@ -4,25 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         .error-message { color: red; font-size: 0.9rem; }
-        .edit-icon {
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-        .edit-icon:hover {
-            color: #198754; /* green hover */
-        }
-        .input-group-text {
-            background: transparent;
-            border: none;
-        }
+        .edit-icon { cursor: pointer; font-size: 1.2rem; transition: color 0.3s ease; }
+        .edit-icon:hover { color: #198754; }
+        .input-group-text { background: transparent; border: none; }
     </style>
 </head>
 <body class="bg-light">
@@ -30,29 +19,12 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
         <a class="navbar-brand d-flex align-items-center" href="index.jsp">
             <img src="${pageContext.request.contextPath}/images/xworkz-logo.jpeg"
                  alt="Logo"
                  style="height:60px; width:auto; margin-right:10px;">
             <span style="font-size:22px; font-weight:bold;">MyWebsite</span>
         </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="SignUp.jsp">SignUp</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="SignIn.jsp">SignIn</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
 
@@ -60,124 +32,109 @@
 <div class="container mt-5">
     <h3 class="mb-4 text-center">Profile</h3>
 
-    <!-- Profile Card -->
-    <c:if test="${not empty list}">
-        <c:forEach var="user" items="${list}">
-            <div class="card shadow-lg p-4 rounded-4 mx-auto" style="max-width: 600px;">
-                <form id="profileForm" action="updateProfile" method="post">
+    <c:if test="${not empty user}">
+        <div class="card shadow-lg p-4 rounded-4 mx-auto" style="max-width: 600px;">
+            <form id="profileForm" action="updateProfile" method="post">
 
-                    <div class="mt-3">
-                        <p class="text-danger">${error}</p>
-                        <p class="text-success">${msg}</p>
+                <div class="mt-3">
+                    <p class="text-danger">${err}</p>
+                    <p class="text-success">${msg}</p>
+                </div>
+
+                <!-- Full Name -->
+                <c:set var="finalFullName" value="${not empty updated.fullName ? updated.fullName : user.fullName}" />
+                <div class="mb-3 position-relative">
+                    <label class="form-label fw-bold">Full Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control pe-5" id="fullName" name="fullName"
+                               value="${finalFullName}" readonly>
+                        <span class="input-group-text position-absolute end-0 me-2">
+                            <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
+                        </span>
                     </div>
+                </div>
 
-                    <!-- Full Name -->
-                    <div class="mb-3 position-relative">
-                        <label class="form-label fw-bold">Full Name</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control pe-5" id="fullName" name="fullName"
-                                   value="${user.fullName}" readonly>
-                            <span class="input-group-text position-absolute end-0 me-2">
-                                <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
-                            </span>
-                        </div>
-                        <small id="fullNameError" class="error-message"></small>
+                <!-- Email -->
+                <c:set var="finalEmail" value="${not empty updated.email ? updated.email : user.email}" />
+                <div class="mb-3 position-relative">
+                    <label class="form-label fw-bold">Email</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control pe-5" id="email" name="email"
+                               value="${finalEmail}" readonly>
+                        <span class="input-group-text position-absolute end-0 me-2">
+                            <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
+                        </span>
                     </div>
+                </div>
 
-                    <!-- Email -->
-                    <div class="mb-3 position-relative">
-                        <label class="form-label fw-bold">Email</label>
-                        <div class="input-group">
-                            <input type="email" class="form-control pe-5" id="email" name="email"
-                                   value="${user.email}" readonly>
-                            <span class="input-group-text position-absolute end-0 me-2">
-                                <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
-                            </span>
-                        </div>
-                        <small id="emailError" class="error-message"></small>
+                <!-- Phone -->
+                <c:set var="finalPhone" value="${not empty updated.phone ? updated.phone : user.phone}" />
+                <div class="mb-3 position-relative">
+                    <label class="form-label fw-bold">Phone</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control pe-5" id="phone" name="phone"
+                               value="${finalPhone}" readonly>
+                        <span class="input-group-text position-absolute end-0 me-2">
+                            <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
+                        </span>
                     </div>
+                </div>
 
-                    <!-- Phone -->
-                    <div class="mb-3 position-relative">
-                        <label class="form-label fw-bold">Phone Number</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control pe-5" id="phone" name="phone"
-                                   value="${user.phone}" readonly>
-                            <span class="input-group-text position-absolute end-0 me-2">
-                                <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
-                            </span>
-                        </div>
-                        <small id="phoneError" class="error-message"></small>
+                <!-- Gender -->
+                <c:set var="finalGender" value="${not empty updated.gender ? updated.gender : user.gender}" />
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="MALE"
+                        <c:if test="${finalGender == 'MALE'}">checked</c:if>>
+                        <label class="form-check-label">Male</label>
                     </div>
-
-                    <!-- Gender -->
-                    <div class="mb-3 position-relative">
-                        <label class="form-label fw-bold">Gender</label>
-                        <div class="input-group">
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio"
-                                       name="gender" id="male" value="MALE"/>
-                                <c:if test="${user.gender == 'MALE'}">checked</c:if>
-                                <label class="form-check-label" for="male">Male</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio"
-                                       name="gender" id="female" value="FEMALE"/>
-                                <c:if test="${user.gender == 'FEMALE'}">checked</c:if>
-                                <label class="form-check-label" for="female">Female</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio"
-                                       name="gender" id="other" value="OTHER"/>
-                                <c:if test="${user.gender == 'OTHER'}">checked</c:if>
-                                <label class="form-check-label" for="other">Other</label>
-                            </div>
-
-                            <span class="input-group-text position-absolute end-0 me-2">
-            <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
-        </span>
-                        </div>
-                        <small id="genderError" class="error-message"></small>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="FEMALE"
+                        <c:if test="${finalGender == 'FEMALE'}">checked</c:if>>
+                        <label class="form-check-label">Female</label>
                     </div>
-
-
-                    <!-- Age -->
-                    <div class="mb-3 position-relative">
-                        <label class="form-label fw-bold">Age</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control pe-5" id="age" name="age"
-                                   value="${user.age}" readonly>
-                            <span class="input-group-text position-absolute end-0 me-2">
-                                <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
-                            </span>
-                        </div>
-                        <small id="ageError" class="error-message"></small>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="OTHER"
+                        <c:if test="${finalGender == 'OTHER'}">checked</c:if>>
+                        <label class="form-check-label">Other</label>
                     </div>
+                </div>
 
-                    <!-- Address -->
-                    <div class="mb-3 position-relative">
-                        <label class="form-label fw-bold">Address</label>
-                        <div class="input-group">
-                            <textarea class="form-control pe-5" id="address" name="address" rows="2" readonly>${user.address}</textarea>
-                            <span class="input-group-text position-absolute end-0 me-2">
-                                <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
-                            </span>
-                        </div>
-                        <small id="addressError" class="error-message"></small>
+                <!-- Age -->
+                <c:set var="finalAge" value="${not empty updated.age ? updated.age : user.age}" />
+                <div class="mb-3 position-relative">
+                    <label class="form-label fw-bold">Age</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control pe-5" id="age" name="age"
+                               value="${finalAge}" readonly>
+                        <span class="input-group-text position-absolute end-0 me-2">
+                            <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
+                        </span>
                     </div>
+                </div>
 
-                    <!-- Update Button -->
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-success px-4">Update Profile</button>
+                <!-- Address -->
+                <c:set var="finalAddress" value="${not empty updated.address ? updated.address : user.address}" />
+                <div class="mb-3 position-relative">
+                    <label class="form-label fw-bold">Address</label>
+                    <div class="input-group">
+                        <textarea class="form-control pe-5" id="address" name="address" rows="2" readonly>${finalAddress}</textarea>
+                        <span class="input-group-text position-absolute end-0 me-2">
+                            <i class="bi bi-pencil text-primary edit-icon" onclick="toggleEdit(this)"></i>
+                        </span>
                     </div>
-                </form>
-            </div>
-        </c:forEach>
+                </div>
+
+                <!-- Update Button -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success px-4">Update Profile</button>
+                </div>
+            </form>
+        </div>
     </c:if>
 </div>
+
 
 <!-- JS -->
 <script>

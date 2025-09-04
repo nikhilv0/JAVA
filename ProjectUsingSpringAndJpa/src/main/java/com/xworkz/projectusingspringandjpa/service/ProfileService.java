@@ -8,5 +8,5 @@ public interface ProfileService {
 
     boolean exitsByMail(String email);
 
-    List<SignUpEntity> getEntityByMail(String email);
+    SignUpEntity getEntityByMail(String email);
 }

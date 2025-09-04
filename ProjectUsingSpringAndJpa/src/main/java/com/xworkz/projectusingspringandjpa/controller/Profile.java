@@ -35,19 +35,18 @@ public class Profile {
 
         String email = (String) session.getAttribute("emailFromSession");
 
-        boolean exits = profileService.exitsByMail(email);
-        if (email != null && exits) {
-            List<SignUpEntity> list = profileService.getEntityByMail(email);
-            System.out.println(list.toString());
-            model.addAttribute("list", list);
+        boolean exists = profileService.exitsByMail(email);
+        if (email != null && exists) {
+            SignUpEntity user = profileService.getEntityByMail(email);
+            model.addAttribute("user", user);
             return "Profile";
         }
         model.addAttribute("err", "No Entity Found By Email");
         return "Profile";
     }
 
-    @RequestMapping("/updateProfile")
-    public String updateProfile(Model model, UpdateProfileDTO updateProfileDTO, BindingResult bindingResult) {
+    @RequestMapping(value = "/updateProfile", method = RequestMethod.POST)
+    public String updateProfile(Model model, UpdateProfileDTO updateProfileDTO, BindingResult bindingResult, HttpSession session) {
         System.out.println("updateProfile Method");
 
         if (bindingResult.hasErrors()) {
@@ -58,18 +57,25 @@ public class Profile {
         }
 
         System.out.println(updateProfileDTO.toString());
-        boolean exits = profileService.exitsByMail(updateProfileDTO.getEmail());
-        if (exits) {
+        boolean exists = profileService.exitsByMail(updateProfileDTO.getEmail());
+        if (exists) {
             String updated = updateProfileService.updateProfile(updateProfileDTO);
             System.out.println(updated);
             if (updated.equals("updated Successfully")) {
                 model.addAttribute("msg", updated);
+                model.addAttribute("updated", updateProfileDTO);
+
+                //  also keep original user for fallback
+                String email = (String) session.getAttribute("emailFromSession");
+                SignUpEntity user = profileService.getEntityByMail(email);
+                model.addAttribute("user",user );
                 return "Profile";
             }
-            model.addAttribute("err",updated);
+            model.addAttribute("err", updated);
             return "Profile";
         }
-        model.addAttribute("err","No User Found");
+        model.addAttribute("err", "No User Found");
         return "Profile";
     }
+
 }

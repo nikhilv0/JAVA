@@ -6,8 +6,6 @@ import com.xworkz.projectusingspringandjpa.repository.ForgotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class ProfileServiceImp implements ProfileService {
 
@@ -24,7 +22,7 @@ public class ProfileServiceImp implements ProfileService {
     }
 
     @Override
-    public List<SignUpEntity> getEntityByMail(String email) {
+    public SignUpEntity getEntityByMail(String email) {
         System.out.println("Validation for entity");
         return profileRepository.getEntityByMail(email);
     }

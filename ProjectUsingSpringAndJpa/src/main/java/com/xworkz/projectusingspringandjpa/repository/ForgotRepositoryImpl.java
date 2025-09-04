@@ -1,8 +1,6 @@
 package com.xworkz.projectusingspringandjpa.repository;
 
-import com.xworkz.projectusingspringandjpa.dto.ForgotDTO;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.*;
 
 @Repository
