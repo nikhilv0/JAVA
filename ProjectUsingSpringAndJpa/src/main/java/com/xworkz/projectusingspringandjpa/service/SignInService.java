@@ -6,4 +6,5 @@ import com.xworkz.projectusingspringandjpa.dto.SignUpDTO;
 public interface SignInService {
 
     String login(SignInDTO signInDTO);
+
 }

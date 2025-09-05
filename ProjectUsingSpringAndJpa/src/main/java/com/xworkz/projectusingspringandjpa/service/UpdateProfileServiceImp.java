@@ -26,6 +26,7 @@ public class UpdateProfileServiceImp implements UpdateProfileService{
         if (existing == null) {
             return "User not Found";
         }
+
         existing.setFullName(updateProfileDTO.getFullName());
         existing.setEmail(updateProfileDTO.getEmail());
         existing.setPhone(updateProfileDTO.getPhone());
@@ -34,6 +35,7 @@ public class UpdateProfileServiceImp implements UpdateProfileService{
         existing.setAddress(updateProfileDTO.getAddress());
         existing.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
         String updated=signUpRepository.save(existing);
+
         if (updated.equals("Successfully Saved")){
         return "updated Successfully";
         }
