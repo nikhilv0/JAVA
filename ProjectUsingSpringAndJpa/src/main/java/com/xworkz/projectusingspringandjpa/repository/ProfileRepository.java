@@ -5,4 +5,5 @@ import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 public interface ProfileRepository {
 
     SignUpEntity getEntityByMail(String email);
+
 }

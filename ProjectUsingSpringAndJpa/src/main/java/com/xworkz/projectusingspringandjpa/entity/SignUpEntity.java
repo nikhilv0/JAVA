@@ -60,5 +60,4 @@ public class SignUpEntity  {
     @Column(name = "token_expiry")
     private LocalDateTime tokenExpiry;
 
-
 }
