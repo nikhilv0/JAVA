@@ -5,9 +5,14 @@ import com.xworkz.projectusingspringandjpa.entity.SignInEntity;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import com.xworkz.projectusingspringandjpa.repository.SignInRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
 import java.sql.Timestamp;
 
 
@@ -15,6 +20,9 @@ import java.sql.Timestamp;
 public class SignInServiceImp implements SignInService {
     @Autowired
     SignInRepository signInRepository;
+
+    @Autowired
+    JavaMailSender javaMailSender;
 
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -25,6 +33,13 @@ public class SignInServiceImp implements SignInService {
         if (storedUser == null) {
             return "User not Found";
         }
+
+        SecureRandom random = new SecureRandom();
+        int otp = 100000 + random.nextInt(900000);
+        System.out.println("Your OTP is: " + otp);
+
+        sendOtpToEmail(signInDTO, otp);
+
         if (passwordEncoder.matches(signInDTO.getPassword(), storedUser.getPassword())) {
             SignInEntity signInEntity = new SignInEntity();
             signInEntity.setEmail(signInDTO.getEmail());
@@ -37,5 +52,15 @@ public class SignInServiceImp implements SignInService {
             return "Invalid password!";
         }
 
+    }
+
+    private void sendOtpToEmail(SignInDTO signInDTO,int otp){
+        SimpleMailMessage message=new SimpleMailMessage();
+        message.setFrom("nikhilnikki6360@gmail.com");
+        message.setTo(signInDTO.getEmail());
+        message.setSubject("Your OTP for Login Verification");
+        message.setText("Your One-Time Password (OTP) is: " + otp);
+
+        javaMailSender.send(message);
     }
 }
