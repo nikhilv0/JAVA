@@ -54,7 +54,7 @@ public class ForgotServiceImp implements ForgotService {
     @Override
     public boolean isValidToken(String token) {
         System.out.println("Validating token exits!");
-            SignUpEntity signUpEntity = signUpRepository.isValidToken(token);
+        SignUpEntity signUpEntity = signUpRepository.isValidToken(token);
 
         return signUpEntity != null && signUpEntity.getTokenExpiry().isAfter(LocalDateTime.now());
     }

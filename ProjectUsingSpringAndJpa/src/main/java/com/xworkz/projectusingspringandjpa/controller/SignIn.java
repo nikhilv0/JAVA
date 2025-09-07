@@ -31,6 +31,29 @@ public class SignIn {
 
         httpSession.setAttribute("emailFromSession",signInDTO.getEmail());
 
+        // Track attempts
+        Integer attempts = (Integer) httpSession.getAttribute("loginAttempts");
+        Long lockTime = (Long) httpSession.getAttribute("lockTime"); // store when locked
+
+        if (attempts == null) {
+            attempts = 0;
+        }
+
+        // If locked
+        if (lockTime != null) {
+            long currentTime = System.currentTimeMillis();
+            long diffHours = (currentTime - lockTime) / (1000 * 60 * 60);
+
+            if (diffHours < 24) {  // still within 24 hours
+                model.addAttribute("invalids", "Account locked due to 3 failed attempts. Try again after 24 hours.");
+                return "SignIn";
+            } else {
+                // Unlock after 24 hours
+                httpSession.setAttribute("loginAttempts", 0);
+                httpSession.removeAttribute("lockTime");
+            }
+        }
+
         if (bindingResult.hasErrors()){
            List<ObjectError> bindingResults=bindingResult.getAllErrors();
            for (ObjectError objectError:bindingResults){
@@ -40,17 +63,24 @@ public class SignIn {
         System.out.println(signInDTO.toString());
         String valid= signInService.login(signInDTO);
         if (valid.equals("Login successful!")) {
+            httpSession.setAttribute("loginAttempts", 0); // reset attempts
+            httpSession.removeAttribute("lockTime");
             model.addAttribute("mess", valid);
             return "Dashboard";
         }
-        if (valid.equals("User not Found")){
-            model.addAttribute("signInDTO", signInDTO);
-            model.addAttribute("err", valid);
-            return "SignIn";
-        }else {
-            model.addAttribute("invalids",valid);
-            return "SignIn";
+
+        // If login failed
+        attempts++;
+        httpSession.setAttribute("loginAttempts", attempts);
+
+        if (attempts >= 3) {
+            httpSession.setAttribute("lockTime", System.currentTimeMillis()); // lock now
+            model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
+        } else {
+            model.addAttribute("invalids", valid + " | Attempts: " + attempts);
         }
+
+        return "SignIn";
     }
 
 }
