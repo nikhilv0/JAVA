@@ -44,7 +44,7 @@ public class SignIn {
             long currentTime = System.currentTimeMillis();
             long diffHours = (currentTime - lockTime) / (1000 * 60 * 60);
 
-            if (diffHours < 24) {  // still within 24 hours
+            if (diffHours < 24) {
                 model.addAttribute("invalids", "Account locked due to 3 failed attempts. Try again after 24 hours.");
                 return "SignIn";
             } else {
@@ -63,7 +63,7 @@ public class SignIn {
         System.out.println(signInDTO.toString());
         String valid= signInService.login(signInDTO);
         if (valid.equals("Login successful!")) {
-            httpSession.setAttribute("loginAttempts", 0); // reset attempts
+            httpSession.setAttribute("loginAttempts", 0);
             httpSession.removeAttribute("lockTime");
             model.addAttribute("mess", valid);
             return "Dashboard";
@@ -74,7 +74,7 @@ public class SignIn {
         httpSession.setAttribute("loginAttempts", attempts);
 
         if (attempts >= 3) {
-            httpSession.setAttribute("lockTime", System.currentTimeMillis()); // lock now
+            httpSession.setAttribute("lockTime", System.currentTimeMillis());
             model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
         } else {
             model.addAttribute("invalids", valid + " | Attempts: " + attempts);
