@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
@@ -31,10 +32,11 @@ public class AppConfiguration implements WebMvcConfigurer {
         configurer.enable();
     }
 
-//    @Bean
-//    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
-//
-//    }
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+
+    }
+
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
