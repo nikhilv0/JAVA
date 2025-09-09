@@ -32,10 +32,10 @@ public class AppConfiguration implements WebMvcConfigurer {
         configurer.enable();
     }
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
-
-    }
+//    @Bean
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+//
+//    }
 
     @Bean
     public JavaMailSender getJavaMailSender() {

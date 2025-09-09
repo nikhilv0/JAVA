@@ -2,6 +2,7 @@ package com.xworkz.projectusingspringandjpa.controller;
 
 import com.xworkz.projectusingspringandjpa.dto.ForgotDTO;
 import com.xworkz.projectusingspringandjpa.service.ForgotService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.UUID;
 
+@Slf4j
 @Controller
 @RequestMapping("/")
 public class ForgotPage {
@@ -27,7 +29,7 @@ public class ForgotPage {
     JavaMailSender mailSender;
 
     public ForgotPage() {
-        System.out.println("ForgotPage Constructor");
+        log.info("ForgotPage Constructor");
     }
 
     @RequestMapping("/forgotPassword")
@@ -40,7 +42,8 @@ public class ForgotPage {
                 System.err.println(objectError.getDefaultMessage());
             }
         }
-        System.out.println(forgotDTO.toString());
+
+        log.info(forgotDTO.toString());
         boolean exists = forgotService.mailExits(forgotDTO);
         if (!exists) {
             model.addAttribute("err", "Email not found!");
