@@ -21,8 +21,11 @@ public class SignInEntity {
     @Column(name = "user_email",nullable = false,length = 45)
     private String email;
 
-    @Column(name = "user_password",nullable = false,length = 70)
-    private String password;
+//    @Column(name = "user_password",nullable = false,length = 70)
+//    private String password;
+
+    @Column(name = "user_otp",nullable = false,length = 6)
+    private String otp;
 
     @Column(name = "user_visitedAt" ,nullable = false)
     private Timestamp visitedAt;

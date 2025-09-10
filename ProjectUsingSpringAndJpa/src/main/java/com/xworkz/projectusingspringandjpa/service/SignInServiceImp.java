@@ -4,6 +4,7 @@ import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
 import com.xworkz.projectusingspringandjpa.entity.SignInEntity;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import com.xworkz.projectusingspringandjpa.repository.SignInRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -15,7 +16,7 @@ import java.security.SecureRandom;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-
+@Slf4j
 @Service
 public class SignInServiceImp implements SignInService {
     @Autowired
@@ -24,6 +25,7 @@ public class SignInServiceImp implements SignInService {
     @Autowired
     JavaMailSender javaMailSender;
 
+    @Autowired
     private HttpSession httpSession;
 
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -36,32 +38,44 @@ public class SignInServiceImp implements SignInService {
             return "User not Found";
         }
 
-        SecureRandom random = new SecureRandom();
-        int otp1 = 100000 + random.nextInt(900000);
-        LocalDateTime expiryTime = LocalDateTime.now().plusMinutes(2);
-        String otp = String.valueOf(otp1);
-        System.out.println("Your OTP is: " + otp);
-
+        String otp = generateOtp();
         sendOtpToEmail(signInDTO, otp);
 
-        String inputOtp = (String) httpSession.getAttribute("");
-        if (otp.equals(inputOtp) && (LocalDateTime.now().isAfter(expiryTime))) {
-//            Thread.sleep(1000);
+        return "User Found";
+    }
 
-            if (passwordEncoder.matches(signInDTO.getPassword(), storedUser.getPassword())) {
-                SignInEntity signInEntity = new SignInEntity();
-                signInEntity.setEmail(signInDTO.getEmail());
-                signInEntity.setPassword(storedUser.getPassword());
-                signInEntity.setVisitedAt(new Timestamp(System.currentTimeMillis()));
-                System.out.println(signInRepository.login(signInEntity));
-                return "Login successful!";
-            } else {
-                return "Invalid password!";
-            }
-
+    @Override
+    public String verifyOtp(String otp, SignInDTO signInDTO) {
+        SignUpEntity storedUser = signInRepository.getEntityByMail(signInDTO.getEmail());
+        if (storedUser == null) {
+            return "User not Found";
         }
-        return "Invalid Otp";
+        String generatedOtp = (String) httpSession.getAttribute("generatedOtp");
+        LocalDateTime experyTime = (LocalDateTime) httpSession.getAttribute("expiryTimeForOtp");
 
+        if (otp.equals(generatedOtp) && (LocalDateTime.now().isAfter(experyTime))) {
+//            Thread.sleep(1000);
+//            if (passwordEncoder.matches(signInDTO.getPassword(), storedUser.getPassword())) {
+            SignInEntity signInEntity = new SignInEntity();
+            signInEntity.setEmail(signInDTO.getEmail());
+            signInEntity.setOtp(otp);
+            signInEntity.setVisitedAt(new Timestamp(System.currentTimeMillis()));
+            log.info(signInRepository.login(signInEntity));
+            return "Login successful!";
+        }
+        return "Invalid otp!";
+    }
+
+
+    private String generateOtp() {
+        SecureRandom random = new SecureRandom();
+        int otp1 = 100000 + random.nextInt(900000);
+        LocalDateTime expiryTime = LocalDateTime.now().plusMinutes(5);
+        httpSession.setAttribute("expiryTimeForOtp", expiryTime);
+        String otp = String.valueOf(otp1);
+        httpSession.setAttribute("generatedOtp", otp);
+        System.out.println("Your OTP is: " + otp);
+        return otp;
     }
 
     private void sendOtpToEmail(SignInDTO signInDTO, String otp) {
@@ -70,7 +84,7 @@ public class SignInServiceImp implements SignInService {
         message.setTo(signInDTO.getEmail());
         message.setSubject("Your OTP for Login Verification");
         message.setText("Your One-Time Password (OTP) is: " + otp + "\n"
-                + "This OTP is valid for 2 minutes.");
+                + "This OTP is valid for 5 minutes.");
 
         javaMailSender.send(message);
     }

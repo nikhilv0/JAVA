@@ -14,10 +14,10 @@ public class SignInDTO implements Serializable {
     )
     private String email;
 
-    @NotBlank(message = "Password is required")
-    @Pattern(
-            regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$",
-            message = "Password must be at least 8 characters long, include uppercase, lowercase, number, and special character"
-    )
-    private String password;
+//    @NotBlank(message = "Password is required")
+//    @Pattern(
+//            regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$",
+//            message = "Password must be at least 8 characters long, include uppercase, lowercase, number, and special character"
+//    )
+//    private String password;
 }

@@ -7,4 +7,6 @@ public interface SignInService {
 
     String login(SignInDTO signInDTO);
 
+    String verifyOtp(String otp,SignInDTO signInDTO);
+
 }

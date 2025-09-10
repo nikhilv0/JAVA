@@ -4,17 +4,20 @@ import com.mysql.cj.Session;
 import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
 import com.xworkz.projectusingspringandjpa.service.SignInService;
 import com.xworkz.projectusingspringandjpa.service.SignUpService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Controller
 @RequestMapping("/")
 public class SignIn {
@@ -26,10 +29,33 @@ public class SignIn {
     }
 
     @RequestMapping("/signIn")
-    public String signIn(Model model, SignInDTO signInDTO, BindingResult bindingResult, HttpSession httpSession){
+    public String signIn(Model model, SignInDTO signInDTO, BindingResult bindingResult, HttpSession httpSession) {
         System.out.println("SignIn Page");
 
-        httpSession.setAttribute("emailFromSession",signInDTO.getEmail());
+        httpSession.setAttribute("emailFromSession", signInDTO.getEmail());
+
+        if (bindingResult.hasErrors()) {
+            List<ObjectError> bindingResults = bindingResult.getAllErrors();
+            for (ObjectError objectError : bindingResults) {
+                System.err.println(objectError.getDefaultMessage());
+            }
+        }
+        System.out.println(signInDTO);
+        String valid = signInService.login(signInDTO);
+        if ("User Found".equals(valid)) {
+            String otpSent = (String) httpSession.getAttribute("generatedOtp");
+            model.addAttribute("otpSent", otpSent);
+            model.addAttribute("email", signInDTO.getEmail());
+            model.addAttribute("mess", valid);
+            return "SignIn";
+        }
+        model.addAttribute("mess", valid);
+        return "SignIn";
+    }
+
+
+    @RequestMapping("/verifyOtp")
+    public String verifyOtp(@RequestParam("otp") String otp,@RequestParam("email") String email,Model model, SignInDTO signInDTO,BindingResult bindingResult,HttpSession httpSession){
 
         // Track attempts
         Integer attempts = (Integer) httpSession.getAttribute("loginAttempts");
@@ -54,18 +80,19 @@ public class SignIn {
             }
         }
 
-        if (bindingResult.hasErrors()){
-           List<ObjectError> bindingResults=bindingResult.getAllErrors();
-           for (ObjectError objectError:bindingResults){
-               System.err.println(objectError.getDefaultMessage());
-           }
+        if (bindingResult.hasErrors()) {
+            List<ObjectError> bindingResults = bindingResult.getAllErrors();
+            for (ObjectError objectError : bindingResults) {
+                System.err.println(objectError.getDefaultMessage());
+            }
         }
-        System.out.println(signInDTO);
-        String valid= signInService.login(signInDTO);
-        if (valid.equals("Login successful!")) {
+
+        log.info(otp);
+        String verified = signInService.verifyOtp(otp,signInDTO);
+        if (verified.equals("Login successful!")) {
             httpSession.setAttribute("loginAttempts", 0);
             httpSession.removeAttribute("lockTime");
-            model.addAttribute("mess", valid);
+            model.addAttribute("mess", verified);
             return "Dashboard";
         }
 
@@ -77,10 +104,10 @@ public class SignIn {
             httpSession.setAttribute("lockTime", System.currentTimeMillis());
             model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
         } else {
-            model.addAttribute("invalids", valid + " | Attempts: " + attempts);
+            model.addAttribute("invalids", verified + " | Attempts: " + attempts);
         }
 
         return "SignIn";
     }
-
 }
+
