@@ -60,7 +60,7 @@ public class SignIn {
                System.err.println(objectError.getDefaultMessage());
            }
         }
-        System.out.println(signInDTO.toString());
+        System.out.println(signInDTO);
         String valid= signInService.login(signInDTO);
         if (valid.equals("Login successful!")) {
             httpSession.setAttribute("loginAttempts", 0);
