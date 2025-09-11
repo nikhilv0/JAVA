@@ -2,6 +2,8 @@ package com.xworkz.projectusingspringandjpa.controller;
 
 import com.mysql.cj.Session;
 import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
+import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
+import com.xworkz.projectusingspringandjpa.repository.SignUpRepository;
 import com.xworkz.projectusingspringandjpa.service.SignInService;
 import com.xworkz.projectusingspringandjpa.service.SignUpService;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -23,6 +27,9 @@ import java.util.Map;
 public class SignIn {
     @Autowired
     SignInService signInService;
+
+    @Autowired
+    SignUpRepository signUpRepository;
 
     public SignIn() {
         System.out.println("SignIn Construct");
@@ -57,54 +64,42 @@ public class SignIn {
     @RequestMapping("/verifyOtp")
     public String verifyOtp(@RequestParam("otp") String otp,@RequestParam("email") String email,Model model, SignInDTO signInDTO,BindingResult bindingResult,HttpSession httpSession){
 
-        // Track attempts
-        Integer attempts = (Integer) httpSession.getAttribute("loginAttempts");
-        Long lockTime = (Long) httpSession.getAttribute("lockTime"); // store when locked
+        Optional<SignUpEntity> optionalUser = signUpRepository.findByEmail(signInDTO.getEmail());
 
-        if (attempts == null) {
-            attempts = 0;
-        }
+        if (optionalUser.isPresent()) {
+            SignUpEntity user = optionalUser.get();
 
-        // If locked
-        if (lockTime != null) {
-            long currentTime = System.currentTimeMillis();
-            long diffHours = (currentTime - lockTime) / (1000 * 60 * 60);
-
-            if (diffHours < 24) {
-                model.addAttribute("invalids", "Account locked due to 3 failed attempts. Try again after 24 hours.");
+            // 🔒 Check if locked
+            if (signInService.isAccountLocked(user)) {
+                model.addAttribute("invalids", "Account locked. Try again after 24 hours.");
                 return "SignIn";
+            }
+
+            String verified = signInService.verifyOtp(otp, signInDTO);
+
+            if (verified.equals("Login successful!")) {
+                user.setFailedAttempts(0);
+                user.setLocked(false);
+                user.setLockTime(null);
+                signUpRepository.save(user);
+                model.addAttribute("mess", verified);
+                return "Dashboard";
             } else {
-                // Unlock after 24 hours
-                httpSession.setAttribute("loginAttempts", 0);
-                httpSession.removeAttribute("lockTime");
+                int attempts = user.getFailedAttempts() + 1;
+                user.setFailedAttempts(attempts);
+
+                if (attempts >= 3) {
+                    user.setLocked(true);
+                    user.setLockTime(LocalDateTime.now());
+                    model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
+                } else {
+                    model.addAttribute("invalids", verified + " | Attempts: " + attempts);
+                }
+
+                signUpRepository.save(user);
             }
-        }
-
-        if (bindingResult.hasErrors()) {
-            List<ObjectError> bindingResults = bindingResult.getAllErrors();
-            for (ObjectError objectError : bindingResults) {
-                System.err.println(objectError.getDefaultMessage());
-            }
-        }
-
-        log.info(otp);
-        String verified = signInService.verifyOtp(otp,signInDTO);
-        if (verified.equals("Login successful!")) {
-            httpSession.setAttribute("loginAttempts", 0);
-            httpSession.removeAttribute("lockTime");
-            model.addAttribute("mess", verified);
-            return "Dashboard";
-        }
-
-        // If login failed
-        attempts++;
-        httpSession.setAttribute("loginAttempts", attempts);
-
-        if (attempts >= 3) {
-            httpSession.setAttribute("lockTime", System.currentTimeMillis());
-            model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
         } else {
-            model.addAttribute("invalids", verified + " | Attempts: " + attempts);
+            model.addAttribute("invalids", "User not found");
         }
 
         return "SignIn";

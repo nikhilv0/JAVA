@@ -1,10 +1,10 @@
 package com.xworkz.projectusingspringandjpa.repository;
 
-import com.xworkz.projectusingspringandjpa.dto.ForgotDTO;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Repository
 public class SignUpRepositoryImp implements SignUpRepository {
@@ -51,16 +51,16 @@ public class SignUpRepositoryImp implements SignUpRepository {
     }
 
     @Override
-    public SignUpEntity findByEmail(String email) {
+    public Optional<SignUpEntity> findByEmail(String email) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            Query query= em.createNamedQuery("SignUpEntity.findByEmail");
+            TypedQuery<SignUpEntity> query = em.createNamedQuery("SignUpEntity.findByEmail", SignUpEntity.class);
             query.setParameter("email",email);
-            SignUpEntity signUpEntity=(SignUpEntity) query.getSingleResult();
+            SignUpEntity signUpEntity=query.getSingleResult();
             et.commit();
-            return signUpEntity;
+            return Optional.of(signUpEntity);
         }
         catch (Exception e){
             System.out.println("No record found for email: " + email);
@@ -68,7 +68,7 @@ public class SignUpRepositoryImp implements SignUpRepository {
         } finally {
             em.close();
         }
-        return null;
+        return Optional.empty();
     }
 
     @Override

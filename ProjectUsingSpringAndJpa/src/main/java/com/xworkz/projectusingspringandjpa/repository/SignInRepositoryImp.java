@@ -19,12 +19,10 @@ public class SignInRepositoryImp implements SignInRepository {
         EntityTransaction et=em.getTransaction();
 
         try {
-            et.begin();
-            Query query=em.createNamedQuery("SignUpEntity.findByEmail");
+
+            TypedQuery<SignUpEntity> query=em.createNamedQuery("SignUpEntity.findByEmail", SignUpEntity.class);
             query.setParameter("email",mail);
-            SignUpEntity signUpEntity=(SignUpEntity) query.getSingleResult();
-            et.commit();
-            return signUpEntity;
+            return query.getSingleResult();
 
         } catch (Exception e) {
             System.out.println("No record found for email: " + mail);

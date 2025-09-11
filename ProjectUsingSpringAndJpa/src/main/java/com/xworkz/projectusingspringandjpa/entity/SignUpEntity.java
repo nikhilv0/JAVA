@@ -60,4 +60,13 @@ public class SignUpEntity  {
     @Column(name = "token_expiry")
     private LocalDateTime tokenExpiry;
 
+    @Column(name = "failed_Attempts")
+    private Integer failedAttempts = 0;
+
+    @Column(name = "lock_Time")
+    private LocalDateTime lockTime;
+
+    @Column(name = "acc_locked")
+    private Boolean locked = false;
+
 }

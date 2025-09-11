@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class ForgotServiceImp implements ForgotService {
@@ -38,18 +39,22 @@ public class ForgotServiceImp implements ForgotService {
 //}
     @Override
     public String updateToken(String token, ForgotDTO forgotDTO) {
-        SignUpEntity signUpEntity = signUpRepository.findByEmail(forgotDTO.getEmail());
-        if (signUpEntity == null) {
+        Optional<SignUpEntity> optionalUser = signUpRepository.findByEmail(forgotDTO.getEmail());
+
+        if (!optionalUser.isPresent()) {
             return "User not found to store token";
         }
+
+        SignUpEntity signUpEntity = optionalUser.get();
         signUpEntity.setResetToken(token);
-        signUpEntity.setTokenExpiry(LocalDateTime.now().plusMinutes(15));
-        signUpEntity.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
-        String save = signUpRepository.save(signUpEntity);
-        if (save.equals("Successfully Saved")) {
-            return "token saved successfully";
-        } else return "Token not Saved ";
+        signUpEntity.setTokenExpiry(LocalDateTime.now().plusMinutes(15)); // token valid 15 mins
+        signUpEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
+
+        signUpRepository.save(signUpEntity);
+
+        return "Token saved successfully";
     }
+
 
     @Override
     public boolean isValidToken(String token) {

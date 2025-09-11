@@ -4,6 +4,7 @@ import com.xworkz.projectusingspringandjpa.dto.SignInDTO;
 import com.xworkz.projectusingspringandjpa.entity.SignInEntity;
 import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import com.xworkz.projectusingspringandjpa.repository.SignInRepository;
+import com.xworkz.projectusingspringandjpa.repository.SignUpRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.security.SecureRandom;
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Slf4j
@@ -21,6 +23,9 @@ import java.time.LocalDateTime;
 public class SignInServiceImp implements SignInService {
     @Autowired
     SignInRepository signInRepository;
+
+    @Autowired
+    SignUpRepository signUpRepository;
 
     @Autowired
     JavaMailSender javaMailSender;
@@ -65,6 +70,27 @@ public class SignInServiceImp implements SignInService {
         }
         return "Invalid otp!";
     }
+
+    public boolean isAccountLocked(SignUpEntity user) {
+        if (user.getLocked()!=null) {
+            LocalDateTime lockTime = user.getLockTime();
+            LocalDateTime now = LocalDateTime.now();
+
+            long diffHours = Duration.between(lockTime, now).toHours();
+
+            if (diffHours >= 24) {
+                // unlock after 24 hours
+                user.setLocked(false);
+                user.setFailedAttempts(0);
+                user.setLockTime(null);
+                signUpRepository.save(user);
+                return false;
+            }
+            return true; // still locked
+        }
+        return false;
+    }
+
 
 
     private String generateOtp() {
