@@ -58,7 +58,8 @@ public class SignInServiceImp implements SignInService {
         String generatedOtp = (String) httpSession.getAttribute("generatedOtp");
         LocalDateTime experyTime = (LocalDateTime) httpSession.getAttribute("expiryTimeForOtp");
 
-        if (otp.equals(generatedOtp) && (LocalDateTime.now().isAfter(experyTime))) {
+        if (generatedOtp.equals(otp) && LocalDateTime.now().isBefore(experyTime)) {
+
 //            Thread.sleep(1000);
 //            if (passwordEncoder.matches(signInDTO.getPassword(), storedUser.getPassword())) {
             SignInEntity signInEntity = new SignInEntity();

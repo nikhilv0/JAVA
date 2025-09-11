@@ -62,7 +62,7 @@ public class SignIn {
 
 
     @RequestMapping("/verifyOtp")
-    public String verifyOtp(@RequestParam("otp") String otp,@RequestParam("email") String email,Model model, SignInDTO signInDTO,BindingResult bindingResult,HttpSession httpSession){
+    public String verifyOtp(@RequestParam("otp") String otp, @RequestParam("email") String email, Model model, SignInDTO signInDTO, BindingResult bindingResult, HttpSession httpSession) {
 
         Optional<SignUpEntity> optionalUser = signUpRepository.findByEmail(signInDTO.getEmail());
 
@@ -74,32 +74,33 @@ public class SignIn {
                 model.addAttribute("invalids", "Account locked. Try again after 24 hours.");
                 return "SignIn";
             }
+            if (otp != null) {
+                String verified = signInService.verifyOtp(otp, signInDTO);
 
-            String verified = signInService.verifyOtp(otp, signInDTO);
-
-            if (verified.equals("Login successful!")) {
-                user.setFailedAttempts(0);
-                user.setLocked(false);
-                user.setLockTime(null);
-                signUpRepository.save(user);
-                model.addAttribute("mess", verified);
-                return "Dashboard";
-            } else {
-                int attempts = user.getFailedAttempts() + 1;
-                user.setFailedAttempts(attempts);
-
-                if (attempts >= 3) {
-                    user.setLocked(true);
-                    user.setLockTime(LocalDateTime.now());
-                    model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
+                if (verified.equals("Login successful!")) {
+                    user.setFailedAttempts(0);
+                    user.setLocked(false);
+                    user.setLockTime(null);
+                    signUpRepository.save(user);
+                    model.addAttribute("mess", verified);
+                    return "Dashboard";
                 } else {
-                    model.addAttribute("invalids", verified + " | Attempts: " + attempts);
-                }
+                    int attempts = user.getFailedAttempts() + 1;
+                    user.setFailedAttempts(attempts);
 
-                signUpRepository.save(user);
+                    if (attempts >= 3) {
+                        user.setLocked(true);
+                        user.setLockTime(LocalDateTime.now());
+                        model.addAttribute("invalids", "Account locked for 24 hours due to 3 failed attempts.");
+                    } else {
+                        model.addAttribute("invalids", verified + " | Attempts: " + attempts);
+                    }
+
+                    signUpRepository.save(user);
+                }
+            } else {
+                model.addAttribute("invalids", "User not found");
             }
-        } else {
-            model.addAttribute("invalids", "User not found");
         }
 
         return "SignIn";
