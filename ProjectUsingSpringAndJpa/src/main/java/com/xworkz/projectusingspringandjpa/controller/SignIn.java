@@ -69,12 +69,12 @@ public class SignIn {
         if (optionalUser.isPresent()) {
             SignUpEntity user = optionalUser.get();
 
-            // 🔒 Check if locked
             if (signInService.isAccountLocked(user)) {
                 model.addAttribute("invalids", "Account locked. Try again after 24 hours.");
                 return "SignIn";
             }
-            if (otp != null) {
+
+            if (otp != null && signInDTO!=null ) {
                 String verified = signInService.verifyOtp(otp, signInDTO);
 
                 if (verified.equals("Login successful!")) {
