@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                     <form action="Profile" method="post">
-                        <button type="submit" >My Profile</button>
+                        <button  class="nav-link" type="submit" >My Profile</button>
                     </form>
                 </li>
             </ul>

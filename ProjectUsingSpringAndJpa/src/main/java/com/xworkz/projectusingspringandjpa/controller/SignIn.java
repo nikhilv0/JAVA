@@ -84,6 +84,7 @@ public class SignIn {
                     signUpRepository.save(user);
                     model.addAttribute("mess", verified);
                     return "Dashboard";
+
                 } else {
                     int attempts = user.getFailedAttempts() + 1;
                     user.setFailedAttempts(attempts);
