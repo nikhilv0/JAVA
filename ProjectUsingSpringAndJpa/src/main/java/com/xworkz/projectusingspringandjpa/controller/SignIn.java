@@ -74,7 +74,7 @@ public class SignIn {
                 return "SignIn";
             }
 
-            if (otp != null) {
+            if (otp != null && !otp.trim().isEmpty()) {
                 String verified = signInService.verifyOtp(otp, signInDTO);
 
                 if (verified.equals("Login successful!")) {

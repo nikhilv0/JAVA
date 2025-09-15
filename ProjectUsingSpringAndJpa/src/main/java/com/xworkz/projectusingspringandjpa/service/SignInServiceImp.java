@@ -73,10 +73,14 @@ public class SignInServiceImp implements SignInService {
     }
 
     public boolean isAccountLocked(SignUpEntity user) {
-        if (user.getLocked()!=null) {
+        if (Boolean.TRUE.equals(user.getLocked())) {
             LocalDateTime lockTime = user.getLockTime();
-            LocalDateTime now = LocalDateTime.now();
 
+            if (lockTime == null) {
+                return false;
+            }
+
+            LocalDateTime now = LocalDateTime.now();
             long diffHours = Duration.between(lockTime, now).toHours();
 
             if (diffHours >= 24) {
@@ -91,6 +95,7 @@ public class SignInServiceImp implements SignInService {
         }
         return false;
     }
+
 
 
 
