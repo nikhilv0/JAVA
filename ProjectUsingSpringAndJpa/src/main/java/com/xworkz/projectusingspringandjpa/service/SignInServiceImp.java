@@ -55,12 +55,12 @@ public class SignInServiceImp implements SignInService {
         if (storedUser == null) {
             return "User not Found";
         }
+
         String generatedOtp = (String) httpSession.getAttribute("generatedOtp");
         LocalDateTime experyTime = (LocalDateTime) httpSession.getAttribute("expiryTimeForOtp");
 
         if (generatedOtp.equals(otp) && LocalDateTime.now().isBefore(experyTime)) {
 
-//            Thread.sleep(1000);
 //            if (passwordEncoder.matches(signInDTO.getPassword(), storedUser.getPassword())) {
             SignInEntity signInEntity = new SignInEntity();
             signInEntity.setEmail(signInDTO.getEmail());
@@ -84,7 +84,6 @@ public class SignInServiceImp implements SignInService {
             long diffHours = Duration.between(lockTime, now).toHours();
 
             if (diffHours >= 24) {
-                // unlock after 24 hours
                 user.setLocked(false);
                 user.setFailedAttempts(0);
                 user.setLockTime(null);
