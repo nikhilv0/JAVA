@@ -29,4 +29,5 @@ public class SignInEntity {
 
     @Column(name = "user_visitedAt" ,nullable = false)
     private Timestamp visitedAt;
+
 }

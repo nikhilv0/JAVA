@@ -1,5 +1,6 @@
 package com.xworkz.projectusingspringandjpa.repository;
 
+import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import org.springframework.stereotype.Repository;
 import javax.persistence.*;
 
@@ -13,11 +14,11 @@ public class ForgotRepositoryImpl implements ForgotRepository{
         EntityManager em= emf.createEntityManager();
         EntityTransaction et= em.getTransaction();
         try {
-            et.begin();
+
             Query query = em.createNamedQuery("SignUpEntity.existsByEmail");
             query.setParameter("email", email);
             Long count = (Long) query.getSingleResult();
-            et.commit();
+
             return count != null && count > 0;
 
         } catch (Exception e) {
