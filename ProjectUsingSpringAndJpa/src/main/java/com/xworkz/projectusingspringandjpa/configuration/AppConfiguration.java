@@ -58,7 +58,7 @@ public class AppConfiguration implements WebMvcConfigurer {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.xworkz.projectusingspringandjpa.entity"); // adjust package
+        em.setPackagesToScan(" com.xworkz.projectusingspringandjpa.entity"); // adjust package
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setShowSql(true);
