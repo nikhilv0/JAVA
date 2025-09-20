@@ -7,15 +7,18 @@ import javax.persistence.*;
 @Repository
 public class ForgotRepositoryImpl implements ForgotRepository{
 
-    EntityManagerFactory emf= Persistence.createEntityManagerFactory("Spring_Project");
+//    EntityManagerFactory emf= Persistence.createEntityManagerFactory("Spring_Project");
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
     public boolean mailExits(String email) {
-        EntityManager em= emf.createEntityManager();
-        EntityTransaction et= em.getTransaction();
+//        EntityManager em= emf.createEntityManager();
+//        EntityTransaction et= em.getTransaction();
         try {
 
-            Query query = em.createNamedQuery("SignUpEntity.existsByEmail");
+            Query query = entityManager.createNamedQuery("SignUpEntity.existsByEmail");
             query.setParameter("email", email);
             Long count = (Long) query.getSingleResult();
 
@@ -23,10 +26,9 @@ public class ForgotRepositoryImpl implements ForgotRepository{
 
         } catch (Exception e) {
             System.out.println("Error checking email existence: " + email);
-            if (et.isActive()) et.rollback();
         }
         finally {
-            em.close();
+//            em.close();
         }
         return false;
     }

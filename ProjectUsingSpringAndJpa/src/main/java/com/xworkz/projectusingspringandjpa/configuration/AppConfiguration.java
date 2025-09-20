@@ -53,12 +53,12 @@ public class AppConfiguration implements WebMvcConfigurer {
         return dataSource;
     }
 
-    // ---------- EntityManagerFactory (replaces persistence.xml) ----------
+    // ---------- EntityManagerFactory  ----------
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan(" com.xworkz.projectusingspringandjpa.entity"); // adjust package
+        em.setPackagesToScan("com.xworkz.projectusingspringandjpa.entity");
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setShowSql(true);
