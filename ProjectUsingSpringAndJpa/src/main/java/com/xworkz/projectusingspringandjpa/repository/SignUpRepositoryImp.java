@@ -9,87 +9,70 @@ import java.util.Optional;
 @Repository
 public class SignUpRepositoryImp implements SignUpRepository {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Spring_Project");
+//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Spring_Project");
+
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Override
     public String save(SignUpEntity signUpEntity) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction et = em.getTransaction();
+        EntityTransaction et = entityManager.getTransaction();
+
         try {
             et.begin();
-            em.merge(signUpEntity);
+            entityManager.merge(signUpEntity);
             et.commit();
             return "Successfully Saved";
         } catch (Exception e) {
             System.out.println("No record found to save");
             if (et.isActive()) et.rollback();
-        } finally {
-            em.close();
         }
         return "No record saved";
     }
 
     @Override
     public boolean existsByEmail(String email) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction et = em.getTransaction();
         try {
-            et.begin();
-            Query query = em.createNamedQuery("SignUpEntity.existsByEmail");
+            Query query = entityManager.createNamedQuery("SignUpEntity.existsByEmail");
             query.setParameter("email", email);
             Long count = (Long) query.getSingleResult();
-            et.commit();
+
             return count != null && count > 0;
 
         } catch (Exception e) {
             System.out.println("Error checking email existence: " + email);
-            if (et.isActive()) et.rollback();
-        } finally {
-            em.close();
         }
         return false;
     }
 
     @Override
     public Optional<SignUpEntity> findByEmail(String email) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction et = em.getTransaction();
+
         try {
-            et.begin();
-            TypedQuery<SignUpEntity> query = em.createNamedQuery("SignUpEntity.findByEmail", SignUpEntity.class);
-            query.setParameter("email",email);
-            SignUpEntity signUpEntity=query.getSingleResult();
-            et.commit();
+            TypedQuery<SignUpEntity> query = entityManager.createNamedQuery("SignUpEntity.findByEmail", SignUpEntity.class);
+            query.setParameter("email", email);
+            SignUpEntity signUpEntity = query.getSingleResult();
+
             return Optional.of(signUpEntity);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("No record found for email: " + email);
-            if (et.isActive()) et.rollback();
-        } finally {
-            em.close();
         }
         return Optional.empty();
     }
 
     @Override
     public SignUpEntity isValidToken(String token) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction et = em.getTransaction();
-        try {
-            et.begin();
-            Query query= em.createNamedQuery("findEntityByToken");
-            query.setParameter("resetToken",token);
-            SignUpEntity signUpEntity=(SignUpEntity) query.getSingleResult();
-            et.commit();
-            return signUpEntity;
-        }
-        catch (Exception e){
-            System.out.println("No record found for resetToken: " + token);
-            if (et.isActive()) et.rollback();
-        } finally {
-            em.close();
-        }
-        return null;
-    }
 
+        try {
+
+            Query query = entityManager.createNamedQuery("findEntityByToken");
+            query.setParameter("resetToken", token);
+
+            return (SignUpEntity) query.getSingleResult();
+        } catch (Exception e) {
+            System.out.println("No record found for resetToken: " + token);
+
+            return null;
+        }
+    }
 }

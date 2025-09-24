@@ -1,23 +1,18 @@
 package com.xworkz.projectusingspringandjpa.repository;
 
-import com.xworkz.projectusingspringandjpa.entity.SignUpEntity;
 import org.springframework.stereotype.Repository;
 import javax.persistence.*;
 
 @Repository
 public class ForgotRepositoryImpl implements ForgotRepository{
 
-//    EntityManagerFactory emf= Persistence.createEntityManagerFactory("Spring_Project");
-
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
     public boolean mailExits(String email) {
-//        EntityManager em= emf.createEntityManager();
-//        EntityTransaction et= em.getTransaction();
-        try {
 
+        try {
             Query query = entityManager.createNamedQuery("SignUpEntity.existsByEmail");
             query.setParameter("email", email);
             Long count = (Long) query.getSingleResult();
@@ -26,9 +21,6 @@ public class ForgotRepositoryImpl implements ForgotRepository{
 
         } catch (Exception e) {
             System.out.println("Error checking email existence: " + email);
-        }
-        finally {
-//            em.close();
         }
         return false;
     }
