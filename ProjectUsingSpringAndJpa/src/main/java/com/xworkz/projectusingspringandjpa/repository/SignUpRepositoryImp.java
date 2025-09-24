@@ -16,16 +16,12 @@ public class SignUpRepositoryImp implements SignUpRepository {
 
     @Override
     public String save(SignUpEntity signUpEntity) {
-        EntityTransaction et = entityManager.getTransaction();
 
         try {
-            et.begin();
             entityManager.merge(signUpEntity);
-            et.commit();
             return "Successfully Saved";
         } catch (Exception e) {
             System.out.println("No record found to save");
-            if (et.isActive()) et.rollback();
         }
         return "No record saved";
     }

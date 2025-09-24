@@ -32,16 +32,14 @@ public class SignInRepositoryImp implements SignInRepository {
 
     @Override
     public String login(SignInEntity signInEntity) {
-        EntityTransaction et=entityManager.getTransaction();
+
         try {
-            et.begin();
             entityManager.persist(signInEntity);
-            et.commit();
             return "Login record saved!";
-        }catch (Exception e){
+        }catch (Exception e) {
             System.out.println("No record found to save");
-            if (et.isActive()) et.rollback();
         }
+
         return "No record to save";
     }
 }
